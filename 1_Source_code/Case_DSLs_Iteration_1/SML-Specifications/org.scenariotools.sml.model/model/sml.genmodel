@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.scenariotools.sml.model/emf-gen" modelPluginID="org.scenariotools.sml.model"
+    modelName="Sml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>sml.ecore</foreignModel>
+  <genPackages prefix="Sml" basePackage="org.scenariotools" disposableProviderFactory="true"
+      ecorePackage="sml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sml.ecore#//ScenarioKind">
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ScenarioKind/assumption"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ScenarioKind/guarantee"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ScenarioKind/existential"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="sml.ecore#//ExpectationKind">
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ExpectationKind/none"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ExpectationKind/eventually"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ExpectationKind/urgent"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ExpectationKind/requested"/>
+      <genEnumLiterals ecoreEnumLiteral="sml.ecore#//ExpectationKind/committed"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="sml.ecore#//DummyDatatype"/>
+    <genClasses ecoreClass="sml.ecore#//Specification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Specification/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/imports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/domains"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/contexts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/controllableEClasses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/nonSpontaneousOperations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/collaborations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/containedCollaborations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/includedCollaborations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/eventParameterRanges"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Specification/channelOptions"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Collaboration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Collaboration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Collaboration/imports"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Collaboration/domains"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Collaboration/contexts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Collaboration/roles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Collaboration/scenarios"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Role/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Role/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Role/static"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Role/multiRole"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Scenario">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Scenario/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Scenario/singular"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Scenario/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Scenario/contexts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Scenario/roleBindings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Scenario/ownedInteraction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Scenario/optimizeCost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Scenario/cost"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ConstraintBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ConstraintBlock/consider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ConstraintBlock/ignore"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ConstraintBlock/interrupt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ConstraintBlock/forbidden"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//InteractionFragment"/>
+    <genClasses ecoreClass="sml.ecore#//Interaction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Interaction/fragments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Interaction/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Message">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Message/receiver"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Message/sender"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//Message/modelElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Message/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//Message/collectionModification"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ModalMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//ModalMessage/strict"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//ModalMessage/monitored"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//ModalMessage/expectationKind"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Alternative">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Alternative/cases"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Case">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Case/caseInteraction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Case/caseCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Loop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Loop/bodyInteraction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Loop/loopCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//Parallel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//Parallel/parallelInteraction"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//ConditionFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ConditionFragment/conditionExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//WaitCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//WaitCondition/strict"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//WaitCondition/requested"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//InterruptCondition"/>
+    <genClasses ecoreClass="sml.ecore#//ViolationCondition"/>
+    <genClasses ecoreClass="sml.ecore#//Condition"/>
+    <genClasses ecoreClass="sml.ecore#//ConditionExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ConditionExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//VariableFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//VariableFragment/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//BindingConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//BindingConstraint/bindingExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//RoleBindingConstraint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//RoleBindingConstraint/role"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ParameterBinding"/>
+    <genClasses image="false" ecoreClass="sml.ecore#//BindingExpression"/>
+    <genClasses ecoreClass="sml.ecore#//FeatureAccessBindingExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//FeatureAccessBindingExpression/featureaccess"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ObjectQueryBindingExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//ObjectQueryBindingExpression/queryClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ObjectQueryBindingExpression/queryValues"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ObjectQueryValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//ObjectQueryValue/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ObjectQueryValue/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ParameterExpression"/>
+    <genClasses ecoreClass="sml.ecore#//WildcardParameterExpression"/>
+    <genClasses ecoreClass="sml.ecore#//ValueParameterExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ValueParameterExpression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//VariableBindingParameterExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//VariableBindingParameterExpression/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//EventParameterRanges">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//EventParameterRanges/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//EventParameterRanges/rangesForParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//RangesForParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//RangesForParameter/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//RangesForParameter/ranges"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//AbstractRanges"/>
+    <genClasses ecoreClass="sml.ecore#//IntegerRanges">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//IntegerRanges/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//IntegerRanges/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//IntegerRanges/values"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//StringRanges">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//StringRanges/values"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//EnumRanges">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//EnumRanges/values"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ChannelOptions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//ChannelOptions/allMessagesRequireLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//ChannelOptions/messageChannels"/>
+      <genOperations ecoreOperation="sml.ecore#//ChannelOptions/getChannelsForEvent">
+        <genParameters ecoreParameter="sml.ecore#//ChannelOptions/getChannelsForEvent/event"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//MessageChannel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//MessageChannel/event"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//MessageChannel/channelFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//TimedViolationCondition"/>
+    <genClasses ecoreClass="sml.ecore#//TimedInterruptCondition"/>
+    <genClasses ecoreClass="sml.ecore#//TimedWaitCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//TimedWaitCondition/requested"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sml.ecore#//TimedWaitCondition/strict"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sml.ecore#//TimedConditionFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sml.ecore#//TimedConditionFragment/timedConditionExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//ClockFragment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference sml.ecore#//ClockFragment/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="sml.ecore#//DummyExprClass"/>
+  </genPackages>
+</genmodel:GenModel>

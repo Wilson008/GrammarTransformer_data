@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://org.scenariotools.test.model" nsPrefix="org.scenariotools.test.model">
+  <eClassifiers xsi:type="ecore:EClass" name="Environment">
+    <eOperations name="opEnv1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="knownA" upperBound="-1"
+        eType="#//A"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnumA">
+    <eLiterals name="A"/>
+    <eLiterals name="B" value="1"/>
+    <eLiterals name="C" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnumB">
+    <eLiterals name="A"/>
+    <eLiterals name="B" value="1"/>
+    <eLiterals name="C" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="A">
+    <eOperations name="opA1"/>
+    <eOperations name="opA2"/>
+    <eOperations name="opA3"/>
+    <eOperations name="opA4"/>
+    <eOperations name="opA5"/>
+    <eOperations name="opA6"/>
+    <eOperations name="opA7"/>
+    <eOperations name="opA8"/>
+    <eOperations name="chosenB">
+      <eParameters name="chosenB" eType="#//B"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" eType="#//B"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="counter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listOfB" upperBound="-1"
+        eType="#//B"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonUniqueListOfB" unique="false"
+        upperBound="-1" eType="#//B"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setOfB" ordered="false"
+        upperBound="-1" eType="#//B"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonUniqueEnvironments"
+        unique="false" upperBound="-1" eType="#//Environment"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumAttr" eType="#//EnumA"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="B">
+    <eOperations name="opB1"/>
+    <eOperations name="opB2"/>
+    <eOperations name="opB3"/>
+    <eOperations name="opBP1">
+      <eParameters name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="opBPInt">
+      <eParameters name="intValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="opBP3">
+      <eParameters name="intPara1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="intPara2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="intPara3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="opBPMix">
+      <eParameters name="stringParam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="intParam" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="enumParam" eType="#//EnumA"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="next" eType="#//B"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enumAttr" eType="#//EnumB"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strings" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moreStrings" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExampleSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aContained" upperBound="-1"
+        eType="#//A" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bContained" upperBound="-1"
+        eType="#//B" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="envContained" eType="#//Environment"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

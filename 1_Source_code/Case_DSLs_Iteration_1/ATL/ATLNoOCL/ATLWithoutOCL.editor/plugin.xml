@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ATLnoOCL -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ATLnoOCL.presentation.ATLnoOCLModelWizardID"
+            name="%_UI_ATLnoOCLModelWizard_label"
+            class="ATLnoOCL.presentation.ATLnoOCLModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ATLnoOCLModelFile.gif">
+         <description>%_UI_ATLnoOCLModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ATLnoOCL -->
+      <editor
+            id="ATLnoOCL.presentation.ATLnoOCLEditorID"
+            name="%_UI_ATLnoOCLEditor_label"
+            icon="icons/full/obj16/ATLnoOCLModelFile.gif"
+            extensions="atlnoocl"
+            class="ATLnoOCL.presentation.ATLnoOCLEditor"
+            contributorClass="ATLnoOCL.presentation.ATLnoOCLActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.prettyprinter.sml
+Bundle-ManifestVersion: 2
+Bundle-Name: org.prettyprinter.sml
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.prettyprinter.sml; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.scenariotools.sml.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.prettyprinter.sml.generator,
+ org.prettyprinter.sml.formatting2,
+ org.prettyprinter.sml.parser.antlr.internal,
+ org.prettyprinter.sml.serializer,
+ org.prettyprinter.sml.validation,
+ org.prettyprinter.sml.services,
+ org.prettyprinter.sml,
+ org.prettyprinter.sml.parser.antlr,
+ org.prettyprinter.sml.scoping
+Import-Package: org.apache.log4j

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/BibTex/src" modelPluginID="BibTex" modelName="BibTeX"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>BibTeX.ecore</foreignModel>
+  <genPackages prefix="BIBTEX" disposableProviderFactory="true" ecorePackage="BibTeX.ecore#/1">
+    <genClasses image="false" ecoreClass="BibTeX.ecore#/1/LocatedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BibTeX.ecore#/1/LocatedElement/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BibTeX.ecore#/1/LocatedElement/commentsBefore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BibTeX.ecore#/1/LocatedElement/commentsAfter"/>
+    </genClasses>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Bibtex">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BibTeX.ecore#/1/Bibtex/entries"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="BibTeX.ecore#/1/Entry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BibTeX.ecore#/1/Entry/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BibTeX.ecore#/1/Entry/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Article"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Book"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Inbook"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Booklet"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Inproceedings"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Proceedings"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Incollection"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Techreport"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/PhdThesis"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/MastersThesis"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Manual"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Misc"/>
+    <genClasses image="false" ecoreClass="BibTeX.ecore#/1/Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BibTeX.ecore#/1/Field/value"/>
+    </genClasses>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Authors"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/AuthorUrls"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Title"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Journal"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/BookTitle"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Institution"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Organization"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Type"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Day"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Number"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Chapter"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Volume"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Series"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Pages"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Publisher"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Howpublished"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/School"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Editor"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Edition"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Address"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Year"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Month"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Note"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Text"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/AbstractField"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Isbn"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Issn"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Url"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Doi"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Conference"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Unpublished"/>
+    <genClasses ecoreClass="BibTeX.ecore#/1/Annote"/>
+  </genPackages>
+</genmodel:GenModel>

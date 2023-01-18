@@ -1,0 +1,8 @@
+@Book{Weixing2021,
+	Title 		= "DSL study",
+	Authors 	= "Weixing",
+	Publisher	= "Don't know",
+	Address		= "Gothenburg",
+	Edition		= "What should I input?",
+	Year		= "2021"		
+}

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sml" nsURI="http://www.scenariotools.org/sml" nsPrefix="sml">
+  <eClassifiers xsi:type="ecore:EClass" name="Specification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//DummyExprClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domains" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllableEClasses" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonSpontaneousOperations"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collaborations" upperBound="-1"
+        eType="#//Collaboration" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedCollaborations"
+        upperBound="-1" eType="#//Collaboration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includedCollaborations"
+        upperBound="-1" eType="#//Collaboration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventParameterRanges" upperBound="-1"
+        eType="#//EventParameterRanges" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="channelOptions" eType="#//ChannelOptions"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Collaboration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//DummyExprClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domains" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="#//Role" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" upperBound="-1"
+        eType="#//Scenario" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Role">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="static" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiRole" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="singular" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ScenarioKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roleBindings" upperBound="-1"
+        eType="#//RoleBindingConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedInteraction" eType="#//Interaction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optimizeCost" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cost" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="0.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScenarioKind">
+    <eLiterals name="assumption"/>
+    <eLiterals name="guarantee" value="1"/>
+    <eLiterals name="existential" value="2" literal="existential"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consider" ordered="false"
+        upperBound="-1" eType="#//Message" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ignore" ordered="false"
+        upperBound="-1" eType="#//Message" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interrupt" ordered="false"
+        upperBound="-1" eType="#//Message" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forbidden" ordered="false"
+        upperBound="-1" eType="#//Message" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionFragment" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interaction" eSuperTypes="#//InteractionFragment #//DummyExprClass">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fragments" upperBound="-1"
+        eType="#//InteractionFragment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" eType="#//ConstraintBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" eType="#//Role"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelElement" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//ParameterBinding" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collectionModification"
+        eType="#//DummyDatatype"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModalMessage" eSuperTypes="#//InteractionFragment #//Message">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strict" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="monitored" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectationKind" eType="#//ExpectationKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ExpectationKind">
+    <eLiterals name="none"/>
+    <eLiterals name="eventually" value="1"/>
+    <eLiterals name="urgent" value="2"/>
+    <eLiterals name="requested" value="3" literal="requested"/>
+    <eLiterals name="committed" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alternative" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cases" upperBound="-1"
+        eType="#//Case" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Case">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caseInteraction" eType="#//Interaction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="caseCondition" eType="#//Condition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bodyInteraction" eType="#//Interaction"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loopCondition" eType="#//Condition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parallel" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parallelInteraction" upperBound="-1"
+        eType="#//Interaction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionFragment" abstract="true" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionExpression" eType="#//ConditionExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WaitCondition" eSuperTypes="#//ConditionFragment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strict" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requested" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterruptCondition" eSuperTypes="#//ConditionFragment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ViolationCondition" eSuperTypes="#//ConditionFragment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//ConditionFragment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//DummyExprClass"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableFragment" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//DummyExprClass"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BindingConstraint" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindingExpression" eType="#//BindingExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoleBindingConstraint" eSuperTypes="#//BindingConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//Role"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterBinding" eSuperTypes="#//BindingConstraint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BindingExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureAccessBindingExpression" eSuperTypes="#//BindingExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureaccess" eType="#//DummyExprClass"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectQueryBindingExpression" eSuperTypes="#//BindingExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queryClass" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="queryValues" upperBound="-1"
+        eType="#//ObjectQueryValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObjectQueryValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//DummyExprClass"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterExpression" eSuperTypes="#//BindingExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WildcardParameterExpression" eSuperTypes="#//ParameterExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueParameterExpression" eSuperTypes="#//ParameterExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//DummyExprClass"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableBindingParameterExpression"
+      eSuperTypes="#//ParameterExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//DummyExprClass"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EventParameterRanges">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rangesForParameter" upperBound="-1"
+        eType="#//RangesForParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RangesForParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ranges" eType="#//AbstractRanges"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractRanges" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerRanges" eSuperTypes="#//AbstractRanges">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringRanges" eSuperTypes="#//AbstractRanges">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumRanges" eSuperTypes="#//AbstractRanges">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" unique="false"
+        upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EEnumLiteral"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChannelOptions">
+    <eOperations name="getChannelsForEvent" upperBound="-1" eType="#//MessageChannel">
+      <eParameters name="event" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="allMessagesRequireLinks"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageChannels" upperBound="-1"
+        eType="#//MessageChannel" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageChannel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//ETypedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="channelFeature" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedViolationCondition" eSuperTypes="#//TimedConditionFragment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedInterruptCondition" eSuperTypes="#//TimedConditionFragment"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedWaitCondition" eSuperTypes="#//TimedConditionFragment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="requested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strict" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimedConditionFragment" abstract="true"
+      eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timedConditionExpression"
+        eType="#//DummyExprClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClockFragment" eSuperTypes="#//InteractionFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//DummyExprClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DummyExprClass"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DummyDatatype" instanceClassName="java.lang.String"/>
+</ecore:EPackage>

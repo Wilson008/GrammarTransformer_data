@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DOT -->
+      <package
+            uri="http://DOT.ecore/PrimitiveTypes"
+            class="PrimitiveTypes.PrimitiveTypesPackage"
+            genModel="model/DOT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DOT -->
+      <package
+            uri="http://DOT.ecore/DOT"
+            class="DOT.DOTPackage"
+            genModel="model/DOT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated MyDot -->
+      <package
+            uri="http://www.eclipse.org/gef/dot/internal/language/Dot"
+            class="dot.DotPackage"
+            genModel="model/MyDot.genmodel"/>
+   </extension>
+
+</plugin>

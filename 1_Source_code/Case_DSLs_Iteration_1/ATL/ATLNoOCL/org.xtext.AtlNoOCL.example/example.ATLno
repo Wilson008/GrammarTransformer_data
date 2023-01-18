@@ -1,0 +1,13 @@
+module Person2Contact ;
+create OCLDummy MMb from OCLDummy MMa;
+
+rule Start {
+	from 
+		p : MMa ( 
+			OCLDummy 'Boss'
+		)
+	to
+		c : MMb (
+			name <- OCLDummy firstName
+		)
+}
