@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: org.bumble.xtext.grammaroptimizer.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: org.bumble.xtext.grammaroptimizer.test
+Require-Bundle: org.bumble.xtext.grammaroptimizer.grammarrule;bundle-version="0.1.0",
+ org.bumble.xtext.grammaroptimizer.optimizationrule;bundle-version="0.1.0",
+ org.bumble.xtext.grammaroptimizer.helper;bundle-version="1.0.0",
+ org.apache.commons.lang
+Export-Package: org.bumble.xtext.grammaroptimizer.test

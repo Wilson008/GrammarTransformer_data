@@ -1,0 +1,91 @@
+package org.bumble.xtext.grammaroptimizer.test;
+
+import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOptionality;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeOptionalAttrToOrRelationImpl;
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+
+public class OptionalityTest {
+	@Test
+	public void testRemoveOptOfSingleAttr() {
+		GrammarOptimizer go = new GrammarOptimizer();
+		
+		// read text from file
+		String input = FileHelper.getFileText("Dot.txt", true);
+		go.processGrammar(input);
+		
+		RemoveOptionality removeOptionality = GrammaroptimizerFactory.eINSTANCE.createRemoveOptionality();
+		removeOptionality.setGrammar(go.getGrammar());
+		removeOptionality.setGrammarRule("EdgeRhsNode");
+		removeOptionality.setAttrName("op");
+		removeOptionality.apply();
+		String actualOutput = go.spliceGrammar();
+		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_001.txt", false);
+
+		// compare text
+		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+	}
+	
+	@Test
+	public void testRemoveOptOfAttrInRule() {
+		GrammarOptimizer go = new GrammarOptimizer();
+		
+		// read text from file
+		String input = FileHelper.getFileText("Dot.txt", true);
+		go.processGrammar(input);
+		
+		RemoveOptionality removeOptionality = GrammaroptimizerFactory.eINSTANCE.createRemoveOptionality();
+		removeOptionality.setGrammar(go.getGrammar());
+		removeOptionality.setGrammarRule("EdgeRhsNode");
+		removeOptionality.setAttrName(null);
+		removeOptionality.apply();
+		String actualOutput = go.spliceGrammar();
+		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_002.txt", false);
+
+		// compare text
+		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+	}
+	
+	@Test
+	public void testRemoveOptOfAttrInGrammar() {
+		GrammarOptimizer go = new GrammarOptimizer();
+		
+		// read text from file
+		String input = FileHelper.getFileText("Dot.txt", true);
+		go.processGrammar(input);
+		
+		RemoveOptionality removeOptionality = GrammaroptimizerFactory.eINSTANCE.createRemoveOptionality();
+		removeOptionality.setGrammar(go.getGrammar());
+		removeOptionality.setGrammarRule(null);
+		removeOptionality.setAttrName(null);
+		removeOptionality.apply();
+		String actualOutput = go.spliceGrammar();
+		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_003.txt", false);
+
+		// compare text
+		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+	}
+	
+	@Test
+	public void testChangeOptOfAttrToOrInRule() {
+		GrammarOptimizer go = new GrammarOptimizer();
+		
+		// read text from file
+		String input = FileHelper.getFileText("Dot.txt", true);
+		go.processGrammar(input);
+		
+		ChangeOptionalAttrToOrRelation changeOptOfAttrToOrInRule = GrammaroptimizerFactory.eINSTANCE.createChangeOptionalAttrToOrRelation();
+		changeOptOfAttrToOrInRule.setGrammar(go.getGrammar());
+		changeOptOfAttrToOrInRule.setGrammarRule("EdgeRhsNode");
+		changeOptOfAttrToOrInRule.setIsAll(true);
+		changeOptOfAttrToOrInRule.apply();
+		String actualOutput = go.spliceGrammar();
+		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_004.txt", false);
+
+		// compare text
+		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+	}
+}

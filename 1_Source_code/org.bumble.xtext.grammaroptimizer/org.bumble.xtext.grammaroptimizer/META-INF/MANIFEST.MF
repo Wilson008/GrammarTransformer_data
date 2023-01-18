@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Prettyprinter
+Bundle-SymbolicName: org.bumble.xtext.grammaroptimizer
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.bumble.xtext.grammaroptimizer
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.bumble.xtext.grammaroptimizer.grammarrule;bundle-version="0.1.0",
+ org.bumble.xtext.grammaroptimizer.optimizationrule;bundle-version="0.1.0",
+ org.bumble.xtext.grammaroptimizer.helper;bundle-version="1.0.0"
+Export-Package: org.bumble.xtext.grammaroptimizer
