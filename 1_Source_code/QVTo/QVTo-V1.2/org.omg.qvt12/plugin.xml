@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated QVTOperational -->
+      <package
+            uri="http://schema.omg.org/spec/QVT/1.2/qvtoperational"
+            class="QVTOperational.QVTOperationalPackage"
+            genModel="model/QVTOperational.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated QVTOperational -->
+      <package
+            uri="http://schema.omg.org/spec/QVT/1.2/emof"
+            class="EMOF.EMOFPackage"
+            genModel="model/QVTOperational.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated QVTOperational -->
+      <package
+            uri="http://schema.omg.org/spec/QVT/1.2/primitivetypes"
+            class="PrimitiveTypes.PrimitiveTypesPackage"
+            genModel="model/QVTOperational.genmodel"/>
+   </extension>
+
+</plugin>

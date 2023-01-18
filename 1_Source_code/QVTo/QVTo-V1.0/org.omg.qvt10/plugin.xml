@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated qvtoperational -->
+      <package
+            uri="http://www.schema.omg.org/spec/QVT/1.0/qvtoperational"
+            class="qvtoperational.QvtoperationalPackage"
+            genModel="model/qvtoperational.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated qvtoperational -->
+      <package
+            uri="http:///emof.ecore"
+            class="emof.EmofPackage"
+            genModel="model/qvtoperational.genmodel"/>
+   </extension>
+
+</plugin>

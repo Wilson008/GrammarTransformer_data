@@ -1,0 +1,70 @@
+modeltype MFS uses "com.chalmers.manufacturingSystem";
+
+transformation CompleteUml2Rdbms(in uml:UML,out rdbms:RDBMS)
+	access transformation UmlCleaning(inout UML);
+
+main() {
+	"this is where write ocl expression"
+}
+
+//main() {
+//	allSuper := umlmodel.objectsOfType(Class)->collect(i|i.getAllBaseClasses());
+//}
+
+query MFS::StoragePoint::getTransitions() : OrderedSet
+{
+	"this is where write ocl expression";
+}
+
+mapping Class::class2table() : Table
+	when {"this is where write ocl expression"} {
+	init {
+		"this is where write ocl expression"
+	}
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+}
+
+//mapping Class::class2table() : Table
+//	when {self.isPersistent() ;} {
+//	init {
+//		self.leafAttributes := self.attribute->map attr2LeafAttrs();
+//	}
+//	name := 't_' + self.name;
+//	column := self.leafAttributes->map leafAttr2OrdinaryColumn();
+//	key := object Key {
+//		name := 'k_'+ self.name;
+//		column := result.column[kind='primary'];
+//	};
+//}
+
+mapping Foo::foo2atombar () : atom:Atom, bar:Bar
+	merges foo2barPersistence, foo2atomFactory
+{
+	"this is where write ocl expression"
+}
+
+//mapping Foo::foo2atombar () : atom:Atom, bar:Bar
+//	merges foo2barPersistence, foo2atomFactory
+//{
+//	object atom:{name := "A_"+self.name.upper();
+//}
+
+mapping out MFS::myclass2(inout MFS::myclass4) refines MFS::anotherclass;
+
+//constructor UML::Operation::Operation(opname:String,Sequence(String));
+constructor UML::Operation::Operation(opname:String,Sequence);
+
+intermediate class LeafAttribute extends fasdfa::fdsf;
+
+datatype class MFS::fsdfa extends MFS::fsadfas {
+	<<MFS>> readonly MFS::mydata::=fsdfsa
+	[1]
+	opposites ~ myopposite [1]
+}
+
+tag "mytag" MFS::mytag = "fsdfs";

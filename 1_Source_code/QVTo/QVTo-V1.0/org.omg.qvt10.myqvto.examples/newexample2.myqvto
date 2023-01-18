@@ -1,0 +1,88 @@
+modeltype UML uses SimpleUml ("http://omg.qvt-examples.SimpleUml");
+
+package otherpackage::somepath::somepath;
+library MyUmlFacilities(UML);
+
+typedef TopLevelPackage=Package;
+
+transformation Req2Psm (inout pim:REQ, out psm:PSM)
+	access Req2Pimgui(in req:REQ, out pimGui:PIM), 
+	       Req2Pimbehavior(in req:REQ, out pimBehavior:PIM),
+	       Pim2Psm(in pimGui:PIM, in pimBehavior:PIM, out psm:PSM);
+
+main() {
+	"this is where write ocl expression";
+}
+
+query Class::isPersistent() : Boolean = "this is where write ocl expression";
+//query Class::isPersistent() : Boolean = self.kind='persistent';
+
+query Class::checkConsistency(typename:String) : Boolean {
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+}
+
+//query Class::checkConsistency(typename:String) : Boolean {
+//	if (not typename) return false;
+//	if (cl := self.namespace.lookForClass(typename) ) return false;
+//	return self.compareTypes(cl);
+//}
+
+helper Package::computeCandidates(inout list:List) : List {
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+}
+
+//helper Package::computeCandidates(inout list:List) : List {
+//	if (self.nothingToAdd()) return list;
+//	list.append(self.retrieveCandidates());
+//	return list;
+//}
+
+mapping inout X::mappingname(in p1:P1, out p2:P2) : r1:R1, r2:R2
+	when { "this is where write ocl expression" }
+	where { "this is where write ocl expression" }
+	{
+		init { "this is where write ocl expression" }
+		population { "this is where write ocl expression" }
+		end { "this is where write ocl expression" }
+	}
+
+mapping Package::packageToSchema() : result:Schema
+	when {"this is where write ocl expression"}
+	{
+		population {
+			"this is where write ocl expression"
+			"this is where write ocl expression"
+			"this is where write ocl expression"
+		}
+	}
+	
+//mapping Package::packageToSchema() : result:Schema
+//	when {  self.name.startingWith() <> "_" }
+//	{
+//		population {
+//			object result:Schema {
+//				name := self.name;
+//				table := self.ownedElement->map class2table();
+//			}
+//		}
+//	}
+
+mapping UML::Feature::convertFeature () : JAVA::Element
+	disjuncts convertAttribute, convertOperation, convertConstructor {}
+
+constructor Column::Column (n:String,t: String) { "this is where write ocl expression" }
+//constructor Column::Column (n:String,t: String) { name:=n; type:=t; }
+
+intermediate class LeafAttribute {name:String;kind:String;attr:Attribute;};
+
+datatype class MFS::fsdfa extends MFS::fsadfas {
+	<<MFS>> readonly MFS::mydata::=fsdfsa
+	[1]
+	opposites ~ myopposite [1]
+}
+
+tag "mytag" MFS::mytag = "fsdfs";

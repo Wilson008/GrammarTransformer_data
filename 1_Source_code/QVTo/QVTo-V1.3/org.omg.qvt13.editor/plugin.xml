@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated QVTOperational -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="QVTOperational.presentation.QVTOperationalModelWizardID"
+            name="%_UI_QVTOperationalModelWizard_label"
+            class="QVTOperational.presentation.QVTOperationalModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/QVTOperationalModelFile.gif">
+         <description>%_UI_QVTOperationalModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated QVTOperational -->
+      <editor
+            id="QVTOperational.presentation.QVTOperationalEditorID"
+            name="%_UI_QVTOperationalEditor_label"
+            icon="icons/full/obj16/QVTOperationalModelFile.gif"
+            extensions="qvtoperational"
+            class="QVTOperational.presentation.QVTOperationalEditor"
+            contributorClass="QVTOperational.presentation.QVTOperationalActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated QVTOperational -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="EMOF.presentation.EMOFModelWizardID"
+            name="%_UI_EMOFModelWizard_label"
+            class="EMOF.presentation.EMOFModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/EMOFModelFile.gif">
+         <description>%_UI_EMOFModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated QVTOperational -->
+      <editor
+            id="EMOF.presentation.EMOFEditorID"
+            name="%_UI_EMOFEditor_label"
+            icon="icons/full/obj16/EMOFModelFile.gif"
+            extensions="emof"
+            class="EMOF.presentation.EMOFEditor"
+            contributorClass="EMOF.presentation.EMOFActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

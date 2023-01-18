@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.omg.qvt11.myqvto.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.omg.qvt11.myqvto.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.omg.qvt11.myqvto.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.omg.qvt11.myqvto,
+ org.omg.qvt11,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.omg.qvt11.myqvto.ide.contentassist.antlr.internal,
+ org.omg.qvt11.myqvto.ide.contentassist.antlr

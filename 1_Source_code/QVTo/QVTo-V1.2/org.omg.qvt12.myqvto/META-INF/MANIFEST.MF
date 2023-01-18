@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.omg.qvt12.myqvto
+Bundle-ManifestVersion: 2
+Bundle-Name: org.omg.qvt12.myqvto
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.omg.qvt12.myqvto; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.omg.qvt12,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.omg.qvt12.myqvto.parser.antlr.internal,
+ org.omg.qvt12.myqvto.parser.antlr,
+ org.omg.qvt12.myqvto.scoping,
+ org.omg.qvt12.myqvto.validation,
+ org.omg.qvt12.myqvto.formatting2,
+ org.omg.qvt12.myqvto.serializer,
+ org.omg.qvt12.myqvto,
+ org.omg.qvt12.myqvto.services,
+ org.omg.qvt12.myqvto.generator
+Import-Package: org.apache.log4j

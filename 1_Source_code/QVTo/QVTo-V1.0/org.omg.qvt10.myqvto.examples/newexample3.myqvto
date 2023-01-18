@@ -1,0 +1,61 @@
+modeltype RDBMS "strict" uses SimpleRdbms;
+
+package otherpackage::somepath::somepath;
+library UmlUtilities(UML1_4) extends BasicUmlUtilities(UML1_4),MathLibrary;
+
+typedef TopLevelPackage=Package;
+
+transformation JClass2JPackage(inout javamodel:JAVA);
+main () { "this is where write ocl expression"}
+//main () { javamodel->objectsOfType(JClass)->jclass2jpackage();}
+
+query UML::Class::getAllBaseClasses() : Set;
+query UML::Element::getUsedStereotypeNames() : Set;
+
+helper Package::computeCandidates(inout list:List) : List {
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+	"this is where write ocl expression"
+}
+
+//helper Package::computeCandidates(inout list:List) : List {
+//	if (self.nothingToAdd()) return list;
+//	list.append(self.retrieveCandidates());
+//	return list;
+//}
+
+mapping inout contexttype::mappingname (parameters) : myclass
+	inherits rulerefs merges rulerefs disjuncts rulerefs
+	refines rulerefs 
+	when {"this is where write ocl expression" } 
+	where { "this is where write ocl expression" };
+// 'X' is a class of 'S' metamodel and 'Y' is a class of 'D' metamodel
+mapping X::foo(inout Y@dest1) : Y@dest2
+{
+	"this is where write ocl expression"
+}
+
+//mapping X::foo(inout Y@dest1) : Y@dest2
+//{
+//	object bar:{ factory := object Factory {name := bar.name}};
+//}
+
+constructor Message::Message(messName:String,messType:String) {
+	"this is where write ocl expression"
+	"this is where write ocl expression" 
+}
+
+//constructor Message::Message(messName:String,messType:String) {
+//	name := messageName; // same as result.name := messageName
+//	type := messType:String; // same as result.type := messType
+//}
+
+configuration property UML::Attribute::MAX_SIZE: String;
+
+datatype class MFS::fsdfa extends MFS::fsadfas {
+	<<MFS>> readonly MFS::mydata::=fsdfsa
+	[1]
+	opposites ~ myopposite [1]
+}
+
+tag "mytag" MFS::mytag = "fsdfs";

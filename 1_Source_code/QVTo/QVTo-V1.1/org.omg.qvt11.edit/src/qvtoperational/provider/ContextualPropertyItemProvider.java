@@ -1,0 +1,501 @@
+/**
+ */
+package qvtoperational.provider;
+
+
+import EMOF.EMOFFactory;
+import EMOF.EMOFPackage;
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.AdapterFactory;
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import qvtoperational.ContextualProperty;
+import qvtoperational.QvtoperationalFactory;
+import qvtoperational.QvtoperationalPackage;
+
+/**
+ * This is the item provider adapter for a {@link qvtoperational.ContextualProperty} object.
+ * <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class ContextualPropertyItemProvider extends ImperativeOperationItemProvider {
+	/**
+	 * This constructs an instance from a factory and a notifier.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ContextualPropertyItemProvider(AdapterFactory adapterFactory) {
+		super(adapterFactory);
+	}
+
+	/**
+	 * This returns the property descriptors for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
+
+			addUriPropertyDescriptor(object);
+			addConfigPropertyPropertyDescriptor(object);
+			addEntryPropertyDescriptor(object);
+			addUsedModelTypePropertyDescriptor(object);
+			addProperty_keyPropertyDescriptor(object);
+		}
+		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Uri feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUriPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Package_uri_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Package_uri_feature", "_UI_Package_type"),
+				 EMOFPackage.Literals.PACKAGE__URI,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Config Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConfigPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Module_configProperty_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Module_configProperty_feature", "_UI_Module_type"),
+				 QvtoperationalPackage.Literals.MODULE__CONFIG_PROPERTY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entry feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntryPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Module_entry_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Module_entry_feature", "_UI_Module_type"),
+				 QvtoperationalPackage.Literals.MODULE__ENTRY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Used Model Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUsedModelTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Module_usedModelType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Module_usedModelType_feature", "_UI_Module_type"),
+				 QvtoperationalPackage.Literals.MODULE__USED_MODEL_TYPE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Property key feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProperty_keyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContextualProperty_property_key_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContextualProperty_property_key_feature", "_UI_ContextualProperty_type"),
+				 QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__PROPERTY_KEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE);
+			childrenFeatures.add(EMOFPackage.Literals.PACKAGE__OWNED_TYPE);
+			childrenFeatures.add(QvtoperationalPackage.Literals.MODULE__MODULE_IMPORT);
+			childrenFeatures.add(QvtoperationalPackage.Literals.MODULE__OWNED_TAG);
+			childrenFeatures.add(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE);
+			childrenFeatures.add(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION);
+			childrenFeatures.add(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__DECLARATOR);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns ContextualProperty.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ContextualProperty"));
+	}
+
+	/**
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getText(Object object) {
+		String label = ((ContextualProperty)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ContextualProperty_type") :
+			getString("_UI_ContextualProperty_type") + " " + label;
+	}
+
+
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to update any cached
+	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(Notification notification) {
+		updateChildren(notification);
+
+		switch (notification.getFeatureID(ContextualProperty.class)) {
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__URI:
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__PROPERTY_KEY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__NESTED_PACKAGE:
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__OWNED_TYPE:
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__MODULE_IMPORT:
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__OWNED_TAG:
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__OWNED_VARIABLE:
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__INIT_EXPRESSION:
+			case QvtoperationalPackage.CONTEXTUAL_PROPERTY__DECLARATOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
+		super.notifyChanged(notification);
+	}
+
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
+	 * that can be created under this object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createConstructor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createContextualProperty()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createEntryOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createHelper()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createModule()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createLibrary()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createMappingOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createModelType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createOperationalTransformation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createTagGO()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createMetaModelGO()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createAccessDecl()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createTypeDef()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 QvtoperationalFactory.eINSTANCE.createClassifierGO()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__NESTED_PACKAGE,
+				 EMOFFactory.eINSTANCE.createPackage()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__OWNED_TYPE,
+				 EMOFFactory.eINSTANCE.createClass()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__OWNED_TYPE,
+				 EMOFFactory.eINSTANCE.createDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__OWNED_TYPE,
+				 EMOFFactory.eINSTANCE.createEnumeration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EMOFPackage.Literals.PACKAGE__OWNED_TYPE,
+				 EMOFFactory.eINSTANCE.createPrimitiveType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__MODULE_IMPORT,
+				 QvtoperationalFactory.eINSTANCE.createModuleImport()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_TAG,
+				 EMOFFactory.eINSTANCE.createTag()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createExpressionGO()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createImperativeCallExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createMappingCallExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createVarParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createMappingParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createModelParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createObjectExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createResolveExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE,
+				 QvtoperationalFactory.eINSTANCE.createResolveInExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createExpressionGO()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createImperativeCallExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createMappingCallExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createVarParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createMappingParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createModelParameter()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createObjectExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createResolveExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION,
+				 QvtoperationalFactory.eINSTANCE.createResolveInExp()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__DECLARATOR,
+				 QvtoperationalFactory.eINSTANCE.createDeclarator()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == EMOFPackage.Literals.OPERATION__OWNED_PARAMETER ||
+			childFeature == QvtoperationalPackage.Literals.IMPERATIVE_OPERATION__CONTEXT ||
+			childFeature == QvtoperationalPackage.Literals.IMPERATIVE_OPERATION__RESULT ||
+			childFeature == QvtoperationalPackage.Literals.MODULE__OWNED_VARIABLE ||
+			childFeature == QvtoperationalPackage.Literals.CONTEXTUAL_PROPERTY__INIT_EXPRESSION;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
+	}
+
+}

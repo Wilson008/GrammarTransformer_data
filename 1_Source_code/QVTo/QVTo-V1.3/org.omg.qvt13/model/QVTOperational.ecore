@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="QVTOperational" name="QVTOperational" nsURI="http://www.omg.org/spec/QVT/20151201/QVTOperational"
+    nsPrefix="qvtoperational">
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.Constructor" name="Constructor"
+      eSuperTypes="#QVTOperational.ImperativeOperation #QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructor_header" lowerBound="1"
+        eType="#//ConstructorHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression_block" eType="#//ExpressionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ConstructorBody" name="ConstructorBody"
+      eSuperTypes="#QVTOperational.OperationBody"/>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ContextualProperty"
+      name="ContextualProperty" eSuperTypes="#QVTOperational.ImperativeOperation #QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ContextualProperty.initExpression"
+        name="initExpression" eType="#//ExpressionGO" containment="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="ownerProperty"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property_key" lowerBound="1"
+        upperBound="-1" eType="#//PropertyKey"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declarator" lowerBound="1"
+        eType="#//Declarator" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" xmi:id="QVTOperational.DirectionKind" name="DirectionKind">
+    <eLiterals xmi:id="QVTOperational.DirectionKind.in" name="in"/>
+    <eLiterals xmi:id="QVTOperational.DirectionKind.inout" name="inout" value="1"/>
+    <eLiterals xmi:id="QVTOperational.DirectionKind.out" name="out" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.EntryOperation" name="EntryOperation"
+      eSuperTypes="#QVTOperational.ImperativeOperation #QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry_header" lowerBound="1"
+        eType="#//EntryHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression_block" eType="#//ExpressionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.Helper" name="Helper"
+      eSuperTypes="#QVTOperational.ImperativeOperation #QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.Helper.isQuery"
+        name="isQuery" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="helper_header" lowerBound="1"
+        eType="#//HelperHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//ExpressionGO"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression_block" eType="#//ExpressionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ImperativeCallExp"
+      name="ImperativeCallExp" eSuperTypes="#//ExpressionGO">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.ImperativeCallExp.isVirtual"
+        name="isVirtual" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.Boolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ImperativeOperation"
+      name="ImperativeOperation" eSuperTypes="EMOF.ecore#EMOF.Operation">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ImperativeOperation.body"
+        name="body" eType="#QVTOperational.OperationBody" containment="true" resolveProxies="false"
+        eOpposite="#QVTOperational.OperationBody.operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ImperativeOperation.context"
+        name="context" eType="#QVTOperational.VarParameter" containment="true" resolveProxies="false"
+        eOpposite="#QVTOperational.VarParameter.ctxOwner"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isBlackbox" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ImperativeOperation.overridden"
+        name="overridden" eType="#QVTOperational.ImperativeOperation">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="overriding"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ImperativeOperation.result"
+        name="result" upperBound="-1" eType="#QVTOperational.VarParameter" containment="true"
+        resolveProxies="false" eOpposite="#QVTOperational.VarParameter.resOwner"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" xmi:id="QVTOperational.ImportKind" name="ImportKind">
+    <eLiterals xmi:id="QVTOperational.ImportKind.extension" name="extension"/>
+    <eLiterals xmi:id="QVTOperational.ImportKind.access" name="access" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.Library" name="Library"
+      eSuperTypes="#QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="library_h" lowerBound="1"
+        eType="#//LibraryHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module_element" upperBound="-1"
+        eType="#QVTOperational.ImperativeOperation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.MappingBody" name="MappingBody"
+      eSuperTypes="#QVTOperational.OperationBody">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingBody.endSection"
+        name="endSection" upperBound="-1" eType="#//ExpressionGO" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="endOwner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingBody.initSection"
+        name="initSection" upperBound="-1" eType="#//ExpressionGO" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="initOwner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="population_section" eType="#//PopulationSection"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.MappingCallExp" name="MappingCallExp"
+      eSuperTypes="#QVTOperational.ImperativeCallExp">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.MappingCallExp.isStrict"
+        name="isStrict" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.Boolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.MappingOperation" name="MappingOperation"
+      eSuperTypes="#QVTOperational.ImperativeOperation #QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingOperation.disjunct"
+        name="disjunct" upperBound="-1" eType="#QVTOperational.MappingOperation">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="disjuncter"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingOperation.inherited"
+        name="inherited" upperBound="-1" eType="#QVTOperational.MappingOperation">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="inheriting"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingOperation.merged"
+        name="merged" upperBound="-1" eType="#QVTOperational.MappingOperation">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="merging"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingOperation.refinedRelation"
+        name="refinedRelation" eType="#//ExpressionGO">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="refiningOperation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingOperation.when"
+        name="when" eType="#//ExpressionGO" containment="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="whenOwner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingOperation.where"
+        name="where" eType="#//ExpressionGO" containment="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="whereOwner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping_full_header" lowerBound="1"
+        eType="#//MappingFullHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping_body" eType="#QVTOperational.MappingBody"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.MappingParameter" name="MappingParameter"
+      eSuperTypes="#QVTOperational.VarParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingParameter.extent"
+        name="extent" eType="#QVTOperational.ModelParameter">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="mappingParameter"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.MappingParameter.referredDomain"
+        name="referredDomain" eType="#//ExpressionGO">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="referringParameter"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ModelParameter" name="ModelParameter"
+      eSuperTypes="#QVTOperational.VarParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module" lowerBound="1"
+        eType="#QVTOperational.OperationalTransformation" eOpposite="#QVTOperational.OperationalTransformation.modelParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ModelType" name="ModelType"
+      eSuperTypes="#QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ModelType.additionalCondition"
+        name="additionalCondition" upperBound="-1" eType="#//ExpressionGO" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="condOwner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.ModelType.conformanceKind"
+        name="conformanceKind" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.String"
+        defaultValueLiteral="effective"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ModelType.metamodel"
+        name="metamodel" lowerBound="1" upperBound="-1" eType="ecore:EClass EMOF.ecore#EMOF.Package">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="modelType"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compliance_kind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packageref_list" upperBound="-1"
+        eType="#//PackageRefGO" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modeltype_where" eType="#//ExpressionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.Module" name="Module"
+      eSuperTypes="EMOF.ecore#EMOF.Package">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.Module.configProperty"
+        name="configProperty" upperBound="-1" eType="ecore:EClass EMOF.ecore#EMOF.Property">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="module"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.Module.entry"
+        name="entry" eType="#QVTOperational.EntryOperation">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="entryContext"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.Module.moduleImport"
+        name="moduleImport" upperBound="-1" eType="#QVTOperational.ModuleImport" containment="true"
+        resolveProxies="false" eOpposite="#QVTOperational.ModuleImport.module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.Module.ownedTag"
+        name="ownedTag" upperBound="-1" eType="ecore:EClass EMOF.ecore#EMOF.Tag" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.Module.ownedVariable"
+        name="ownedVariable" ordered="false" upperBound="-1" eType="#//ExpressionGO"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="variableOwner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.Module.usedModelType"
+        name="usedModelType" upperBound="-1" eType="#QVTOperational.ModelType">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="module"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ModuleImport" name="ModuleImport"
+      eSuperTypes="EMOF.ecore#EMOF.Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ModuleImport.binding"
+        name="binding" upperBound="-1" eType="#QVTOperational.ModelType">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="moduleImport"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ModuleImport.importedModule"
+        name="importedModule" lowerBound="1" eType="#QVTOperational.Module">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="importingElement"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.ModuleImport.kind"
+        name="kind" lowerBound="1" eType="#QVTOperational.ImportKind" defaultValueLiteral="access"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ModuleImport.module"
+        name="module" eType="#QVTOperational.Module" transient="true" resolveProxies="false"
+        eOpposite="#QVTOperational.Module.moduleImport"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unit" eType="#//UnitRefGO"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ObjectExp" name="ObjectExp"
+      eSuperTypes="#//ExpressionGO">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ObjectExp.body"
+        name="body" lowerBound="1" eType="#QVTOperational.ConstructorBody" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="objectExp"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ObjectExp.referredObject"
+        name="referredObject" lowerBound="1" eType="#//ExpressionGO">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="objectExpression"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.OperationBody" name="OperationBody"
+      eSuperTypes="EMOF.ecore#EMOF.Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationBody.content"
+        name="content" upperBound="-1" eType="#//ExpressionGO" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="contentOwner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationBody.operation"
+        name="operation" eType="#QVTOperational.ImperativeOperation" transient="true"
+        resolveProxies="false" eOpposite="#QVTOperational.ImperativeOperation.body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationBody.variable"
+        name="variable" ordered="false" upperBound="-1" eType="#//ExpressionGO" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="opBody"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.OperationalTransformation"
+      name="OperationalTransformation" eSuperTypes="#QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationalTransformation.intermediateClass"
+        name="intermediateClass" upperBound="-1" eType="ecore:EClass EMOF.ecore#EMOF.Class">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="transfClient"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationalTransformation.intermediateProperty"
+        name="intermediateProperty" upperBound="-1" eType="ecore:EClass EMOF.ecore#EMOF.Property">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="transfClient"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationalTransformation.modelParameter"
+        name="modelParameter" upperBound="-1" eType="#QVTOperational.ModelParameter"
+        containment="true" resolveProxies="false" eOpposite="#//ModelParameter/module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationalTransformation.refined"
+        name="refined" eType="#//ExpressionGO">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="refinement"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.OperationalTransformation.relation"
+        name="relation" upperBound="-1" eType="#//ExpressionGO" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformation_h" lowerBound="1"
+        eType="#//TransformationHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module_element" upperBound="-1"
+        eType="#QVTOperational.ImperativeOperation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ResolveExp" name="ResolveExp"
+      eSuperTypes="#//ExpressionGO">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ResolveExp.condition"
+        name="condition" eType="#//ExpressionGO" containment="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="resolveExp"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.ResolveExp.isDeferred"
+        name="isDeferred" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.ResolveExp.isInverse"
+        name="isInverse" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.ResolveExp.one"
+        name="one" eType="ecore:EDataType PrimitiveTypes.ecore#PrimitiveTypes.Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ResolveExp.target"
+        name="target" eType="#//ExpressionGO" containment="true" resolveProxies="false">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="resolveExp"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.ResolveInExp" name="ResolveInExp"
+      eSuperTypes="#QVTOperational.ResolveExp">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.ResolveInExp.inMapping"
+        name="inMapping" eType="#QVTOperational.MappingOperation">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="resolveExpression"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="QVTOperational.VarParameter" name="VarParameter"
+      eSuperTypes="#//ExpressionGO EMOF.ecore#EMOF.Parameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.VarParameter.ctxOwner"
+        name="ctxOwner" eType="#QVTOperational.ImperativeOperation" transient="true"
+        resolveProxies="false" eOpposite="#QVTOperational.ImperativeOperation.context"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="QVTOperational.VarParameter.kind"
+        name="kind" eType="#QVTOperational.DirectionKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="QVTOperational.VarParameter.resOwner"
+        name="resOwner" eType="#QVTOperational.ImperativeOperation" transient="true"
+        resolveProxies="false" eOpposite="#QVTOperational.ImperativeOperation.result"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declarator" lowerBound="1"
+        eType="#//Declarator" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TopLevelGO">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unit_element" upperBound="-1"
+        eType="#QVTOperational.Module" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleimport" upperBound="-1"
+        eType="#QVTOperational.ModuleImport" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnitRefGO">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagGO" eSuperTypes="#QVTOperational.Module #QVTOperational.ImperativeOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagid" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tagvalue" eType="#//ExpressionGO"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaModelGO" eSuperTypes="#QVTOperational.Module">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metamodel_h" lowerBound="1"
+        eType="#//MetaModelHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metamodel_element" upperBound="-1"
+        eType="#//MetaModelElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessDecl" eSuperTypes="#QVTOperational.Module #QVTOperational.ImperativeOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="access_usage" lowerBound="1"
+        eType="#//AccessUsage" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeDef" eSuperTypes="#QVTOperational.Module #QVTOperational.ImperativeOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typespec" lowerBound="1"
+        eType="#//TypeSpec" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformationHeader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" upperBound="-1"
+        eType="#//GeneralQualifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformation_signature"
+        lowerBound="1" eType="#//SimpleSignature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformation_usage_refine"
+        eType="#//TransformationUsageRefine" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleSignature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="param_list" eType="#//ParamList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformationUsageRefine">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module_usage" eType="#//ModuleUsageGO"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transformation_refine"
+        eType="#//ModuleRefGO" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleRefGO">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simple_signature" eType="#//SimpleSignature"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GeneralQualifier">
+    <eLiterals name="blackbox"/>
+    <eLiterals name="abstract" value="1"/>
+    <eLiterals name="static" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleUsageGO">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="access_usage" eType="#//AccessUsage"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extends_usage" eType="#//ExtendsUsage"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LibraryHeader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="library_signature" eType="#//SimpleSignature"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="module_usage" eType="#//ModuleUsageGO"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessUsage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="module_kind" eType="#//ModuleKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleref_list" upperBound="-1"
+        eType="#//ModuleRefGO" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendsUsage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="module_kind" eType="#//ModuleKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moduleref_list" upperBound="-1"
+        eType="#//ModuleRefGO" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ModuleKind">
+    <eLiterals name="transformation"/>
+    <eLiterals name="library" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScopedIdentifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParamList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="param" upperBound="-1"
+        eType="#QVTOperational.VarParameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierGO" eSuperTypes="#QVTOperational.Module #QVTOperational.ImperativeOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier_h" lowerBound="1"
+        eType="#//ClassifierHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier_feature_list"
+        eType="#//ClassifierFeatureList" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Declarator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typespec" lowerBound="1"
+        eType="#//TypeSpec" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="init_part" eType="#//InitPart"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" eType="#//ScopedIdentifier"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeSpec">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type_reference" lowerBound="1"
+        eType="#//TypeReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extent_location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" eType="#//ScopedIdentifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complex_type" eType="#//ComplexType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="complex_type_key" eType="#//ComplexTypeKey"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="collection_key" eType="#//CollectionKey"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typespec" upperBound="2"
+        eType="#//TypeSpec" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declarator_list" eType="#//DeclaratorList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComplexTypeKey">
+    <eLiterals name="Collection"/>
+    <eLiterals name="Set" value="1"/>
+    <eLiterals name="OrderedSet" value="2"/>
+    <eLiterals name="Sequence" value="3"/>
+    <eLiterals name="Bag" value="4"/>
+    <eLiterals name="List" value="5"/>
+    <eLiterals name="Dict" value="6"/>
+    <eLiterals name="Tuple" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeclaratorList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declarator" upperBound="-1"
+        eType="#//Declarator" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitPart">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init_op" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//ExpressionGO" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionSemiList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//ExpressionGO" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression_semi_list" lowerBound="1"
+        eType="#//ExpressionSemiList" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression_list" eType="#//ExpressionList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageRefGO">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" eType="#//ScopedIdentifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaModelHeader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier" eType="#//ClassifierGO"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumeration" eType="#//EnumerationGO"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//TagGO" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationGO">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumeration_h" eType="#//EnumerationHeader"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierHeader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier_info" lowerBound="1"
+        eType="#//ClassifierInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier_extension" eType="#//ClassifierExtension"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierFeatureList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifier_feature" upperBound="-1"
+        eType="#//ClassifierFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" upperBound="-1"
+        eType="#//GeneralQualifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierExtension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier_list"
+        lowerBound="1" eType="#//ScopedIdentifierList" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScopedIdentifierList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier_list"
+        upperBound="-1" eType="#//ScopedIdentifier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifierFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature_qualifier" eType="#//FeatureQualifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declarator" lowerBound="1"
+        eType="#//Declarator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicity" eType="#//Multiplicity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite_property" eType="#//OppositeProperty"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complete_signature" eType="#//CompleteSignature"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" eType="#//TagGO" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Multiplicity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicity_range" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OppositeProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiplicity" eType="#//Multiplicity"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StereotypeQualifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureQualifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stereotype_qualifier" eType="#//StereotypeQualifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature_key" upperBound="-1"
+        eType="#//FeatureKey"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FeatureKey">
+    <eLiterals name="composes"/>
+    <eLiterals name="references" value="1"/>
+    <eLiterals name="readonly" value="2"/>
+    <eLiterals name="derived" value="3"/>
+    <eLiterals name="static" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompleteSignature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simple_signature" lowerBound="1"
+        eType="#//SimpleSignature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="param_list" eType="#//ParamList"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumerationHeader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PropertyKey">
+    <eLiterals name="derived"/>
+    <eLiterals name="literal" value="1"/>
+    <eLiterals name="configuration" value="2"/>
+    <eLiterals name="property" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HelperInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" upperBound="-1"
+        eType="#//GeneralQualifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="helper_kind" eType="#//HelperKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HelperHeader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="helper_info" lowerBound="1"
+        eType="#//HelperInfo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scope_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complete_signature" lowerBound="1"
+        eType="#//CompleteSignature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HelperKind">
+    <eLiterals name="helper"/>
+    <eLiterals name="query" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstructorHeader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" upperBound="-1"
+        eType="#//GeneralQualifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simple_signature" lowerBound="1"
+        eType="#//SimpleSignature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntryHeader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="simple_signature" lowerBound="1"
+        eType="#//SimpleSignature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingHeader">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifier" upperBound="-1"
+        eType="#//GeneralQualifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="param_direction" eType="#QVTOperational.DirectionKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="complete_signature" lowerBound="1"
+        eType="#//CompleteSignature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping_extra" upperBound="-1"
+        eType="#//MappingExtra" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingFullHeader">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping_header" lowerBound="1"
+        eType="#//MappingHeader" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="when" eType="#//ExpressionBlock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="where" eType="#//ExpressionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingExtra">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping_extension" eType="#//MappingExtension"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping_refinement" eType="#//MappingRefinement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingExtension">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mapping_extension_key"
+        lowerBound="1" eType="#//MappingExtensionKey"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier_list"
+        lowerBound="1" eType="#//ScopedIdentifierList" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MappingRefinement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scoped_identifier" lowerBound="1"
+        eType="#//ScopedIdentifier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MappingExtensionKey">
+    <eLiterals name="inherits"/>
+    <eLiterals name="merges" value="1"/>
+    <eLiterals name="disjuncts" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PopulationSection">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression_list" eType="#//ExpressionList"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression_block" eType="#//ExpressionBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionGO">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dummyContent" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CollectionKey">
+    <eLiterals name="Collection"/>
+    <eLiterals name="Set" value="1"/>
+    <eLiterals name="OrderedSet" value="2"/>
+    <eLiterals name="Sequence" value="3"/>
+    <eLiterals name="Bag" value="4"/>
+    <eLiterals name="List" value="5"/>
+  </eClassifiers>
+</ecore:EPackage>
