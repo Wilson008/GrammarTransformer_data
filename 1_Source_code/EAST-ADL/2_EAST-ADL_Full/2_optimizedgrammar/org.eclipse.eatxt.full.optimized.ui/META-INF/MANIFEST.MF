@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.eatxt.full.optimized.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.eatxt.full.optimized.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.eclipse.eatxt.full.optimized.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.eatxt.full.optimized,
+ org.eclipse.eatxt.full.optimized.ide,
+ org.eclipse.eatop.eastadl22,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.eclipse.eatxt.full.optimized.ui.quickfix,
+ org.eclipse.eatxt.full.optimized.ui.contentassist,
+ org.eclipse.eatxt.full.optimized.ui.internal
+Bundle-Activator: org.eclipse.eatxt.full.optimized.ui.internal.OptimizedActivator

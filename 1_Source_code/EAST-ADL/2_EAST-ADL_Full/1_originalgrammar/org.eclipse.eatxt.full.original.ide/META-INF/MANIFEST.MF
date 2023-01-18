@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.eclipse.eatxt.full.original.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: org.eclipse.eatxt.full.original.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.eclipse.eatxt.full.original.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.eatxt.full.original,
+ org.eclipse.eatop.eastadl22,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-11
