@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.example.myxenia
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.myxenia
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.myxenia; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: Xenia,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.example.myxenia.serializer,
+ org.xtext.example.myxenia.parser.antlr.internal,
+ org.xtext.example.myxenia.services,
+ org.xtext.example.myxenia.scoping,
+ org.xtext.example.myxenia.parser.antlr,
+ org.xtext.example.myxenia.validation,
+ org.xtext.example.myxenia,
+ org.xtext.example.myxenia.generator,
+ org.xtext.example.myxenia.formatting2
+Import-Package: org.apache.log4j

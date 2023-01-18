@@ -1,0 +1,31 @@
+package library.example.library
+
+class Library
+{
+	String name
+	contains Book[] books opposite library
+	contains Writer[] authors opposite library
+}
+
+class Book
+{
+	String title
+	int pages
+	BookCategory bookCategory
+	container Library library opposite books
+	refers Writer[] authors opposite books
+}
+
+class Writer
+{
+	String name
+	container Library library opposite authors
+	refers Book[] books opposite authors
+}
+
+enum BookCategory
+{
+	Mystery
+	ScienceFiction
+	Biography
+}

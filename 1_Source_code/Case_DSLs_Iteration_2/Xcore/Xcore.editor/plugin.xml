@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Xcore -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="xcore.presentation.XcoreModelWizardID"
+            name="%_UI_XcoreModelWizard_label"
+            class="xcore.presentation.XcoreModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XcoreModelFile.gif">
+         <description>%_UI_XcoreModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Xcore -->
+      <editor
+            id="xcore.presentation.XcoreEditorID"
+            name="%_UI_XcoreEditor_label"
+            icon="icons/full/obj16/XcoreModelFile.gif"
+            extensions="xcore"
+            class="xcore.presentation.XcoreEditor"
+            contributorClass="xcore.presentation.XcoreActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

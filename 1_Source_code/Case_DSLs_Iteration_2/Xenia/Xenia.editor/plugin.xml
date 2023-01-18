@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Xenia -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="xenia.presentation.XeniaModelWizardID"
+            name="%_UI_XeniaModelWizard_label"
+            class="xenia.presentation.XeniaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XeniaModelFile.gif">
+         <description>%_UI_XeniaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Xenia -->
+      <editor
+            id="xenia.presentation.XeniaEditorID"
+            name="%_UI_XeniaEditor_label"
+            icon="icons/full/obj16/XeniaModelFile.gif"
+            extensions="xenia"
+            class="xenia.presentation.XeniaEditor"
+            contributorClass="xenia.presentation.XeniaActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

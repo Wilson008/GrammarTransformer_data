@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.example.spectra
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.example.spectra
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.example.spectra; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: Spectra.ecore,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.example.myspectra.parser.antlr.internal,
+ org.xtext.example.myspectra.scoping,
+ org.xtext.example.myspectra.generator,
+ org.xtext.example.myspectra.serializer,
+ org.xtext.example.myspectra.formatting2,
+ org.xtext.example.myspectra,
+ org.xtext.example.myspectra.validation,
+ org.xtext.example.myspectra.parser.antlr,
+ org.xtext.example.myspectra.services
+Import-Package: org.apache.log4j

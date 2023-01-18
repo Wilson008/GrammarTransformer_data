@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Spectra -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="spectra.presentation.SpectraModelWizardID"
+            name="%_UI_SpectraModelWizard_label"
+            class="spectra.presentation.SpectraModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpectraModelFile.gif">
+         <description>%_UI_SpectraModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Spectra -->
+      <editor
+            id="spectra.presentation.SpectraEditorID"
+            name="%_UI_SpectraEditor_label"
+            icon="icons/full/obj16/SpectraModelFile.gif"
+            extensions="spectra"
+            class="spectra.presentation.SpectraEditor"
+            contributorClass="spectra.presentation.SpectraActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

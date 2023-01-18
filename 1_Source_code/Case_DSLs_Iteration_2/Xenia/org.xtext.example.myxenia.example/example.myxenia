@@ -1,0 +1,11 @@
+app myapp has pages [
+	@gu,
+	@chalmers with modal (
+		@jupiter
+	)
+]
+with : "xtext"
+xml  : "org.eclipse.example"
+mode : development
+info : [gu -> freq : "don't know"]
+map  : [gu -> (gu)]
