@@ -18,10 +18,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddKeywordToRule" eSuperTypes="#//OptimizationRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newKeyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveKeyword" eSuperTypes="#//OptimizationRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keywordName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -123,15 +119,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="KeywordUpperToLowerCase" eSuperTypes="#//OptimizationRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KeywordLowerToUpperCase" eSuperTypes="#//OptimizationRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keyword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AddSquareBracketToAttr" eSuperTypes="#//OptimizationRule"/>
   <eClassifiers xsi:type="ecore:EClass" name="AddOptionalityToOutermostBracket" eSuperTypes="#//OptimizationRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageType" eType="#//PackageKey"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChangeOutermostBracketToParenthesis"
-      eSuperTypes="#//OptimizationRule"/>
   <eClassifiers xsi:type="ecore:EClass" name="AddSymbolToAttr" eSuperTypes="#//OptimizationRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newSymbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ignoredAttributes" upperBound="-1"

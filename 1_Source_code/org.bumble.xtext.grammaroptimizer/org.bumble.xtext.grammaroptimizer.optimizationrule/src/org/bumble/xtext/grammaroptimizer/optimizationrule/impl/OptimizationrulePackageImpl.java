@@ -15,7 +15,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.AddImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordAfterKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToLine;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToLine;
@@ -46,7 +45,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCalledRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCommaToOtherSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOutermostBracketToParenthesis;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeReturns;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeRuleContent;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeTypeOfAttr;
@@ -58,7 +56,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1toStarToStar;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1toStarToTwo;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.CopyAttrAToAttrB;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.CopyXfromStarToY;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordUpperToLowerCase;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveAttrToAfterRuleKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveLine;
@@ -122,13 +119,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * @generated
 	 */
 	private EClass addKeywordToAttrEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addKeywordToRuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -408,13 +398,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass keywordLowerToUpperCaseEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass addSquareBracketToAttrEClass = null;
 
 	/**
@@ -423,13 +406,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * @generated
 	 */
 	private EClass addOptionalityToOutermostBracketEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass changeOutermostBracketToParenthesisEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -846,33 +822,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 */
 	public EAttribute getAddKeywordToAttr_TargetAttribute() {
 		return (EAttribute)addKeywordToAttrEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAddKeywordToRule() {
-		return addKeywordToRuleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAddKeywordToRule_NewKeyword() {
-		return (EAttribute)addKeywordToRuleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAddKeywordToRule_IsHead() {
-		return (EAttribute)addKeywordToRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1564,24 +1513,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getKeywordLowerToUpperCase() {
-		return keywordLowerToUpperCaseEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getKeywordLowerToUpperCase_Keyword() {
-		return (EAttribute)keywordLowerToUpperCaseEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAddSquareBracketToAttr() {
 		return addSquareBracketToAttrEClass;
 	}
@@ -1602,15 +1533,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 */
 	public EAttribute getAddOptionalityToOutermostBracket_PackageType() {
 		return (EAttribute)addOptionalityToOutermostBracketEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getChangeOutermostBracketToParenthesis() {
-		return changeOutermostBracketToParenthesisEClass;
 	}
 
 	/**
@@ -2448,10 +2370,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		createEAttribute(addKeywordToAttrEClass, ADD_KEYWORD_TO_ATTR__IS_HEAD);
 		createEAttribute(addKeywordToAttrEClass, ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE);
 
-		addKeywordToRuleEClass = createEClass(ADD_KEYWORD_TO_RULE);
-		createEAttribute(addKeywordToRuleEClass, ADD_KEYWORD_TO_RULE__NEW_KEYWORD);
-		createEAttribute(addKeywordToRuleEClass, ADD_KEYWORD_TO_RULE__IS_HEAD);
-
 		removeKeywordEClass = createEClass(REMOVE_KEYWORD);
 		createEAttribute(removeKeywordEClass, REMOVE_KEYWORD__KEYWORD_NAME);
 		createEAttribute(removeKeywordEClass, REMOVE_KEYWORD__TARGET_ATTRIBUTE);
@@ -2567,15 +2485,10 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		keywordUpperToLowerCaseEClass = createEClass(KEYWORD_UPPER_TO_LOWER_CASE);
 		createEAttribute(keywordUpperToLowerCaseEClass, KEYWORD_UPPER_TO_LOWER_CASE__KEYWORD);
 
-		keywordLowerToUpperCaseEClass = createEClass(KEYWORD_LOWER_TO_UPPER_CASE);
-		createEAttribute(keywordLowerToUpperCaseEClass, KEYWORD_LOWER_TO_UPPER_CASE__KEYWORD);
-
 		addSquareBracketToAttrEClass = createEClass(ADD_SQUARE_BRACKET_TO_ATTR);
 
 		addOptionalityToOutermostBracketEClass = createEClass(ADD_OPTIONALITY_TO_OUTERMOST_BRACKET);
 		createEAttribute(addOptionalityToOutermostBracketEClass, ADD_OPTIONALITY_TO_OUTERMOST_BRACKET__PACKAGE_TYPE);
-
-		changeOutermostBracketToParenthesisEClass = createEClass(CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS);
 
 		addSymbolToAttrEClass = createEClass(ADD_SYMBOL_TO_ATTR);
 		createEAttribute(addSymbolToAttrEClass, ADD_SYMBOL_TO_ATTR__NEW_SYMBOL);
@@ -2734,7 +2647,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		// Add supertypes to classes
 		removeBracketEClass.getESuperTypes().add(this.getOptimizationRule());
 		addKeywordToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
-		addKeywordToRuleEClass.getESuperTypes().add(this.getOptimizationRule());
 		removeKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
 		renameKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
 		convert1toStarToStarEClass.getESuperTypes().add(this.getOptimizationRule());
@@ -2774,10 +2686,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		addOptionalityToKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
 		addBracketToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		keywordUpperToLowerCaseEClass.getESuperTypes().add(this.getOptimizationRule());
-		keywordLowerToUpperCaseEClass.getESuperTypes().add(this.getOptimizationRule());
 		addSquareBracketToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		addOptionalityToOutermostBracketEClass.getESuperTypes().add(this.getOptimizationRule());
-		changeOutermostBracketToParenthesisEClass.getESuperTypes().add(this.getOptimizationRule());
 		addSymbolToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		addPrimitiveTypeEClass.getESuperTypes().add(this.getOptimizationRule());
 		addSymbolToRuleEClass.getESuperTypes().add(this.getOptimizationRule());
@@ -2828,10 +2738,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		initEAttribute(getAddKeywordToAttr_NewKeyword(), ecorePackage.getEString(), "newKeyword", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddKeywordToAttr_IsHead(), ecorePackage.getEBoolean(), "isHead", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddKeywordToAttr_TargetAttribute(), ecorePackage.getEString(), "targetAttribute", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addKeywordToRuleEClass, AddKeywordToRule.class, "AddKeywordToRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddKeywordToRule_NewKeyword(), ecorePackage.getEString(), "newKeyword", null, 0, 1, AddKeywordToRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddKeywordToRule_IsHead(), ecorePackage.getEBoolean(), "isHead", null, 0, 1, AddKeywordToRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(removeKeywordEClass, RemoveKeyword.class, "RemoveKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRemoveKeyword_KeywordName(), ecorePackage.getEString(), "keywordName", null, 0, 1, RemoveKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2948,15 +2854,10 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		initEClass(keywordUpperToLowerCaseEClass, KeywordUpperToLowerCase.class, "KeywordUpperToLowerCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeywordUpperToLowerCase_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, KeywordUpperToLowerCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(keywordLowerToUpperCaseEClass, KeywordLowerToUpperCase.class, "KeywordLowerToUpperCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKeywordLowerToUpperCase_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, KeywordLowerToUpperCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(addSquareBracketToAttrEClass, AddSquareBracketToAttr.class, "AddSquareBracketToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(addOptionalityToOutermostBracketEClass, AddOptionalityToOutermostBracket.class, "AddOptionalityToOutermostBracket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddOptionalityToOutermostBracket_PackageType(), this.getPackageKey(), "packageType", null, 0, 1, AddOptionalityToOutermostBracket.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(changeOutermostBracketToParenthesisEClass, ChangeOutermostBracketToParenthesis.class, "ChangeOutermostBracketToParenthesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(addSymbolToAttrEClass, AddSymbolToAttr.class, "AddSymbolToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddSymbolToAttr_NewSymbol(), ecorePackage.getEString(), "newSymbol", null, 0, 1, AddSymbolToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

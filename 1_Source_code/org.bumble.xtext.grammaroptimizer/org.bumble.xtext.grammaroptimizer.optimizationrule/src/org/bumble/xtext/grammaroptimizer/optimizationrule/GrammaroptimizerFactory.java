@@ -41,15 +41,6 @@ public interface GrammaroptimizerFactory extends EFactory {
 	AddKeywordToAttr createAddKeywordToAttr();
 
 	/**
-	 * Returns a new object of class '<em>Add Keyword To Rule</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Keyword To Rule</em>'.
-	 * @generated
-	 */
-	AddKeywordToRule createAddKeywordToRule();
-
-	/**
 	 * Returns a new object of class '<em>Remove Keyword</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -401,15 +392,6 @@ public interface GrammaroptimizerFactory extends EFactory {
 	KeywordUpperToLowerCase createKeywordUpperToLowerCase();
 
 	/**
-	 * Returns a new object of class '<em>Keyword Lower To Upper Case</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Keyword Lower To Upper Case</em>'.
-	 * @generated
-	 */
-	KeywordLowerToUpperCase createKeywordLowerToUpperCase();
-
-	/**
 	 * Returns a new object of class '<em>Add Square Bracket To Attr</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -426,15 +408,6 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @generated
 	 */
 	AddOptionalityToOutermostBracket createAddOptionalityToOutermostBracket();
-
-	/**
-	 * Returns a new object of class '<em>Change Outer Most Bracket To Parenthesis</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Outer Most Bracket To Parenthesis</em>'.
-	 * @generated
-	 */
-	ChangeOutermostBracketToParenthesis createChangeOutermostBracketToParenthesis();
 
 	/**
 	 * Returns a new object of class '<em>Add Symbol To Attr</em>'.

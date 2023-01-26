@@ -296,88 +296,6 @@ public interface OptimizationrulePackage extends EPackage {
 	int ADD_KEYWORD_TO_ATTR_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddKeywordToRuleImpl <em>Add Keyword To Rule</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddKeywordToRuleImpl
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddKeywordToRule()
-	 * @generated
-	 */
-	int ADD_KEYWORD_TO_RULE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Grammar</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE__GRAMMAR = OPTIMIZATION_RULE__GRAMMAR;
-
-	/**
-	 * The feature id for the '<em><b>Grammar Rule</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE__GRAMMAR_RULE = OPTIMIZATION_RULE__GRAMMAR_RULE;
-
-	/**
-	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE__ATTR_NAME = OPTIMIZATION_RULE__ATTR_NAME;
-
-	/**
-	 * The feature id for the '<em><b>New Keyword</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE__NEW_KEYWORD = OPTIMIZATION_RULE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Head</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE__IS_HEAD = OPTIMIZATION_RULE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Add Keyword To Rule</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE_FEATURE_COUNT = OPTIMIZATION_RULE_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Apply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE___APPLY = OPTIMIZATION_RULE___APPLY;
-
-	/**
-	 * The number of operations of the '<em>Add Keyword To Rule</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_KEYWORD_TO_RULE_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveKeywordImpl <em>Remove Keyword</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -385,7 +303,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveKeyword()
 	 * @generated
 	 */
-	int REMOVE_KEYWORD = 4;
+	int REMOVE_KEYWORD = 3;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -467,7 +385,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRenameKeyword()
 	 * @generated
 	 */
-	int RENAME_KEYWORD = 5;
+	int RENAME_KEYWORD = 4;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -558,7 +476,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getConvert1toStarToStar()
 	 * @generated
 	 */
-	int CONVERT1TO_STAR_TO_STAR = 6;
+	int CONVERT1TO_STAR_TO_STAR = 5;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -622,7 +540,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getConvert1toStarToPlus()
 	 * @generated
 	 */
-	int CONVERT1TO_STAR_TO_PLUS = 7;
+	int CONVERT1TO_STAR_TO_PLUS = 6;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -686,7 +604,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeOptionalAttrToOrRelation()
 	 * @generated
 	 */
-	int CHANGE_OPTIONAL_ATTR_TO_OR_RELATION = 8;
+	int CHANGE_OPTIONAL_ATTR_TO_OR_RELATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -786,7 +704,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveXStarAttrKeyword()
 	 * @generated
 	 */
-	int REMOVE_XSTAR_ATTR_KEYWORD = 9;
+	int REMOVE_XSTAR_ATTR_KEYWORD = 8;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -859,7 +777,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveComma()
 	 * @generated
 	 */
-	int REMOVE_COMMA = 10;
+	int REMOVE_COMMA = 9;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -932,7 +850,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getMoveLine()
 	 * @generated
 	 */
-	int MOVE_LINE = 11;
+	int MOVE_LINE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1023,7 +941,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveRule()
 	 * @generated
 	 */
-	int REMOVE_RULE = 12;
+	int REMOVE_RULE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1087,7 +1005,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getConvert1ToStarTo1()
 	 * @generated
 	 */
-	int CONVERT1_TO_STAR_TO1 = 13;
+	int CONVERT1_TO_STAR_TO1 = 12;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1151,7 +1069,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveRuleCall()
 	 * @generated
 	 */
-	int REMOVE_RULE_CALL = 14;
+	int REMOVE_RULE_CALL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1224,7 +1142,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddKeywordAfterKeyword()
 	 * @generated
 	 */
-	int ADD_KEYWORD_AFTER_KEYWORD = 15;
+	int ADD_KEYWORD_AFTER_KEYWORD = 14;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1306,7 +1224,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeTypeOfAttr()
 	 * @generated
 	 */
-	int CHANGE_TYPE_OF_ATTR = 16;
+	int CHANGE_TYPE_OF_ATTR = 15;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1388,7 +1306,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddParenthesesToAttr()
 	 * @generated
 	 */
-	int ADD_PARENTHESES_TO_ATTR = 17;
+	int ADD_PARENTHESES_TO_ATTR = 16;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1452,7 +1370,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveParenthesesInSpecifiedAttr()
 	 * @generated
 	 */
-	int REMOVE_PARENTHESES_IN_SPECIFIED_ATTR = 18;
+	int REMOVE_PARENTHESES_IN_SPECIFIED_ATTR = 17;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1516,7 +1434,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddImport()
 	 * @generated
 	 */
-	int ADD_IMPORT = 19;
+	int ADD_IMPORT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1589,7 +1507,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveAttribute()
 	 * @generated
 	 */
-	int REMOVE_ATTRIBUTE = 20;
+	int REMOVE_ATTRIBUTE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1653,7 +1571,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeAttrLineContent()
 	 * @generated
 	 */
-	int CHANGE_ATTR_LINE_CONTENT = 21;
+	int CHANGE_ATTR_LINE_CONTENT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1726,7 +1644,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRenameRule()
 	 * @generated
 	 */
-	int RENAME_RULE = 22;
+	int RENAME_RULE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1808,7 +1726,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveKeywordsOfAllAttrs()
 	 * @generated
 	 */
-	int REMOVE_KEYWORDS_OF_ALL_ATTRS = 23;
+	int REMOVE_KEYWORDS_OF_ALL_ATTRS = 22;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1872,7 +1790,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveOptionality()
 	 * @generated
 	 */
-	int REMOVE_OPTIONALITY = 24;
+	int REMOVE_OPTIONALITY = 23;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -1936,7 +1854,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeBracketToParentheses()
 	 * @generated
 	 */
-	int CHANGE_BRACKET_TO_PARENTHESES = 25;
+	int CHANGE_BRACKET_TO_PARENTHESES = 24;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2000,7 +1918,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeBracketToSquare()
 	 * @generated
 	 */
-	int CHANGE_BRACKET_TO_SQUARE = 26;
+	int CHANGE_BRACKET_TO_SQUARE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2064,7 +1982,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeBracketToAngle()
 	 * @generated
 	 */
-	int CHANGE_BRACKET_TO_ANGLE = 27;
+	int CHANGE_BRACKET_TO_ANGLE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2128,7 +2046,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveOutermostBracket()
 	 * @generated
 	 */
-	int REMOVE_OUTERMOST_BRACKET = 28;
+	int REMOVE_OUTERMOST_BRACKET = 27;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2192,7 +2110,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getConvert1toStarTo1orStar()
 	 * @generated
 	 */
-	int CONVERT1TO_STAR_TO1OR_STAR = 29;
+	int CONVERT1TO_STAR_TO1OR_STAR = 28;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2256,7 +2174,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveBracketExceptOutermost()
 	 * @generated
 	 */
-	int REMOVE_BRACKET_EXCEPT_OUTERMOST = 30;
+	int REMOVE_BRACKET_EXCEPT_OUTERMOST = 29;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2320,7 +2238,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveCertainTypeFromAttr()
 	 * @generated
 	 */
-	int REMOVE_CERTAIN_TYPE_FROM_ATTR = 31;
+	int REMOVE_CERTAIN_TYPE_FROM_ATTR = 30;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2393,7 +2311,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeRuleContent()
 	 * @generated
 	 */
-	int CHANGE_RULE_CONTENT = 32;
+	int CHANGE_RULE_CONTENT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2466,7 +2384,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeCalledRule()
 	 * @generated
 	 */
-	int CHANGE_CALLED_RULE = 33;
+	int CHANGE_CALLED_RULE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2548,7 +2466,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeCommaToOtherSymbol()
 	 * @generated
 	 */
-	int CHANGE_COMMA_TO_OTHER_SYMBOL = 34;
+	int CHANGE_COMMA_TO_OTHER_SYMBOL = 33;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2621,7 +2539,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getMoveAttrToAfterRuleKeyword()
 	 * @generated
 	 */
-	int MOVE_ATTR_TO_AFTER_RULE_KEYWORD = 35;
+	int MOVE_ATTR_TO_AFTER_RULE_KEYWORD = 34;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2694,7 +2612,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddStringToRuleKeyword()
 	 * @generated
 	 */
-	int ADD_STRING_TO_RULE_KEYWORD = 36;
+	int ADD_STRING_TO_RULE_KEYWORD = 35;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2785,7 +2703,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddOptionalityToAttr()
 	 * @generated
 	 */
-	int ADD_OPTIONALITY_TO_ATTR = 37;
+	int ADD_OPTIONALITY_TO_ATTR = 36;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2849,7 +2767,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveImport()
 	 * @generated
 	 */
-	int REMOVE_IMPORT = 38;
+	int REMOVE_IMPORT = 37;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -2922,7 +2840,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddAlternativeKeyword()
 	 * @generated
 	 */
-	int ADD_ALTERNATIVE_KEYWORD = 39;
+	int ADD_ALTERNATIVE_KEYWORD = 38;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3004,7 +2922,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddOptionalityToKeyword()
 	 * @generated
 	 */
-	int ADD_OPTIONALITY_TO_KEYWORD = 40;
+	int ADD_OPTIONALITY_TO_KEYWORD = 39;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3077,7 +2995,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddBracketToAttr()
 	 * @generated
 	 */
-	int ADD_BRACKET_TO_ATTR = 41;
+	int ADD_BRACKET_TO_ATTR = 40;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3141,7 +3059,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getKeywordUpperToLowerCase()
 	 * @generated
 	 */
-	int KEYWORD_UPPER_TO_LOWER_CASE = 42;
+	int KEYWORD_UPPER_TO_LOWER_CASE = 41;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3207,79 +3125,6 @@ public interface OptimizationrulePackage extends EPackage {
 	int KEYWORD_UPPER_TO_LOWER_CASE_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.KeywordLowerToUpperCaseImpl <em>Keyword Lower To Upper Case</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.KeywordLowerToUpperCaseImpl
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getKeywordLowerToUpperCase()
-	 * @generated
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE = 43;
-
-	/**
-	 * The feature id for the '<em><b>Grammar</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE__GRAMMAR = OPTIMIZATION_RULE__GRAMMAR;
-
-	/**
-	 * The feature id for the '<em><b>Grammar Rule</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE__GRAMMAR_RULE = OPTIMIZATION_RULE__GRAMMAR_RULE;
-
-	/**
-	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE__ATTR_NAME = OPTIMIZATION_RULE__ATTR_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Keyword</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE__KEYWORD = OPTIMIZATION_RULE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Keyword Lower To Upper Case</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE_FEATURE_COUNT = OPTIMIZATION_RULE_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Apply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE___APPLY = OPTIMIZATION_RULE___APPLY;
-
-	/**
-	 * The number of operations of the '<em>Keyword Lower To Upper Case</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEYWORD_LOWER_TO_UPPER_CASE_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddSquareBracketToAttrImpl <em>Add Square Bracket To Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3287,7 +3132,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddSquareBracketToAttr()
 	 * @generated
 	 */
-	int ADD_SQUARE_BRACKET_TO_ATTR = 44;
+	int ADD_SQUARE_BRACKET_TO_ATTR = 42;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3351,7 +3196,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddOptionalityToOutermostBracket()
 	 * @generated
 	 */
-	int ADD_OPTIONALITY_TO_OUTERMOST_BRACKET = 45;
+	int ADD_OPTIONALITY_TO_OUTERMOST_BRACKET = 43;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3417,70 +3262,6 @@ public interface OptimizationrulePackage extends EPackage {
 	int ADD_OPTIONALITY_TO_OUTERMOST_BRACKET_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeOutermostBracketToParenthesisImpl <em>Change Outermost Bracket To Parenthesis</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeOutermostBracketToParenthesisImpl
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeOutermostBracketToParenthesis()
-	 * @generated
-	 */
-	int CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS = 46;
-
-	/**
-	 * The feature id for the '<em><b>Grammar</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS__GRAMMAR = OPTIMIZATION_RULE__GRAMMAR;
-
-	/**
-	 * The feature id for the '<em><b>Grammar Rule</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS__GRAMMAR_RULE = OPTIMIZATION_RULE__GRAMMAR_RULE;
-
-	/**
-	 * The feature id for the '<em><b>Attr Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS__ATTR_NAME = OPTIMIZATION_RULE__ATTR_NAME;
-
-	/**
-	 * The number of structural features of the '<em>Change Outermost Bracket To Parenthesis</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS_FEATURE_COUNT = OPTIMIZATION_RULE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Apply</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS___APPLY = OPTIMIZATION_RULE___APPLY;
-
-	/**
-	 * The number of operations of the '<em>Change Outermost Bracket To Parenthesis</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddSymbolToAttrImpl <em>Add Symbol To Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3488,7 +3269,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddSymbolToAttr()
 	 * @generated
 	 */
-	int ADD_SYMBOL_TO_ATTR = 47;
+	int ADD_SYMBOL_TO_ATTR = 44;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3597,7 +3378,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddPrimitiveType()
 	 * @generated
 	 */
-	int ADD_PRIMITIVE_TYPE = 48;
+	int ADD_PRIMITIVE_TYPE = 45;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3688,7 +3469,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddSymbolToRule()
 	 * @generated
 	 */
-	int ADD_SYMBOL_TO_RULE = 49;
+	int ADD_SYMBOL_TO_RULE = 46;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3770,7 +3551,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddKeywordToLine()
 	 * @generated
 	 */
-	int ADD_KEYWORD_TO_LINE = 50;
+	int ADD_KEYWORD_TO_LINE = 47;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3853,7 +3634,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddParenthesesWithoutQuotes()
 	 * @generated
 	 */
-	int ADD_PARENTHESES_WITHOUT_QUOTES = 51;
+	int ADD_PARENTHESES_WITHOUT_QUOTES = 48;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -3944,7 +3725,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddOptionalityToSymbol()
 	 * @generated
 	 */
-	int ADD_OPTIONALITY_TO_SYMBOL = 52;
+	int ADD_OPTIONALITY_TO_SYMBOL = 49;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4017,7 +3798,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddSymbolToLine()
 	 * @generated
 	 */
-	int ADD_SYMBOL_TO_LINE = 53;
+	int ADD_SYMBOL_TO_LINE = 50;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4099,7 +3880,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddSymbolWithoutQuoteToLine()
 	 * @generated
 	 */
-	int ADD_SYMBOL_WITHOUT_QUOTE_TO_LINE = 54;
+	int ADD_SYMBOL_WITHOUT_QUOTE_TO_LINE = 51;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4181,7 +3962,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeABtoBAB()
 	 * @generated
 	 */
-	int CHANGE_ABTO_BAB = 55;
+	int CHANGE_ABTO_BAB = 52;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4263,7 +4044,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getCopyAttrAToAttrB()
 	 * @generated
 	 */
-	int COPY_ATTR_ATO_ATTR_B = 56;
+	int COPY_ATTR_ATO_ATTR_B = 53;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4354,7 +4135,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getCopyXfromStarToY()
 	 * @generated
 	 */
-	int COPY_XFROM_STAR_TO_Y = 57;
+	int COPY_XFROM_STAR_TO_Y = 54;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4445,7 +4226,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getConvert1toStarToTwo()
 	 * @generated
 	 */
-	int CONVERT1TO_STAR_TO_TWO = 58;
+	int CONVERT1TO_STAR_TO_TWO = 55;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4509,7 +4290,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeAToOptionalAorA()
 	 * @generated
 	 */
-	int CHANGE_ATO_OPTIONAL_AOR_A = 59;
+	int CHANGE_ATO_OPTIONAL_AOR_A = 56;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4573,7 +4354,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddTerminalRule()
 	 * @generated
 	 */
-	int ADD_TERMINAL_RULE = 60;
+	int ADD_TERMINAL_RULE = 57;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4655,7 +4436,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddOptionalityToLine()
 	 * @generated
 	 */
-	int ADD_OPTIONALITY_TO_LINE = 61;
+	int ADD_OPTIONALITY_TO_LINE = 58;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4719,7 +4500,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddBracketToLine()
 	 * @generated
 	 */
-	int ADD_BRACKET_TO_LINE = 62;
+	int ADD_BRACKET_TO_LINE = 59;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4783,7 +4564,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddParenthesesWithoutQuoteToRule()
 	 * @generated
 	 */
-	int ADD_PARENTHESES_WITHOUT_QUOTE_TO_RULE = 63;
+	int ADD_PARENTHESES_WITHOUT_QUOTE_TO_RULE = 60;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4856,7 +4637,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddAlternativeSymbol()
 	 * @generated
 	 */
-	int ADD_ALTERNATIVE_SYMBOL = 64;
+	int ADD_ALTERNATIVE_SYMBOL = 61;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -4938,7 +4719,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeABToABorBA()
 	 * @generated
 	 */
-	int CHANGE_AB_TO_ABOR_BA = 65;
+	int CHANGE_AB_TO_ABOR_BA = 62;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5020,7 +4801,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddSymbolWithoutQuoteToKeyword()
 	 * @generated
 	 */
-	int ADD_SYMBOL_WITHOUT_QUOTE_TO_KEYWORD = 66;
+	int ADD_SYMBOL_WITHOUT_QUOTE_TO_KEYWORD = 63;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5111,7 +4892,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getPackageAttributes()
 	 * @generated
 	 */
-	int PACKAGE_ATTRIBUTES = 67;
+	int PACKAGE_ATTRIBUTES = 64;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5202,7 +4983,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeBooleanAttrToSpecialPatten()
 	 * @generated
 	 */
-	int CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTEN = 68;
+	int CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTEN = 65;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5266,7 +5047,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeAToASemiOrAWithBracket()
 	 * @generated
 	 */
-	int CHANGE_ATO_ASEMI_OR_AWITH_BRACKET = 69;
+	int CHANGE_ATO_ASEMI_OR_AWITH_BRACKET = 66;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5330,7 +5111,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeReturns()
 	 * @generated
 	 */
-	int CHANGE_RETURNS = 70;
+	int CHANGE_RETURNS = 67;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5403,7 +5184,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddAlternativeValue()
 	 * @generated
 	 */
-	int ADD_ALTERNATIVE_VALUE = 71;
+	int ADD_ALTERNATIVE_VALUE = 68;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5485,7 +5266,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeAToAorSymbol()
 	 * @generated
 	 */
-	int CHANGE_ATO_AOR_SYMBOL = 72;
+	int CHANGE_ATO_AOR_SYMBOL = 69;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5558,7 +5339,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddAlternativeSubClassToAbstractClass()
 	 * @generated
 	 */
-	int ADD_ALTERNATIVE_SUB_CLASS_TO_ABSTRACT_CLASS = 73;
+	int ADD_ALTERNATIVE_SUB_CLASS_TO_ABSTRACT_CLASS = 70;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5631,7 +5412,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddBracketToRule()
 	 * @generated
 	 */
-	int ADD_BRACKET_TO_RULE = 74;
+	int ADD_BRACKET_TO_RULE = 71;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5695,7 +5476,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveLiteralFromEnum()
 	 * @generated
 	 */
-	int REMOVE_LITERAL_FROM_ENUM = 75;
+	int REMOVE_LITERAL_FROM_ENUM = 72;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5768,7 +5549,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getConvert0toStarTo0toStaror1toStar()
 	 * @generated
 	 */
-	int CONVERT0TO_STAR_TO0TO_STAROR1TO_STAR = 76;
+	int CONVERT0TO_STAR_TO0TO_STAROR1TO_STAR = 73;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5832,7 +5613,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getRemoveAction()
 	 * @generated
 	 */
-	int REMOVE_ACTION = 77;
+	int REMOVE_ACTION = 74;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5896,7 +5677,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddCallToOtherRule()
 	 * @generated
 	 */
-	int ADD_CALL_TO_OTHER_RULE = 78;
+	int ADD_CALL_TO_OTHER_RULE = 75;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -5978,7 +5759,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getSetAstProperty()
 	 * @generated
 	 */
-	int SET_AST_PROPERTY = 79;
+	int SET_AST_PROPERTY = 76;
 
 	/**
 	 * The feature id for the '<em><b>Grammar</b></em>' reference.
@@ -6078,7 +5859,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getScopeKey()
 	 * @generated
 	 */
-	int SCOPE_KEY = 80;
+	int SCOPE_KEY = 77;
 
 
 	/**
@@ -6089,7 +5870,7 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getPackageKey()
 	 * @generated
 	 */
-	int PACKAGE_KEY = 81;
+	int PACKAGE_KEY = 78;
 
 
 	/**
@@ -6219,38 +6000,6 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAddKeywordToAttr_TargetAttribute();
-
-	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule <em>Add Keyword To Rule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Add Keyword To Rule</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule
-	 * @generated
-	 */
-	EClass getAddKeywordToRule();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule#getNewKeyword <em>New Keyword</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>New Keyword</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule#getNewKeyword()
-	 * @see #getAddKeywordToRule()
-	 * @generated
-	 */
-	EAttribute getAddKeywordToRule_NewKeyword();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule#isIsHead <em>Is Head</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Head</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule#isIsHead()
-	 * @see #getAddKeywordToRule()
-	 * @generated
-	 */
-	EAttribute getAddKeywordToRule_IsHead();
 
 	/**
 	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeyword <em>Remove Keyword</em>}'.
@@ -7050,27 +6799,6 @@ public interface OptimizationrulePackage extends EPackage {
 	EAttribute getKeywordUpperToLowerCase_Keyword();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase <em>Keyword Lower To Upper Case</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Keyword Lower To Upper Case</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase
-	 * @generated
-	 */
-	EClass getKeywordLowerToUpperCase();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase#getKeyword <em>Keyword</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Keyword</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase#getKeyword()
-	 * @see #getKeywordLowerToUpperCase()
-	 * @generated
-	 */
-	EAttribute getKeywordLowerToUpperCase_Keyword();
-
-	/**
 	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddSquareBracketToAttr <em>Add Square Bracket To Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7100,16 +6828,6 @@ public interface OptimizationrulePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAddOptionalityToOutermostBracket_PackageType();
-
-	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOutermostBracketToParenthesis <em>Change Outermost Bracket To Parenthesis</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Change Outermost Bracket To Parenthesis</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOutermostBracketToParenthesis
-	 * @generated
-	 */
-	EClass getChangeOutermostBracketToParenthesis();
 
 	/**
 	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolToAttr <em>Add Symbol To Attr</em>}'.
@@ -8170,32 +7888,6 @@ public interface OptimizationrulePackage extends EPackage {
 		EAttribute ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE = eINSTANCE.getAddKeywordToAttr_TargetAttribute();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddKeywordToRuleImpl <em>Add Keyword To Rule</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddKeywordToRuleImpl
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getAddKeywordToRule()
-		 * @generated
-		 */
-		EClass ADD_KEYWORD_TO_RULE = eINSTANCE.getAddKeywordToRule();
-
-		/**
-		 * The meta object literal for the '<em><b>New Keyword</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ADD_KEYWORD_TO_RULE__NEW_KEYWORD = eINSTANCE.getAddKeywordToRule_NewKeyword();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Head</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ADD_KEYWORD_TO_RULE__IS_HEAD = eINSTANCE.getAddKeywordToRule_IsHead();
-
-		/**
 		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveKeywordImpl <em>Remove Keyword</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8882,24 +8574,6 @@ public interface OptimizationrulePackage extends EPackage {
 		EAttribute KEYWORD_UPPER_TO_LOWER_CASE__KEYWORD = eINSTANCE.getKeywordUpperToLowerCase_Keyword();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.KeywordLowerToUpperCaseImpl <em>Keyword Lower To Upper Case</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.KeywordLowerToUpperCaseImpl
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getKeywordLowerToUpperCase()
-		 * @generated
-		 */
-		EClass KEYWORD_LOWER_TO_UPPER_CASE = eINSTANCE.getKeywordLowerToUpperCase();
-
-		/**
-		 * The meta object literal for the '<em><b>Keyword</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute KEYWORD_LOWER_TO_UPPER_CASE__KEYWORD = eINSTANCE.getKeywordLowerToUpperCase_Keyword();
-
-		/**
 		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddSquareBracketToAttrImpl <em>Add Square Bracket To Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8926,16 +8600,6 @@ public interface OptimizationrulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ADD_OPTIONALITY_TO_OUTERMOST_BRACKET__PACKAGE_TYPE = eINSTANCE.getAddOptionalityToOutermostBracket_PackageType();
-
-		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeOutermostBracketToParenthesisImpl <em>Change Outermost Bracket To Parenthesis</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeOutermostBracketToParenthesisImpl
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationrulePackageImpl#getChangeOutermostBracketToParenthesis()
-		 * @generated
-		 */
-		EClass CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS = eINSTANCE.getChangeOutermostBracketToParenthesis();
 
 		/**
 		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddSymbolToAttrImpl <em>Add Symbol To Attr</em>}' class.

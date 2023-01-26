@@ -616,8 +616,8 @@ public class AdaptingQVToV10 {
 		go.removeBraces("Declarator");		
 		go.removeOptionality("Declarator", "scoped_identifier");
 		go.addSymbolToLine("Declarator", "scoped_identifier", ":", false);
-		go.CopyAttrAToAttrB("Declarator", "typespec", "scoped_identifier", false);
-		go.CopyAttrAToAttrB("Declarator", "init_part", "scoped_identifier", false);
+		go.copyAttrAToAttrB("Declarator", "typespec", "scoped_identifier", false);
+		go.copyAttrAToAttrB("Declarator", "init_part", "scoped_identifier", false);
 		go.addSymbolWithoutQuoteToLine("Declarator", "init_part", "|", false);
 		
 		

@@ -52,7 +52,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCalledRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCommaToOtherSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOutermostBracketToParenthesis;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeReturns;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeRuleContent;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeTypeOfAttr;
@@ -65,7 +64,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1toStarToTwo;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.CopyAttrAToAttrB;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.CopyXfromStarToY;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordUpperToLowerCase;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveAttrToAfterRuleKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveLine;
@@ -318,7 +316,7 @@ public class GrammarOptimizer {
 		addBracketToRule.apply();
 	}
 
-	public void AddCallToOtherRule(String grammarRule, String nameOfOtherRule, boolean removeAction) {
+	public void addCallToOtherRule(String grammarRule, String nameOfOtherRule, boolean removeAction) {
 		AddCallToOtherRule addCallToOtherRule = OptimizationruleFactory.eINSTANCE.createAddCallToOtherRule();
 		addCallToOtherRule.setGrammar(grammar);
 		addCallToOtherRule.setGrammarRule(grammarRule);
@@ -731,15 +729,7 @@ public class GrammarOptimizer {
 		addSymbolToRule.apply();
 	}
 	
-	public void addSymbolToRule(String grammarRule, String symbol, String bInside) {
-		AddSymbolToRule addSymbolToRule = GrammaroptimizerFactory.eINSTANCE.createAddSymbolToRule();
-		addSymbolToRule.setGrammar(grammar);
-		addSymbolToRule.setGrammarRule(grammarRule);
-		addSymbolToRule.setSymbol(symbol);
-		addSymbolToRule.setBInside(bInside);
-		addSymbolToRule.apply();
-	}
-	
+
 	/**
 	* This method is used to add a symbol without quotes to an existing line.
 	* @param grammarRule This param specifies which grammar rule will happen this addition.
@@ -987,18 +977,6 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	* This method is used to change the container brackets to parentheses.
-	* @param grammarRule This param indicates in which grammar rule will happen operation.
-	*/
-	public void changeContainerBracesToParenthesis(String grammarRule) {
-		ChangeOutermostBracketToParenthesis changeOutermostBracketToParenthesis = GrammaroptimizerFactory.eINSTANCE
-				.createChangeOutermostBracketToParenthesis();
-		changeOutermostBracketToParenthesis.setGrammar(grammar);
-		changeOutermostBracketToParenthesis.setGrammarRule(grammarRule);
-		changeOutermostBracketToParenthesis.apply();
-	}
-	
-	/**
 	* This method is used to change the "returns" part of a rule (i.e., the metaclass name, it is in the first
 	* line of a grammar rule).
 	* @param grammarRule This param indicates in which grammar rule will happen operation.
@@ -1158,7 +1136,7 @@ public class GrammarOptimizer {
 	* @param attrB The attribute will be added with a copied attrA.
 	* @param isFront Tihs param specifies the place for placing, in front of attribute B or behind.
 	*/
-	public void CopyAttrAToAttrB(String grammarRule, String attrA, String attrB, boolean isFront) {
+	public void copyAttrAToAttrB(String grammarRule, String attrA, String attrB, boolean isFront) {
 		CopyAttrAToAttrB copyAttrAToAttrB = OptimizationruleFactory.eINSTANCE.createCopyAttrAToAttrB();
 		copyAttrAToAttrB.setGrammar(grammar);
 		copyAttrAToAttrB.setGrammarRule(grammarRule);
@@ -1229,23 +1207,6 @@ public class GrammarOptimizer {
 		keywordUpperToLowerCase.setAttrName(attrName);
 		keywordUpperToLowerCase.setKeyword(keyword);
 		keywordUpperToLowerCase.apply();
-	}
-
-	/**
-	* This method is used to change the specified keyword from lower case to uppper case
-	* @param grammarRule This param specifies in which grammar rule this change will happen.
-	* @param attrName This param specifies a line by specifying an attribute and in this line
-	* it is where to find the keyword and change it.
-	* @param keyword This param specifies the keyword.
-	*/
-	public void keywordLowerToUpperCase(String grammarRule, String attrName, String keyword) {
-		KeywordLowerToUpperCase keywordLowerToUpperCase = GrammaroptimizerFactory.eINSTANCE
-				.createKeywordLowerToUpperCase();
-		keywordLowerToUpperCase.setGrammar(grammar);
-		keywordLowerToUpperCase.setGrammarRule(grammarRule);
-		keywordLowerToUpperCase.setAttrName(attrName);
-		keywordLowerToUpperCase.setKeyword(keyword);
-		keywordLowerToUpperCase.apply();
 	}
 
 	/**

@@ -315,7 +315,7 @@ public class AdaptingSpectraTest {
 		go.removeKeyword("TemporalInExpr", "operator", "operator", null);
 		go.changeReturns("TemporalInExpr", "TemporalExpression");
 		go.addOptionalityToAttr("TemporalInExpr", "not");
-		go.AddCallToOtherRule("TemporalInExpr", "TemporalImpExpr", true);
+		go.addCallToOtherRule("TemporalInExpr", "TemporalImpExpr", true);
 		go.removeAttribute("TemporalInExpr", "left");
 		go.setAstProperty("TemporalInExpr", "TemporalInExpr", "left", "current", false);
 		go.packageAttributes("TemporalInExpr", "TemporalInExpr", "values", PackageKey.PACKAGE_OPTIONALLY);
@@ -329,7 +329,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalImpExpr", "operator", "ID", "('->' | 'implies')");
 		go.changeReturns("TemporalImpExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalImpExpr", "implication", "TemporalExpression", "TemporalImpExpr");
-		go.AddCallToOtherRule("TemporalImpExpr", "TemporalIffExpr", true);
+		go.addCallToOtherRule("TemporalImpExpr", "TemporalIffExpr", true);
 		go.removeAttribute("TemporalImpExpr", "left");
 		go.setAstProperty("TemporalImpExpr", "TemporalImpExpr", "left", "current", false);
 		go.packageAttributes("TemporalImpExpr", "TemporalImpExpr", "implication", PackageKey.PACKAGE_OPTIONALLY);
@@ -342,7 +342,7 @@ public class AdaptingSpectraTest {
 		go.convert1toStarTo1("TemporalIffExpr", "elements");
 		go.changeReturns("TemporalIffExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalIffExpr", "elements", "TemporalExpression", "TemporalOrExpr");
-		go.AddCallToOtherRule("TemporalIffExpr", "TemporalOrExpr", true);
+		go.addCallToOtherRule("TemporalIffExpr", "TemporalOrExpr", true);
 		go.setAstProperty("TemporalIffExpr", "TemporalIffExpr", "elements", "current", true);
 		go.packageAttributes("TemporalIffExpr", "TemporalIffExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
 		
@@ -355,7 +355,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalOrExpr", "operator", "ID", "('|' | 'or' | 'xor')");
 		go.changeReturns("TemporalOrExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalOrExpr", "elements", "TemporalExpression", "TemporalAndExpr");
-		go.AddCallToOtherRule("TemporalOrExpr", "TemporalAndExpr", true);
+		go.addCallToOtherRule("TemporalOrExpr", "TemporalAndExpr", true);
 		go.setAstProperty("TemporalOrExpr", "TemporalOrExpr", "elements", "current", true);
 		go.packageAttributes("TemporalOrExpr", "TemporalOrExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
 
@@ -368,7 +368,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalAndExpr", "operator", "ID", "('&' | 'and')");
 		go.changeReturns("TemporalAndExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalAndExpr", "elements", "TemporalExpression", "TemporalRelationalExpr");
-		go.AddCallToOtherRule("TemporalAndExpr", "TemporalRelationalExpr", true);
+		go.addCallToOtherRule("TemporalAndExpr", "TemporalRelationalExpr", true);
 		go.setAstProperty("TemporalAndExpr", "TemporalAndExpr", "elements", "current", true);
 		go.packageAttributes("TemporalAndExpr", "TemporalAndExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
 		
@@ -380,7 +380,7 @@ public class AdaptingSpectraTest {
 		go.moveLine("TemporalRelationalExpr", "left", "operator", true);
 		go.changeReturns("TemporalRelationalExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalRelationalExpr", "right", "TemporalExpression", "TemporalRemainderExpr");
-		go.AddCallToOtherRule("TemporalRelationalExpr", "TemporalRemainderExpr", true);
+		go.addCallToOtherRule("TemporalRelationalExpr", "TemporalRemainderExpr", true);
 		go.removeAttribute("TemporalRelationalExpr", "left");
 		go.setAstProperty("TemporalRelationalExpr", "TemporalRelationalExpr", "left", "current", false);
 		go.packageAttributes("TemporalRelationalExpr", "TemporalRelationalExpr", "right", PackageKey.PACKAGE_OPTIONALLY);
@@ -393,7 +393,7 @@ public class AdaptingSpectraTest {
 		go.moveLine("TemporalRemainderExpr", "left", "operator", true);
 		go.changeReturns("TemporalRemainderExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalRemainderExpr", "right", "TemporalExpression", "TemporalAdditiveExpr");
-		go.AddCallToOtherRule("TemporalRemainderExpr", "TemporalAdditiveExpr", true);
+		go.addCallToOtherRule("TemporalRemainderExpr", "TemporalAdditiveExpr", true);
 		go.removeAttribute("TemporalRemainderExpr", "left");
 		go.setAstProperty("TemporalRemainderExpr", "TemporalRemainderExpr", "left", "current", false);
 		go.packageAttributes("TemporalRemainderExpr", "TemporalRemainderExpr", "right", PackageKey.PACKAGE_OPTIONALLY);
@@ -407,7 +407,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalAdditiveExpr", "operator", "ID", "('+'|'-')");
 		go.changeReturns("TemporalAdditiveExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalAdditiveExpr", "elements", "TemporalExpression", "TemporalMultiplicativeExpr");
-		go.AddCallToOtherRule("TemporalAdditiveExpr", "TemporalMultiplicativeExpr", true);
+		go.addCallToOtherRule("TemporalAdditiveExpr", "TemporalMultiplicativeExpr", true);
 		go.setAstProperty("TemporalAdditiveExpr", "TemporalAdditiveExpr", "elements", "current", true);
 		go.packageAttributes("TemporalAdditiveExpr", "TemporalAdditiveExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
 		
@@ -420,7 +420,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalMultiplicativeExpr", "operator", "ID", "('*'|'/')");
 		go.changeReturns("TemporalMultiplicativeExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalMultiplicativeExpr", "elements", "TemporalExpression", "TemporalBinaryExpr");
-		go.AddCallToOtherRule("TemporalMultiplicativeExpr", "TemporalBinaryExpr", true);
+		go.addCallToOtherRule("TemporalMultiplicativeExpr", "TemporalBinaryExpr", true);
 		go.setAstProperty("TemporalMultiplicativeExpr", "TemporalMultiplicativeExpr", "elements", "current", true);
 		go.packageAttributes("TemporalMultiplicativeExpr", "TemporalMultiplicativeExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
 		
@@ -434,7 +434,7 @@ public class AdaptingSpectraTest {
 		go.changeReturns("TemporalBinaryExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalBinaryExpr", "elements", "TemporalExpression", "TemporalUnaryExpr");
 		//go.removeAction("TemporalBinaryExpr");
-		go.AddCallToOtherRule("TemporalBinaryExpr", "TemporalUnaryExpr", true);
+		go.addCallToOtherRule("TemporalBinaryExpr", "TemporalUnaryExpr", true);
 		go.setAstProperty("TemporalBinaryExpr", "TemporalBinaryExpr", "elements", "current", true);
 		go.packageAttributes("TemporalBinaryExpr", "TemporalBinaryExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
 		
@@ -444,7 +444,7 @@ public class AdaptingSpectraTest {
 		go.changeReturns("TemporalUnaryExpr", "TemporalExpression");
 		go.changeTypeOfAttr("TemporalUnaryExpr", "tue", "TemporalExpression", "TemporalUnaryExpr");
 		go.removeOptionality("TemporalUnaryExpr", "tue");
-		go.AddCallToOtherRule("TemporalUnaryExpr", "TemporalPrimaryExpr", false);
+		go.addCallToOtherRule("TemporalUnaryExpr", "TemporalPrimaryExpr", false);
 		
 		// Adapt rule TemporalPrimaryExpr
 		go.changeBracesToParentheses("TemporalPrimaryExpr", "predPattParams");
@@ -455,7 +455,7 @@ public class AdaptingSpectraTest {
 		go.addBracesToAttr("TemporalPrimaryExpr", "index");
 		go.changeBracesToSquare("TemporalPrimaryExpr", "index");
 		go.changeReturns("TemporalPrimaryExpr", "TemporalExpression");
-		go.AddCallToOtherRule("TemporalPrimaryExpr", "Constant | '(' QuantifierExpr ')'", false);
+		go.addCallToOtherRule("TemporalPrimaryExpr", "Constant | '(' QuantifierExpr ')'", false);
 		go.moveLine("TemporalPrimaryExpr", "predPatt", "operator", true);
 		go.moveLine("TemporalPrimaryExpr", "predPattParams", "operator", true);
 		go.removeCertainTypeFromAttr("TemporalPrimaryExpr", "predPatt", "ID");
@@ -491,7 +491,7 @@ public class AdaptingSpectraTest {
 		go.changeReturns("QuantifierExpr", "TemporalExpression");
 		go.changeTypeOfAttr("QuantifierExpr", "temporalExpr", "TemporalExpression", "(QuantifierExpr)");
 		go.packageAttributes("QuantifierExpr", "operator", "temporalExpr", PackageKey.PACKAGE_ONLY);
-		go.AddCallToOtherRule("QuantifierExpr", "TemporalInExpr", false);
+		go.addCallToOtherRule("QuantifierExpr", "TemporalInExpr", false);
 		
 		// Adapt rule ValueInRange
 		go.removeKeyword("ValueInRange", null, null, null);
@@ -535,7 +535,7 @@ public class AdaptingSpectraTest {
 		go.changeBracesToSquare("DefineDecl", "dimensions");
 		go.addSymbolToRule("DefineDecl", ";");
 		go.removeOptionality("DefineDecl", null);
-		go.CopyAttrAToAttrB("DefineDecl", "name", "dimensions", true);
+		go.copyAttrAToAttrB("DefineDecl", "name", "dimensions", true);
 		go.packageAttributes("DefineDecl", "name", "simpleExpr", PackageKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("DefineDecl", false, "simpleExpr", "dimensions");
 		go.packageAttributes("DefineDecl", "dimensions", "innerArray", PackageKey.PACKAGE_ONLY);
@@ -617,7 +617,7 @@ public class AdaptingSpectraTest {
 		go.removeKeyword("BinaryRegExp", "right", "right", null);
 		go.changeReturns("BinaryRegExp", "RegExp");
 		go.removeContainerBraces("BinaryRegExp");
-		go.AddCallToOtherRule("BinaryRegExp", "UnaryRegExp", true);
+		go.addCallToOtherRule("BinaryRegExp", "UnaryRegExp", true);
 		go.removeAttribute("BinaryRegExp", "val");
 		go.removeAttribute("BinaryRegExp", "assrt");
 		go.removeAttribute("BinaryRegExp", "empty");
@@ -643,7 +643,7 @@ public class AdaptingSpectraTest {
 		go.moveLine("UnaryRegExp", "fromDefine", "to", true);
 		go.addSymbolToAttr("UnaryRegExp", "atLeast", ",", false, null, true, true);
 		go.changeReturns("UnaryRegExp", "RegExp");
-		go.AddCallToOtherRule("UnaryRegExp", "CompRegExp", true);
+		go.addCallToOtherRule("UnaryRegExp", "CompRegExp", true);
 		go.removeAttribute("UnaryRegExp", "empty");
 		go.removeAttribute("UnaryRegExp", "val");
 		go.removeAttribute("UnaryRegExp", "assrt");
@@ -690,7 +690,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("CompRegExp", "comp", "ID", "'~'");
 		go.addParenthesesWithoutQuotes("CompRegExp", ScopeKey.SINGLELINE, null, "comp", PackageKey.PACKAGE_ONLY);
 		go.changeReturns("CompRegExp", "RegExp");
-		go.AddCallToOtherRule("CompRegExp", "PrimaryRegExp", false);
+		go.addCallToOtherRule("CompRegExp", "PrimaryRegExp", false);
 		go.removeAttribute("CompRegExp", "assrt");
 		go.removeAttribute("CompRegExp", "empty");
 		go.removeAttribute("CompRegExp", "val");

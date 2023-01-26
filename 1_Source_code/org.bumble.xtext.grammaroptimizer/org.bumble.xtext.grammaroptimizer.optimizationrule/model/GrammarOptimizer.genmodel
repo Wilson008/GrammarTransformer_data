@@ -34,10 +34,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddKeywordToAttr/isHead"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddKeywordToAttr/targetAttribute"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddKeywordToRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddKeywordToRule/newKeyword"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddKeywordToRule/isHead"/>
-    </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveKeyword">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveKeyword/keywordName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveKeyword/targetAttribute"/>
@@ -136,14 +132,10 @@
     <genClasses ecoreClass="GrammarOptimizer.ecore#//KeywordUpperToLowerCase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//KeywordUpperToLowerCase/keyword"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//KeywordLowerToUpperCase">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//KeywordLowerToUpperCase/keyword"/>
-    </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddSquareBracketToAttr"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddOptionalityToOutermostBracket">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddOptionalityToOutermostBracket/packageType"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeOutermostBracketToParenthesis"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddSymbolToAttr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddSymbolToAttr/newSymbol"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddSymbolToAttr/ignoredAttributes"/>

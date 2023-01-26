@@ -86,13 +86,6 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.ADD_KEYWORD_TO_RULE: {
-				AddKeywordToRule addKeywordToRule = (AddKeywordToRule)theEObject;
-				T result = caseAddKeywordToRule(addKeywordToRule);
-				if (result == null) result = caseOptimizationRule(addKeywordToRule);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case OptimizationrulePackage.REMOVE_KEYWORD: {
 				RemoveKeyword removeKeyword = (RemoveKeyword)theEObject;
 				T result = caseRemoveKeyword(removeKeyword);
@@ -366,13 +359,6 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.KEYWORD_LOWER_TO_UPPER_CASE: {
-				KeywordLowerToUpperCase keywordLowerToUpperCase = (KeywordLowerToUpperCase)theEObject;
-				T result = caseKeywordLowerToUpperCase(keywordLowerToUpperCase);
-				if (result == null) result = caseOptimizationRule(keywordLowerToUpperCase);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case OptimizationrulePackage.ADD_SQUARE_BRACKET_TO_ATTR: {
 				AddSquareBracketToAttr addSquareBracketToAttr = (AddSquareBracketToAttr)theEObject;
 				T result = caseAddSquareBracketToAttr(addSquareBracketToAttr);
@@ -384,13 +370,6 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				AddOptionalityToOutermostBracket addOptionalityToOutermostBracket = (AddOptionalityToOutermostBracket)theEObject;
 				T result = caseAddOptionalityToOutermostBracket(addOptionalityToOutermostBracket);
 				if (result == null) result = caseOptimizationRule(addOptionalityToOutermostBracket);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case OptimizationrulePackage.CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS: {
-				ChangeOutermostBracketToParenthesis changeOutermostBracketToParenthesis = (ChangeOutermostBracketToParenthesis)theEObject;
-				T result = caseChangeOutermostBracketToParenthesis(changeOutermostBracketToParenthesis);
-				if (result == null) result = caseOptimizationRule(changeOutermostBracketToParenthesis);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -671,21 +650,6 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAddKeywordToAttr(AddKeywordToAttr object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Add Keyword To Rule</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Add Keyword To Rule</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAddKeywordToRule(AddKeywordToRule object) {
 		return null;
 	}
 
@@ -1275,21 +1239,6 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Keyword Lower To Upper Case</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Keyword Lower To Upper Case</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseKeywordLowerToUpperCase(KeywordLowerToUpperCase object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Add Square Bracket To Attr</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1316,21 +1265,6 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAddOptionalityToOutermostBracket(AddOptionalityToOutermostBracket object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change Outermost Bracket To Parenthesis</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change Outermost Bracket To Parenthesis</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseChangeOutermostBracketToParenthesis(ChangeOutermostBracketToParenthesis object) {
 		return null;
 	}
 

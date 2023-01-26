@@ -59,7 +59,6 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 		switch (eClass.getClassifierID()) {
 			case OptimizationrulePackage.REMOVE_BRACKET: return createRemoveBracket();
 			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR: return createAddKeywordToAttr();
-			case OptimizationrulePackage.ADD_KEYWORD_TO_RULE: return createAddKeywordToRule();
 			case OptimizationrulePackage.REMOVE_KEYWORD: return createRemoveKeyword();
 			case OptimizationrulePackage.RENAME_KEYWORD: return createRenameKeyword();
 			case OptimizationrulePackage.CONVERT1TO_STAR_TO_STAR: return createConvert1toStarToStar();
@@ -99,10 +98,8 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 			case OptimizationrulePackage.ADD_OPTIONALITY_TO_KEYWORD: return createAddOptionalityToKeyword();
 			case OptimizationrulePackage.ADD_BRACKET_TO_ATTR: return createAddBracketToAttr();
 			case OptimizationrulePackage.KEYWORD_UPPER_TO_LOWER_CASE: return createKeywordUpperToLowerCase();
-			case OptimizationrulePackage.KEYWORD_LOWER_TO_UPPER_CASE: return createKeywordLowerToUpperCase();
 			case OptimizationrulePackage.ADD_SQUARE_BRACKET_TO_ATTR: return createAddSquareBracketToAttr();
 			case OptimizationrulePackage.ADD_OPTIONALITY_TO_OUTERMOST_BRACKET: return createAddOptionalityToOutermostBracket();
-			case OptimizationrulePackage.CHANGE_OUTERMOST_BRACKET_TO_PARENTHESIS: return createChangeOutermostBracketToParenthesis();
 			case OptimizationrulePackage.ADD_SYMBOL_TO_ATTR: return createAddSymbolToAttr();
 			case OptimizationrulePackage.ADD_PRIMITIVE_TYPE: return createAddPrimitiveType();
 			case OptimizationrulePackage.ADD_SYMBOL_TO_RULE: return createAddSymbolToRule();
@@ -193,16 +190,6 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	public AddKeywordToAttr createAddKeywordToAttr() {
 		AddKeywordToAttrImpl addKeywordToAttr = new AddKeywordToAttrImpl();
 		return addKeywordToAttr;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AddKeywordToRule createAddKeywordToRule() {
-		AddKeywordToRuleImpl addKeywordToRule = new AddKeywordToRuleImpl();
-		return addKeywordToRule;
 	}
 
 	/**
@@ -600,16 +587,6 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public KeywordLowerToUpperCase createKeywordLowerToUpperCase() {
-		KeywordLowerToUpperCaseImpl keywordLowerToUpperCase = new KeywordLowerToUpperCaseImpl();
-		return keywordLowerToUpperCase;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AddSquareBracketToAttr createAddSquareBracketToAttr() {
 		AddSquareBracketToAttrImpl addSquareBracketToAttr = new AddSquareBracketToAttrImpl();
 		return addSquareBracketToAttr;
@@ -623,16 +600,6 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	public AddOptionalityToOutermostBracket createAddOptionalityToOutermostBracket() {
 		AddOptionalityToOutermostBracketImpl addOptionalityToOutermostBracket = new AddOptionalityToOutermostBracketImpl();
 		return addOptionalityToOutermostBracket;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ChangeOutermostBracketToParenthesis createChangeOutermostBracketToParenthesis() {
-		ChangeOutermostBracketToParenthesisImpl changeOutermostBracketToParenthesis = new ChangeOutermostBracketToParenthesisImpl();
-		return changeOutermostBracketToParenthesis;
 	}
 
 	/**

@@ -80,10 +80,6 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createAddKeywordToAttrAdapter();
 			}
 			@Override
-			public Adapter caseAddKeywordToRule(AddKeywordToRule object) {
-				return createAddKeywordToRuleAdapter();
-			}
-			@Override
 			public Adapter caseRemoveKeyword(RemoveKeyword object) {
 				return createRemoveKeywordAdapter();
 			}
@@ -240,20 +236,12 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createKeywordUpperToLowerCaseAdapter();
 			}
 			@Override
-			public Adapter caseKeywordLowerToUpperCase(KeywordLowerToUpperCase object) {
-				return createKeywordLowerToUpperCaseAdapter();
-			}
-			@Override
 			public Adapter caseAddSquareBracketToAttr(AddSquareBracketToAttr object) {
 				return createAddSquareBracketToAttrAdapter();
 			}
 			@Override
 			public Adapter caseAddOptionalityToOutermostBracket(AddOptionalityToOutermostBracket object) {
 				return createAddOptionalityToOutermostBracketAdapter();
-			}
-			@Override
-			public Adapter caseChangeOutermostBracketToParenthesis(ChangeOutermostBracketToParenthesis object) {
-				return createChangeOutermostBracketToParenthesisAdapter();
 			}
 			@Override
 			public Adapter caseAddSymbolToAttr(AddSymbolToAttr object) {
@@ -446,20 +434,6 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAddKeywordToAttrAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule <em>Add Keyword To Rule</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule
-	 * @generated
-	 */
-	public Adapter createAddKeywordToRuleAdapter() {
 		return null;
 	}
 
@@ -1010,20 +984,6 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase <em>Keyword Lower To Upper Case</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase
-	 * @generated
-	 */
-	public Adapter createKeywordLowerToUpperCaseAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddSquareBracketToAttr <em>Add Square Bracket To Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -1048,20 +1008,6 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAddOptionalityToOutermostBracketAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOutermostBracketToParenthesis <em>Change Outermost Bracket To Parenthesis</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOutermostBracketToParenthesis
-	 * @generated
-	 */
-	public Adapter createChangeOutermostBracketToParenthesisAdapter() {
 		return null;
 	}
 

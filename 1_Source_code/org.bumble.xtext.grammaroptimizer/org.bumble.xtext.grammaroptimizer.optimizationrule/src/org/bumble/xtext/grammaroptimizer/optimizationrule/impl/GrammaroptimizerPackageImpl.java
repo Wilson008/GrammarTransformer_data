@@ -7,7 +7,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToLine;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket;
@@ -23,8 +22,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCommaToOtherSymbol;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOutermostBracketToParenthesis;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeRuleContent;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeTypeOfAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1ToStarTo1;
@@ -33,7 +30,6 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1toStarToPlus;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1toStarToStar;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerPackage;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordLowerToUpperCase;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordUpperToLowerCase;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveAttrToAfterRuleKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveLine;
@@ -1794,10 +1790,6 @@ public class GrammaroptimizerPackageImpl extends EPackageImpl implements Grammar
 		initEAttribute(getAddKeywordToAttr_IsHead(), ecorePackage.getEBoolean(), "isHead", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddKeywordToAttr_OnlyExistAttr(), ecorePackage.getEString(), "onlyExistAttr", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(addKeywordToRuleEClass, AddKeywordToRule.class, "AddKeywordToRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddKeywordToRule_NewKeyword(), ecorePackage.getEString(), "newKeyword", null, 0, 1, AddKeywordToRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddKeywordToRule_IsHead(), ecorePackage.getEBoolean(), "isHead", null, 0, 1, AddKeywordToRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(removeKeywordEClass, RemoveKeyword.class, "RemoveKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRemoveKeyword_KeywordName(), ecorePackage.getEString(), "keywordName", null, 0, 1, RemoveKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRemoveKeyword_OnlyExistAttr(), ecorePackage.getEString(), "onlyExistAttr", null, 0, 1, RemoveKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1885,14 +1877,9 @@ public class GrammaroptimizerPackageImpl extends EPackageImpl implements Grammar
 		initEClass(keywordUpperToLowerCaseEClass, KeywordUpperToLowerCase.class, "KeywordUpperToLowerCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeywordUpperToLowerCase_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, KeywordUpperToLowerCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(keywordLowerToUpperCaseEClass, KeywordLowerToUpperCase.class, "KeywordLowerToUpperCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKeywordLowerToUpperCase_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, KeywordLowerToUpperCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(addSquareBracketToAttrEClass, AddSquareBracketToAttr.class, "AddSquareBracketToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(addOptionalityToOutermostBracketEClass, AddOptionalityToOutermostBracket.class, "AddOptionalityToOutermostBracket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(changeOutermostBracketToParenthesisEClass, ChangeOutermostBracketToParenthesis.class, "ChangeOutermostBracketToParenthesis", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(addSymbolToAttrEClass, AddSymbolToAttr.class, "AddSymbolToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddSymbolToAttr_NewSymbol(), ecorePackage.getEString(), "newSymbol", null, 0, 1, AddSymbolToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
