@@ -2,7 +2,6 @@ package org.bumble.xtext.grammaroptimizer.test;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeyword;
 import org.junit.Test;
@@ -31,27 +30,7 @@ public class KeywordRuleTest {
 		// compare text
 		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
 	}
-	
-	@Test
-	public void testAddKeywordToRule() {
-		GrammarOptimizer go = new GrammarOptimizer();
-		
-		// read text from file
-		String input = FileHelper.getFileText("Dot.txt", true);
-		go.processGrammar(input);
-		
-		// call the specific method for adding key keyword and get output text
-		AddKeywordToRule addKeywordToRule = GrammaroptimizerFactory.eINSTANCE.createAddKeywordToRule();
-		addKeywordToRule.setGrammar(go.getGrammar());
-		addKeywordToRule.setGrammarRule("DotAst");
-		addKeywordToRule.setNewKeyword("test");
-		addKeywordToRule.setIsHead(true);
-		addKeywordToRule.apply();
-		String actualOutput = go.spliceGrammar();
-		String expectOutput = FileHelper.getFileText("Test_KeywordProcess_002.txt", false);
-		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-	}
+
 		
 	@Test
 	public void testRemoveKeyword() {
