@@ -14,7 +14,6 @@ package org.bumble.xtext.grammaroptimizer.optimizationrule;
  * <ul>
  *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr#getNewKeyword <em>New Keyword</em>}</li>
  *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr#isIsHead <em>Is Head</em>}</li>
- *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr#getTargetAttribute <em>Target Attribute</em>}</li>
  * </ul>
  *
  * @see org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage#getAddKeywordToAttr()
@@ -65,27 +64,5 @@ public interface AddKeywordToAttr extends OptimizationRule {
 	 * @generated
 	 */
 	void setIsHead(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Target Attribute</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Attribute</em>' attribute.
-	 * @see #setTargetAttribute(String)
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage#getAddKeywordToAttr_TargetAttribute()
-	 * @model
-	 * @generated
-	 */
-	String getTargetAttribute();
-
-	/**
-	 * Sets the value of the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr#getTargetAttribute <em>Target Attribute</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Attribute</em>' attribute.
-	 * @see #getTargetAttribute()
-	 * @generated
-	 */
-	void setTargetAttribute(String value);
 
 } // AddKeywordToAttr

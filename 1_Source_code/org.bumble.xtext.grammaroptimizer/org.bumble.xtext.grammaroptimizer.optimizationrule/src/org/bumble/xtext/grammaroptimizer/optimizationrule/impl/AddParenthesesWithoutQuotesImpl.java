@@ -7,13 +7,11 @@ import org.bumble.xtext.grammaroptimizer.grammarrule.LineEntry;
 import org.bumble.xtext.grammaroptimizer.helper.RegexHelper;
 import org.bumble.xtext.grammaroptimizer.helper.StringHelper;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesWithoutQuotes;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddParenthesesWithoutQuotesImpl#getKeyword <em>Keyword</em>}</li>
  *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddParenthesesWithoutQuotesImpl#getScope <em>Scope</em>}</li>
- *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddParenthesesWithoutQuotesImpl#getPackageType <em>Package Type</em>}</li>
+ *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddParenthesesWithoutQuotesImpl#getMultiplicity <em>Multiplicity</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,24 +71,24 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 	protected ScopeKey scope = SCOPE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPackageType() <em>Package Type</em>}' attribute.
+	 * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPackageType()
+	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PackageKey PACKAGE_TYPE_EDEFAULT = PackageKey.PACKAGE_ONLY;
+	protected static final MultiplicityKey MULTIPLICITY_EDEFAULT = MultiplicityKey.PACKAGE_ONLY;
 
 	/**
-	 * The cached value of the '{@link #getPackageType() <em>Package Type</em>}' attribute.
+	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPackageType()
+	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
 	 */
-	protected PackageKey packageType = PACKAGE_TYPE_EDEFAULT;
+	protected MultiplicityKey multiplicity = MULTIPLICITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,8 +156,8 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageKey getPackageType() {
-		return packageType;
+	public MultiplicityKey getMultiplicity() {
+		return multiplicity;
 	}
 
 	/**
@@ -167,11 +165,11 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPackageType(PackageKey newPackageType) {
-		PackageKey oldPackageType = packageType;
-		packageType = newPackageType == null ? PACKAGE_TYPE_EDEFAULT : newPackageType;
+	public void setMultiplicity(MultiplicityKey newMultiplicity) {
+		MultiplicityKey oldMultiplicity = multiplicity;
+		multiplicity = newMultiplicity == null ? MULTIPLICITY_EDEFAULT : newMultiplicity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__PACKAGE_TYPE, oldPackageType, packageType));
+			eNotify(new ENotificationImpl(this, Notification.SET, OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__MULTIPLICITY, oldMultiplicity, multiplicity));
 	}
 
 	/**
@@ -186,8 +184,8 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 				return getKeyword();
 			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__SCOPE:
 				return getScope();
-			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__PACKAGE_TYPE:
-				return getPackageType();
+			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__MULTIPLICITY:
+				return getMultiplicity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,8 +205,8 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__SCOPE:
 				setScope((ScopeKey)newValue);
 				return;
-			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__PACKAGE_TYPE:
-				setPackageType((PackageKey)newValue);
+			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__MULTIPLICITY:
+				setMultiplicity((MultiplicityKey)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,8 +226,8 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__SCOPE:
 				setScope(SCOPE_EDEFAULT);
 				return;
-			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__PACKAGE_TYPE:
-				setPackageType(PACKAGE_TYPE_EDEFAULT);
+			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__MULTIPLICITY:
+				setMultiplicity(MULTIPLICITY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,8 +245,8 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 				return KEYWORD_EDEFAULT == null ? keyword != null : !KEYWORD_EDEFAULT.equals(keyword);
 			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__SCOPE:
 				return scope != SCOPE_EDEFAULT;
-			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__PACKAGE_TYPE:
-				return packageType != PACKAGE_TYPE_EDEFAULT;
+			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTES__MULTIPLICITY:
+				return multiplicity != MULTIPLICITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,8 +265,8 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 		result.append(keyword);
 		result.append(", scope: ");
 		result.append(scope);
-		result.append(", packageType: ");
-		result.append(packageType);
+		result.append(", multiplicity: ");
+		result.append(multiplicity);
 		result.append(')');
 		return result.toString();
 	}
@@ -308,11 +306,11 @@ public class AddParenthesesWithoutQuotesImpl extends OptimizationRuleImpl implem
 					String coreContent = line.getLineContent().stripLeading();
 					int numOfWhiteSpace = StringHelper.getWhitespaceNumAtHead(line.getLineContent());
 					String lineContent = "(" + coreContent + ")";
-					if (packageType == PackageKey.PACKAGE_OPTIONALLY)
+					if (multiplicity == MultiplicityKey.MULTIPLICITY_OPTIONAL)
 						lineContent += "?";
-					else if (packageType == PackageKey.PACKAGE_ZERO_OR_MORE)
+					else if (multiplicity == MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE)
 						lineContent += "*";
-					else if (packageType == PackageKey.PACKAGE_ONE_OR_MORE)
+					else if (multiplicity == MultiplicityKey.MULTIPLICITY_ONE_OR_MORE)
 						lineContent += "+";
 					
 					lineContent = StringHelper.setWhitespaceToString(lineContent, numOfWhiteSpace);

@@ -1,10 +1,10 @@
 package org.bumble.xtext.grammaroptimizer.test;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingQVToV12 {
 	@Test
@@ -380,7 +380,7 @@ public class AdaptingQVToV12 {
 		go.renameKeyword("ModelType", "packageref_list", "packageref_list", "uses", null);
 		go.addSymbolToRule("ModelType", ";");
 		go.renameKeyword("ModelType", null, "ModelType", "modeltype", null);
-		go.addKeywordToAttr("ModelType", "modeltype_where", "where", true, null);
+		go.addKeywordToAttr("ModelType", "modeltype_where", "where", true);
 		
 		
 		// optimize TagGO
@@ -832,7 +832,7 @@ public class AdaptingQVToV12 {
 		go.removeBraces("MetaModelHeader");
 		go.removeKeywordsOfAllAttrs("MetaModelHeader");
 		go.renameKeyword("MetaModelHeader", null, "MetaModelHeader", "metamodel", null);
-		go.addParenthesesWithoutQuotes("MetaModelHeader", ScopeKey.SINGLEKEWORD, "metamodel", null, PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("MetaModelHeader", ScopeKey.SINGLEKEWORD, "metamodel", null, MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("MetaModelHeader", null, "metamodel", "package");
 		
 		
@@ -959,7 +959,6 @@ public class AdaptingQVToV12 {
 
 		// compare text
 		//Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

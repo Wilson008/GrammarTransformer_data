@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingEastAdlFullTest {
 	@Test
@@ -68,12 +68,12 @@ public class AdaptingEastAdlFullTest {
 		go.changeTypeOfAttr(null, "uuid", "String0", "UUID");
 
 		// allow empty attribute existing
-		go.addOptionalityToContainerBraces(null, PackageKey.PACKAGE_OPTIONALLY);
+		go.addOptionalityToContainerBraces(null, MultiplicityKey.MULTIPLICITY_OPTIONAL);
 
-		go.addKeywordToAttr("FeatureModel", "featureLink", "featureLink", true, null);
-		go.addKeywordToAttr("VerificationValidation", "verify", "verify", true, null);
-		go.addKeywordToAttr("ArbitraryConstraint", "minimum", "minimum", true, null);
-		go.addKeywordToAttr("ArbitraryConstraint", "maximum", "maximum", true, null);
+		go.addKeywordToAttr("FeatureModel", "featureLink", "featureLink", true);
+		go.addKeywordToAttr("VerificationValidation", "verify", "verify", true);
+		go.addKeywordToAttr("ArbitraryConstraint", "minimum", "minimum", true);
+		go.addKeywordToAttr("ArbitraryConstraint", "maximum", "maximum", true);
 
 		// add ';' to the attributes which is not 0...* or 1...*, and the name is not
 		// shortName
@@ -97,7 +97,6 @@ public class AdaptingEastAdlFullTest {
 		String expectedOutput = FileHelper.getFileText("Test_EastAdlFull.txt", false);
 
 		// compare text
-		Assertions.assertEquals(expectedOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectedOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

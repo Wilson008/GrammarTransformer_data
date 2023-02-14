@@ -1,10 +1,10 @@
 package org.bumble.xtext.grammaroptimizer.test;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class OptimizeSMLTest {
 	@Test
@@ -91,14 +91,14 @@ public class OptimizeSMLTest {
 		go.removeParenthesesInSpecifiedAttr("Specification", "domains");
 		go.convert1toStarTo1("Specification", "domains");
 		go.renameKeyword("Specification", "domains", "domains", "domain", null);
-		go.addParenthesesWithoutQuotes("Specification", ScopeKey.SINGLELINE, null, "domains", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.addParenthesesWithoutQuotes("Specification", ScopeKey.SINGLELINE, null, "domains", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		go.changeTypeOfAttr("Specification", "domains", "EString", "FQN");
 		go.addSymbolWithoutQuoteToLine("Specification", "domains", "->", true);
 		
 		go.removeOptionality("Specification", "contexts");
 		go.removeParenthesesInSpecifiedAttr("Specification", "contexts");
 		go.convert1toStarTo1("Specification", "contexts");
-		go.addParenthesesWithoutQuotes("Specification", ScopeKey.SINGLELINE, null, "contexts", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.addParenthesesWithoutQuotes("Specification", ScopeKey.SINGLELINE, null, "contexts", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		go.changeTypeOfAttr("Specification", "contexts", "EString", "FQN");
 		
 		go.convert1toStarToStar("Specification", "controllableEClasses");
@@ -151,9 +151,9 @@ public class OptimizeSMLTest {
 		go.removeParenthesesInSpecifiedAttr("Specification", "includedCollaborations");
 		go.removeCertainTypeFromAttr("Specification", "includedCollaborations", "EString");
 		go.addKeywordToLine("Specification", "includedCollaborations", "include collaboration", true);
-		go.addParenthesesWithoutQuotes("Specification", ScopeKey.SINGLELINE, null, "includedCollaborations", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Specification", ScopeKey.SINGLELINE, null, "includedCollaborations", MultiplicityKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("Specification", false, "containedCollaborations", "includedCollaborations");
-		go.packageAttributes("Specification", "containedCollaborations", "includedCollaborations", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("Specification", "containedCollaborations", "includedCollaborations", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		// optimize BindingExpression
 		go.removeRuleCall("BindingExpression", "ObjectQueryBindingExpression");
@@ -175,7 +175,7 @@ public class OptimizeSMLTest {
 		go.addAlternativeSubClassToAbstractClass("InteractionFragment", "TimedConditionFragment");
 		
 		// optimize AbstractRanges
-		go.addParenthesesWithoutQuoteToRule("AbstractRanges", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuoteToRule("AbstractRanges", MultiplicityKey.PACKAGE_ONLY);
 		go.addBracesToRule("AbstractRanges");
 		go.changeBracesToSquare("AbstractRanges", null);
 		
@@ -197,8 +197,8 @@ public class OptimizeSMLTest {
 		go.convert1toStarTo1("Collaboration", "contexts");
 		go.addKeywordToLine("Collaboration", "domains", "domain", true);
 		go.addKeywordToLine("Collaboration", "contexts", "contexts", true);
-		go.addParenthesesWithoutQuotes("Collaboration", ScopeKey.SINGLELINE, null, "domains", PackageKey.PACKAGE_ZERO_OR_MORE);
-		go.addParenthesesWithoutQuotes("Collaboration", ScopeKey.SINGLELINE, null, "contexts", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.addParenthesesWithoutQuotes("Collaboration", ScopeKey.SINGLELINE, null, "domains", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
+		go.addParenthesesWithoutQuotes("Collaboration", ScopeKey.SINGLELINE, null, "contexts", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		go.changeTypeOfAttr("Collaboration", "domains", "EString", "FQN");
 		go.changeTypeOfAttr("Collaboration", "contexts", "EString", "FQN");
 		go.changeTypeOfAttr("Collaboration", "name", "EString", "ID");
@@ -219,7 +219,7 @@ public class OptimizeSMLTest {
 		go.removeOptionality("ChannelOptions", "messageChannels");
 		go.convert1toStarToStar("ChannelOptions", "messageChannels");
 		go.renameKeyword("ChannelOptions", null, "ChannelOptions", "channels", null);
-		go.addParenthesesWithoutQuoteToRule("ChannelOptions", PackageKey.PACKAGE_OPTIONALLY);
+		go.addParenthesesWithoutQuoteToRule("ChannelOptions", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// optimize Role
 		go.removeAction("Role");
@@ -229,7 +229,7 @@ public class OptimizeSMLTest {
 		go.renameKeyword("Role", "multiRole", "multiRole", "multi", null);
 		go.addOptionalityToLine("Role", "multiRole");
 		go.addKeywordToLine("Role", "multiRole", "dynamic", true);
-		go.packageAttributes("Role", "static", "multiRole", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("Role", "static", "multiRole", MultiplicityKey.PACKAGE_ONLY);
 		go.removeCertainTypeFromAttr("Role", "type", "EString");
 		go.changeTypeOfAttr("Role", "type", "EClassifier", "EClass");
 		go.removeKeyword("Role", "type", "type", null);
@@ -251,14 +251,14 @@ public class OptimizeSMLTest {
 		go.removeOptionality("Scenario", "kind");
 		go.removeOptionality("Scenario", "ownedInteraction");
 		go.renameKeyword("Scenario", "optimizeCost", "optimizecost", "optimize", null);
-		go.addKeywordToAttr("Scenario", "optimizeCost", "cost", false, null);
+		go.addKeywordToAttr("Scenario", "optimizeCost", "cost", false);
 		go.removeKeyword("Scenario", "cost", "cost", null);
 		go.addSquareBracketToAttr("Scenario", "cost");
 		go.addKeywordToLine("Scenario", "cost", "cost", true);
-		go.addParenthesesWithoutQuotes("Scenario", ScopeKey.SINGLELINE, null, "cost", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Scenario", ScopeKey.SINGLELINE, null, "optimizeCost", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Scenario", ScopeKey.SINGLELINE, null, "cost", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Scenario", ScopeKey.SINGLELINE, null, "optimizeCost", MultiplicityKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("Scenario", false, "optimizeCost", "cost");
-		go.packageAttributes("Scenario", "optimizeCost", "cost", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("Scenario", "optimizeCost", "cost", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		go.removeParenthesesInSpecifiedAttr("Scenario", "contexts");
 		go.changeBracesToSquare("Scenario", "roleBindings");
 		go.renameKeyword("Scenario", "contexts", "contexts", "context", null);
@@ -324,7 +324,7 @@ public class OptimizeSMLTest {
 		go.convert1toStarTo1("ConstraintBlock", null);
 		go.changeTypeOfAttr("ConstraintBlock", null, "Message", "ConstraintMessage");
 		go.changeOptionalAttrToOrRelation("ConstraintBlock", true, null, null);
-		go.packageAttributes("ConstraintBlock", "consider", "interrupt", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("ConstraintBlock", "consider", "interrupt", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		
 		// optimize ModalMessage
@@ -334,7 +334,7 @@ public class OptimizeSMLTest {
 		go.moveLine("ModalMessage", "sender", "expectationKind", false);
 		go.removeKeyword("ModalMessage", "expectationKind", "expectationKind", null);
 		go.removeOptionality("ModalMessage", "expectationKind");
-		go.packageAttributes("ModalMessage", "monitored", "expectationKind", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("ModalMessage", "monitored", "expectationKind", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		go.removeCertainTypeFromAttr("ModalMessage", "sender", "EString");
 		go.removeKeyword("ModalMessage", "sender", "sender", null);
 		go.removeOptionality("ModalMessage", "sender");
@@ -353,7 +353,7 @@ public class OptimizeSMLTest {
 		go.removeBraces("ModalMessage", "parameters", null);
 		go.addBracesToLine("ModalMessage", "parameters");
 		go.changeBracesToParentheses("ModalMessage", "parameters");
-		go.addParenthesesWithoutQuotes("ModalMessage", ScopeKey.SINGLELINE, null, "parameters", PackageKey.PACKAGE_OPTIONALLY);
+		go.addParenthesesWithoutQuotes("ModalMessage", ScopeKey.SINGLELINE, null, "parameters", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		
 		// optimize Alternative
@@ -517,7 +517,7 @@ public class OptimizeSMLTest {
 		go.removeOptionality("IntegerRanges", "min");
 		go.removeOptionality("IntegerRanges", "max");
 		go.addSymbolToLine("IntegerRanges", "min", "..", false);
-		go.packageAttributes("IntegerRanges", "min", "max", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("IntegerRanges", "min", "max", MultiplicityKey.PACKAGE_ONLY);
 		go.convert0toStarTo0toStaror1toStar("IntegerRanges", "values");
 		go.changeTypeOfAttr("IntegerRanges", null, "EInt", "(INT | SIGNEDINT)");
 		go.renameKeyword("IntegerRanges", "values", "values", ",", null);
@@ -528,7 +528,7 @@ public class OptimizeSMLTest {
 		go.removeBraces("StringRanges");
 		go.removeKeyword("StringRanges");
 		go.removeOptionality("StringRanges", "values");
-		go.addParenthesesWithoutQuotes("StringRanges", ScopeKey.SINGLELINE, null, "values", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("StringRanges", ScopeKey.SINGLELINE, null, "values", MultiplicityKey.PACKAGE_ONLY);
 		go.changeTypeOfAttr("StringRanges", "values", "EString", "STRING");
 		
 		
@@ -538,7 +538,7 @@ public class OptimizeSMLTest {
 		go.removeAction("EnumRanges");
 		go.removeOptionality("EnumRanges", "values");
 		go.removeParenthesesInSpecifiedAttr("EnumRanges", "values");
-		go.addParenthesesWithoutQuotes("EnumRanges", ScopeKey.SINGLELINE, null, "values", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("EnumRanges", ScopeKey.SINGLELINE, null, "values", MultiplicityKey.PACKAGE_ONLY);
 		go.changeTypeOfAttr("EnumRanges", "values", "EString", "FQNENUM");
 		go.removeAction("StringRanges");
 		
@@ -580,7 +580,6 @@ public class OptimizeSMLTest {
 
 		// compare text
 		//Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

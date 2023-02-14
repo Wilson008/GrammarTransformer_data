@@ -7,9 +7,9 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeSubClassToAbstractClass;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeValue;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToLine;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToRule;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToAttr;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToLine;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddCallToOtherRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordAfterKeyword;
@@ -18,7 +18,7 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToLine;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToLine;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBraces;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesWithoutQuoteToRule;
@@ -34,14 +34,14 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolWithoutQuoteT
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddTerminalRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeABToABorBA;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeABtoBAB;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToASemiOrAWithBracket;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeToSingleElementOrBracedList;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToAorSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToOptionalAorA;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttrLineContent;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPatten;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPattern;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToAngle;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToParentheses;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCalledRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCommaToOtherSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
@@ -62,21 +62,21 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveLine;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationruleFactory;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageAttributes;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeMultiplicity;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAction;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttribute;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveCertainTypeFromAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveComma;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeyword;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeywordsOfAllAttrs;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttributeKeywords;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveLiteralFromEnum;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOptionality;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInSpecifiedAttr;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInAttribute;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveRuleCall;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveXStarAttrKeyword;
@@ -111,7 +111,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass removeBracketEClass = null;
+	private EClass removeBracesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -223,7 +223,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass removeParenthesesInSpecifiedAttrEClass = null;
+	private EClass removeParenthesesInAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,7 +258,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass removeKeywordsOfAllAttrsEClass = null;
+	private EClass removeAttributeKeywordsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,28 +272,28 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass changeBracketToParenthesesEClass = null;
+	private EClass changeBracesToParenthesesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass changeBracketToSquareEClass = null;
+	private EClass changeBracesToSquareEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass changeBracketToAngleEClass = null;
+	private EClass changeBracesToAngleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass removeOutermostBracketEClass = null;
+	private EClass removeOutermostBracesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -307,7 +307,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass removeBracketExceptOutermostEClass = null;
+	private EClass removeBracesExceptOutermostEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -384,7 +384,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass addBracketToAttrEClass = null;
+	private EClass addBracesToAttrEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -405,7 +405,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass addOptionalityToOutermostBracketEClass = null;
+	private EClass addOptionalityToOutermostBracesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -517,7 +517,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass addBracketToLineEClass = null;
+	private EClass addBracesToLineEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -552,21 +552,21 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass packageAttributesEClass = null;
+	private EClass changeAttributeMultiplicityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass changeBooleanAttrToSpecialPattenEClass = null;
+	private EClass changeBooleanAttrToSpecialPatternEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass changeAToASemiOrAWithBracketEClass = null;
+	private EClass changeAttributeToSingleElementOrBracedListEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -601,7 +601,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass addBracketToRuleEClass = null;
+	private EClass addBracesToRuleEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -650,7 +650,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum packageKeyEEnum = null;
+	private EEnum multiplicityKeyEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -766,8 +766,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemoveBracket() {
-		return removeBracketEClass;
+	public EClass getRemoveBraces() {
+		return removeBracesEClass;
 	}
 
 	/**
@@ -775,8 +775,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRemoveBracket_TargetAttribute() {
-		return (EAttribute)removeBracketEClass.getEStructuralFeatures().get(0);
+	public EAttribute getRemoveBraces_TargetAttribute() {
+		return (EAttribute)removeBracesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -784,8 +784,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRemoveBracket_ExcludedGrammarRule() {
-		return (EAttribute)removeBracketEClass.getEStructuralFeatures().get(1);
+	public EAttribute getRemoveBraces_ExcludedGrammarRule() {
+		return (EAttribute)removeBracesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -813,15 +813,6 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 */
 	public EAttribute getAddKeywordToAttr_IsHead() {
 		return (EAttribute)addKeywordToAttrEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAddKeywordToAttr_TargetAttribute() {
-		return (EAttribute)addKeywordToAttrEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1126,8 +1117,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemoveParenthesesInSpecifiedAttr() {
-		return removeParenthesesInSpecifiedAttrEClass;
+	public EClass getRemoveParenthesesInAttribute() {
+		return removeParenthesesInAttributeEClass;
 	}
 
 	/**
@@ -1207,8 +1198,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemoveKeywordsOfAllAttrs() {
-		return removeKeywordsOfAllAttrsEClass;
+	public EClass getRemoveAttributeKeywords() {
+		return removeAttributeKeywordsEClass;
 	}
 
 	/**
@@ -1225,8 +1216,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChangeBracketToParentheses() {
-		return changeBracketToParenthesesEClass;
+	public EClass getChangeBracesToParentheses() {
+		return changeBracesToParenthesesEClass;
 	}
 
 	/**
@@ -1234,8 +1225,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChangeBracketToSquare() {
-		return changeBracketToSquareEClass;
+	public EClass getChangeBracesToSquare() {
+		return changeBracesToSquareEClass;
 	}
 
 	/**
@@ -1243,8 +1234,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChangeBracketToAngle() {
-		return changeBracketToAngleEClass;
+	public EClass getChangeBracesToAngle() {
+		return changeBracesToAngleEClass;
 	}
 
 	/**
@@ -1252,8 +1243,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemoveOutermostBracket() {
-		return removeOutermostBracketEClass;
+	public EClass getRemoveOutermostBraces() {
+		return removeOutermostBracesEClass;
 	}
 
 	/**
@@ -1270,8 +1261,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRemoveBracketExceptOutermost() {
-		return removeBracketExceptOutermostEClass;
+	public EClass getRemoveBracesExceptOutermost() {
+		return removeBracesExceptOutermostEClass;
 	}
 
 	/**
@@ -1486,8 +1477,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAddBracketToAttr() {
-		return addBracketToAttrEClass;
+	public EClass getAddBracesToAttr() {
+		return addBracesToAttrEClass;
 	}
 
 	/**
@@ -1522,8 +1513,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAddOptionalityToOutermostBracket() {
-		return addOptionalityToOutermostBracketEClass;
+	public EClass getAddOptionalityToOutermostBraces() {
+		return addOptionalityToOutermostBracesEClass;
 	}
 
 	/**
@@ -1531,8 +1522,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddOptionalityToOutermostBracket_PackageType() {
-		return (EAttribute)addOptionalityToOutermostBracketEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAddOptionalityToOutermostBraces_Multiplicity() {
+		return (EAttribute)addOptionalityToOutermostBracesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1711,7 +1702,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddParenthesesWithoutQuotes_PackageType() {
+	public EAttribute getAddParenthesesWithoutQuotes_Multiplicity() {
 		return (EAttribute)addParenthesesWithoutQuotesEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1945,8 +1936,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAddBracketToLine() {
-		return addBracketToLineEClass;
+	public EClass getAddBracesToLine() {
+		return addBracesToLineEClass;
 	}
 
 	/**
@@ -1963,7 +1954,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddParenthesesWithoutQuoteToRule_PackageType() {
+	public EAttribute getAddParenthesesWithoutQuoteToRule_Multiplicity() {
 		return (EAttribute)addParenthesesWithoutQuoteToRuleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -2062,8 +2053,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPackageAttributes() {
-		return packageAttributesEClass;
+	public EClass getChangeAttributeMultiplicity() {
+		return changeAttributeMultiplicityEClass;
 	}
 
 	/**
@@ -2071,8 +2062,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPackageAttributes_StartAttr() {
-		return (EAttribute)packageAttributesEClass.getEStructuralFeatures().get(0);
+	public EAttribute getChangeAttributeMultiplicity_StartAttr() {
+		return (EAttribute)changeAttributeMultiplicityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2080,8 +2071,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPackageAttributes_EndAttr() {
-		return (EAttribute)packageAttributesEClass.getEStructuralFeatures().get(1);
+	public EAttribute getChangeAttributeMultiplicity_EndAttr() {
+		return (EAttribute)changeAttributeMultiplicityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2089,8 +2080,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPackageAttributes_Packagetype() {
-		return (EAttribute)packageAttributesEClass.getEStructuralFeatures().get(2);
+	public EAttribute getChangeAttributeMultiplicity_Multiplicity() {
+		return (EAttribute)changeAttributeMultiplicityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2098,8 +2089,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChangeBooleanAttrToSpecialPatten() {
-		return changeBooleanAttrToSpecialPattenEClass;
+	public EClass getChangeBooleanAttrToSpecialPattern() {
+		return changeBooleanAttrToSpecialPatternEClass;
 	}
 
 	/**
@@ -2107,8 +2098,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getChangeAToASemiOrAWithBracket() {
-		return changeAToASemiOrAWithBracketEClass;
+	public EClass getChangeAttributeToSingleElementOrBracedList() {
+		return changeAttributeToSingleElementOrBracedListEClass;
 	}
 
 	/**
@@ -2197,8 +2188,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAddBracketToRule() {
-		return addBracketToRuleEClass;
+	public EClass getAddBracesToRule() {
+		return addBracesToRuleEClass;
 	}
 
 	/**
@@ -2260,7 +2251,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddCallToOtherRule_RemoveAction() {
+	public EAttribute getAddCallToOtherRule_CallRequired() {
 		return (EAttribute)addCallToOtherRuleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2323,8 +2314,8 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getPackageKey() {
-		return packageKeyEEnum;
+	public EEnum getMultiplicityKey() {
+		return multiplicityKeyEEnum;
 	}
 
 	/**
@@ -2361,14 +2352,13 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		createEAttribute(optimizationRuleEClass, OPTIMIZATION_RULE__ATTR_NAME);
 		createEOperation(optimizationRuleEClass, OPTIMIZATION_RULE___APPLY);
 
-		removeBracketEClass = createEClass(REMOVE_BRACKET);
-		createEAttribute(removeBracketEClass, REMOVE_BRACKET__TARGET_ATTRIBUTE);
-		createEAttribute(removeBracketEClass, REMOVE_BRACKET__EXCLUDED_GRAMMAR_RULE);
+		removeBracesEClass = createEClass(REMOVE_BRACES);
+		createEAttribute(removeBracesEClass, REMOVE_BRACES__TARGET_ATTRIBUTE);
+		createEAttribute(removeBracesEClass, REMOVE_BRACES__EXCLUDED_GRAMMAR_RULE);
 
 		addKeywordToAttrEClass = createEClass(ADD_KEYWORD_TO_ATTR);
 		createEAttribute(addKeywordToAttrEClass, ADD_KEYWORD_TO_ATTR__NEW_KEYWORD);
 		createEAttribute(addKeywordToAttrEClass, ADD_KEYWORD_TO_ATTR__IS_HEAD);
-		createEAttribute(addKeywordToAttrEClass, ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE);
 
 		removeKeywordEClass = createEClass(REMOVE_KEYWORD);
 		createEAttribute(removeKeywordEClass, REMOVE_KEYWORD__KEYWORD_NAME);
@@ -2417,7 +2407,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		addParenthesesToAttrEClass = createEClass(ADD_PARENTHESES_TO_ATTR);
 
-		removeParenthesesInSpecifiedAttrEClass = createEClass(REMOVE_PARENTHESES_IN_SPECIFIED_ATTR);
+		removeParenthesesInAttributeEClass = createEClass(REMOVE_PARENTHESES_IN_ATTRIBUTE);
 
 		addImportEClass = createEClass(ADD_IMPORT);
 		createEAttribute(addImportEClass, ADD_IMPORT__NEW_IMPORT);
@@ -2431,21 +2421,21 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		createEAttribute(renameRuleEClass, RENAME_RULE__CURRENT_NAME);
 		createEAttribute(renameRuleEClass, RENAME_RULE__NEW_NAME);
 
-		removeKeywordsOfAllAttrsEClass = createEClass(REMOVE_KEYWORDS_OF_ALL_ATTRS);
+		removeAttributeKeywordsEClass = createEClass(REMOVE_ATTRIBUTE_KEYWORDS);
 
 		removeOptionalityEClass = createEClass(REMOVE_OPTIONALITY);
 
-		changeBracketToParenthesesEClass = createEClass(CHANGE_BRACKET_TO_PARENTHESES);
+		changeBracesToParenthesesEClass = createEClass(CHANGE_BRACES_TO_PARENTHESES);
 
-		changeBracketToSquareEClass = createEClass(CHANGE_BRACKET_TO_SQUARE);
+		changeBracesToSquareEClass = createEClass(CHANGE_BRACES_TO_SQUARE);
 
-		changeBracketToAngleEClass = createEClass(CHANGE_BRACKET_TO_ANGLE);
+		changeBracesToAngleEClass = createEClass(CHANGE_BRACES_TO_ANGLE);
 
-		removeOutermostBracketEClass = createEClass(REMOVE_OUTERMOST_BRACKET);
+		removeOutermostBracesEClass = createEClass(REMOVE_OUTERMOST_BRACES);
 
 		convert1toStarTo1orStarEClass = createEClass(CONVERT1TO_STAR_TO1OR_STAR);
 
-		removeBracketExceptOutermostEClass = createEClass(REMOVE_BRACKET_EXCEPT_OUTERMOST);
+		removeBracesExceptOutermostEClass = createEClass(REMOVE_BRACES_EXCEPT_OUTERMOST);
 
 		removeCertainTypeFromAttrEClass = createEClass(REMOVE_CERTAIN_TYPE_FROM_ATTR);
 		createEAttribute(removeCertainTypeFromAttrEClass, REMOVE_CERTAIN_TYPE_FROM_ATTR__TYPE);
@@ -2480,15 +2470,15 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		addOptionalityToKeywordEClass = createEClass(ADD_OPTIONALITY_TO_KEYWORD);
 		createEAttribute(addOptionalityToKeywordEClass, ADD_OPTIONALITY_TO_KEYWORD__KEYWORD);
 
-		addBracketToAttrEClass = createEClass(ADD_BRACKET_TO_ATTR);
+		addBracesToAttrEClass = createEClass(ADD_BRACES_TO_ATTR);
 
 		keywordUpperToLowerCaseEClass = createEClass(KEYWORD_UPPER_TO_LOWER_CASE);
 		createEAttribute(keywordUpperToLowerCaseEClass, KEYWORD_UPPER_TO_LOWER_CASE__KEYWORD);
 
 		addSquareBracketToAttrEClass = createEClass(ADD_SQUARE_BRACKET_TO_ATTR);
 
-		addOptionalityToOutermostBracketEClass = createEClass(ADD_OPTIONALITY_TO_OUTERMOST_BRACKET);
-		createEAttribute(addOptionalityToOutermostBracketEClass, ADD_OPTIONALITY_TO_OUTERMOST_BRACKET__PACKAGE_TYPE);
+		addOptionalityToOutermostBracesEClass = createEClass(ADD_OPTIONALITY_TO_OUTERMOST_BRACES);
+		createEAttribute(addOptionalityToOutermostBracesEClass, ADD_OPTIONALITY_TO_OUTERMOST_BRACES__MULTIPLICITY);
 
 		addSymbolToAttrEClass = createEClass(ADD_SYMBOL_TO_ATTR);
 		createEAttribute(addSymbolToAttrEClass, ADD_SYMBOL_TO_ATTR__NEW_SYMBOL);
@@ -2513,7 +2503,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		addParenthesesWithoutQuotesEClass = createEClass(ADD_PARENTHESES_WITHOUT_QUOTES);
 		createEAttribute(addParenthesesWithoutQuotesEClass, ADD_PARENTHESES_WITHOUT_QUOTES__KEYWORD);
 		createEAttribute(addParenthesesWithoutQuotesEClass, ADD_PARENTHESES_WITHOUT_QUOTES__SCOPE);
-		createEAttribute(addParenthesesWithoutQuotesEClass, ADD_PARENTHESES_WITHOUT_QUOTES__PACKAGE_TYPE);
+		createEAttribute(addParenthesesWithoutQuotesEClass, ADD_PARENTHESES_WITHOUT_QUOTES__MULTIPLICITY);
 
 		addOptionalityToSymbolEClass = createEClass(ADD_OPTIONALITY_TO_SYMBOL);
 		createEAttribute(addOptionalityToSymbolEClass, ADD_OPTIONALITY_TO_SYMBOL__TARGET_SYMBOL);
@@ -2550,10 +2540,10 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		addOptionalityToLineEClass = createEClass(ADD_OPTIONALITY_TO_LINE);
 
-		addBracketToLineEClass = createEClass(ADD_BRACKET_TO_LINE);
+		addBracesToLineEClass = createEClass(ADD_BRACES_TO_LINE);
 
 		addParenthesesWithoutQuoteToRuleEClass = createEClass(ADD_PARENTHESES_WITHOUT_QUOTE_TO_RULE);
-		createEAttribute(addParenthesesWithoutQuoteToRuleEClass, ADD_PARENTHESES_WITHOUT_QUOTE_TO_RULE__PACKAGE_TYPE);
+		createEAttribute(addParenthesesWithoutQuoteToRuleEClass, ADD_PARENTHESES_WITHOUT_QUOTE_TO_RULE__MULTIPLICITY);
 
 		addAlternativeSymbolEClass = createEClass(ADD_ALTERNATIVE_SYMBOL);
 		createEAttribute(addAlternativeSymbolEClass, ADD_ALTERNATIVE_SYMBOL__CURRENT_SYMBOL);
@@ -2568,14 +2558,14 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		createEAttribute(addSymbolWithoutQuoteToKeywordEClass, ADD_SYMBOL_WITHOUT_QUOTE_TO_KEYWORD__SYMBOL);
 		createEAttribute(addSymbolWithoutQuoteToKeywordEClass, ADD_SYMBOL_WITHOUT_QUOTE_TO_KEYWORD__IS_FRONT);
 
-		packageAttributesEClass = createEClass(PACKAGE_ATTRIBUTES);
-		createEAttribute(packageAttributesEClass, PACKAGE_ATTRIBUTES__START_ATTR);
-		createEAttribute(packageAttributesEClass, PACKAGE_ATTRIBUTES__END_ATTR);
-		createEAttribute(packageAttributesEClass, PACKAGE_ATTRIBUTES__PACKAGETYPE);
+		changeAttributeMultiplicityEClass = createEClass(CHANGE_ATTRIBUTE_MULTIPLICITY);
+		createEAttribute(changeAttributeMultiplicityEClass, CHANGE_ATTRIBUTE_MULTIPLICITY__START_ATTR);
+		createEAttribute(changeAttributeMultiplicityEClass, CHANGE_ATTRIBUTE_MULTIPLICITY__END_ATTR);
+		createEAttribute(changeAttributeMultiplicityEClass, CHANGE_ATTRIBUTE_MULTIPLICITY__MULTIPLICITY);
 
-		changeBooleanAttrToSpecialPattenEClass = createEClass(CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTEN);
+		changeBooleanAttrToSpecialPatternEClass = createEClass(CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTERN);
 
-		changeAToASemiOrAWithBracketEClass = createEClass(CHANGE_ATO_ASEMI_OR_AWITH_BRACKET);
+		changeAttributeToSingleElementOrBracedListEClass = createEClass(CHANGE_ATTRIBUTE_TO_SINGLE_ELEMENT_OR_BRACED_LIST);
 
 		changeReturnsEClass = createEClass(CHANGE_RETURNS);
 		createEAttribute(changeReturnsEClass, CHANGE_RETURNS__NEW_RETURNS);
@@ -2590,7 +2580,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		addAlternativeSubClassToAbstractClassEClass = createEClass(ADD_ALTERNATIVE_SUB_CLASS_TO_ABSTRACT_CLASS);
 		createEAttribute(addAlternativeSubClassToAbstractClassEClass, ADD_ALTERNATIVE_SUB_CLASS_TO_ABSTRACT_CLASS__NEW_ALTERNATIVE_SUB_CLASS);
 
-		addBracketToRuleEClass = createEClass(ADD_BRACKET_TO_RULE);
+		addBracesToRuleEClass = createEClass(ADD_BRACES_TO_RULE);
 
 		removeLiteralFromEnumEClass = createEClass(REMOVE_LITERAL_FROM_ENUM);
 		createEAttribute(removeLiteralFromEnumEClass, REMOVE_LITERAL_FROM_ENUM__LITERAL_NAME);
@@ -2601,7 +2591,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		addCallToOtherRuleEClass = createEClass(ADD_CALL_TO_OTHER_RULE);
 		createEAttribute(addCallToOtherRuleEClass, ADD_CALL_TO_OTHER_RULE__NAME_OF_OTHER_CLASS);
-		createEAttribute(addCallToOtherRuleEClass, ADD_CALL_TO_OTHER_RULE__REMOVE_ACTION);
+		createEAttribute(addCallToOtherRuleEClass, ADD_CALL_TO_OTHER_RULE__CALL_REQUIRED);
 
 		setAstPropertyEClass = createEClass(SET_AST_PROPERTY);
 		createEAttribute(setAstPropertyEClass, SET_AST_PROPERTY__CLASS_NAME);
@@ -2611,7 +2601,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		// Create enums
 		scopeKeyEEnum = createEEnum(SCOPE_KEY);
-		packageKeyEEnum = createEEnum(PACKAGE_KEY);
+		multiplicityKeyEEnum = createEEnum(MULTIPLICITY_KEY);
 	}
 
 	/**
@@ -2645,7 +2635,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		removeBracketEClass.getESuperTypes().add(this.getOptimizationRule());
+		removeBracesEClass.getESuperTypes().add(this.getOptimizationRule());
 		addKeywordToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		removeKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
 		renameKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
@@ -2661,19 +2651,19 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		addKeywordAfterKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
 		changeTypeOfAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		addParenthesesToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
-		removeParenthesesInSpecifiedAttrEClass.getESuperTypes().add(this.getOptimizationRule());
+		removeParenthesesInAttributeEClass.getESuperTypes().add(this.getOptimizationRule());
 		addImportEClass.getESuperTypes().add(this.getOptimizationRule());
 		removeAttributeEClass.getESuperTypes().add(this.getOptimizationRule());
 		changeAttrLineContentEClass.getESuperTypes().add(this.getOptimizationRule());
 		renameRuleEClass.getESuperTypes().add(this.getOptimizationRule());
-		removeKeywordsOfAllAttrsEClass.getESuperTypes().add(this.getOptimizationRule());
+		removeAttributeKeywordsEClass.getESuperTypes().add(this.getOptimizationRule());
 		removeOptionalityEClass.getESuperTypes().add(this.getOptimizationRule());
-		changeBracketToParenthesesEClass.getESuperTypes().add(this.getOptimizationRule());
-		changeBracketToSquareEClass.getESuperTypes().add(this.getOptimizationRule());
-		changeBracketToAngleEClass.getESuperTypes().add(this.getOptimizationRule());
-		removeOutermostBracketEClass.getESuperTypes().add(this.getOptimizationRule());
+		changeBracesToParenthesesEClass.getESuperTypes().add(this.getOptimizationRule());
+		changeBracesToSquareEClass.getESuperTypes().add(this.getOptimizationRule());
+		changeBracesToAngleEClass.getESuperTypes().add(this.getOptimizationRule());
+		removeOutermostBracesEClass.getESuperTypes().add(this.getOptimizationRule());
 		convert1toStarTo1orStarEClass.getESuperTypes().add(this.getOptimizationRule());
-		removeBracketExceptOutermostEClass.getESuperTypes().add(this.getOptimizationRule());
+		removeBracesExceptOutermostEClass.getESuperTypes().add(this.getOptimizationRule());
 		removeCertainTypeFromAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		changeRuleContentEClass.getESuperTypes().add(this.getOptimizationRule());
 		changeCalledRuleEClass.getESuperTypes().add(this.getOptimizationRule());
@@ -2684,10 +2674,10 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		removeImportEClass.getESuperTypes().add(this.getOptimizationRule());
 		addAlternativeKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
 		addOptionalityToKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
-		addBracketToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
+		addBracesToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		keywordUpperToLowerCaseEClass.getESuperTypes().add(this.getOptimizationRule());
 		addSquareBracketToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
-		addOptionalityToOutermostBracketEClass.getESuperTypes().add(this.getOptimizationRule());
+		addOptionalityToOutermostBracesEClass.getESuperTypes().add(this.getOptimizationRule());
 		addSymbolToAttrEClass.getESuperTypes().add(this.getOptimizationRule());
 		addPrimitiveTypeEClass.getESuperTypes().add(this.getOptimizationRule());
 		addSymbolToRuleEClass.getESuperTypes().add(this.getOptimizationRule());
@@ -2703,19 +2693,19 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		changeAToOptionalAorAEClass.getESuperTypes().add(this.getOptimizationRule());
 		addTerminalRuleEClass.getESuperTypes().add(this.getOptimizationRule());
 		addOptionalityToLineEClass.getESuperTypes().add(this.getOptimizationRule());
-		addBracketToLineEClass.getESuperTypes().add(this.getOptimizationRule());
+		addBracesToLineEClass.getESuperTypes().add(this.getOptimizationRule());
 		addParenthesesWithoutQuoteToRuleEClass.getESuperTypes().add(this.getOptimizationRule());
 		addAlternativeSymbolEClass.getESuperTypes().add(this.getOptimizationRule());
 		changeABToABorBAEClass.getESuperTypes().add(this.getOptimizationRule());
 		addSymbolWithoutQuoteToKeywordEClass.getESuperTypes().add(this.getOptimizationRule());
-		packageAttributesEClass.getESuperTypes().add(this.getOptimizationRule());
-		changeBooleanAttrToSpecialPattenEClass.getESuperTypes().add(this.getOptimizationRule());
-		changeAToASemiOrAWithBracketEClass.getESuperTypes().add(this.getOptimizationRule());
+		changeAttributeMultiplicityEClass.getESuperTypes().add(this.getOptimizationRule());
+		changeBooleanAttrToSpecialPatternEClass.getESuperTypes().add(this.getOptimizationRule());
+		changeAttributeToSingleElementOrBracedListEClass.getESuperTypes().add(this.getOptimizationRule());
 		changeReturnsEClass.getESuperTypes().add(this.getOptimizationRule());
 		addAlternativeValueEClass.getESuperTypes().add(this.getOptimizationRule());
 		changeAToAorSymbolEClass.getESuperTypes().add(this.getOptimizationRule());
 		addAlternativeSubClassToAbstractClassEClass.getESuperTypes().add(this.getOptimizationRule());
-		addBracketToRuleEClass.getESuperTypes().add(this.getOptimizationRule());
+		addBracesToRuleEClass.getESuperTypes().add(this.getOptimizationRule());
 		removeLiteralFromEnumEClass.getESuperTypes().add(this.getOptimizationRule());
 		convert0toStarTo0toStaror1toStarEClass.getESuperTypes().add(this.getOptimizationRule());
 		removeActionEClass.getESuperTypes().add(this.getOptimizationRule());
@@ -2730,14 +2720,13 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		initEOperation(getOptimizationRule__Apply(), null, "apply", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(removeBracketEClass, RemoveBracket.class, "RemoveBracket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRemoveBracket_TargetAttribute(), ecorePackage.getEString(), "targetAttribute", null, 0, 1, RemoveBracket.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRemoveBracket_ExcludedGrammarRule(), ecorePackage.getEString(), "excludedGrammarRule", null, 0, -1, RemoveBracket.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(removeBracesEClass, RemoveBraces.class, "RemoveBraces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRemoveBraces_TargetAttribute(), ecorePackage.getEString(), "targetAttribute", null, 0, 1, RemoveBraces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRemoveBraces_ExcludedGrammarRule(), ecorePackage.getEString(), "excludedGrammarRule", null, 0, -1, RemoveBraces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addKeywordToAttrEClass, AddKeywordToAttr.class, "AddKeywordToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddKeywordToAttr_NewKeyword(), ecorePackage.getEString(), "newKeyword", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddKeywordToAttr_IsHead(), ecorePackage.getEBoolean(), "isHead", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddKeywordToAttr_TargetAttribute(), ecorePackage.getEString(), "targetAttribute", null, 0, 1, AddKeywordToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(removeKeywordEClass, RemoveKeyword.class, "RemoveKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRemoveKeyword_KeywordName(), ecorePackage.getEString(), "keywordName", null, 0, 1, RemoveKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2786,7 +2775,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		initEClass(addParenthesesToAttrEClass, AddParenthesesToAttr.class, "AddParenthesesToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(removeParenthesesInSpecifiedAttrEClass, RemoveParenthesesInSpecifiedAttr.class, "RemoveParenthesesInSpecifiedAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(removeParenthesesInAttributeEClass, RemoveParenthesesInAttribute.class, "RemoveParenthesesInAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(addImportEClass, AddImport.class, "AddImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddImport_NewImport(), ecorePackage.getEString(), "newImport", null, 0, 1, AddImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2800,21 +2789,21 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		initEAttribute(getRenameRule_CurrentName(), ecorePackage.getEString(), "currentName", null, 0, 1, RenameRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRenameRule_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(removeKeywordsOfAllAttrsEClass, RemoveKeywordsOfAllAttrs.class, "RemoveKeywordsOfAllAttrs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(removeAttributeKeywordsEClass, RemoveAttributeKeywords.class, "RemoveAttributeKeywords", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(removeOptionalityEClass, RemoveOptionality.class, "RemoveOptionality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(changeBracketToParenthesesEClass, ChangeBracketToParentheses.class, "ChangeBracketToParentheses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(changeBracesToParenthesesEClass, ChangeBracesToParentheses.class, "ChangeBracesToParentheses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(changeBracketToSquareEClass, ChangeBracketToSquare.class, "ChangeBracketToSquare", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(changeBracesToSquareEClass, ChangeBracesToSquare.class, "ChangeBracesToSquare", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(changeBracketToAngleEClass, ChangeBracketToAngle.class, "ChangeBracketToAngle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(changeBracesToAngleEClass, ChangeBracesToAngle.class, "ChangeBracesToAngle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(removeOutermostBracketEClass, RemoveOutermostBracket.class, "RemoveOutermostBracket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(removeOutermostBracesEClass, RemoveOutermostBraces.class, "RemoveOutermostBraces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(convert1toStarTo1orStarEClass, Convert1toStarTo1orStar.class, "Convert1toStarTo1orStar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(removeBracketExceptOutermostEClass, RemoveBracketExceptOutermost.class, "RemoveBracketExceptOutermost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(removeBracesExceptOutermostEClass, RemoveBracesExceptOutermost.class, "RemoveBracesExceptOutermost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(removeCertainTypeFromAttrEClass, RemoveCertainTypeFromAttr.class, "RemoveCertainTypeFromAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRemoveCertainTypeFromAttr_Type(), ecorePackage.getEString(), "type", null, 0, 1, RemoveCertainTypeFromAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2849,15 +2838,15 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		initEClass(addOptionalityToKeywordEClass, AddOptionalityToKeyword.class, "AddOptionalityToKeyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddOptionalityToKeyword_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, AddOptionalityToKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(addBracketToAttrEClass, AddBracketToAttr.class, "AddBracketToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(addBracesToAttrEClass, AddBracesToAttr.class, "AddBracesToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(keywordUpperToLowerCaseEClass, KeywordUpperToLowerCase.class, "KeywordUpperToLowerCase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeywordUpperToLowerCase_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, KeywordUpperToLowerCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addSquareBracketToAttrEClass, AddSquareBracketToAttr.class, "AddSquareBracketToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(addOptionalityToOutermostBracketEClass, AddOptionalityToOutermostBracket.class, "AddOptionalityToOutermostBracket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddOptionalityToOutermostBracket_PackageType(), this.getPackageKey(), "packageType", null, 0, 1, AddOptionalityToOutermostBracket.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(addOptionalityToOutermostBracesEClass, AddOptionalityToOutermostBraces.class, "AddOptionalityToOutermostBraces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAddOptionalityToOutermostBraces_Multiplicity(), this.getMultiplicityKey(), "multiplicity", null, 0, 1, AddOptionalityToOutermostBraces.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addSymbolToAttrEClass, AddSymbolToAttr.class, "AddSymbolToAttr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddSymbolToAttr_NewSymbol(), ecorePackage.getEString(), "newSymbol", null, 0, 1, AddSymbolToAttr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2882,7 +2871,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		initEClass(addParenthesesWithoutQuotesEClass, AddParenthesesWithoutQuotes.class, "AddParenthesesWithoutQuotes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddParenthesesWithoutQuotes_Keyword(), ecorePackage.getEString(), "keyword", null, 0, 1, AddParenthesesWithoutQuotes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddParenthesesWithoutQuotes_Scope(), this.getScopeKey(), "scope", null, 0, 1, AddParenthesesWithoutQuotes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddParenthesesWithoutQuotes_PackageType(), this.getPackageKey(), "packageType", null, 0, 1, AddParenthesesWithoutQuotes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAddParenthesesWithoutQuotes_Multiplicity(), this.getMultiplicityKey(), "multiplicity", null, 0, 1, AddParenthesesWithoutQuotes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addOptionalityToSymbolEClass, AddOptionalityToSymbol.class, "AddOptionalityToSymbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddOptionalityToSymbol_TargetSymbol(), ecorePackage.getEString(), "targetSymbol", null, 0, 1, AddOptionalityToSymbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2919,10 +2908,10 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		initEClass(addOptionalityToLineEClass, AddOptionalityToLine.class, "AddOptionalityToLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(addBracketToLineEClass, AddBracketToLine.class, "AddBracketToLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(addBracesToLineEClass, AddBracesToLine.class, "AddBracesToLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(addParenthesesWithoutQuoteToRuleEClass, AddParenthesesWithoutQuoteToRule.class, "AddParenthesesWithoutQuoteToRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAddParenthesesWithoutQuoteToRule_PackageType(), this.getPackageKey(), "packageType", null, 0, 1, AddParenthesesWithoutQuoteToRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAddParenthesesWithoutQuoteToRule_Multiplicity(), this.getMultiplicityKey(), "multiplicity", null, 0, 1, AddParenthesesWithoutQuoteToRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addAlternativeSymbolEClass, AddAlternativeSymbol.class, "AddAlternativeSymbol", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddAlternativeSymbol_CurrentSymbol(), ecorePackage.getEString(), "currentSymbol", null, 0, 1, AddAlternativeSymbol.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2937,14 +2926,14 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		initEAttribute(getAddSymbolWithoutQuoteToKeyword_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, AddSymbolWithoutQuoteToKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAddSymbolWithoutQuoteToKeyword_IsFront(), ecorePackage.getEBoolean(), "isFront", null, 0, 1, AddSymbolWithoutQuoteToKeyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(packageAttributesEClass, PackageAttributes.class, "PackageAttributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPackageAttributes_StartAttr(), ecorePackage.getEString(), "startAttr", null, 0, 1, PackageAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPackageAttributes_EndAttr(), ecorePackage.getEString(), "endAttr", null, 0, 1, PackageAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPackageAttributes_Packagetype(), this.getPackageKey(), "packagetype", null, 0, 1, PackageAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(changeAttributeMultiplicityEClass, ChangeAttributeMultiplicity.class, "ChangeAttributeMultiplicity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getChangeAttributeMultiplicity_StartAttr(), ecorePackage.getEString(), "startAttr", null, 0, 1, ChangeAttributeMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangeAttributeMultiplicity_EndAttr(), ecorePackage.getEString(), "endAttr", null, 0, 1, ChangeAttributeMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangeAttributeMultiplicity_Multiplicity(), this.getMultiplicityKey(), "multiplicity", null, 0, 1, ChangeAttributeMultiplicity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(changeBooleanAttrToSpecialPattenEClass, ChangeBooleanAttrToSpecialPatten.class, "ChangeBooleanAttrToSpecialPatten", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(changeBooleanAttrToSpecialPatternEClass, ChangeBooleanAttrToSpecialPattern.class, "ChangeBooleanAttrToSpecialPattern", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(changeAToASemiOrAWithBracketEClass, ChangeAToASemiOrAWithBracket.class, "ChangeAToASemiOrAWithBracket", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(changeAttributeToSingleElementOrBracedListEClass, ChangeAttributeToSingleElementOrBracedList.class, "ChangeAttributeToSingleElementOrBracedList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(changeReturnsEClass, ChangeReturns.class, "ChangeReturns", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChangeReturns_NewReturns(), ecorePackage.getEString(), "newReturns", null, 0, 1, ChangeReturns.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2959,7 +2948,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		initEClass(addAlternativeSubClassToAbstractClassEClass, AddAlternativeSubClassToAbstractClass.class, "AddAlternativeSubClassToAbstractClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddAlternativeSubClassToAbstractClass_NewAlternativeSubClass(), ecorePackage.getEString(), "newAlternativeSubClass", null, 0, 1, AddAlternativeSubClassToAbstractClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(addBracketToRuleEClass, AddBracketToRule.class, "AddBracketToRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(addBracesToRuleEClass, AddBracesToRule.class, "AddBracesToRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(removeLiteralFromEnumEClass, RemoveLiteralFromEnum.class, "RemoveLiteralFromEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRemoveLiteralFromEnum_LiteralName(), ecorePackage.getEString(), "literalName", null, 0, 1, RemoveLiteralFromEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2970,7 +2959,7 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 
 		initEClass(addCallToOtherRuleEClass, AddCallToOtherRule.class, "AddCallToOtherRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAddCallToOtherRule_NameOfOtherClass(), ecorePackage.getEString(), "nameOfOtherClass", null, 1, 1, AddCallToOtherRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddCallToOtherRule_RemoveAction(), ecorePackage.getEBoolean(), "removeAction", null, 0, 1, AddCallToOtherRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAddCallToOtherRule_CallRequired(), ecorePackage.getEBoolean(), "callRequired", null, 0, 1, AddCallToOtherRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(setAstPropertyEClass, SetAstProperty.class, "SetAstProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSetAstProperty_ClassName(), ecorePackage.getEString(), "className", null, 1, 1, SetAstProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2984,11 +2973,11 @@ public class OptimizationrulePackageImpl extends EPackageImpl implements Optimiz
 		addEEnumLiteral(scopeKeyEEnum, ScopeKey.SINGLELINE);
 		addEEnumLiteral(scopeKeyEEnum, ScopeKey.MULTILINES);
 
-		initEEnum(packageKeyEEnum, PackageKey.class, "PackageKey");
-		addEEnumLiteral(packageKeyEEnum, PackageKey.PACKAGE_ONLY);
-		addEEnumLiteral(packageKeyEEnum, PackageKey.PACKAGE_OPTIONALLY);
-		addEEnumLiteral(packageKeyEEnum, PackageKey.PACKAGE_ZERO_OR_MORE);
-		addEEnumLiteral(packageKeyEEnum, PackageKey.PACKAGE_ONE_OR_MORE);
+		initEEnum(multiplicityKeyEEnum, MultiplicityKey.class, "MultiplicityKey");
+		addEEnumLiteral(multiplicityKeyEEnum, MultiplicityKey.PACKAGE_ONLY);
+		addEEnumLiteral(multiplicityKeyEEnum, MultiplicityKey.MULTIPLICITY_OPTIONAL);
+		addEEnumLiteral(multiplicityKeyEEnum, MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
+		addEEnumLiteral(multiplicityKeyEEnum, MultiplicityKey.MULTIPLICITY_ONE_OR_MORE);
 
 		// Create resource
 		createResource(eNS_URI);

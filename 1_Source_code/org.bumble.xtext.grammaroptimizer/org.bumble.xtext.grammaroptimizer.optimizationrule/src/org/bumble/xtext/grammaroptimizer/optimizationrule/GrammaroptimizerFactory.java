@@ -29,7 +29,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Remove Bracket</em>'.
 	 * @generated
 	 */
-	RemoveBracket createRemoveBracket();
+	RemoveBraces createRemoveBraces();
 
 	/**
 	 * Returns a new object of class '<em>Add Keyword To Attr</em>'.
@@ -173,7 +173,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Remove Parentheses In Specified Attr</em>'.
 	 * @generated
 	 */
-	RemoveParenthesesInSpecifiedAttr createRemoveParenthesesInSpecifiedAttr();
+	RemoveParenthesesInAttribute createRemoveParenthesesInSpecifiedAttr();
 
 	/**
 	 * Returns a new object of class '<em>Add Import</em>'.
@@ -218,7 +218,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Remove Keywords Of All Attrs</em>'.
 	 * @generated
 	 */
-	RemoveKeywordsOfAllAttrs createRemoveKeywordsOfAllAttrs();
+	RemoveAttributeKeywords createRemoveKeywordsOfAllAttrs();
 
 	/**
 	 * Returns a new object of class '<em>Remove Optionality</em>'.
@@ -236,7 +236,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Change Bracket To Parentheses</em>'.
 	 * @generated
 	 */
-	ChangeBracketToParentheses createChangeBracketToParentheses();
+	ChangeBracesToParentheses createChangeBracesToParentheses();
 
 	/**
 	 * Returns a new object of class '<em>Change Bracket To Square</em>'.
@@ -245,7 +245,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Change Bracket To Square</em>'.
 	 * @generated
 	 */
-	ChangeBracketToSquare createChangeBracketToSquare();
+	ChangeBracesToSquare createChangeBracesToSquare();
 
 	/**
 	 * Returns a new object of class '<em>Change Bracket To Angle</em>'.
@@ -254,7 +254,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Change Bracket To Angle</em>'.
 	 * @generated
 	 */
-	ChangeBracketToAngle createChangeBracketToAngle();
+	ChangeBracesToAngle createChangeBracesToAngle();
 
 	/**
 	 * Returns a new object of class '<em>Remove Outer Most Bracket</em>'.
@@ -263,7 +263,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Remove Outer Most Bracket</em>'.
 	 * @generated
 	 */
-	RemoveOutermostBracket createRemoveOutermostBracket();
+	RemoveOutermostBraces createRemoveOutermostBraces();
 
 	/**
 	 * Returns a new object of class '<em>Convert1to Star To1or Star</em>'.
@@ -281,7 +281,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Remove Bracket Except Outermost</em>'.
 	 * @generated
 	 */
-	RemoveBracketExceptOutermost createRemoveBracketExceptOutermost();
+	RemoveBracesExceptOutermost createRemoveBracesExceptOutermost();
 
 	/**
 	 * Returns a new object of class '<em>Remove Certain Type From Attr</em>'.
@@ -380,7 +380,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Add Bracket To Attr</em>'.
 	 * @generated
 	 */
-	AddBracketToAttr createAddBracketToAttr();
+	AddBracesToAttr createAddBracesToAttr();
 
 	/**
 	 * Returns a new object of class '<em>Keyword Upper To Lower Case</em>'.
@@ -407,7 +407,7 @@ public interface GrammaroptimizerFactory extends EFactory {
 	 * @return a new object of class '<em>Add Optionality To Outer Most Bracket</em>'.
 	 * @generated
 	 */
-	AddOptionalityToOutermostBracket createAddOptionalityToOutermostBracket();
+	AddOptionalityToOutermostBraces createAddOptionalityToOutermostBraces();
 
 	/**
 	 * Returns a new object of class '<em>Add Symbol To Attr</em>'.

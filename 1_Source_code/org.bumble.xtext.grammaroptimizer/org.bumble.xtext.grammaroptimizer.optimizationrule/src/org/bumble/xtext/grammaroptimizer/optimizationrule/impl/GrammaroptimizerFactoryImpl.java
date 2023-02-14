@@ -3,14 +3,14 @@
 package org.bumble.xtext.grammaroptimizer.optimizationrule.impl;
 
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeKeyword;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordAfterKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToLine;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToKeyword;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBraces;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesWithoutQuotes;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddPrimitiveType;
@@ -19,9 +19,9 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.AddStringToRuleKeyword
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolToRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttrLineContent;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToAngle;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToParentheses;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCalledRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCommaToOtherSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
@@ -37,16 +37,16 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordUpperToLowerCas
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveAttrToAfterRuleKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveLine;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttribute;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveCertainTypeFromAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveComma;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeyword;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeywordsOfAllAttrs;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttributeKeywords;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOptionality;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInSpecifiedAttr;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInAttribute;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveRuleCall;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveXStarAttrKeyword;
@@ -102,7 +102,7 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case GrammaroptimizerPackage.REMOVE_BRACKET: return createRemoveBracket();
+			case GrammaroptimizerPackage.REMOVE_BRACKET: return createRemoveBraces();
 			case GrammaroptimizerPackage.ADD_KEYWORD_TO_ATTR: return createAddKeywordToAttr();
 			case GrammaroptimizerPackage.REMOVE_KEYWORD: return createRemoveKeyword();
 			case GrammaroptimizerPackage.RENAME_KEYWORD: return createRenameKeyword();
@@ -124,12 +124,12 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 			case GrammaroptimizerPackage.RENAME_RULE: return createRenameRule();
 			case GrammaroptimizerPackage.REMOVE_KEYWORDS_OF_ALL_ATTRS: return createRemoveKeywordsOfAllAttrs();
 			case GrammaroptimizerPackage.REMOVE_OPTIONALITY: return createRemoveOptionality();
-			case GrammaroptimizerPackage.CHANGE_BRACKET_TO_PARENTHESES: return createChangeBracketToParentheses();
-			case GrammaroptimizerPackage.CHANGE_BRACKET_TO_SQUARE: return createChangeBracketToSquare();
-			case GrammaroptimizerPackage.CHANGE_BRACKET_TO_ANGLE: return createChangeBracketToAngle();
-			case GrammaroptimizerPackage.REMOVE_OUTER_MOST_BRACKET: return createRemoveOutermostBracket();
+			case GrammaroptimizerPackage.CHANGE_BRACKET_TO_PARENTHESES: return createChangeBracesToParentheses();
+			case GrammaroptimizerPackage.CHANGE_BRACKET_TO_SQUARE: return createChangeBracesToSquare();
+			case GrammaroptimizerPackage.CHANGE_BRACKET_TO_ANGLE: return createChangeBracesToAngle();
+			case GrammaroptimizerPackage.REMOVE_OUTER_MOST_BRACKET: return createRemoveOutermostBraces();
 			case GrammaroptimizerPackage.CONVERT1TO_STAR_TO1OR_STAR: return createConvert1toStarTo1orStar();
-			case GrammaroptimizerPackage.REMOVE_BRACKET_EXCEPT_OUTERMOST: return createRemoveBracketExceptOutermost();
+			case GrammaroptimizerPackage.REMOVE_BRACKET_EXCEPT_OUTERMOST: return createRemoveBracesExceptOutermost();
 			case GrammaroptimizerPackage.REMOVE_CERTAIN_TYPE_FROM_ATTR: return createRemoveCertainTypeFromAttr();
 			case GrammaroptimizerPackage.CHANGE_RULE_CONTENT: return createChangeRuleContent();
 			case GrammaroptimizerPackage.CHANGE_CALLED_RULE: return createChangeCalledRule();
@@ -140,10 +140,10 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 			case GrammaroptimizerPackage.REMOVE_IMPORT: return createRemoveImport();
 			case GrammaroptimizerPackage.ADD_KEYWORD_AFTER_KEYWORD: return createAddKeywordAfterKeyword();
 			case GrammaroptimizerPackage.ADD_OPTIONALITY_TO_KEYWORD: return createAddOptionalityToKeyword();
-			case GrammaroptimizerPackage.ADD_BRACKET_TO_ATTR: return createAddBracketToAttr();
+			case GrammaroptimizerPackage.ADD_BRACKET_TO_ATTR: return createAddBracesToAttr();
 			case GrammaroptimizerPackage.KEYWORD_UPPER_TO_LOWER_CASE: return createKeywordUpperToLowerCase();
 			case GrammaroptimizerPackage.ADD_SQUARE_BRACKET_TO_ATTR: return createAddSquareBracketToAttr();
-			case GrammaroptimizerPackage.ADD_OPTIONALITY_TO_OUTER_MOST_BRACKET: return createAddOptionalityToOutermostBracket();
+			case GrammaroptimizerPackage.ADD_OPTIONALITY_TO_OUTER_MOST_BRACKET: return createAddOptionalityToOutermostBraces();
 			case GrammaroptimizerPackage.ADD_SYMBOL_TO_ATTR: return createAddSymbolToAttr();
 			case GrammaroptimizerPackage.ADD_PRIMITIVE_TYPE: return createAddPrimitiveType();
 			case GrammaroptimizerPackage.ADD_SYMBOL_TO_RULE: return createAddSymbolToRule();
@@ -159,8 +159,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveBracket createRemoveBracket() {
-		RemoveBracketImpl removeBracket = new RemoveBracketImpl();
+	public RemoveBraces createRemoveBraces() {
+		RemoveBracesImpl removeBracket = new RemoveBracesImpl();
 		return removeBracket;
 	}
 
@@ -309,8 +309,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveParenthesesInSpecifiedAttr createRemoveParenthesesInSpecifiedAttr() {
-		RemoveParenthesesInSpecifiedAttrImpl removeParenthesesInSpecifiedAttr = new RemoveParenthesesInSpecifiedAttrImpl();
+	public RemoveParenthesesInAttribute createRemoveParenthesesInSpecifiedAttr() {
+		RemoveParenthesesInAttribute removeParenthesesInSpecifiedAttr = new RemoveParenthesesInAttributeImpl();
 		return removeParenthesesInSpecifiedAttr;
 	}
 
@@ -350,8 +350,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveKeywordsOfAllAttrs createRemoveKeywordsOfAllAttrs() {
-		RemoveKeywordsOfAllAttrsImpl removeKeywordsOfAllAttrs = new RemoveKeywordsOfAllAttrsImpl();
+	public RemoveAttributeKeywords createRemoveKeywordsOfAllAttrs() {
+		RemoveAttributeKeywordsImpl removeKeywordsOfAllAttrs = new RemoveAttributeKeywordsImpl();
 		return removeKeywordsOfAllAttrs;
 	}
 
@@ -370,8 +370,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeBracketToParentheses createChangeBracketToParentheses() {
-		ChangeBracketToParenthesesImpl changeBracketToParentheses = new ChangeBracketToParenthesesImpl();
+	public ChangeBracesToParentheses createChangeBracesToParentheses() {
+		ChangeBracesToParenthesesImpl changeBracketToParentheses = new ChangeBracesToParenthesesImpl();
 		return changeBracketToParentheses;
 	}
 
@@ -380,8 +380,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeBracketToSquare createChangeBracketToSquare() {
-		ChangeBracketToSquareImpl changeBracketToSquare = new ChangeBracketToSquareImpl();
+	public ChangeBracesToSquare createChangeBracesToSquare() {
+		ChangeBracesToSquareImpl changeBracketToSquare = new ChangeBracesToSquareImpl();
 		return changeBracketToSquare;
 	}
 
@@ -390,8 +390,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeBracketToAngle createChangeBracketToAngle() {
-		ChangeBracketToAngleImpl changeBracketToAngle = new ChangeBracketToAngleImpl();
+	public ChangeBracesToAngle createChangeBracesToAngle() {
+		ChangeBracesToAngleImpl changeBracketToAngle = new ChangeBracesToAngleImpl();
 		return changeBracketToAngle;
 	}
 
@@ -400,8 +400,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveOutermostBracket createRemoveOutermostBracket() {
-		RemoveOutermostBracketImpl removeOutermostBracket = new RemoveOutermostBracketImpl();
+	public RemoveOutermostBraces createRemoveOutermostBraces() {
+		RemoveOutermostBracesImpl removeOutermostBracket = new RemoveOutermostBracesImpl();
 		return removeOutermostBracket;
 	}
 
@@ -420,8 +420,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveBracketExceptOutermost createRemoveBracketExceptOutermost() {
-		RemoveBracketExceptOutermostImpl removeBracketExceptOutermost = new RemoveBracketExceptOutermostImpl();
+	public RemoveBracesExceptOutermost createRemoveBracesExceptOutermost() {
+		RemoveBracesExceptOutermostImpl removeBracketExceptOutermost = new RemoveBracesExceptOutermostImpl();
 		return removeBracketExceptOutermost;
 	}
 
@@ -530,8 +530,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddBracketToAttr createAddBracketToAttr() {
-		AddBracketToAttrImpl addBracketToAttr = new AddBracketToAttrImpl();
+	public AddBracesToAttr createAddBracesToAttr() {
+		AddBracesToAttrImpl addBracketToAttr = new AddBracesToAttrImpl();
 		return addBracketToAttr;
 	}
 
@@ -560,8 +560,8 @@ public class GrammaroptimizerFactoryImpl extends EFactoryImpl implements Grammar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddOptionalityToOutermostBracket createAddOptionalityToOutermostBracket() {
-		AddOptionalityToOutermostBracketImpl addOptionalityToOutermostBracket = new AddOptionalityToOutermostBracketImpl();
+	public AddOptionalityToOutermostBraces createAddOptionalityToOutermostBraces() {
+		AddOptionalityToOutermostBracesImpl addOptionalityToOutermostBracket = new AddOptionalityToOutermostBracesImpl();
 		return addOptionalityToOutermostBracket;
 	}
 

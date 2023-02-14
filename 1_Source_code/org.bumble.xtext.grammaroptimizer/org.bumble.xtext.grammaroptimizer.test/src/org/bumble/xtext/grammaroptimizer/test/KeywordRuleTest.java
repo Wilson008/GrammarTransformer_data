@@ -4,8 +4,8 @@ import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeyword;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class KeywordRuleTest {
 	// test adding a keyword to a specified attribute in a specified class
@@ -28,7 +28,7 @@ public class KeywordRuleTest {
 		String actualOutput = go.spliceGrammar();
 		String expectOutput = FileHelper.getFileText("Test_KeywordProcess_001.txt", false);
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 
 		
@@ -49,6 +49,6 @@ public class KeywordRuleTest {
 		String actualOutput = go.spliceGrammar();
 		String expectOutput = FileHelper.getFileText("Test_KeywordProcess_003.txt", false);
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 }

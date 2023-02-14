@@ -4,9 +4,8 @@ import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOptionality;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeOptionalAttrToOrRelationImpl;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class OptionalityTest {
 	@Test
@@ -26,7 +25,7 @@ public class OptionalityTest {
 		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_001.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -46,7 +45,7 @@ public class OptionalityTest {
 		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_002.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -66,7 +65,7 @@ public class OptionalityTest {
 		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_003.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -86,6 +85,6 @@ public class OptionalityTest {
 		String expectOutput = FileHelper.getFileText("Test_OptionalityProcess_004.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 }

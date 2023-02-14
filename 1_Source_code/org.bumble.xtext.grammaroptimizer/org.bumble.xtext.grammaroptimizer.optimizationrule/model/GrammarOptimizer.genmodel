@@ -13,11 +13,11 @@
       <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//ScopeKey/singleline"/>
       <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//ScopeKey/multilines"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GrammarOptimizer.ecore#//PackageKey">
-      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//PackageKey/PackageOnly"/>
-      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//PackageKey/PackageOptionally"/>
-      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//PackageKey/PackageZeroOrMore"/>
-      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//PackageKey/PackageOneOrMore"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GrammarOptimizer.ecore#//MultiplicityKey">
+      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//MultiplicityKey/PackageOnly"/>
+      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//MultiplicityKey/MultiplicityOptional"/>
+      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//MultiplicityKey/MultiplicityZeroOrMore"/>
+      <genEnumLiterals ecoreEnumLiteral="GrammarOptimizer.ecore#//MultiplicityKey/MultiplicityOneOrMore"/>
     </genEnums>
     <genClasses image="false" ecoreClass="GrammarOptimizer.ecore#//OptimizationRule">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GrammarOptimizer.ecore#//OptimizationRule/grammar"/>
@@ -25,14 +25,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//OptimizationRule/attrName"/>
       <genOperations ecoreOperation="GrammarOptimizer.ecore#//OptimizationRule/apply"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveBracket">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveBracket/targetAttribute"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveBracket/excludedGrammarRule"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveBraces">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveBraces/targetAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveBraces/excludedGrammarRule"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddKeywordToAttr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddKeywordToAttr/newKeyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddKeywordToAttr/isHead"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddKeywordToAttr/targetAttribute"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveKeyword">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveKeyword/keywordName"/>
@@ -76,7 +75,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//ChangeTypeOfAttr/newType"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddParenthesesToAttr"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveParenthesesInSpecifiedAttr"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveParenthesesInAttribute"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddImport">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddImport/newImport"/>
     </genClasses>
@@ -88,14 +87,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RenameRule/currentName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RenameRule/newName"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveKeywordsOfAllAttrs"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveAttributeKeywords"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveOptionality"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBracketToParentheses"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBracketToSquare"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBracketToAngle"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveOutermostBracket"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBracesToParentheses"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBracesToSquare"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBracesToAngle"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveOutermostBraces"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//Convert1toStarTo1orStar"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveBracketExceptOutermost"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveBracesExceptOutermost"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveCertainTypeFromAttr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveCertainTypeFromAttr/type"/>
     </genClasses>
@@ -128,13 +127,13 @@
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddOptionalityToKeyword">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddOptionalityToKeyword/keyword"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddBracketToAttr"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddBracesToAttr"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//KeywordUpperToLowerCase">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//KeywordUpperToLowerCase/keyword"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddSquareBracketToAttr"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddOptionalityToOutermostBracket">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddOptionalityToOutermostBracket/packageType"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddOptionalityToOutermostBraces">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddOptionalityToOutermostBraces/multiplicity"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddSymbolToAttr">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddSymbolToAttr/newSymbol"/>
@@ -159,7 +158,7 @@
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddParenthesesWithoutQuotes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddParenthesesWithoutQuotes/keyword"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddParenthesesWithoutQuotes/scope"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddParenthesesWithoutQuotes/packageType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddParenthesesWithoutQuotes/multiplicity"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddOptionalityToSymbol">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddOptionalityToSymbol/targetSymbol"/>
@@ -193,9 +192,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddTerminalRule/annotation"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddOptionalityToLine"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddBracketToLine"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddBracesToLine"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddParenthesesWithoutQuoteToRule">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddParenthesesWithoutQuoteToRule/packageType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddParenthesesWithoutQuoteToRule/multiplicity"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddAlternativeSymbol">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddAlternativeSymbol/currentSymbol"/>
@@ -210,13 +209,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddSymbolWithoutQuoteToKeyword/symbol"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddSymbolWithoutQuoteToKeyword/isFront"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//PackageAttributes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//PackageAttributes/startAttr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//PackageAttributes/endAttr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//PackageAttributes/packagetype"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeAttributeMultiplicity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//ChangeAttributeMultiplicity/startAttr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//ChangeAttributeMultiplicity/endAttr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//ChangeAttributeMultiplicity/multiplicity"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBooleanAttrToSpecialPatten"/>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeAToASemiOrAWithBracket"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeBooleanAttrToSpecialPattern"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeAttributeToSingleElementOrBracedList"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//ChangeReturns">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//ChangeReturns/newReturns"/>
     </genClasses>
@@ -230,7 +229,7 @@
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddAlternativeSubClassToAbstractClass">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddAlternativeSubClassToAbstractClass/newAlternativeSubClass"/>
     </genClasses>
-    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddBracketToRule"/>
+    <genClasses ecoreClass="GrammarOptimizer.ecore#//AddBracesToRule"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveLiteralFromEnum">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//RemoveLiteralFromEnum/literalName"/>
     </genClasses>
@@ -238,7 +237,7 @@
     <genClasses ecoreClass="GrammarOptimizer.ecore#//RemoveAction"/>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//AddCallToOtherRule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddCallToOtherRule/nameOfOtherClass"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddCallToOtherRule/removeAction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//AddCallToOtherRule/callRequired"/>
     </genClasses>
     <genClasses ecoreClass="GrammarOptimizer.ecore#//SetAstProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GrammarOptimizer.ecore#//SetAstProperty/className"/>

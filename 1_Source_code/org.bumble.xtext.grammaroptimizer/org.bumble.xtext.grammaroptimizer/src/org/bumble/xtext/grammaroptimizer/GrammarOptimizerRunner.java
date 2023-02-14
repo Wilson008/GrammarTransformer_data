@@ -2,7 +2,6 @@ package org.bumble.xtext.grammaroptimizer;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.PreparedStatement;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -12,7 +11,7 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.bumble.xtext.grammaroptimizer.helper.IOHelper;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
 
 public class GrammarOptimizerRunner {
@@ -79,6 +78,8 @@ public class GrammarOptimizerRunner {
 
 		String inputFilePath = cmd.getOptionValue("input");
 		String outputFilePath = cmd.getOptionValue("output");
+		
+		System.out.println("Optimizing grammar in file " + outputFilePath);
 
 		// read whole content from xtext file
 		String strRaw;
@@ -114,6 +115,7 @@ public class GrammarOptimizerRunner {
 		String strFinal = go.spliceGrammar();
 
 		setFileText(outputFilePath, strFinal);
+		System.out.println("Optimized grammar written to file " + outputFilePath);
 	}
 
 	/**
@@ -130,7 +132,7 @@ public class GrammarOptimizerRunner {
 		go.removeRuleCall("Stmt", "Stmt_Impl");
 		go.removeRuleCall("Stmt", "EdgeStmtSubgraph");
 		go.removeRuleCall("Stmt", "Subgraph");
-		go.addParenthesesWithoutQuoteToRule("Stmt", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuoteToRule("Stmt", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolToRule("Stmt", ";");
 		go.addOptionalityToSymbol("Stmt", null, ";");
 
@@ -221,7 +223,7 @@ public class GrammarOptimizerRunner {
 		go.addOptionalityToAttr("Subgraph", "name");
 		go.addKeywordToLine("Subgraph", "name", "subgraph", true);
 		go.changeTypeOfAttr("Subgraph", "name", "EString", "ID");
-		go.addParenthesesWithoutQuotes("Subgraph", ScopeKey.SINGLELINE, null, "name", PackageKey.PACKAGE_OPTIONALLY);
+		go.addParenthesesWithoutQuotes("Subgraph", ScopeKey.SINGLELINE, null, "name", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 
 		go.removeOptionality("Subgraph", "stmts");
 

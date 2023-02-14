@@ -1,13 +1,13 @@
 package org.bumble.xtext.grammaroptimizer.test;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class BracketRuleTest {
 	@Test
@@ -18,7 +18,7 @@ public class BracketRuleTest {
 		String input = FileHelper.getFileText("Dot.txt", true);
 		go.processGrammar(input);
 		
-		RemoveBracket removeBrackets = GrammaroptimizerFactory.eINSTANCE.createRemoveBracket();
+		RemoveBraces removeBrackets = GrammaroptimizerFactory.eINSTANCE.createRemoveBraces();
 		removeBrackets.setGrammar(go.getGrammar());
 		removeBrackets.setGrammarRule(null);
 		removeBrackets.setAttrName(null);
@@ -27,7 +27,7 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_001.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -38,7 +38,7 @@ public class BracketRuleTest {
 		String input = FileHelper.getFileText("Dot.txt", true);
 		go.processGrammar(input);
 		
-		RemoveOutermostBracket removeOutermostBracket = GrammaroptimizerFactory.eINSTANCE.createRemoveOutermostBracket();
+		RemoveOutermostBraces removeOutermostBracket = GrammaroptimizerFactory.eINSTANCE.createRemoveOutermostBraces();
 		removeOutermostBracket.setGrammar(go.getGrammar());
 		removeOutermostBracket.setGrammarRule("AttrList");
 		removeOutermostBracket.apply();
@@ -46,7 +46,7 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_002.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -57,7 +57,7 @@ public class BracketRuleTest {
 		String input = FileHelper.getFileText("Dot.txt", true);
 		go.processGrammar(input);
 		
-		RemoveBracketExceptOutermost removeBracketExceptOutermost = GrammaroptimizerFactory.eINSTANCE.createRemoveBracketExceptOutermost();
+		RemoveBracesExceptOutermost removeBracketExceptOutermost = GrammaroptimizerFactory.eINSTANCE.createRemoveBracesExceptOutermost();
 		removeBracketExceptOutermost.setGrammar(go.getGrammar());
 		removeBracketExceptOutermost.setGrammarRule("AttrList");
 		removeBracketExceptOutermost.setAttrName(null);
@@ -67,7 +67,7 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_003.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	/**
@@ -83,7 +83,7 @@ public class BracketRuleTest {
 		go.processGrammar(input);
 		
 		// call the specific method for adding key keyword and get output text
-		RemoveBracketExceptOutermost removeBracketExceptOutermost = GrammaroptimizerFactory.eINSTANCE.createRemoveBracketExceptOutermost();
+		RemoveBracesExceptOutermost removeBracketExceptOutermost = GrammaroptimizerFactory.eINSTANCE.createRemoveBracesExceptOutermost();
 		removeBracketExceptOutermost.setGrammar(go.getGrammar());
 		removeBracketExceptOutermost.setGrammarRule(null);
 		removeBracketExceptOutermost.setAttrName(null);
@@ -92,7 +92,7 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_004.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -104,7 +104,7 @@ public class BracketRuleTest {
 		go.processGrammar(input);
 		
 		// call the specific method for adding key keyword and get output text
-		RemoveBracket removeBrackets = GrammaroptimizerFactory.eINSTANCE.createRemoveBracket();
+		RemoveBraces removeBrackets = GrammaroptimizerFactory.eINSTANCE.createRemoveBraces();
 		removeBrackets.setGrammar(go.getGrammar());
 		removeBrackets.setGrammarRule("EdgeStmtNode");
 		removeBrackets.setAttrName("edgeRHS");
@@ -113,7 +113,7 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_005.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -125,7 +125,7 @@ public class BracketRuleTest {
 		go.processGrammar(input);
 		
 		// call the specific method for adding key keyword and get output text
-		ChangeBracketToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracketToSquare();
+		ChangeBracesToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracesToSquare();
 		changeBracketToSquare.setGrammar(go.getGrammar());
 		changeBracketToSquare.setGrammarRule(null);
 		changeBracketToSquare.setAttrName(null);
@@ -135,7 +135,7 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_006.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -147,7 +147,7 @@ public class BracketRuleTest {
 		go.processGrammar(input);
 		
 		// call the specific method for adding key keyword and get output text
-		ChangeBracketToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracketToSquare();
+		ChangeBracesToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracesToSquare();
 		changeBracketToSquare.setGrammar(go.getGrammar());
 		changeBracketToSquare.setGrammarRule("DotAst");
 		changeBracketToSquare.setAttrName(null);
@@ -157,7 +157,7 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_007.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	@Test
@@ -169,7 +169,7 @@ public class BracketRuleTest {
 		go.processGrammar(input);
 		
 		// call the specific method for adding key keyword and get output text
-		ChangeBracketToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracketToSquare();
+		ChangeBracesToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracesToSquare();
 		changeBracketToSquare.setGrammar(go.getGrammar());
 		changeBracketToSquare.setGrammarRule("EdgeStmtNode");
 		changeBracketToSquare.setAttrName("attrLists");
@@ -178,6 +178,6 @@ public class BracketRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_BracketProcess_008.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 }

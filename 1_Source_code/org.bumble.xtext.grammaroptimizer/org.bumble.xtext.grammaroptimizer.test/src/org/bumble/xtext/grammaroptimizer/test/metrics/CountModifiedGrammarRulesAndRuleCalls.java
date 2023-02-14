@@ -35,7 +35,7 @@ public class CountModifiedGrammarRulesAndRuleCalls {
 //		initializeGrammarDataStructures("Xcore.txt", "Test_Xcore.txt");
 //		initializeGrammarDataStructures("Dot.txt", "Test_MyDot.txt");
 //		initializeGrammarDataStructures("SML.txt", "Test_SML.txt");
-		initializeGrammarDataStructures("Spectra.txt", "Test_Spectra.txt");
+//		initializeGrammarDataStructures("Spectra.txt", "Test_Spectra.txt");
 //		initializeGrammarDataStructures("SQLDDL.txt", "Test_SQLDDL.txt");
 //		initializeGrammarDataStructures("MyBibTex.txt", "Test_MyBibTex.txt");
 //		initializeGrammarDataStructures("QVToV10.txt", "Test_QVToV10.txt");

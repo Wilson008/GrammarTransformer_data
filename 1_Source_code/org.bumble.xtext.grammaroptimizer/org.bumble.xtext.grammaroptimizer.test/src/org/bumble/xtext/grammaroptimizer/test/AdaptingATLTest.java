@@ -6,11 +6,10 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingATLTest {
 	@Test
@@ -245,113 +244,113 @@ public class AdaptingATLTest {
 		
 		go.removeKeywordsOfAllAttrs(null);
 		//exceptions, keywords to keep/change:
-		go.addKeywordToAttr(null, "isAbstract", "abstract", false, null);
-		go.addKeywordToAttr(null, "isRefining", "refining", false, null);
-		go.addKeywordToAttr(null, "isNoDefault", "nodefault", false, null);
-		go.addKeywordToAttr(null,  "isUnique", "unique", false, null);
-		go.addKeywordToAttr(null, "isEntrypoint", "entrypoint", false, null);
-		go.addKeywordToAttr(null, "isEndpoint", "endpoint", false, null);
+		go.addKeywordToLine(null, "isAbstract", "abstract", false);
+		go.addKeywordToLine(null, "isRefining", "refining", false);
+		go.addKeywordToLine(null, "isNoDefault", "nodefault", false);
+		go.addKeywordToLine(null,  "isUnique", "unique", false);
+		go.addKeywordToLine(null, "isEntrypoint", "entrypoint", false);
+		go.addKeywordToLine(null, "isEndpoint", "endpoint", false);
 				
 		
 		// Add attribute Keywords
-		go.addKeywordToAttr(null, "variables", "using", true, null);
-		go.addKeywordToAttr(null, "superRule", "extends", true, null);
-		go.addKeywordToAttr( "ForStat", "iterator", "in", false, null);
-		go.addKeywordToAttr( "ForStat", "for", "(", false, null);
-		go.addKeywordToAttr( "ForStat", "collection", ")", false, null);
-		go.addKeywordToAttr( "IfStat", "elseStatements", "else", true, null);
-		go.addKeywordToAttr( "BindingStat", "value", "<-", true, null);
-		go.addKeywordToAttr( "BindingStat", "value", ";", false, null);
-		go.addKeywordToAttr( "ExpressionStat", "expression", ";", false, null);
-		go.addKeywordToAttr( "Binding", "value", "<-", true, null);
-		go.addKeywordToAttr( "RuleVariableDeclaration", "type", "=", false, null);
-		go.addKeywordToAttr( "RuleVariableDeclaration", "varName", ":", false, null);
-		go.addKeywordToAttr( "RuleVariableDeclaration", "initExpression", ";", false, null);
-		go.addKeywordToAttr( "SimpleInPatternElement", "varName", ":", false, null);
-		go.addKeywordToAttr( "SimpleInPatternElement", "models", "in", true, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "varName", ":", false, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "model", "in", true, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "sourceElement", "mapsTo", true, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "bindings", "(", true, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "bindings", ")", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "varName", ":", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "iterator", "in", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "sourceElement", "mapsTo", true, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "foreach", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "distinct", true, null);
+		go.addKeywordToAttr(null, "variables", "using", true);
+		go.addKeywordToAttr(null, "superRule", "extends", true);
+		go.addKeywordToAttr( "ForStat", "iterator", "in", false);
+		go.addKeywordToAttr( "ForStat", "for", "(", false);
+		go.addKeywordToAttr( "ForStat", "collection", ")", false);
+		go.addKeywordToAttr( "IfStat", "elseStatements", "else", true);
+		go.addKeywordToAttr( "BindingStat", "value", "<-", true);
+		go.addKeywordToAttr( "BindingStat", "value", ";", false);
+		go.addKeywordToAttr( "ExpressionStat", "expression", ";", false);
+		go.addKeywordToAttr( "Binding", "value", "<-", true);
+		go.addKeywordToAttr( "RuleVariableDeclaration", "type", "=", false);
+		go.addKeywordToAttr( "RuleVariableDeclaration", "varName", ":", false);
+		go.addKeywordToAttr( "RuleVariableDeclaration", "initExpression", ";", false);
+		go.addKeywordToAttr( "SimpleInPatternElement", "varName", ":", false);
+		go.addKeywordToAttr( "SimpleInPatternElement", "models", "in", true);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "varName", ":", false);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "model", "in", true);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "sourceElement", "mapsTo", true);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "bindings", "(", true);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "bindings", ")", false);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "varName", ":", false);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "iterator", "in", false);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "sourceElement", "mapsTo", true);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "foreach", false);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "distinct", true);
 		go.addSymbolToLine("ForEachOutPatternElement", "iterator", "(", true);
 		go.addSymbolToLine( "ForEachOutPatternElement", "collection", ")", false);
-		go.addKeywordToAttr( "Helper", "definition", ";", false, null);
-		go.addKeywordToAttr( "LibraryRef", "name", ";", false, null);
-		go.addKeywordToAttr( "Query", "name", "=", false, null);
-		go.addKeywordToAttr( "Query", "body", ";", false, null);
-		go.addKeywordToAttr( "Library", "name", ";", false, null);
-		go.addKeywordToAttr( "Module", "name", ";", false, null);
-		go.addKeywordToAttr( "Module", "name", "create", false, null);
-		go.addKeywordToAttr( "Module", "inModels", ";", false, null);
+		go.addKeywordToAttr( "Helper", "definition", ";", false);
+		go.addKeywordToAttr( "LibraryRef", "name", ";", false);
+		go.addKeywordToAttr( "Query", "name", "=", false);
+		go.addKeywordToAttr( "Query", "body", ";", false);
+		go.addKeywordToAttr( "Library", "name", ";", false);
+		go.addKeywordToAttr( "Module", "name", ";", false);
+		go.addKeywordToAttr( "Module", "name", "create", false);
+		go.addKeywordToAttr( "Module", "inModels", ";", false);
 		
 //		go.addKeywordToAttr( "OclFeatureDefinition", "feature", "def", true, null);
 //		go.addKeywordToAttr( "OclFeatureDefinition", "feature", ":", true, null);
 		go.addSymbolToLine("OclFeatureDefinition", "feature", ":", true);
 		go.addKeywordToLine("OclFeatureDefinition", "feature", "def", true);
 		
-		go.addKeywordToAttr( "Attribute", "name", ":", false, null);
-		go.addKeywordToAttr( "Attribute", "type", "=", false, null);
+		go.addKeywordToLine( "Attribute", "name", ":", false);
+		go.addKeywordToLine( "Attribute", "type", "=", false);
 		
-		go.addKeywordToAttr( "Operation", "returnType", ":", true, null);
-		go.addKeywordToAttr( "Operation", "returnType", "=", false, null);
-		go.addKeywordToAttr( "IterateExp", "iterators", ";", false, null);
-		go.addKeywordToAttr( "IterateExp", "result", "|", false, null);
-		go.addKeywordToAttr( "IterateExp", "body", ")", false, null);
-		go.addKeywordToAttr( "IterateExp", "iterators", "(", true, null);
-		go.addKeywordToAttr( "IteratorExp", "iterators", "|", false, null);
-		go.addKeywordToAttr( "IteratorExp", "body", ")", false, null);
-		go.addKeywordToAttr( "IteratorExp", "iterators", "(", true, null);
+		go.addKeywordToAttr( "Operation", "returnType", ":", true);
+		go.addKeywordToAttr( "Operation", "returnType", "=", false);
+		go.addKeywordToAttr( "IterateExp", "iterators", ";", false);
+		go.addKeywordToAttr( "IterateExp", "result", "|", false);
+		go.addKeywordToAttr( "IterateExp", "body", ")", false);
+		go.addKeywordToAttr( "IterateExp", "iterators", "(", true);
+		go.addKeywordToAttr( "IteratorExp", "iterators", "|", false);
+		go.addKeywordToAttr( "IteratorExp", "body", ")", false);
+		go.addKeywordToAttr( "IteratorExp", "iterators", "(", true);
 		//go.addKeywordToAttr( "CollectionOperationCallExp", "arguments", ")", false, null);
 		//go.addKeywordToAttr( "CollectionOperationCallExp", "arguments", "(", true, null);
 		
-		go.addKeywordToAttr( "LetExp", "variable", "in", false, null);
-		go.addKeywordToAttr( "IfExp", "condition", "then", false, null);
-		go.addKeywordToAttr( "IfExp", "thenExpression", "else", false, null);
-		go.addKeywordToAttr( "IfExp", "elseExpression", "endif", false, null);
+		go.addKeywordToAttr( "LetExp", "variable", "in", false);
+		go.addKeywordToAttr( "IfExp", "condition", "then", false);
+		go.addKeywordToAttr( "IfExp", "thenExpression", "else", false);
+		go.addKeywordToAttr( "IfExp", "elseExpression", "endif", false);
 		
-		go.addKeywordToAttr( "CollectionType_Impl", "elementType", "(", true, null);
-		go.addKeywordToAttr( "CollectionType_Impl", "elementType", ")", false, null);
-		go.addKeywordToAttr( "BagType", "elementType", "(", true, null);
-		go.addKeywordToAttr( "BagType", "elementType", ")", false, null);
-		go.addKeywordToAttr( "SetType", "elementType", "(", true, null);
-		go.addKeywordToAttr( "SetType", "elementType", ")", false, null);
-		go.addKeywordToAttr( "OrderedSetType", "elementType", "(", true, null);
-		go.addKeywordToAttr( "OrderedSetType", "elementType", ")", false, null);
-		go.addKeywordToAttr( "SequenceType", "elementType", "(", true, null);
-		go.addKeywordToAttr( "SequenceType", "elementType", ")", false, null);
+		go.addKeywordToAttr( "CollectionType_Impl", "elementType", "(", true);
+		go.addKeywordToAttr( "CollectionType_Impl", "elementType", ")", false);
+		go.addKeywordToAttr( "BagType", "elementType", "(", true);
+		go.addKeywordToAttr( "BagType", "elementType", ")", false);
+		go.addKeywordToAttr( "SetType", "elementType", "(", true);
+		go.addKeywordToAttr( "SetType", "elementType", ")", false);
+		go.addKeywordToAttr( "OrderedSetType", "elementType", "(", true);
+		go.addKeywordToAttr( "OrderedSetType", "elementType", ")", false);
+		go.addKeywordToAttr( "SequenceType", "elementType", "(", true);
+		go.addKeywordToAttr( "SequenceType", "elementType", ")", false);
 //		go.addKeywordToAttr( "TupleType", "attributes", "(", true, null);
 //		go.addKeywordToAttr( "TupleType", "attributes", ")", false, null);
 		go.removeOptionality("TupleType", "attributes");
 		go.addBracesToLine("TupleType", "attributes");
 		go.changeBracesToParentheses("TupleType", "attributes");
-		go.addParenthesesWithoutQuotes("TupleType", ScopeKey.SINGLELINE, null, "attributes", PackageKey.PACKAGE_OPTIONALLY);
+		go.addParenthesesWithoutQuotes("TupleType", ScopeKey.SINGLELINE, null, "attributes", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
-		go.addKeywordToAttr( "OclModelElement", "name", "!", false, null);
+		go.addKeywordToAttr( "OclModelElement", "name", "!", false);
 		
-		go.addKeywordToAttr( "MapType", "valueType", "(", true, null);
-		go.addKeywordToAttr( "MapType", "valueType", ",", false, null);
-		go.addKeywordToAttr( "MapType", "keyType", ")", false, null);
+		go.addKeywordToAttr( "MapType", "valueType", "(", true);
+		go.addKeywordToAttr( "MapType", "valueType", ",", false);
+		go.addKeywordToAttr( "MapType", "keyType", ")", false);
 		
-		go.addKeywordToAttr( "MapElement", "key", "(", true, null);
-		go.addKeywordToAttr( "MapElement", "key", ",", false, null);
-		go.addKeywordToAttr( "MapElement", "value", ")", false, null);
+		go.addKeywordToAttr( "MapElement", "key", "(", true);
+		go.addKeywordToAttr( "MapElement", "key", ",", false);
+		go.addKeywordToAttr( "MapElement", "value", ")", false);
 		
-		go.addKeywordToAttr( "TupleTypeAttribute", "name", ":", false, null);
-		go.addKeywordToAttr( "OclModel", "name", ":", false, null);
+		go.addKeywordToAttr( "TupleTypeAttribute", "name", ":", false);
+		go.addKeywordToAttr( "OclModel", "name", ":", false);
 		
-		go.addKeywordToAttr( "VariableDeclaration_Impl", "varName", ":", false, null);
-		go.addKeywordToAttr( "VariableDeclaration_Impl", "type", "=", false, null);
+		go.addKeywordToAttr( "VariableDeclaration_Impl", "varName", ":", false);
+		go.addKeywordToAttr( "VariableDeclaration_Impl", "type", "=", false);
 			
-		go.addKeywordToAttr( "TuplePart", "type", ":", true, null);
-		go.addKeywordToAttr( "TuplePart", "initExpression", "=", true, null);
+		go.addKeywordToAttr( "TuplePart", "type", ":", true);
+		go.addKeywordToAttr( "TuplePart", "initExpression", "=", true);
 		
-		go.addKeywordToAttr( "Parameter", "type", ":", true, null);
+		go.addKeywordToAttr( "Parameter", "type", ":", true);
 		
 		
 		//Make Booleans optional
@@ -383,9 +382,9 @@ public class AdaptingATLTest {
 		go.removeOptionality("Parameter", "type");
 		go.removeOptionality("IfStat", "elseStatements");
 		go.removeKeyword("IfStat", "elseStatements", "else", null);
-		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", MultiplicityKey.PACKAGE_ONLY);
 		go.addKeywordToLine("IfStat", "elseStatements", "else", true);
-		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", PackageKey.PACKAGE_OPTIONALLY);
+		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		
 		// change the order of lines 
@@ -476,6 +475,6 @@ public class AdaptingATLTest {
 		String expectOutput = FileHelper.getFileText("Test_MyATL.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.replaceAll("\\s+","").equals(expectOutput.replaceAll("\\s+","")), "The modified ATL grammar is not expected!" + " \n " + StringUtils.difference(expectOutput.replaceAll("\\s+",""),actualOutput.replaceAll("\\s+","")));
+		Assert.assertEquals("The modified ATL grammar is not expected!" + " \n " + StringUtils.difference(expectOutput.replaceAll("\\s+",""),actualOutput.replaceAll("\\s+","")), expectOutput.replaceAll("\\s+",""), actualOutput.replaceAll("\\s+",""));
 	}
 }

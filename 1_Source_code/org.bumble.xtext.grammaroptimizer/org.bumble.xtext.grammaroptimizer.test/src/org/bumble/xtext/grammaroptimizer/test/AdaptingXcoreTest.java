@@ -1,10 +1,10 @@
 package org.bumble.xtext.grammaroptimizer.test;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingXcoreTest {
 	@Test
@@ -114,7 +114,7 @@ public class AdaptingXcoreTest {
 		go.changeOptionalAttrToOrRelation("XImportDirective", true, null, null);		
 		go.changeTypeOfAttr("XImportDirective", "importedNamespace", "EString", "QualifiedNameWithWildcard");		
 		go.changeTypeOfAttr("XImportDirective", "importedObject", "EString", "QualifiedName");
-		go.packageAttributes("XImportDirective", "importedNamespace", "importedObject", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("XImportDirective", "importedNamespace", "importedObject", MultiplicityKey.PACKAGE_ONLY);
 		
 		
 		// remove attribute annotations from rule XAnnotationDirective
@@ -133,11 +133,11 @@ public class AdaptingXcoreTest {
 		go.changeTypeOfAttr("XAnnotationDirective", "sourceURI", "EString", "STRING");
 		go.renameKeyword("XAnnotationDirective", "sourceURI", "sourceURI", "annotation", null);
 		go.removeOptionality("XAnnotationDirective", "sourceURI");
-		go.addParenthesesWithoutQuotes("XAnnotationDirective", ScopeKey.SINGLELINE, null, "sourceURI", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("XAnnotationDirective", ScopeKey.SINGLELINE, null, "sourceURI", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolWithoutQuoteToLine("XAnnotationDirective", "sourceURI", "=>", true);
 		
 		// add a keyword 'as' to the head of attribute name
-		go.addKeywordToAttr("XAnnotationDirective", "name", "as", true, null);
+		go.addKeywordToAttr("XAnnotationDirective", "name", "as", true);
 		
 		// change the type of attribute name from EString to ValidID
 		go.changeTypeOfAttr("XAnnotationDirective", "name", "EString", "ValidID");
@@ -152,7 +152,7 @@ public class AdaptingXcoreTest {
 		go.removeOptionality("XStringToStringMapEntry", null);
 		
 		// add an '=' to the head of attribute value
-		go.addKeywordToAttr("XStringToStringMapEntry", "value", "=", true, null);
+		go.addKeywordToAttr("XStringToStringMapEntry", "value", "=", true);
 		
 		// change the type of attribute key from EString to QualifiedName
 		go.changeTypeOfAttr("XStringToStringMapEntry", "key", "EString", "QualifiedName");
@@ -209,9 +209,9 @@ public class AdaptingXcoreTest {
 		go.removeKeyword("XClass", null, "XClass", null);
 		go.addSymbolWithoutQuoteToLine("XClass", "abstract", "?", false);
 		go.addKeywordToLine("XClass", "abstract", "class", false);
-		go.addParenthesesWithoutQuotes("XClass", ScopeKey.SINGLELINE, null, "abstract", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("XClass", ScopeKey.SINGLELINE, null, "abstract", MultiplicityKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("XClass", false, "abstract", "interface");
-		go.packageAttributes("XClass", "abstract", "interface", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("XClass", "abstract", "interface", MultiplicityKey.PACKAGE_ONLY);
 		
 		// change the type of attribute name from EString to ID
 		go.changeTypeOfAttr("XClass", "name", "EString", "ID");
@@ -309,7 +309,7 @@ public class AdaptingXcoreTest {
 		
 		// remove keyword 'serializable' from attribute serializable
 		//go.removeKeyword("XDataType", null, "serializable", null);
-		go.changeBooleanAttrToSpecialPatten("XDataType", "serializable");
+		go.changeBooleanAttrToSpecialPattern("XDataType", "serializable");
 		go.renameKeyword("XDataType", "serializable", "serializable", "create", null);
 
 		//go.changeTypeOfAttr("XDataType", "serializable", "EBoolean", "create");
@@ -318,9 +318,9 @@ public class AdaptingXcoreTest {
 		go.removeKeyword("XDataType", "createBody", "createBody", null);
 		go.renameKeyword("XDataType", "convertBody", "convertBody", "convert", null);
 		go.removeOptionality("XDataType", "createBody");
-		go.packageAttributes("XDataType", "serializable", "createBody", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("XDataType", "serializable", "createBody", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		go.addSymbolWithoutQuoteToLine("XDataType", "createBody", " &", false);
-		go.packageAttributes("XDataType", "serializable", "convertBody", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("XDataType", "serializable", "convertBody", MultiplicityKey.PACKAGE_ONLY);
 		
 		
 		// move attribute annotations to the front of keyword 'XEnum' in rule XEnum
@@ -405,7 +405,7 @@ public class AdaptingXcoreTest {
 		go.addSymbolWithoutQuoteToLine("XAttribute", "volatile", "&", false);
 		go.addSymbolWithoutQuoteToLine("XAttribute", "unsettable", "&", false);
 		go.addSymbolWithoutQuoteToLine("XAttribute", "derived", "&", false);
-		go.packageAttributes("XAttribute", "unordered", "iD", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("XAttribute", "unordered", "iD", MultiplicityKey.PACKAGE_ONLY);
 		
 		// remove keyword 'XAttribute'
 		go.removeKeyword("XAttribute", null, "XAttribute", null);
@@ -447,7 +447,7 @@ public class AdaptingXcoreTest {
 		go.addSymbolWithoutQuoteToLine("XAttribute", "getBody", " &", false);
 		go.addSymbolWithoutQuoteToLine("XAttribute", "setBody", " &", false);
 		go.addSymbolWithoutQuoteToLine("XAttribute", "isSetBody", " &", false);
-		go.packageAttributes("XAttribute", "getBody", "unsetBody", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("XAttribute", "getBody", "unsetBody", MultiplicityKey.PACKAGE_ONLY);
 		
 		
 		// move attribute annotations to the front of attribute unordered in rule XOperation
@@ -466,14 +466,14 @@ public class AdaptingXcoreTest {
 		go.removeOptionality("XOperation", "annotations");
 		
 		// add a keyword 'op' to the front of attribute unordered
-		go.addKeywordToAttr("XOperation", "annotations", "op", false, null);
+		go.addKeywordToAttr("XOperation", "annotations", "op", false);
 		
 		go.removeOptionality("XOperation", "unordered");
 		go.removeOptionality("XOperation", "unique");
 		go.changeABToABorBA("XOperation", "unordered", "unique");
 		go.addSymbolWithoutQuoteToKeyword("XOperation", "unordered", "unique", "?", false);
 		go.addSymbolWithoutQuoteToKeyword("XOperation", "unique", "unordered", "?", false);
-		go.packageAttributes("XOperation", "unordered", "unique", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("XOperation", "unordered", "unique", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// remove keyword XOperation
 		go.removeKeyword("XOperation", null, "XOperation", null);
@@ -500,7 +500,7 @@ public class AdaptingXcoreTest {
 		go.removeKeyword("XOperation", "type", "type", null);
 		go.addSymbolWithoutQuoteToLine("XOperation", "type", " |", false);
 		go.addKeywordToLine("XOperation", "type", "void", false);
-		go.addParenthesesWithoutQuotes("XOperation", ScopeKey.SINGLELINE, null, "type", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("XOperation", ScopeKey.SINGLELINE, null, "type", MultiplicityKey.PACKAGE_ONLY);
 		
 		// remove keyword 'multiplicity' of attribute multiplicity
 		go.removeKeyword("XOperation", null, "multiplicity", null);
@@ -579,7 +579,7 @@ public class AdaptingXcoreTest {
 		go.addSymbolWithoutQuoteToLine("XReference", "transient", " &", false);
 		go.addSymbolWithoutQuoteToLine("XReference", "volatile", " &", false);
 		go.addSymbolWithoutQuoteToLine("XReference", "unsettable", " &", false);
-		go.packageAttributes("XReference", "unordered", "derived", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("XReference", "unordered", "derived", MultiplicityKey.PACKAGE_ONLY);
 		
 		// remove keyword 'XReference'
 		go.removeKeyword("XReference", null, "XReference", null);
@@ -616,7 +616,7 @@ public class AdaptingXcoreTest {
 		go.addSymbolWithoutQuoteToLine("XReference", "getBody", " &", false);
 		go.addSymbolWithoutQuoteToLine("XReference", "setBody", " &", false);
 		go.addSymbolWithoutQuoteToLine("XReference", "isSetBody", " &", false);
-		go.packageAttributes("XReference", "getBody", "unsetBody", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("XReference", "getBody", "unsetBody", MultiplicityKey.PACKAGE_ONLY);
 		
 		// move attribute annotations to the front of attribute unordered in rule XParameter
 		go.moveLine("XParameter", "annotations", "unordered", true);
@@ -638,7 +638,7 @@ public class AdaptingXcoreTest {
 		go.changeABToABorBA("XParameter", "unordered", "unique");
 		go.addSymbolWithoutQuoteToKeyword("XParameter", "unordered", "unique", "?", false);
 		go.addSymbolWithoutQuoteToKeyword("XParameter", "unique", "unordered", "?", false);
-		go.packageAttributes("XParameter", "unordered", "unique", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("XParameter", "unordered", "unique", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// remove keyword 'XParameter'
 		go.removeKeyword("XParameter", null, "XParameter", null);
@@ -732,7 +732,6 @@ public class AdaptingXcoreTest {
 		
 		// compare text
 		//Assertions.assertEquals(expectOutput, actualOutput, "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

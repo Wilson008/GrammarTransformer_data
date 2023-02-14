@@ -6,11 +6,10 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingATLNoOCLTest {
 	@Test
@@ -113,55 +112,55 @@ public class AdaptingATLNoOCLTest {
 		
 		go.removeKeywordsOfAllAttrs(null);
 		//exceptions, keywords to keep/change:
-		go.addKeywordToAttr(null, "isAbstract", "abstract", false, null);
-		go.addKeywordToAttr(null, "isRefining", "refining", false, null);
-		go.addKeywordToAttr(null, "isNoDefault", "nodefault", false, null);
-		go.addKeywordToAttr(null,  "isUnique", "unique", false, null);
-		go.addKeywordToAttr(null, "isEntrypoint", "entrypoint", false, null);
-		go.addKeywordToAttr(null, "isEndpoint", "endpoint", false, null);
+		go.addKeywordToAttr(null, "isAbstract", "abstract", false);
+		go.addKeywordToAttr(null, "isRefining", "refining", false);
+		go.addKeywordToAttr(null, "isNoDefault", "nodefault", false);
+		go.addKeywordToAttr(null,  "isUnique", "unique", false);
+		go.addKeywordToAttr(null, "isEntrypoint", "entrypoint", false);
+		go.addKeywordToAttr(null, "isEndpoint", "endpoint", false);
 		
 		go.addKeywordToLine("LazyMatchedRule", "isAbstract", "lazy", true);
 		//("LazyMatchedRule", "isAbstract", "lazy", true, null);
 		
 		// Add attribute Keywords
-		go.addKeywordToAttr(null, "variables", "using", true, null);
-		go.addKeywordToAttr(null, "superRule", "extends", true, null);
-		go.addKeywordToAttr( "ForStat", "iterator", "in", false, null);
-		go.addKeywordToAttr( "ForStat", "for", "(", false, null);
-		go.addKeywordToAttr( "ForStat", "collection", ")", false, null);
-		go.addKeywordToAttr( "IfStat", "elseStatements", "else", true, null);
-		go.addKeywordToAttr( "BindingStat", "value", "<-", true, null);
-		go.addKeywordToAttr( "BindingStat", "value", ";", false, null);
-		go.addKeywordToAttr( "ExpressionStat", "expression", ";", false, null);
-		go.addKeywordToAttr( "Binding", "value", "<-", true, null);
-		go.addKeywordToAttr( "RuleVariableDeclaration", "type", "=", false, null);
-		go.addKeywordToAttr( "RuleVariableDeclaration", "varName", ":", false, null);
-		go.addKeywordToAttr( "RuleVariableDeclaration", "initExpression", ";", false, null);
-		go.addKeywordToAttr( "SimpleInPatternElement", "varName", ":", false, null);
-		go.addKeywordToAttr( "SimpleInPatternElement", "models", "in", true, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "varName", ":", false, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "model", "in", true, null);
-		go.addKeywordToAttr( "SimpleOutPatternElement", "sourceElement", "mapsTo", true, null);
+		go.addKeywordToAttr(null, "variables", "using", true);
+		go.addKeywordToAttr(null, "superRule", "extends", true);
+		go.addKeywordToAttr( "ForStat", "iterator", "in", false);
+		go.addKeywordToAttr( "ForStat", "for", "(", false);
+		go.addKeywordToAttr( "ForStat", "collection", ")", false);
+		go.addKeywordToAttr( "IfStat", "elseStatements", "else", true);
+		go.addKeywordToAttr( "BindingStat", "value", "<-", true);
+		go.addKeywordToAttr( "BindingStat", "value", ";", false);
+		go.addKeywordToAttr( "ExpressionStat", "expression", ";", false);
+		go.addKeywordToAttr( "Binding", "value", "<-", true);
+		go.addKeywordToAttr( "RuleVariableDeclaration", "type", "=", false);
+		go.addKeywordToAttr( "RuleVariableDeclaration", "varName", ":", false);
+		go.addKeywordToAttr( "RuleVariableDeclaration", "initExpression", ";", false);
+		go.addKeywordToAttr( "SimpleInPatternElement", "varName", ":", false);
+		go.addKeywordToAttr( "SimpleInPatternElement", "models", "in", true);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "varName", ":", false);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "model", "in", true);
+		go.addKeywordToAttr( "SimpleOutPatternElement", "sourceElement", "mapsTo", true);
 //		go.addKeywordToAttr( "SimpleOutPatternElement", "bindings", "(", true, null);
 //		go.addKeywordToAttr( "SimpleOutPatternElement", "bindings", ")", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "varName", ":", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "iterator", "in", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "sourceElement", "mapsTo", true, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "foreach", false, null);
-		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "distinct", true, null);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "varName", ":", false);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "iterator", "in", false);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "sourceElement", "mapsTo", true);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "foreach", false);
+		go.addKeywordToAttr( "ForEachOutPatternElement", "type", "distinct", true);
 		go.addSymbolToLine("ForEachOutPatternElement", "iterator", "(", true);
 		go.addSymbolToLine( "ForEachOutPatternElement", "collection", ")", false);
-		go.addKeywordToAttr( "Helper", "definition", ";", false, null);
-		go.addKeywordToAttr( "LibraryRef", "name", ";", false, null);
-		go.addKeywordToAttr( "Query", "name", "=", false, null);
-		go.addKeywordToAttr( "Query", "body", ";", false, null);
-		go.addKeywordToAttr( "Library", "name", ";", false, null);
-		go.addKeywordToAttr( "Module", "name", ";", false, null);
-		go.addKeywordToAttr( "Module", "name", "create", false, null);
-		go.addKeywordToAttr( "Module", "inModels", ";", false, null);
+		go.addKeywordToAttr( "Helper", "definition", ";", false);
+		go.addKeywordToAttr( "LibraryRef", "name", ";", false);
+		go.addKeywordToAttr( "Query", "name", "=", false);
+		go.addKeywordToAttr( "Query", "body", ";", false);
+		go.addKeywordToAttr( "Library", "name", ";", false);
+		go.addKeywordToAttr( "Module", "name", ";", false);
+		go.addKeywordToAttr( "Module", "name", "create", false);
+		go.addKeywordToAttr( "Module", "inModels", ";", false);
 		
 		go.addAlternativeKeyword("Module", "isRefining", "refining", "from");
-		go.addParenthesesWithoutQuotes("Module", ScopeKey.SINGLELINE, null, "isRefining", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Module", ScopeKey.SINGLELINE, null, "isRefining", MultiplicityKey.PACKAGE_ONLY);
 				
 		
 		//Make Booleans optional
@@ -198,9 +197,9 @@ public class AdaptingATLNoOCLTest {
 		go.removeOptionality("Module", "libraries");
 		go.removeOptionality("IfStat", "elseStatements");
 		go.removeKeyword("IfStat", "elseStatements", "else", null);
-		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", MultiplicityKey.PACKAGE_ONLY);
 		go.addKeywordToLine("IfStat", "elseStatements", "else", true);
-		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", PackageKey.PACKAGE_OPTIONALLY);
+		go.addParenthesesWithoutQuotes("IfStat", ScopeKey.SINGLELINE, null, "elseStatements", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		
 		// change the order of lines 
@@ -270,10 +269,10 @@ public class AdaptingATLNoOCLTest {
 		go.addOptionalityToLine("ForEachOutPatternElement", "bindings");
 		
 		String actualOutput = go.spliceGrammar();
-		FileHelper.setFileText("Test_MyATLnoOCL1.txt", actualOutput);
+		//FileHelper.setFileText("Test_MyATLnoOCL1.txt", actualOutput);
 		String expectOutput = FileHelper.getFileText("Test_MyATLnoOCL.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.replaceAll("\\s+","").equals(expectOutput.replaceAll("\\s+","")), "The modified ATLnoOCL grammar is not expected!" + " \n " + StringUtils.difference(expectOutput.replaceAll("\\s+",""),actualOutput.replaceAll("\\s+","")));
+		Assert.assertEquals("The modified ATLnoOCL grammar is not expected!" + " \n " + StringUtils.difference(expectOutput.replaceAll("\\s+",""),actualOutput.replaceAll("\\s+","")), actualOutput.replaceAll("\\s+",""), expectOutput.replaceAll("\\s+",""));
 	}
 }

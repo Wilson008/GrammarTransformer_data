@@ -1,10 +1,10 @@
 package org.bumble.xtext.grammaroptimizer.test;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingMyDotTest {
 	@Test
@@ -29,7 +29,7 @@ public class AdaptingMyDotTest {
 		go.removeRuleCall("Stmt", "Stmt_Impl");
 		go.removeRuleCall("Stmt", "EdgeStmtSubgraph");
 		go.removeRuleCall("Stmt", "Subgraph");
-		go.addParenthesesWithoutQuoteToRule("Stmt", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuoteToRule("Stmt", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolToRule("Stmt", ";");
 		go.addOptionalityToSymbol("Stmt", null, ";");
 		
@@ -119,7 +119,7 @@ public class AdaptingMyDotTest {
 		go.addOptionalityToAttr("Subgraph", "name");
 		go.addKeywordToLine("Subgraph", "name", "subgraph", true);
 		go.changeTypeOfAttr("Subgraph", "name", "EString", "ID");
-		go.addParenthesesWithoutQuotes("Subgraph", ScopeKey.SINGLELINE, null, "name", PackageKey.PACKAGE_OPTIONALLY);
+		go.addParenthesesWithoutQuotes("Subgraph", ScopeKey.SINGLELINE, null, "name", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		go.removeOptionality("Subgraph", "stmts");
 		
@@ -184,7 +184,6 @@ public class AdaptingMyDotTest {
 
 		// compare text
 		//Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

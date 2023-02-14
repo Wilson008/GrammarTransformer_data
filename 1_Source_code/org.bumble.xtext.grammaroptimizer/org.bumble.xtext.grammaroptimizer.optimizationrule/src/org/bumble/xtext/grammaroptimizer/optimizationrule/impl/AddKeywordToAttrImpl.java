@@ -8,9 +8,7 @@ import org.bumble.xtext.grammaroptimizer.helper.RegexHelper;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -23,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddKeywordToAttrImpl#getNewKeyword <em>New Keyword</em>}</li>
  *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddKeywordToAttrImpl#isIsHead <em>Is Head</em>}</li>
- *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddKeywordToAttrImpl#getTargetAttribute <em>Target Attribute</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,26 +65,6 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 	 * @ordered
 	 */
 	protected boolean isHead = IS_HEAD_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getTargetAttribute() <em>Target Attribute</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetAttribute()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TARGET_ATTRIBUTE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTargetAttribute() <em>Target Attribute</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTargetAttribute()
-	 * @generated
-	 * @ordered
-	 */
-	protected String targetAttribute = TARGET_ATTRIBUTE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,27 +132,6 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTargetAttribute() {
-		return targetAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTargetAttribute(String newTargetAttribute) {
-		String oldTargetAttribute = targetAttribute;
-		targetAttribute = newTargetAttribute;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE, oldTargetAttribute, targetAttribute));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -183,8 +139,6 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 				return getNewKeyword();
 			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__IS_HEAD:
 				return isIsHead();
-			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE:
-				return getTargetAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,9 +156,6 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 				return;
 			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__IS_HEAD:
 				setIsHead((Boolean)newValue);
-				return;
-			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE:
-				setTargetAttribute((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,9 +175,6 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__IS_HEAD:
 				setIsHead(IS_HEAD_EDEFAULT);
 				return;
-			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE:
-				setTargetAttribute(TARGET_ATTRIBUTE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,8 +191,6 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 				return NEW_KEYWORD_EDEFAULT == null ? newKeyword != null : !NEW_KEYWORD_EDEFAULT.equals(newKeyword);
 			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__IS_HEAD:
 				return isHead != IS_HEAD_EDEFAULT;
-			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR__TARGET_ATTRIBUTE:
-				return TARGET_ATTRIBUTE_EDEFAULT == null ? targetAttribute != null : !TARGET_ATTRIBUTE_EDEFAULT.equals(targetAttribute);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -263,8 +209,6 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 		result.append(newKeyword);
 		result.append(", isHead: ");
 		result.append(isHead);
-		result.append(", targetAttribute: ");
-		result.append(targetAttribute);
 		result.append(')');
 		return result.toString();
 	}
@@ -280,8 +224,8 @@ public class AddKeywordToAttrImpl extends OptimizationRuleImpl implements AddKey
 				}
 			}			
 			
-			if (targetAttribute != null && !targetAttribute.isEmpty()) {
-				if (!RegexHelper.doesAttributeExist(grammar.getRules().get(i), targetAttribute)) {
+			if (attrName != null && !attrName.isEmpty()) {
+				if (!RegexHelper.doesAttributeExist(grammar.getRules().get(i), attrName)) {
 					continue;
 				}
 			}

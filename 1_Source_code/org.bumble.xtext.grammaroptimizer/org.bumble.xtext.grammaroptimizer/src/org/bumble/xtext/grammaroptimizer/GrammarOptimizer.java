@@ -11,12 +11,12 @@ import org.bumble.xtext.grammaroptimizer.grammarrule.impl.GrammarRuleImpl;
 import org.bumble.xtext.grammaroptimizer.grammarrule.impl.LineEntryImpl;
 import org.bumble.xtext.grammaroptimizer.helper.RegexHelper;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeKeyword;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeSubClassToAbstractClass;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeValue;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddAlternativeSubClassToAbstractClass;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToLine;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToRule;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToAttr;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToLine;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddCallToOtherRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordAfterKeyword;
@@ -25,30 +25,31 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.AddKeywordToLine;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToLine;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBraces;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToSymbol;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesToAttr;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesWithoutQuotes;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesWithoutQuoteToRule;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddParenthesesWithoutQuotes;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddPrimitiveType;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSquareBracketToAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddStringToRuleKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolToAttr;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolWithoutQuoteToKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolToLine;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolToRule;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolWithoutQuoteToKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddSymbolWithoutQuoteToLine;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.AddTerminalRule;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeABtoBAB;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeABToABorBA;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeABtoBAB;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToAorSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToOptionalAorA;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToASemiOrAWithBracket;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttrLineContent;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPatten;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeMultiplicity;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeToSingleElementOrBracedList;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPattern;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToAngle;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToParentheses;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCalledRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeCommaToOtherSymbol;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeOptionalAttrToOrRelation;
@@ -67,22 +68,21 @@ import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactor
 import org.bumble.xtext.grammaroptimizer.optimizationrule.KeywordUpperToLowerCase;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveAttrToAfterRuleKeyword;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.MoveLine;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationruleFactory;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageAttributes;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAction;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttribute;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttributeKeywords;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveCertainTypeFromAttr;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveComma;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveImport;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeyword;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeywordsOfAllAttrs;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveLiteralFromEnum;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOptionality;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInSpecifiedAttr;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInAttribute;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveRule;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveRuleCall;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveXStarAttrKeyword;
@@ -285,49 +285,52 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	* This method is used to add brackets to a specified attribute or
+	* This method is used to add braces to a specified attribute or
 	* multiple specified attributes in the form of placing a pair of '{' '}'
 	* in both side of the attribute expression.
-	* @param grammarRule This param could specify which grammar rule that the addition
-	* action will work on.
-	* @param attrName This param could specify which attribute that the addition action
-	* will work on.
+	* @param grammarRule specifies which grammar rule to work on.
+	* @param attrName specifies which attribute to work on.
 	*/
 	public void addBracesToAttr(String grammarRule, String attrName) {
-		AddBracketToAttr addBracketToAttr = GrammaroptimizerFactory.eINSTANCE.createAddBracketToAttr();
-		addBracketToAttr.setGrammar(grammar);
-		addBracketToAttr.setGrammarRule(grammarRule);
-		addBracketToAttr.setAttrName(attrName);
-		addBracketToAttr.apply();
+		AddBracesToAttr addBracesToAttr = GrammaroptimizerFactory.eINSTANCE.createAddBracesToAttr();
+		addBracesToAttr.setGrammar(grammar);
+		addBracesToAttr.setGrammarRule(grammarRule);
+		addBracesToAttr.setAttrName(attrName);
+		addBracesToAttr.apply();
 	}
 	
 	/**
-	* This method is used to add bracket to a specified rule or multiple 
+	* This method is used to add braces to a specified rule or multiple 
 	* specified rules in the form of placing an opening bracket '{' at the beginning 
 	* of the grammar rule and an closing bracket '}' at the ending of the grammar rule.
-	* @param ruleName This param could specify which grammar rule that the addition
-	* operation will work on.
+	* @param ruleName specifies which grammar rule the operation will work on.
 	*/
 	public void addBracesToRule(String ruleName) {
-		AddBracketToRule addBracketToRule = OptimizationruleFactory.eINSTANCE.createAddBracketToRule();
-		addBracketToRule.setGrammar(grammar);
-		addBracketToRule.setGrammarRule(ruleName);
-		addBracketToRule.setAttrName(null);
-		addBracketToRule.apply();
+		AddBracesToRule addBracesToRule = OptimizationruleFactory.eINSTANCE.createAddBracesToRule();
+		addBracesToRule.setGrammar(grammar);
+		addBracesToRule.setGrammarRule(ruleName);
+		addBracesToRule.setAttrName(null);
+		addBracesToRule.apply();
 	}
 
-	public void addCallToOtherRule(String grammarRule, String nameOfOtherRule, boolean removeAction) {
+	/**
+	 * Adds a call to another rule to the very beginning of the specified rule.
+	 * @param grammarRule the rule to which to add the rule call
+	 * @param nameOfOtherRule the name of the rule to be called
+	 * @param callRequired indicates whether the new rule must be called or if it adds an alternative
+	 */
+	public void addCallToOtherRule(String grammarRule, String nameOfOtherRule, boolean callRequired) {
 		AddCallToOtherRule addCallToOtherRule = OptimizationruleFactory.eINSTANCE.createAddCallToOtherRule();
 		addCallToOtherRule.setGrammar(grammar);
 		addCallToOtherRule.setGrammarRule(grammarRule);
 		addCallToOtherRule.setNameOfOtherClass(nameOfOtherRule);
-		addCallToOtherRule.setRemoveAction(removeAction);
+		addCallToOtherRule.setCallRequired(callRequired);
 		addCallToOtherRule.setAttrName(null);
 		addCallToOtherRule.apply();
 	}
 	/**
-	* This method is used to add an Import to the whole grammar.
-	* @param importString This param is the "Import" string that aimed to add.
+	* This method is used to add an import to the whole grammar.
+	* @param importString the import to add
 	*/
 	public void addImport(String importString) {
 		AddImport addImport = GrammaroptimizerFactory.eINSTANCE.createAddImport();
@@ -337,35 +340,31 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	 * This method is used to add a keyword to an attribute.
-	 * @param grammarRule: which grammar rule are you working on? When this value is null, 
-	 * means this action will work on all the grammar rules. 
-	 * @param attrName: which attribute are you working on? when this value is null, means 
-	 * this action will work on all the attributes. 
-	 * @param newKeyword: what's the new keyword are you going to add? 
+	 * This method is used to add a keyword to an attribute. It transforms
+	 * <code>(attrA=typeA)?</code> to <code>('keywordA' attrA=typeA)?</code>.
+	 * 
+	 * @param grammarRule: specifies the rule on which to apply this action. 
+	 * @param attrName: specifies the attribute on which to apply this action. 
+	 * @param newKeyword: the new keyword to add
 	 * @param isHead: Will the new keyword be added to the front or the end of the the attribute? 
-	 * @param targetAttributeAttr: this value is actually an attribute name, when it gets 
-	 * a non-null value, it will check if the grammar rule has this attribute, and then 
-	 * the method will be executed only when the attribute exists.
+	 * @see #addKeywordToLine(String, String, String, boolean)
 	 */
-	public void addKeywordToAttr(String grammarRule, String attrName, String newKeyword, boolean isHead,
-			String targetAttributeAttr) {
+	public void addKeywordToAttr(String grammarRule, String attrName, String newKeyword, boolean isHead) {
 		AddKeywordToAttr addKeywordToAttr = GrammaroptimizerFactory.eINSTANCE.createAddKeywordToAttr();
 		addKeywordToAttr.setGrammar(grammar);
 		addKeywordToAttr.setGrammarRule(grammarRule);
 		addKeywordToAttr.setAttrName(attrName);
 		addKeywordToAttr.setNewKeyword(newKeyword);
 		addKeywordToAttr.setIsHead(isHead);
-		addKeywordToAttr.setTargetAttribute(targetAttributeAttr);
 		addKeywordToAttr.apply();
 	}
 
 	/**
 	* This method is used to add an alternative to an existing keyword, for example: 'A' to 'A' | 'B'
-	* @param grammarRule This param is used to specify the rule that aimed to do this addition action.
-	* @param attrName This param is used to specify the attribute that aimed to do this addition action.
-	* @param currentKeyword This param means the existing keyword that aimed to add an alternative keyword.
-	* @param newKeyword This pram means the alternative keyword that aimed to add.
+	* @param grammarRule specifies the rule on which to apply this action.
+	* @param attrName specifies the attribute on which to apply this action.
+	* @param currentKeyword specifies the existing keyword to which an alternative keyword should be added.
+	* @param newKeyword specifies the alternative keyword to add.
 	*/
 	public void addAlternativeKeyword(String grammarRule, String attrName, String currentKeyword, String newKeyword) {
 		AddAlternativeKeyword addAlternativeKeyword = GrammaroptimizerFactory.eINSTANCE.createAddAlternativeKeyword();
@@ -378,12 +377,12 @@ public class GrammarOptimizer {
 	}
 	
 	/**
-	* This method is used to add an alternative symbol to an existing symbole, for example,
+	* This method is used to add an alternative symbol to an existing symbol, for example,
 	* ';' to ';' | ','
-	* @param grammarRule This param is used to specify the rule that aimed to do this addition action.
-	* @param attrName This param is used to specify the attribute that aimed to do this addition action.
-	* @param currentSymbol This param means the existing symbol that aimed to add an alternative symbol.
-	* @param newSymbol This pram means the alternative symbol that aimed to add.
+	* @param grammarRule specifies the rule on which to apply this action.
+	* @param attrName specifies the attribute on which to apply this action.
+	* @param currentSymbol specifies the existing symbol to which an alternative symbol should be added.
+	* @param newSymbol specifies the alternative symbol to add.
 	*/
 	public void addAlternativeSymbol(String grammarRule, String attrName, String currentSymbol, String newSymbol) {
 		AddAlternativeSymbol addAlternativeSymbol = OptimizationruleFactory.eINSTANCE.createAddAlternativeSymbol();
@@ -396,11 +395,13 @@ public class GrammarOptimizer {
 	}
 	
 	/**
-	* This method is used to add an alternative symbol to a grammar rule, for example, attr='value1'.
-	* @param ruleName This param is used to specify the rule that aimed to do this addition action.
-	* @param attrName This param is used to specify the attribute that aimed to do this addition action.
-	* @param newValues This param list the new values that aimed to add.
-	* @param isEnum This param indicate whether the rule is an Enum.
+	* This method is used to add an alternative symbol to a grammar rule, for example:
+	* previous: <code>A returns A: B='b' | C = 'c'</code>,
+	* after:    <code>A returns A: B='b' | C = 'c' | D = 'd'</code>
+	* @param ruleName specifies the rule  on which to apply this action.
+	* @param attrName specifies the attribute on which to apply this action.
+	* @param newValues the new values to add.
+	* @param isEnum indicates whether the rule is an enumeration.
 	*/
 	public void addAlternativeValue(String ruleName, String attrName, List<String> newValues, boolean isEnum) {
 		AddAlternativeValue addAlternativeValue = OptimizationruleFactory.eINSTANCE.createAddAlternativeValue();
@@ -416,8 +417,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to add an alternative subclass to a grammar rule
 	* (a grammar rule is actually a class in the meta-model).
-	* @param ruleName This param indicates the rule that aimed to add an alternative subclass.
-	* @param newAlternativeSubClass This param is the subclass that aimed to add.
+	* @param ruleName specifies the rule to add an alternative subclass to.
+	* @param newAlternativeSubClass the subclass to add.
 	*/
 	public void addAlternativeSubClassToAbstractClass(String ruleName, String newAlternativeSubClass) {
 		AddAlternativeSubClassToAbstractClass addAlternativeSubClassToAbstractClass = OptimizationruleFactory.eINSTANCE.createAddAlternativeSubClassToAbstractClass();
@@ -429,13 +430,14 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	* This method is used to add a keyword to a specified line or lines.
-	* @param grammarRule This param indicates which rule aimed to do this addition operation.
-	* @param attrName This param indicates the line containing the attribute, and the line is aimed to do 
-	* the addition operation.
-	* @param newKeyword This param indicates the new keyword aimed to add.
-	* @param isHead This param indicates where to add the keyword: "true" means "to the front of the line"
-	* while "false" means "to the end of the line".
+	* This method is used to add a keyword to a specified line or lines. It transforms
+	* <code>(attrA=typeA)?</code> to <code>'keywordA' (attrA=typeA)?</code>.
+	* @param grammarRule specifies which rule on which to apply this action.
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param newKeyword specifies the keyword to add.
+	* @param isHead specifies where to add the keyword: <code>true</code> means "to the front of the line"
+	* while <code>false</code> means "to the end of the line".
+	* @see #addKeywordToAttr(String, String, String, boolean)
 	*/
 	public void addKeywordToLine(String grammarRule, String attrName, String newKeyword, boolean isHead) {
 		AddKeywordToLine addKeywordToLine = GrammaroptimizerFactory.eINSTANCE.createAddKeywordToLine();
@@ -449,9 +451,8 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to make an attribute be optional, i.e. from attr=Type to (attr=Type)?
-	* @param grammarRule This param means which grammar rule aimed to do the operation.
-	* @param attrName This param is used to specify the line that containing the specified attribute,
-	* and this line is going to do the operation.
+	* @param grammarRule specifies which grammar rule to apply this action to
+	* @param attrName specifies the line that contains the specified attribute
 	*/
 	public void addOptionalityToAttr(String grammarRule, String attrName) {
 		AddOptionalityToAttr addOptionalityToAttr = GrammaroptimizerFactory.eINSTANCE.createAddOptionalityToAttr();
@@ -463,11 +464,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to make a specified keyword be optional.
-	* @param grammarRule This param specifies which grammar rule aimed to do the operation.
-	* @param attrName This param specifies a line containing the attribute, and the line is where 
-	* the operation will happen.
-	* @param keyword If there are many keywords in the same line, then this param could be used
-	* to specify the certain keyword.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName  specifies the name of the attribute that marks the line to which to apply this action
+	* @param keyword If there are many keywords in the same line, then this specifies the keyword.
 	*/
 	public void addOptionalityToKeyword(String grammarRule, String attrName, String keyword) {
 		AddOptionalityToKeyword addOptionalityToKeyword = GrammaroptimizerFactory.eINSTANCE
@@ -481,9 +480,8 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to make a specified line optional (the whole line).
-	* @param grammarRule This param specifies which grammar rule aimed to do the operation.
-	* @param attrName This param specifies a line containing the specified attribute, and 
-	* the line is where the operation will happen.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
 	*/
 	public void addOptionalityToLine(String grammarRule, String attrName) {
 		AddOptionalityToLine addOptionalityToLine = OptimizationruleFactory.eINSTANCE.createAddOptionalityToLine();
@@ -494,32 +492,29 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	* This method has four alternative functions:
+	* This method has four alternative functions depending on the provided multiplicity key:
 	* 	1) add ()  to the outside of the container brackets.
 	* 	2) add ()? to the outside of the container brackets.
 	* 	3) add ()* to the outside of the container brackets.
 	* 	4) add ()+ to the outside of the container brackets.
-	* @param grammarRule This param specifies which grammar rule aimed to do the operation.
-	* @param packageType This param specifies what concrete operation the method will do (there
-	* are four types of operation above).
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param multiplicity specifies which concrete operation the method will do
 	*/
-	public void addOptionalityToContainerBraces(String grammarRule, PackageKey packageType) {
-		AddOptionalityToOutermostBracket addOptionalityToOutermostBracket = GrammaroptimizerFactory.eINSTANCE
-				.createAddOptionalityToOutermostBracket();
+	public void addOptionalityToContainerBraces(String grammarRule, MultiplicityKey multiplicity) {
+		AddOptionalityToOutermostBraces addOptionalityToOutermostBracket = GrammaroptimizerFactory.eINSTANCE
+				.createAddOptionalityToOutermostBraces();
 		addOptionalityToOutermostBracket.setGrammar(grammar);
 		addOptionalityToOutermostBracket.setGrammarRule(grammarRule);
 		addOptionalityToOutermostBracket.setAttrName(null);
-		addOptionalityToOutermostBracket.setPackageType(packageType);
+		addOptionalityToOutermostBracket.setMultiplicity(multiplicity);
 		addOptionalityToOutermostBracket.apply();
 	}
 	
 	/**
 	* This method is used to make a specified symbol optional.
-	* @param grammarRule This param specifies which grammar rule aimed to do the operation.
-	* @param attrName This param specifies a line containing the specified attribute, then
-	* the line is where the operation will happen.
-	* @param targetSymbol This param specifies which concrete symbol will be transformed to be
-	* optional.
+	* @param grammarRulespecifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param targetSymbol specifies which concrete symbol will be made optional.
 	*/
 	public void addOptionalityToSymbol(String grammarRule, String attrName, String targetSymbol) {
 		AddOptionalityToSymbol addOptionalityToSymbol = OptimizationruleFactory.eINSTANCE.createAddOptionalityToSymbol();
@@ -532,15 +527,13 @@ public class GrammarOptimizer {
 
 	/**
 	 * This method is used to add () or ()? or ()* or ()+ without quote to a keyword or a line.
-	 * @param grammarRule: which grammar rule do you want to modify? 
-	 * @param scope: Do you want to add () to a keyword or a line (containing a specified attribute
-	 * @param keyword: the keyword that you want to do this operation.
-	 * @param attrName This param specifies a line containing the specified attribute, and this line
-	 * is where the operation will be happen.
-	 * @param packageType This param specifies which operation will the method do: to add ()/()?/
-	 * ()* or ()+?
+	 * @param grammarRule specifies which grammar rule aimed to apply this action to
+	 * @param scope Do you want to add () to a keyword or a line (containing a specified attribute
+	 * @param keyword the keyword that you want to do this operation.
+	 * @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	 * @param multiplicity specifies which operation will the method do: to add ()/()?/()* or ()+?
 	 */
-	public void addParenthesesWithoutQuotes(String grammarRule, ScopeKey scope, String keyword, String attrName, PackageKey packageType) {
+	public void addParenthesesWithoutQuotes(String grammarRule, ScopeKey scope, String keyword, String attrName, MultiplicityKey multiplicity) {
 		AddParenthesesWithoutQuotes addParenthesesWithoutQuotes = GrammaroptimizerFactory.eINSTANCE
 				.createAddParenthesesWithoutQuotes();
 		addParenthesesWithoutQuotes.setGrammar(grammar);
@@ -548,30 +541,30 @@ public class GrammarOptimizer {
 		addParenthesesWithoutQuotes.setScope(scope);
 		addParenthesesWithoutQuotes.setKeyword(keyword);
 		addParenthesesWithoutQuotes.setAttrName(attrName);
-		addParenthesesWithoutQuotes.setPackageType(packageType);
+		addParenthesesWithoutQuotes.setMultiplicity(multiplicity);
 		addParenthesesWithoutQuotes.apply();
 	}
 	
 	/**
 	* This method is used to add () or ()? or ()* or ()+ without quote to a specified grammar rule, i.e.
 	* to the outside of the container brackets.
-	* @param grammarRule The param specifies which grammar rule the operation will happen.
-	* @param packageType The param specifies what will be added to the specified grammar rule: ()/()?/()* or ()+
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param multiplicity specifies what will be added to the specified grammar rule: ()/()?/()* or ()+
 	*/
-	public void addParenthesesWithoutQuoteToRule(String grammarRule, PackageKey packageType) {
+	public void addParenthesesWithoutQuoteToRule(String grammarRule, MultiplicityKey multiplicity) {
 		AddParenthesesWithoutQuoteToRule addParenthesesWithoutQuoteToRule = OptimizationruleFactory.eINSTANCE.createAddParenthesesWithoutQuoteToRule();
 		addParenthesesWithoutQuoteToRule.setGrammar(grammar);
 		addParenthesesWithoutQuoteToRule.setGrammarRule(grammarRule);
 		addParenthesesWithoutQuoteToRule.setAttrName(null);
-		addParenthesesWithoutQuoteToRule.setPackageType(packageType);
+		addParenthesesWithoutQuoteToRule.setMultiplicity(multiplicity);
 		addParenthesesWithoutQuoteToRule.apply();
 	}
 
 	/**
 	* This method is used to add a pair of parentheses to the specifies attribute
 	* (i.e., like attr=Type expression).
-	* @param grammarRule This param specifies which grammar rule to do the addition.
-	* @param attrName This param specifies which attribute to be added with parentheses.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies to which attribute parentheses should be added.
 	*/
 	public void addParenthesesToAttr(String grammarRule, String attrName) {
 		AddParenthesesToAttr addParenthesesToAttr = GrammaroptimizerFactory.eINSTANCE.createAddParenthesesToAttr();
@@ -583,12 +576,11 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to add a pair of brackets, i.e., '{' and '}' to a specified line.
-	* @param This param specifies which grammar rule aimed to do this addition.
-	* @param This param specifies a line containing the specified attribute, and the line
-	* will be added with the brackets.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
 	*/
 	public void addBracesToLine(String grammarRule, String attrName) {
-		AddBracketToLine addBracketToLine = OptimizationruleFactory.eINSTANCE.createAddBracketToLine();
+		AddBracesToLine addBracketToLine = OptimizationruleFactory.eINSTANCE.createAddBracesToLine();
 		addBracketToLine.setGrammar(grammar);
 		addBracketToLine.setGrammarRule(grammarRule);
 		addBracketToLine.setAttrName(attrName);
@@ -598,11 +590,10 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to add a totally new grammar rule which is a primitive type, for example, 
 	* the definition for EString.
-	* @param grammarRule This param is the name of the newly added rule, i.e., the primitive type.
-	* @param metaClass This param indicates the metaClass (it is in the form of returns <class name>).
-	* @param body This param is the body of the newly added rule (multiply lines are connected by using
-	* \n.
-	* @param annotation This param is the annotation which would be put before the rule 
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param metaClass specifies the metaClass (it is in the form of returns <class name>).
+	* @param body the body of the newly added rule (multiply lines are connected by using <code>\n</code>.
+	* @param annotation the annotation to put before the rule 
 	*/
 	public void addPrimitiveType(String grammarRule, String metaClass, String body, String annotation) {
 		AddPrimitiveType addPrimitiveType = GrammaroptimizerFactory.eINSTANCE.createAddPrimitiveType();
@@ -616,8 +607,8 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to add '[' and ']' to a specified attribute.
-	* @param grammarRule This param specifies the rule where the addition will happen.
-	* @param attrName This param specifies which attribute aimed to be added with the square brackets.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies which attribute aimed to be added with the square brackets.
 	*/
 	public void addSquareBracketToAttr(String grammarRule, String attrName) {
 		AddSquareBracketToAttr addSquareBracketToAttr = GrammaroptimizerFactory.eINSTANCE
@@ -629,15 +620,15 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	 * There is usually (not always) a keyword with the same name as the name of the rule, then
-	 * this method is used to add an extra string to this kind of keyword.
-	 * @param grammarRule This param specifies the grammar rule where this addition will happen.
+	 * There is usually a keyword with the same name as the name of the rule. This
+	 * method is used to add an extra string to this kind of keyword.
+	 * @param grammarRule specifies which grammar rule aimed to apply this action to
 	 * @param targetAttribute: this value is actually an attribute name, when it gets a
 	 * non-null value, it will check if the grammar rule has this attribute, and
 	 * then the method will be executed only when the attribute exists. 
 	 * @param addedString: what string will you add to the rule keyword (here we call the rule which has
 	 * the same text with the grammar rule name "rule keyword"
-	 * @param isHead This param specifies where to add the string, before the keyword or after the keyword
+	 * @param isHead specifies where to add the string, before the keyword or after the keyword
 	 * (anyway, the added string and the existing keyword will be connected).
 	 */
 	public void addStringToRuleKeyword(String grammarRule, String targetAttribute,
@@ -655,11 +646,10 @@ public class GrammarOptimizer {
 
 	/**
 	* This method adds a new symbol to an existing attribute. (the symbol will be with quotes, e.g. ';')
-	* @param grammarRule This param specifies the grammar rule where to do the addition.
-	* @param attrName This param specifies which attrName will be added with a new symbol.
-	* @param newSymbol This param specifies what a new symbol will be .
-	* @param isHead This param specifies where to add the new symbol, to the front of the attibute? or
-	* after the attribute?
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies to which attribute the new symbol will be added.
+	* @param newSymbol the new symbol
+	* @param isHead here to add the new symbol, to the front of the attribute or after the attribute?
 	*/
 	public void addSymbolToAttr(String grammarRule, String attrName, String newSymbol, boolean isHead,
 			List<String> ignoredAttributes, boolean onlyCommonRule, boolean onlyUpperBoundOne) {
@@ -680,12 +670,11 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to add a symbol without quotes to an existing keyword.
-	* @param grammarRule This param specifies which grammar rule will happen this addition.
-	* @param attrName This param specifies a line by specifying an attribute, and this line contains
-	* the target keyword.
-	* @param keyword This param is the target keyword aimed to be added with symbol.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param keyword the target keyword aimed to be added with symbol.
 	* @param symbol What the symbol is.
-	* @param isFront This param specifies where to add the symbol, to the front of the keyword or behind?
+	* @param isFront specifies where to add the symbol, to the front of the keyword or behind?
 	*/
 	public void addSymbolWithoutQuoteToKeyword(String grammarRule, String attrName, String keyword, String symbol, boolean isFront) {
 		AddSymbolWithoutQuoteToKeyword addSymbolToKeyword = OptimizationruleFactory.eINSTANCE.createAddSymbolWithoutQuoteToKeyword();
@@ -700,10 +689,10 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to add a new symbol to a specified line.
-	* @param grammarRule This param specifies which grammar rule will happen this addition.
-	* @param attrName This param specifies the line by specifying an attribute.
-	* @param newSymbol This param indicates what the new symbol will be.
-	* @param isFront This param specifies where to add the symbol, to the front of the line or behind?
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param newSymbol specifies what the new symbol will be.
+	* @param isFront specifies where to add the symbol, to the front of the line or behind?
 	*/
 	public void addSymbolToLine(String grammarRule, String attrName, String newSymbol, boolean isFront) {
 		AddSymbolToLine addSymbolToLine = OptimizationruleFactory.eINSTANCE.createAddSymbolToLine();
@@ -718,8 +707,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to add a new symbol to a existing grammar rule (the default place
 	* is in the end of a grammar rule).
-	* @param grammarRule This param specifies which grammar rule to do the addition.
-	* @param symbol This param indicates what the symbol is.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param symbol specifies what the symbol is.
 	*/
 	public void addSymbolToRule(String grammarRule, String symbol) {
 		AddSymbolToRule addSymbolToRule = GrammaroptimizerFactory.eINSTANCE.createAddSymbolToRule();
@@ -732,9 +721,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to add a symbol without quotes to an existing line.
-	* @param grammarRule This param specifies which grammar rule will happen this addition.
-	* @param attrName This param specifies a line by specifying an attribute.
-	* @param newSymbol This param specifies the symbol that is planned to be added.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param newSymbol specifies the symbol to add
 	*/
 	public void addSymbolWithoutQuoteToLine(String grammarRule, String attrName, String newSymbol, boolean isFront) {
 		AddSymbolWithoutQuoteToLine addSymbolWithoutQuoteToLine = OptimizationruleFactory.eINSTANCE.createAddSymbolWithoutQuoteToLine();
@@ -748,9 +737,9 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to add a terminal rule.
-	* @param grammarRule This param means what is the name of the terminal rule that is planned to add. 
-	* @param body This param contains the body of the newly added terminal rule.
-	* @param annotation This param is the annotation of the added terminal rule.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param body the body of the newly added terminal rule.
+	* @param annotation the annotation of the added terminal rule.
 	*/
 	public void addTerminalRule(String grammarRule, String body, String annotation) {
 		AddTerminalRule addTerminalRule = OptimizationruleFactory.eINSTANCE.createAddTerminalRule();
@@ -764,9 +753,9 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to copy attribute B and place it to the front of attribute A.
-	* @param grammarRule This param means which grammar rule will happen this operation.
-	* @param attrA This param indicates which attribute is so-called attrA.
-	* @param attrB This param indicates which attribute is so-called attrB.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrA specifies the name of attribute A.
+	* @param attrB specifies the name of attribute B.
 	*/
 	public void changeABtoBAB(String grammarRule, String attrA, String attrB) {
 		ChangeABtoBAB changeABtoBAB = OptimizationruleFactory.eINSTANCE.createChangeABtoBAB();
@@ -783,11 +772,12 @@ public class GrammarOptimizer {
 	* 	attrA=TypeA
 	* 	attrB=TypeB
 	* to:
-	* 	attrA=TypeA attrB=TypeB
-	* 	attrB=TypeB attrA=TypeA.
-	* @param grammarRule This param indicates in which grammar rule this operation will happen.
-	* @param attrA This param indicates which attribute is the attrA.
-	* @param attrB This param indicates which attribute is the attrB.
+	* 	attrA=TypeA attrB=TypeB | 
+	* 	attrB=TypeB attrA=TypeA
+	* This means that both attributes need to be present, but their order is arbitrary.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrA specifies the name of attribute A
+	* @param attrB specifies the name of attribute B
 	*/
 	public void changeABToABorBA(String grammarRule, String attrA, String attrB) {
 		ChangeABToABorBA changeABToABorBA = OptimizationruleFactory.eINSTANCE.createChangeABToABorBA();
@@ -805,9 +795,9 @@ public class GrammarOptimizer {
 	* to:
 	* 	attrA=TypeA | ';'
 	* Please be ware, ';' here is just an example.
-	* @param grammarRule This param indicates in which grammar rule this operation will happen.
-	* @param attrName This param indicates which attribute is the so-called attrA.
-	* @param symbol This param indicates what symbol will be added.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of attribute A.
+	* @param symbol specifies what symbol will be added.
 	*/
 	public void changeAToAorSymbol(String grammarRule, String attrName, String symbol) {
 		ChangeAToAorSymbol changeAToAorSymbol = OptimizationruleFactory.eINSTANCE.createChangeAToAorSymbol();
@@ -823,8 +813,8 @@ public class GrammarOptimizer {
 	* 	attrA=TypeA
 	* to:
 	* 	(attrA=TypeA)? | attrA=TypeA
-	* @param grammarRule This param indicates in which grammar rule this operation will happen.
-	* @param attrName This param indicates which attribute is the so-called attrA.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of attribute A
 	*/
 	public void changeAToOptionalAorA(String grammarRule, String attrName) {
 		ChangeAToOptionalAorA changeAToOptionalAorA = OptimizationruleFactory.eINSTANCE.createChangeAToOptionalAorA();
@@ -839,23 +829,22 @@ public class GrammarOptimizer {
 	* 	attrA=TypeA
 	* to:
 	* 	attrA=TypeA ';' | '{' attrA=TypeA '}'
-	* @param grammarRule This param indicates in which grammar rule this operation will happen.
-	* @param attrName This param indicates which attribute is the so-called attrA.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of attribute A.
 	*/
 	public void changeAToASemiOrAWithBraces(String grammarRule, String attrName) {
-		ChangeAToASemiOrAWithBracket changeAToASemiOrAWithBracket = OptimizationruleFactory.eINSTANCE.createChangeAToASemiOrAWithBracket();
-		changeAToASemiOrAWithBracket.setGrammar(grammar);
-		changeAToASemiOrAWithBracket.setGrammarRule(grammarRule);
-		changeAToASemiOrAWithBracket.setAttrName(attrName);
-		changeAToASemiOrAWithBracket.apply();
+		ChangeAttributeToSingleElementOrBracedList changeAttributeToSingleElementOrBracedList = OptimizationruleFactory.eINSTANCE.createChangeAttributeToSingleElementOrBracedList();
+		changeAttributeToSingleElementOrBracedList.setGrammar(grammar);
+		changeAttributeToSingleElementOrBracedList.setGrammarRule(grammarRule);
+		changeAttributeToSingleElementOrBracedList.setAttrName(attrName);
+		changeAttributeToSingleElementOrBracedList.apply();
 	}
 
 	/**
 	* This method is used to replace the whole line containing a specified attribute with a new string.
-	* @param grammarRule This param indicates in which grammar rule this replacement will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and this line is what will 
-	* be replaced by a new string.
-	* @param newLineContent This param provides the new content for the target line.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param newLineContent the new content for the target line.
 	*/
 	public void changeAttrLineContent(String grammarRule, String attrName, String newLineContent) {
 		ChangeAttrLineContent changeAttrLineContent = GrammaroptimizerFactory.eINSTANCE.createChangeAttrLineContent();
@@ -868,11 +857,11 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to re-form the appearance of a specified boolean attribute.
-	* @param grammarRule This param specifies in which grammar rule this re-formation will happen.
-	* @param attrName This param indicates which attribute is the target boolean attribute.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies which attribute is the target boolean attribute.
 	*/
-	public void changeBooleanAttrToSpecialPatten(String grammarRule, String attrName) {
-		ChangeBooleanAttrToSpecialPatten changeBooleanAttrToSpecialPatten = OptimizationruleFactory.eINSTANCE.createChangeBooleanAttrToSpecialPatten();
+	public void changeBooleanAttrToSpecialPattern(String grammarRule, String attrName) {
+		ChangeBooleanAttrToSpecialPattern changeBooleanAttrToSpecialPatten = OptimizationruleFactory.eINSTANCE.createChangeBooleanAttrToSpecialPattern();
 		changeBooleanAttrToSpecialPatten.setGrammar(grammar);
 		changeBooleanAttrToSpecialPatten.setGrammarRule(grammarRule);
 		changeBooleanAttrToSpecialPatten.setAttrName(attrName);
@@ -880,42 +869,39 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	* This method is used to change curly brackets to angle brackets.
-	* @param grammarRule This param indicates in which this change will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and the change will 
-	* happen in this line.
+	* This method is used to change curly braces to angle brackets.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
 	*/
 	public void changeBracesToAngle(String grammarRule, String attrName) {
-		ChangeBracketToAngle changeBracketToAngle = GrammaroptimizerFactory.eINSTANCE.createChangeBracketToAngle();
-		changeBracketToAngle.setGrammar(grammar);
-		changeBracketToAngle.setGrammarRule(grammarRule);
-		changeBracketToAngle.setAttrName(attrName);
-		changeBracketToAngle.apply();
+		ChangeBracesToAngle changeBracesToAngle = GrammaroptimizerFactory.eINSTANCE.createChangeBracesToAngle();
+		changeBracesToAngle.setGrammar(grammar);
+		changeBracesToAngle.setGrammarRule(grammarRule);
+		changeBracesToAngle.setAttrName(attrName);
+		changeBracesToAngle.apply();
 	}
 
 	/**
-	* This method is used to change curly brackets to Parentheses.
-	* @param grammarRule This param indicates in which this change will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and the change will 
-	* happen in this line.
+	* This method is used to change curly braces to parentheses.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
 	*/
 	public void changeBracesToParentheses(String grammarRule, String attrName) {
-		ChangeBracketToParentheses changeBracketToParentheses = GrammaroptimizerFactory.eINSTANCE
-				.createChangeBracketToParentheses();
-		changeBracketToParentheses.setGrammar(grammar);
-		changeBracketToParentheses.setGrammarRule(grammarRule);
-		changeBracketToParentheses.setAttrName(attrName);
-		changeBracketToParentheses.apply();
+		ChangeBracesToParentheses changeBracesToParentheses = GrammaroptimizerFactory.eINSTANCE
+				.createChangeBracesToParentheses();
+		changeBracesToParentheses.setGrammar(grammar);
+		changeBracesToParentheses.setGrammarRule(grammarRule);
+		changeBracesToParentheses.setAttrName(attrName);
+		changeBracesToParentheses.apply();
 	}
 
 	/**
-	* This method is used to change curly brackets to Square brackets.
-	* @param grammarRule This param indicates in which this change will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and the change will 
-	* happen in this line.
+	* This method is used to change curly braces to square brackets.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
 	*/
 	public void changeBracesToSquare(String grammarRule, String attrName) {
-		ChangeBracketToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracketToSquare();
+		ChangeBracesToSquare changeBracketToSquare = GrammaroptimizerFactory.eINSTANCE.createChangeBracesToSquare();
 		changeBracketToSquare.setGrammar(grammar);
 		changeBracketToSquare.setGrammarRule(grammarRule);
 		changeBracketToSquare.setAttrName(attrName);
@@ -924,9 +910,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to change the called rule in a speficified grammar rule.
-	* @param grammarRule This param specifies in which grammar rule this change will happen.
-	* @param currentCalledRule This param specifies the current name of the called rule.
-	* @param newCalledRule This param speficies the new name of the called rule.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param currentCalledRule the current name of the called rule.
+	* @param newCalledRule the new name of the called rule.
 	*/
 	public void changeCalledRule(String grammarRule, String currentCalledRule, String newCalledRule) {
 		ChangeCalledRule changeCalledRule = GrammaroptimizerFactory.eINSTANCE.createChangeCalledRule();
@@ -940,10 +926,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to change a specified comma symbol to other symbol.
-	* @param grammarRule This param specifies in which grammar this change will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and the change
-	* will happen in this line.
-	* @param newSymbol This param provides new symbol for replacement.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param newSymbol the new symbol for replacement.
 	*/
 	public void changeCommaToOtherSymbol(String grammarRule, String attrName, String newSymbol) {
 		ChangeCommaToOtherSymbol changeCommaToOtherSymbol = GrammaroptimizerFactory.eINSTANCE
@@ -959,7 +944,7 @@ public class GrammarOptimizer {
 	 * Change all (or some of) the optional attributes within the same grammar rule to be in an "OR" 
 	 * relationship with each other.
 	 * (So in this change, the optionality ()? of the specified attribute(s) will be removed).
-	 * @param grammarRule This param specifies in which grammar rule the change will happen.
+	 * @param grammarRule specifies which grammar rule aimed to apply this action to
 	 * @param isAll This param indicate whether the change will be applied to all the attributes or only part of them?
 	 * @param startAttr If the change is applied to part of them, then this param indicate the first attribute, and
 	 * @param endAttr indicates the last attribute.
@@ -977,10 +962,10 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	* This method is used to change the "returns" part of a rule (i.e., the metaclass name, it is in the first
+	* This method is used to change the "returns" part of a rule (i.e., the metaclass name in the first
 	* line of a grammar rule).
-	* @param grammarRule This param indicates in which grammar rule will happen operation.
-	* @param newReturns This param provides the new returns.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param newReturns provides the new returns.
 	*/
 	public void changeReturns(String grammarRule, String newReturns) {
 		ChangeReturns changeReturns = OptimizationruleFactory.eINSTANCE.createChangeReturns();
@@ -997,11 +982,10 @@ public class GrammarOptimizer {
 	 * 	attr=TypeA
 	 * to:
 	 * 	attr=TypeB
-	* @param grammarRule This param indicates in which grammar rule will happen operation.
-	* @param attrName This param specifies a line by specifying an attribute and it is in this line
-	* where the type of the specified attribute will be changed.
-	* @param currentType This param indicates what is the old type of the specified attribute.
-	* @param newType This param indicates what will be the new type of the specified attribute.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param currentType specifies what is the old type of the specified attribute.
+	* @param newType specifies what will be the new type of the specified attribute.
 	*/
 	public void changeTypeOfAttr(String grammarRule, String attrName, String currentType, String newType) {
 		ChangeTypeOfAttr changeTypeOfAttr = GrammaroptimizerFactory.eINSTANCE.createChangeTypeOfAttr();
@@ -1015,8 +999,8 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to change the whole rule content for a grammar rule.
-	* @param grammarRule This param indicates in which grammar rule will happen operation.
-	* @param newContent This param provide the new content for the grammar rule.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param newContent the new content for the grammar rule.
 	*/
 	public void changeRuleContent(String grammarRule, String newContent) {
 		ChangeRuleContent changeRuleContent = GrammaroptimizerFactory.eINSTANCE.createChangeRuleContent();
@@ -1029,9 +1013,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to rename the specified grammar rule (the name is in the first line)
-	* @param grammarRule This param indicates in which grammar rule will happen operation.
-	* @param currentName This param indicates the current name of the specified grammar rule.
-	* @param newName This param provides a new name for the specified grammar rule.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param currentName specifies the current name of the specified grammar rule.
+	* @param newName the new name for the specified grammar rule.
 	*/
 	public void renameRule(String grammarRule, String currentName, String newName) {
 		RenameRule renameRule = GrammaroptimizerFactory.eINSTANCE.createRenameRule();
@@ -1046,8 +1030,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to change multiplicity of the specified attribute (the range is changed 
 	* from 0~* to 0~* or 1~*, star symbol means infinite).
-	* @param grammarRule This param indicates in which grammar rule this change will happen.
-	* @param attrName This param specifies the attribute which will be changed the multiplicity.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName the attribute whose multiplicity will be changed
 	*/
 	public void convert0toStarTo0toStaror1toStar(String grammarRule, String attrName) {
 		Convert0toStarTo0toStaror1toStar convert0toStarTo0toStaror1toStar = OptimizationruleFactory.eINSTANCE.createConvert0toStarTo0toStaror1toStar();
@@ -1060,8 +1044,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to change multiplicity of the specified attribute (the range is changed 
 	* from 1~* to 1).
-	* @param grammarRule This param indicates in which grammar rule this change will happen.
-	* @param attrName This param specifies the attribute which will be changed the multiplicity.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName the attribute whose multiplicity will be changed
 	*/
 	public void convert1toStarTo1(String grammarRule, String attrName) {
 		Convert1ToStarTo1 x0toStarToX = GrammaroptimizerFactory.eINSTANCE.createConvert1ToStarTo1();
@@ -1074,8 +1058,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to change multiplicity of the specified attribute (the range is changed 
 	* from 1~* to *).
-	* @param grammarRule This param indicates in which grammar rule this change will happen.
-	* @param attrName This param specifies the attribute which will be changed the multiplicity.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName the attribute whose multiplicity will be changed
 	*/
 	public void convert1toStarToStar(String grammarRule, String attrName) {
 		Convert1toStarToStar x0toStarToXStar = GrammaroptimizerFactory.eINSTANCE.createConvert1toStarToStar();
@@ -1088,8 +1072,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to change multiplicity of the specified attribute (the range is changed 
 	* from 1~* to +, plus symbol is equivalent with 1~*).
-	* @param grammarRule This param indicates in which grammar rule this change will happen.
-	* @param attrName This param specifies the attribute which will be changed the multiplicity.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName the attribute whose multiplicity will be changed
 	*/
 	public void convert1toStarToPlus(String grammarRule, String attrName) {
 		Convert1toStarToPlus x0toStarToXPlus = GrammaroptimizerFactory.eINSTANCE.createConvert1toStarToPlus();
@@ -1102,8 +1086,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to change multiplicity of the specified attribute (the range is changed 
 	* from 1~* to "1 or star). 
-	* @param grammarRule This param indicates in which grammar rule this change will happen.
-	* @param attrName This param specifies the attribute which will be changed the multiplicity.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName the attribute whose multiplicity will be changed
 	*/
 	public void convert1toStarTo1orStar(String grammarRule, String attrName) {
 		Convert1toStarTo1orStar convert1toStarTo1orStar = GrammaroptimizerFactory.eINSTANCE
@@ -1117,8 +1101,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to change multiplicity of the specified attribute (the range is changed 
 	* from 1~* to 2).
-	* @param grammarRule This param indicates in which grammar rule this change will happen.
-	* @param attrName This param specifies the attribute which will be changed the multiplicity.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName the attribute whose multiplicity will be changed
 	*/
 	public void convert1toStarToTwo(String grammarRule, String attrName) {
 		Convert1toStarToTwo convert1toStarToTwo = OptimizationruleFactory.eINSTANCE.createConvert1toStarToTwo();
@@ -1131,10 +1115,10 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to copy one specified attribute (called A here) to another specified
 	* attribute (called B here).
-	* @param grammarRule This param indicates in which grammar rule this copy will happen.
-	* @param attrA The attribute will be copied.
-	* @param attrB The attribute will be added with a copied attrA.
-	* @param isFront Tihs param specifies the place for placing, in front of attribute B or behind.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrA the attribute which will be copied.
+	* @param attrB the attribute which will be extended with attrA.
+	* @param isFront specifies the place for placing, in front of attribute B or behind.
 	*/
 	public void copyAttrAToAttrB(String grammarRule, String attrA, String attrB, boolean isFront) {
 		CopyAttrAToAttrB copyAttrAToAttrB = OptimizationruleFactory.eINSTANCE.createCopyAttrAToAttrB();
@@ -1155,10 +1139,10 @@ public class GrammarOptimizer {
 	* 	attrY=TypeY
 	* The copied part is only attrX=TypeX. So finally, a possible result would be:
 	* 	attrY=TypeY attrX=TypeX
-	* @param grammarRule This param specifies in which grammar rule this copy will happen.
-	* @param attrInX This param indicates the attribute called X in the above example.
-	* @param attrInY This param indicates the attribute called Y in the above example.
-	* @param isFront This param indicates where to place the copied attribute, front or behine?
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrInX specifies the attribute called X in the above example.
+	* @param attrInY specifies the attribute called Y in the above example.
+	* @param isFront specifies where to place the copied attribute, front or behine?
 	*/
 	public void copyXfromStarToY(String grammarRule, String attrInX, String attrInY, boolean isFront) {
 		CopyXfromStarToY copyXfromStarToY = OptimizationruleFactory.eINSTANCE.createCopyXfromStarToY();
@@ -1174,9 +1158,8 @@ public class GrammarOptimizer {
 	/**
 	 * This method is used to insert a new keyword after an existing keyword in
 	 * a specified attribute.
-	* @param grammarRule This param specifies in which grammar rule this operation will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and this line contains
-	* the target keyword (or we call it current existing keyword).
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
 	* @param currentKeyword This param specifies a target keyword (means insert the new keyword after it).
 	* @param newKeyword This param specifies a new keyword.
 	*/
@@ -1194,10 +1177,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to change the specified keyword from upper case to lower case.
-	* @param grammarRule This param specifies in which grammar will happen this change.
-	* @param attrName This param specifies a line by specifying an attribute, and in this line
-	* it is where to change the keyword (if it needs).
-	* @param keyword This param indicates which keyword.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param keyword specifies which keyword.
 	*/
 	public void keywordUpperToLowerCase(String grammarRule, String attrName, String keyword) {
 		KeywordUpperToLowerCase keywordUpperToLowerCase = GrammaroptimizerFactory.eINSTANCE
@@ -1214,8 +1196,8 @@ public class GrammarOptimizer {
 	 * keyword. Note: here when a keyword has the same name with the rule name, then
 	 * we call it rule keyword here, usually it exists very beginning place of a
 	 * grammar rule.
-	* @param grammarRule This param specifies in which grammar rule this move will happen.
-	* @param movedLine This param specifies which attribute will be moved.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param movedLine specifies the keyword or attributed denoting which line will be moved.
 	*/
 	public void moveAttrToAfterRuleKeyword(String grammarRule, String movedLine) {
 		MoveAttrToAfterRuleKeyword moveAttrToAfterRuleKeyword = GrammaroptimizerFactory.eINSTANCE
@@ -1232,13 +1214,12 @@ public class GrammarOptimizer {
 	 * move target: the line containing a specified attribute/keyword that you want
 	 * to find isHead: where to place the moved line? before the target line or
 	 * after it?
-	* @param grammarRule This param specifies in which grammar rule this move will happen.
-	* @param source This param specifies a line by specifying an attribute or keyword, then
-	* this line will be moved.
-	* @param target This param specifies the target line by specifying an attribute or keyword,
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param source specifies the attribute or keyword that marks the line to which to apply this action
+	* @param target specifies the target line by specifying an attribute or keyword,
 	* the moved line will be put in the front of this line or behine.
-	* @param inFrontOfTarget This param specifies where to place the moved line, to the front
-	* of the target line or behind?
+	* @param inFrontOfTarget specifies where to place the moved line, to the front
+	* of the target line or the back
 	*/
 	public void moveLine(String grammarRule, String source, String target, boolean inFrontOfTarget) {
 		MoveLine moveLine = GrammaroptimizerFactory.eINSTANCE.createMoveLine();
@@ -1252,39 +1233,39 @@ public class GrammarOptimizer {
 	}
 	
 	/**
-	* This method is used to package attributes.
-	* @param grammarRule This param specifies in which grammar this package will happen.
-	* @param startAttr This param specifies the first attribute which is going to be packaged.
-	* @param endAttr This param specifies the last attribute.
-	* @param packagetype This param specifies how to package them? By adding () or ()? or ()* or ()+.
+	* Changes the optionality of an attribute to optional, zero or more or one or more.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param startAttr specifies the first attribute which is going to be packaged.
+	* @param endAttr specifies the last attribute.
+	* @param multiplicity specifies how to package them? By adding () or ()? or ()* or ()+.
 	*/
-	public void packageAttributes(String grammarRule, String startAttr, String endAttr, PackageKey packagetype) {
-		PackageAttributes packageAttributes = OptimizationruleFactory.eINSTANCE.createPackageAttributes();
+	public void packageAttributes(String grammarRule, String startAttr, String endAttr, MultiplicityKey multiplicity) {
+		ChangeAttributeMultiplicity packageAttributes = OptimizationruleFactory.eINSTANCE.createChangeAttributeMultiplicity();
 		packageAttributes.setGrammar(grammar);
 		packageAttributes.setGrammarRule(grammarRule);
 		packageAttributes.setAttrName(null);
 		packageAttributes.setStartAttr(startAttr);
 		packageAttributes.setEndAttr(endAttr);
-		packageAttributes.setPackagetype(packagetype);
+		packageAttributes.setMultiplicity(multiplicity);
 		packageAttributes.apply();
 	}
 	
 	/**
 	* This method is used to remove the action of a specified grammar rule.
-	* @param ruleName This param specifies in which grammar rule this removal will happen.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
 	*/
-	public void removeAction(String ruleName) {
+	public void removeAction(String grammarRule) {
 		RemoveAction removeAction = OptimizationruleFactory.eINSTANCE.createRemoveAction();
 		removeAction.setGrammar(grammar);
-		removeAction.setGrammarRule(ruleName);
+		removeAction.setGrammarRule(grammarRule);
 		removeAction.setAttrName(null);
 		removeAction.apply();
 	}
 
 	/**
-	* This method is used to remove a specified attibute.
-	* @param grammarRule This param indicates in which grammar rule this removal will happen.
-	* @param attrName This param indicates which attribute is going to be removed.
+	* This method is used to remove a specified attribute.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies which attribute is going to be removed.
 	*/
 	public void removeAttribute(String grammarRule, String attrName) {
 		RemoveAttribute removeAttr = GrammaroptimizerFactory.eINSTANCE.createRemoveAttribute();
@@ -1296,20 +1277,20 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to remove all the brackets except the container brackets in a specified grammar rule.
-	* @param grammarRule This param specifies in which grammar rule this removal will happen.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
 	*/
 	public void removeBracesExceptContainer(String grammarRule) {
-		RemoveBracketExceptOutermost removeBracketExceptOutermost = GrammaroptimizerFactory.eINSTANCE
-				.createRemoveBracketExceptOutermost();
-		removeBracketExceptOutermost.setGrammar(grammar);
-		removeBracketExceptOutermost.setGrammarRule(grammarRule);
-		removeBracketExceptOutermost.setAttrName(null);
-		removeBracketExceptOutermost.apply();
+		RemoveBracesExceptOutermost removeBracesExceptOutermost = GrammaroptimizerFactory.eINSTANCE
+				.createRemoveBracesExceptOutermost();
+		removeBracesExceptOutermost.setGrammar(grammar);
+		removeBracesExceptOutermost.setGrammarRule(grammarRule);
+		removeBracesExceptOutermost.setAttrName(null);
+		removeBracesExceptOutermost.apply();
 	}
 
 	/**
 	* This method is used to remove bracket and the scope of this removal could be set.
-	* @param grammarRule This param specifies a grammar rule that the removal will happen, if it is empty, then 
+	* @param grammarRule specifies which grammar rule aimed to apply this action to, if it is empty, then 
 	* the removal will happen in all the grammar rules in a grammar.
 	* @param attrName This param specifies in which line (attribute) the brackets will be removed?
 	* If it is empty, that means all the brackets in all attribute lines will be removed.
@@ -1319,39 +1300,39 @@ public class GrammarOptimizer {
 	*/
 	public void removeBraces(String grammarRule, String attrName, String targetAttribute,
 			List<String> excludedGrammarRules) {
-		RemoveBracket removeBrackets = GrammaroptimizerFactory.eINSTANCE.createRemoveBracket();
-		removeBrackets.setGrammar(grammar);
-		removeBrackets.setGrammarRule(grammarRule);
-		removeBrackets.setAttrName(attrName);
-		removeBrackets.setTargetAttribute(targetAttribute);
+		RemoveBraces removeBraces = GrammaroptimizerFactory.eINSTANCE.createRemoveBraces();
+		removeBraces.setGrammar(grammar);
+		removeBraces.setGrammarRule(grammarRule);
+		removeBraces.setAttrName(attrName);
+		removeBraces.setTargetAttribute(targetAttribute);
 		if (excludedGrammarRules != null) {
-			removeBrackets.getExcludedGrammarRule().addAll(excludedGrammarRules);
+			removeBraces.getExcludedGrammarRule().addAll(excludedGrammarRules);
 		}
-		removeBrackets.apply();
+		removeBraces.apply();
 	}
 	
 	public void removeBraces(String grammarRule, String attrName, List<String> excludedGrammarRules) {
-		RemoveBracket removeBrackets = GrammaroptimizerFactory.eINSTANCE.createRemoveBracket();
-		removeBrackets.setGrammar(grammar);
-		removeBrackets.setGrammarRule(grammarRule);
-		removeBrackets.setAttrName(attrName);
+		RemoveBraces removeBraces = GrammaroptimizerFactory.eINSTANCE.createRemoveBraces();
+		removeBraces.setGrammar(grammar);
+		removeBraces.setGrammarRule(grammarRule);
+		removeBraces.setAttrName(attrName);
 		if (excludedGrammarRules != null) {
-			removeBrackets.getExcludedGrammarRule().addAll(excludedGrammarRules);
+			removeBraces.getExcludedGrammarRule().addAll(excludedGrammarRules);
 		}
-		removeBrackets.apply();
+		removeBraces.apply();
 	}
 
 	/**
 	* This method is used to remove all the brackets in the specified grammar rule(s).
-	* @param grammarRule This param speicifes in which grammar rule this removal will happen.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
 	*/
 	public void removeBraces(String grammarRule) {
-		RemoveBracket removeBrackets = GrammaroptimizerFactory.eINSTANCE.createRemoveBracket();
-		removeBrackets.setGrammar(grammar);
-		removeBrackets.setGrammarRule(grammarRule);
-		removeBrackets.setAttrName(null);
-		removeBrackets.setTargetAttribute(null);
-		removeBrackets.apply();
+		RemoveBraces removeBraces = GrammaroptimizerFactory.eINSTANCE.createRemoveBraces();
+		removeBraces.setGrammar(grammar);
+		removeBraces.setGrammarRule(grammarRule);
+		removeBraces.setAttrName(null);
+		removeBraces.setTargetAttribute(null);
+		removeBraces.apply();
 	}
 
 	/**
@@ -1359,8 +1340,9 @@ public class GrammarOptimizer {
 	* 	attr=[Type|EString]
 	* to:
 	* 	attr=[Type]
-	* @param attrName This param specifies an attribute which one of its types will be removed.
-	* @param type This param specifies which type will ber removed.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies an attribute which one of its types will be removed.
+	* @param type specifies which type will ber removed.
 	*/
 	public void removeCertainTypeFromAttr(String grammarRule, String attrName, String type) {
 		RemoveCertainTypeFromAttr removeCertainTypeFromAttr = GrammaroptimizerFactory.eINSTANCE
@@ -1374,10 +1356,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to remove comma.
-	* @param grammarRule This param specifies in which grammar rule this removal will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and it is in this line that 
-	* the comma will be removed.
-	* @param ecludedAttributes This param indicates the attributes containing the attributes that you want to avoid being
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param ecludedAttributes specifies the attributes containing the attributes that you want to avoid being
 	* removed comma ",".
 	*/
 	public void removeComma(String grammarRule, String attrName, List<String> ecludedAttributes) {
@@ -1393,10 +1374,9 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to remove keyword.
-	* @param grammarRule This param specifies in which grammar rule this removal will happen.
-	* @param attrName This param specifies a line by specifying an attribute. In this line, it is where
-	* to find the specified keyword for being removed.
-	* @param keywordName This param indicates which keyword to remove.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param keywordName specifies which keyword to remove.
 	* @param targetAttribute The removal will happen only when the targetAttribute is found (if it is not null).
 	*/
 	public void removeKeyword(String grammarRule, String attrName, String keywordName, String targetAttribute) {
@@ -1411,7 +1391,7 @@ public class GrammarOptimizer {
 	
 	/**
 	* This method is used to remove all the keywords in the specified grammar rule.
-	* @param grammarRule This param specifies the grammar rule that will happen this removal.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
 	*/
 	public void removeKeyword(String grammarRule) {
 		RemoveKeyword removeKeyword = GrammaroptimizerFactory.eINSTANCE.createRemoveKeyword();
@@ -1425,10 +1405,10 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to remove the brackets in all the attribute lines.
-	* @param grammarRule This param specifies the grammar rule that will happen this removal.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
 	*/
 	public void removeKeywordsOfAllAttrs(String grammarRule) {
-		RemoveKeywordsOfAllAttrs removeKeywordsOfAllAttrs = GrammaroptimizerFactory.eINSTANCE
+		RemoveAttributeKeywords removeKeywordsOfAllAttrs = GrammaroptimizerFactory.eINSTANCE
 				.createRemoveKeywordsOfAllAttrs();
 		removeKeywordsOfAllAttrs.setGrammar(grammar);
 		removeKeywordsOfAllAttrs.setGrammarRule(grammarRule);
@@ -1436,20 +1416,20 @@ public class GrammarOptimizer {
 	}
 
 	/**
-	* This method is used to remove a specifiec Import.
-	* @param impport_ This param specifies which Import to remove.
+	* This method is used to remove a specific Import.
+	* @param importString specifies which Import to remove.
 	*/
-	public void removeImport(String import_) {
+	public void removeImport(String importString) {
 		RemoveImport removeImport = GrammaroptimizerFactory.eINSTANCE.createRemoveImport();
 		removeImport.setGrammar(grammar);
-		removeImport.setImport(import_);
+		removeImport.setImport(importString);
 		removeImport.apply();
 	}
 	
 	/**
 	* This method is used to remove a specified literal from Enum.
-	* @param grammarRule This param specifies in which enumeration will happen this removal.
-	* @param literalName This param specifies which literal to remove.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param literalName specifies which literal to remove.
 	*/
 	public void removeLiteralFromEnum(String grammarRule, String literalName) {
 		RemoveLiteralFromEnum removeLiteralFromEnum = OptimizationruleFactory.eINSTANCE.createRemoveLiteralFromEnum();
@@ -1463,8 +1443,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to Remove the optionality from the specified attribute in the specified rule.
 	* The optionality is the in form of, e.g., (attr=Type)?.
-	* @param grammarRule This param specifies in which grammar rule this operation will happen.
-	* @param attribute This param specifies which attribute that the optionality will be removed.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attribute specifies from which attribute the optionality will be removed
 	*/
 	public void removeOptionality(String grammarRule, String attrName) {
 		RemoveOptionality removeOptionality = GrammaroptimizerFactory.eINSTANCE.createRemoveOptionality();
@@ -1476,24 +1456,24 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to remove the container brackets.
-	* @param grammarRule This param specifies in which grammar rule this removal will happen.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
 	*/
 	public void removeContainerBraces(String grammarRule) {
-		RemoveOutermostBracket removeOutermostBracket = GrammaroptimizerFactory.eINSTANCE
-				.createRemoveOutermostBracket();
-		removeOutermostBracket.setGrammar(grammar);
-		removeOutermostBracket.setGrammarRule(grammarRule);
-		removeOutermostBracket.setAttrName(null);
-		removeOutermostBracket.apply();
+		RemoveOutermostBraces removeOutermostBraces = GrammaroptimizerFactory.eINSTANCE
+				.createRemoveOutermostBraces();
+		removeOutermostBraces.setGrammar(grammar);
+		removeOutermostBraces.setGrammarRule(grammarRule);
+		removeOutermostBraces.setAttrName(null);
+		removeOutermostBraces.apply();
 	}
 
 	/**
 	* This method is used to remove parentheses from a specifies attribute line.
-	* @param grammarRule This param specifies in which grammar rule this removal will happen.
-	* @param attrName This param does actually specify a line, then remove the parentheses in this line.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
 	*/
 	public void removeParenthesesInSpecifiedAttr(String grammarRule, String attrName) {
-		RemoveParenthesesInSpecifiedAttr removeParenthesesInSpecifiedAttr = GrammaroptimizerFactory.eINSTANCE
+		RemoveParenthesesInAttribute removeParenthesesInSpecifiedAttr = GrammaroptimizerFactory.eINSTANCE
 				.createRemoveParenthesesInSpecifiedAttr();
 		removeParenthesesInSpecifiedAttr.setGrammar(grammar);
 		removeParenthesesInSpecifiedAttr.setGrammarRule(grammarRule);
@@ -1504,7 +1484,7 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to remove a specified whole rule. This is necessary, because sometimes Xtext will
 	* generate some useless and fault grammar rules.
-	* @param grammarRule This param specifies the grammar rule aimed to remove.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
 	*/
 	public void removeRule(String grammarRule) {
 		RemoveRule removeRule = GrammaroptimizerFactory.eINSTANCE.createRemoveRule();
@@ -1518,8 +1498,8 @@ public class GrammarOptimizer {
 	* An abstract class will be generated into a grammar rule which the definition
 	* consists of called rules, and this method is going to remove a specified
 	* called rule from them.
-	* @param grammarRule This param specifies in which grammar rule this removal will happen.
-	* @param calledRuleName This param specifies which called rule should be removed.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param calledRuleName specifies which called rule should be removed.
 	*/
 	public void removeRuleCall(String grammarRule, String calledRuleName) {
 		RemoveRuleCall removeRuleCall = GrammaroptimizerFactory.eINSTANCE.createRemoveRuleCall();
@@ -1533,8 +1513,8 @@ public class GrammarOptimizer {
 	/**
 	* This method is used to remove keyword from the specified XStar Attr (XStar Attr means
 	* the range of the attribute is from 0 to infinite).
-	* @param grammarRule This param specifies in which grammar rule this removal will happen.
-	* @param attrName This param specifies the so-called XStar Attr.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the so-called XStar Attr.
 	* @param excludedAttributes If the specified attribute is the member of list excludedAttributes,
 	* then the removal will be skipped.
 	*/
@@ -1552,11 +1532,10 @@ public class GrammarOptimizer {
 
 	/**
 	* This method is used to rename keyword.
-	* @param grammarRule This param specifies in which grammar rule this renaming will happen.
-	* @param attrName This param specifies a line by specifying an attribute, and in this line 
-	* that the keyword will be looked for.
-	* @param currentKeyword This param specifies which keyword will be renamed.
-	* @param newKeyword This param specifies what is the new keyword name.
+	* @param grammarRule specifies which grammar rule aimed to apply this action to
+	* @param attrName specifies the name of the attribute that marks the line to which to apply this action
+	* @param currentKeyword specifies which keyword will be renamed.
+	* @param newKeyword specifies what is the new keyword name.
 	*/
 	public void renameKeyword(String grammarRule, String attrName, String currentKeyword, String newKeyword,
 			String targetAttributeAttr) {

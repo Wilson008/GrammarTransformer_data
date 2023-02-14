@@ -22,13 +22,13 @@ public interface OptimizationruleFactory extends EFactory {
 	OptimizationruleFactory eINSTANCE = org.bumble.xtext.grammaroptimizer.optimizationrule.impl.OptimizationruleFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Remove Bracket</em>'.
+	 * Returns a new object of class '<em>Remove Braces</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Bracket</em>'.
+	 * @return a new object of class '<em>Remove Braces</em>'.
 	 * @generated
 	 */
-	RemoveBracket createRemoveBracket();
+	RemoveBraces createRemoveBraces();
 
 	/**
 	 * Returns a new object of class '<em>Add Keyword To Attr</em>'.
@@ -166,13 +166,13 @@ public interface OptimizationruleFactory extends EFactory {
 	AddParenthesesToAttr createAddParenthesesToAttr();
 
 	/**
-	 * Returns a new object of class '<em>Remove Parentheses In Specified Attr</em>'.
+	 * Returns a new object of class '<em>Remove Parentheses In Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Parentheses In Specified Attr</em>'.
+	 * @return a new object of class '<em>Remove Parentheses In Attribute</em>'.
 	 * @generated
 	 */
-	RemoveParenthesesInSpecifiedAttr createRemoveParenthesesInSpecifiedAttr();
+	RemoveParenthesesInAttribute createRemoveParenthesesInAttribute();
 
 	/**
 	 * Returns a new object of class '<em>Add Import</em>'.
@@ -211,13 +211,13 @@ public interface OptimizationruleFactory extends EFactory {
 	RenameRule createRenameRule();
 
 	/**
-	 * Returns a new object of class '<em>Remove Keywords Of All Attrs</em>'.
+	 * Returns a new object of class '<em>Remove Attribute Keywords</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Keywords Of All Attrs</em>'.
+	 * @return a new object of class '<em>Remove Attribute Keywords</em>'.
 	 * @generated
 	 */
-	RemoveKeywordsOfAllAttrs createRemoveKeywordsOfAllAttrs();
+	RemoveAttributeKeywords createRemoveAttributeKeywords();
 
 	/**
 	 * Returns a new object of class '<em>Remove Optionality</em>'.
@@ -229,40 +229,40 @@ public interface OptimizationruleFactory extends EFactory {
 	RemoveOptionality createRemoveOptionality();
 
 	/**
-	 * Returns a new object of class '<em>Change Bracket To Parentheses</em>'.
+	 * Returns a new object of class '<em>Change Braces To Parentheses</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Bracket To Parentheses</em>'.
+	 * @return a new object of class '<em>Change Braces To Parentheses</em>'.
 	 * @generated
 	 */
-	ChangeBracketToParentheses createChangeBracketToParentheses();
+	ChangeBracesToParentheses createChangeBracesToParentheses();
 
 	/**
-	 * Returns a new object of class '<em>Change Bracket To Square</em>'.
+	 * Returns a new object of class '<em>Change Braces To Square</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Bracket To Square</em>'.
+	 * @return a new object of class '<em>Change Braces To Square</em>'.
 	 * @generated
 	 */
-	ChangeBracketToSquare createChangeBracketToSquare();
+	ChangeBracesToSquare createChangeBracesToSquare();
 
 	/**
-	 * Returns a new object of class '<em>Change Bracket To Angle</em>'.
+	 * Returns a new object of class '<em>Change Braces To Angle</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Bracket To Angle</em>'.
+	 * @return a new object of class '<em>Change Braces To Angle</em>'.
 	 * @generated
 	 */
-	ChangeBracketToAngle createChangeBracketToAngle();
+	ChangeBracesToAngle createChangeBracesToAngle();
 
 	/**
-	 * Returns a new object of class '<em>Remove Outermost Bracket</em>'.
+	 * Returns a new object of class '<em>Remove Outermost Braces</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Outermost Bracket</em>'.
+	 * @return a new object of class '<em>Remove Outermost Braces</em>'.
 	 * @generated
 	 */
-	RemoveOutermostBracket createRemoveOutermostBracket();
+	RemoveOutermostBraces createRemoveOutermostBraces();
 
 	/**
 	 * Returns a new object of class '<em>Convert1to Star To1or Star</em>'.
@@ -274,13 +274,13 @@ public interface OptimizationruleFactory extends EFactory {
 	Convert1toStarTo1orStar createConvert1toStarTo1orStar();
 
 	/**
-	 * Returns a new object of class '<em>Remove Bracket Except Outermost</em>'.
+	 * Returns a new object of class '<em>Remove Braces Except Outermost</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Bracket Except Outermost</em>'.
+	 * @return a new object of class '<em>Remove Braces Except Outermost</em>'.
 	 * @generated
 	 */
-	RemoveBracketExceptOutermost createRemoveBracketExceptOutermost();
+	RemoveBracesExceptOutermost createRemoveBracesExceptOutermost();
 
 	/**
 	 * Returns a new object of class '<em>Remove Certain Type From Attr</em>'.
@@ -373,13 +373,13 @@ public interface OptimizationruleFactory extends EFactory {
 	AddOptionalityToKeyword createAddOptionalityToKeyword();
 
 	/**
-	 * Returns a new object of class '<em>Add Bracket To Attr</em>'.
+	 * Returns a new object of class '<em>Add Braces To Attr</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Bracket To Attr</em>'.
+	 * @return a new object of class '<em>Add Braces To Attr</em>'.
 	 * @generated
 	 */
-	AddBracketToAttr createAddBracketToAttr();
+	AddBracesToAttr createAddBracesToAttr();
 
 	/**
 	 * Returns a new object of class '<em>Keyword Upper To Lower Case</em>'.
@@ -400,13 +400,13 @@ public interface OptimizationruleFactory extends EFactory {
 	AddSquareBracketToAttr createAddSquareBracketToAttr();
 
 	/**
-	 * Returns a new object of class '<em>Add Optionality To Outermost Bracket</em>'.
+	 * Returns a new object of class '<em>Add Optionality To Outermost Braces</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Optionality To Outermost Bracket</em>'.
+	 * @return a new object of class '<em>Add Optionality To Outermost Braces</em>'.
 	 * @generated
 	 */
-	AddOptionalityToOutermostBracket createAddOptionalityToOutermostBracket();
+	AddOptionalityToOutermostBraces createAddOptionalityToOutermostBraces();
 
 	/**
 	 * Returns a new object of class '<em>Add Symbol To Attr</em>'.
@@ -544,13 +544,13 @@ public interface OptimizationruleFactory extends EFactory {
 	AddOptionalityToLine createAddOptionalityToLine();
 
 	/**
-	 * Returns a new object of class '<em>Add Bracket To Line</em>'.
+	 * Returns a new object of class '<em>Add Braces To Line</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Bracket To Line</em>'.
+	 * @return a new object of class '<em>Add Braces To Line</em>'.
 	 * @generated
 	 */
-	AddBracketToLine createAddBracketToLine();
+	AddBracesToLine createAddBracesToLine();
 
 	/**
 	 * Returns a new object of class '<em>Add Parentheses Without Quote To Rule</em>'.
@@ -589,31 +589,31 @@ public interface OptimizationruleFactory extends EFactory {
 	AddSymbolWithoutQuoteToKeyword createAddSymbolWithoutQuoteToKeyword();
 
 	/**
-	 * Returns a new object of class '<em>Package Attributes</em>'.
+	 * Returns a new object of class '<em>Change Attribute Multiplicity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package Attributes</em>'.
+	 * @return a new object of class '<em>Change Attribute Multiplicity</em>'.
 	 * @generated
 	 */
-	PackageAttributes createPackageAttributes();
+	ChangeAttributeMultiplicity createChangeAttributeMultiplicity();
 
 	/**
-	 * Returns a new object of class '<em>Change Boolean Attr To Special Patten</em>'.
+	 * Returns a new object of class '<em>Change Boolean Attr To Special Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Boolean Attr To Special Patten</em>'.
+	 * @return a new object of class '<em>Change Boolean Attr To Special Pattern</em>'.
 	 * @generated
 	 */
-	ChangeBooleanAttrToSpecialPatten createChangeBooleanAttrToSpecialPatten();
+	ChangeBooleanAttrToSpecialPattern createChangeBooleanAttrToSpecialPattern();
 
 	/**
-	 * Returns a new object of class '<em>Change ATo ASemi Or AWith Bracket</em>'.
+	 * Returns a new object of class '<em>Change Attribute To Single Element Or Braced List</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change ATo ASemi Or AWith Bracket</em>'.
+	 * @return a new object of class '<em>Change Attribute To Single Element Or Braced List</em>'.
 	 * @generated
 	 */
-	ChangeAToASemiOrAWithBracket createChangeAToASemiOrAWithBracket();
+	ChangeAttributeToSingleElementOrBracedList createChangeAttributeToSingleElementOrBracedList();
 
 	/**
 	 * Returns a new object of class '<em>Change Returns</em>'.
@@ -652,13 +652,13 @@ public interface OptimizationruleFactory extends EFactory {
 	AddAlternativeSubClassToAbstractClass createAddAlternativeSubClassToAbstractClass();
 
 	/**
-	 * Returns a new object of class '<em>Add Bracket To Rule</em>'.
+	 * Returns a new object of class '<em>Add Braces To Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Bracket To Rule</em>'.
+	 * @return a new object of class '<em>Add Braces To Rule</em>'.
 	 * @generated
 	 */
-	AddBracketToRule createAddBracketToRule();
+	AddBracesToRule createAddBracesToRule();
 
 	/**
 	 * Returns a new object of class '<em>Remove Literal From Enum</em>'.

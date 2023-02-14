@@ -72,10 +72,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.REMOVE_BRACKET: {
-				RemoveBracket removeBracket = (RemoveBracket)theEObject;
-				T result = caseRemoveBracket(removeBracket);
-				if (result == null) result = caseOptimizationRule(removeBracket);
+			case OptimizationrulePackage.REMOVE_BRACES: {
+				RemoveBraces removeBraces = (RemoveBraces)theEObject;
+				T result = caseRemoveBraces(removeBraces);
+				if (result == null) result = caseOptimizationRule(removeBraces);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -184,10 +184,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.REMOVE_PARENTHESES_IN_SPECIFIED_ATTR: {
-				RemoveParenthesesInSpecifiedAttr removeParenthesesInSpecifiedAttr = (RemoveParenthesesInSpecifiedAttr)theEObject;
-				T result = caseRemoveParenthesesInSpecifiedAttr(removeParenthesesInSpecifiedAttr);
-				if (result == null) result = caseOptimizationRule(removeParenthesesInSpecifiedAttr);
+			case OptimizationrulePackage.REMOVE_PARENTHESES_IN_ATTRIBUTE: {
+				RemoveParenthesesInAttribute removeParenthesesInAttribute = (RemoveParenthesesInAttribute)theEObject;
+				T result = caseRemoveParenthesesInAttribute(removeParenthesesInAttribute);
+				if (result == null) result = caseOptimizationRule(removeParenthesesInAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -219,10 +219,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.REMOVE_KEYWORDS_OF_ALL_ATTRS: {
-				RemoveKeywordsOfAllAttrs removeKeywordsOfAllAttrs = (RemoveKeywordsOfAllAttrs)theEObject;
-				T result = caseRemoveKeywordsOfAllAttrs(removeKeywordsOfAllAttrs);
-				if (result == null) result = caseOptimizationRule(removeKeywordsOfAllAttrs);
+			case OptimizationrulePackage.REMOVE_ATTRIBUTE_KEYWORDS: {
+				RemoveAttributeKeywords removeAttributeKeywords = (RemoveAttributeKeywords)theEObject;
+				T result = caseRemoveAttributeKeywords(removeAttributeKeywords);
+				if (result == null) result = caseOptimizationRule(removeAttributeKeywords);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -233,31 +233,31 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.CHANGE_BRACKET_TO_PARENTHESES: {
-				ChangeBracketToParentheses changeBracketToParentheses = (ChangeBracketToParentheses)theEObject;
-				T result = caseChangeBracketToParentheses(changeBracketToParentheses);
-				if (result == null) result = caseOptimizationRule(changeBracketToParentheses);
+			case OptimizationrulePackage.CHANGE_BRACES_TO_PARENTHESES: {
+				ChangeBracesToParentheses changeBracesToParentheses = (ChangeBracesToParentheses)theEObject;
+				T result = caseChangeBracesToParentheses(changeBracesToParentheses);
+				if (result == null) result = caseOptimizationRule(changeBracesToParentheses);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.CHANGE_BRACKET_TO_SQUARE: {
-				ChangeBracketToSquare changeBracketToSquare = (ChangeBracketToSquare)theEObject;
-				T result = caseChangeBracketToSquare(changeBracketToSquare);
-				if (result == null) result = caseOptimizationRule(changeBracketToSquare);
+			case OptimizationrulePackage.CHANGE_BRACES_TO_SQUARE: {
+				ChangeBracesToSquare changeBracesToSquare = (ChangeBracesToSquare)theEObject;
+				T result = caseChangeBracesToSquare(changeBracesToSquare);
+				if (result == null) result = caseOptimizationRule(changeBracesToSquare);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.CHANGE_BRACKET_TO_ANGLE: {
-				ChangeBracketToAngle changeBracketToAngle = (ChangeBracketToAngle)theEObject;
-				T result = caseChangeBracketToAngle(changeBracketToAngle);
-				if (result == null) result = caseOptimizationRule(changeBracketToAngle);
+			case OptimizationrulePackage.CHANGE_BRACES_TO_ANGLE: {
+				ChangeBracesToAngle changeBracesToAngle = (ChangeBracesToAngle)theEObject;
+				T result = caseChangeBracesToAngle(changeBracesToAngle);
+				if (result == null) result = caseOptimizationRule(changeBracesToAngle);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.REMOVE_OUTERMOST_BRACKET: {
-				RemoveOutermostBracket removeOutermostBracket = (RemoveOutermostBracket)theEObject;
-				T result = caseRemoveOutermostBracket(removeOutermostBracket);
-				if (result == null) result = caseOptimizationRule(removeOutermostBracket);
+			case OptimizationrulePackage.REMOVE_OUTERMOST_BRACES: {
+				RemoveOutermostBraces removeOutermostBraces = (RemoveOutermostBraces)theEObject;
+				T result = caseRemoveOutermostBraces(removeOutermostBraces);
+				if (result == null) result = caseOptimizationRule(removeOutermostBraces);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -268,10 +268,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.REMOVE_BRACKET_EXCEPT_OUTERMOST: {
-				RemoveBracketExceptOutermost removeBracketExceptOutermost = (RemoveBracketExceptOutermost)theEObject;
-				T result = caseRemoveBracketExceptOutermost(removeBracketExceptOutermost);
-				if (result == null) result = caseOptimizationRule(removeBracketExceptOutermost);
+			case OptimizationrulePackage.REMOVE_BRACES_EXCEPT_OUTERMOST: {
+				RemoveBracesExceptOutermost removeBracesExceptOutermost = (RemoveBracesExceptOutermost)theEObject;
+				T result = caseRemoveBracesExceptOutermost(removeBracesExceptOutermost);
+				if (result == null) result = caseOptimizationRule(removeBracesExceptOutermost);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -345,10 +345,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.ADD_BRACKET_TO_ATTR: {
-				AddBracketToAttr addBracketToAttr = (AddBracketToAttr)theEObject;
-				T result = caseAddBracketToAttr(addBracketToAttr);
-				if (result == null) result = caseOptimizationRule(addBracketToAttr);
+			case OptimizationrulePackage.ADD_BRACES_TO_ATTR: {
+				AddBracesToAttr addBracesToAttr = (AddBracesToAttr)theEObject;
+				T result = caseAddBracesToAttr(addBracesToAttr);
+				if (result == null) result = caseOptimizationRule(addBracesToAttr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -366,10 +366,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.ADD_OPTIONALITY_TO_OUTERMOST_BRACKET: {
-				AddOptionalityToOutermostBracket addOptionalityToOutermostBracket = (AddOptionalityToOutermostBracket)theEObject;
-				T result = caseAddOptionalityToOutermostBracket(addOptionalityToOutermostBracket);
-				if (result == null) result = caseOptimizationRule(addOptionalityToOutermostBracket);
+			case OptimizationrulePackage.ADD_OPTIONALITY_TO_OUTERMOST_BRACES: {
+				AddOptionalityToOutermostBraces addOptionalityToOutermostBraces = (AddOptionalityToOutermostBraces)theEObject;
+				T result = caseAddOptionalityToOutermostBraces(addOptionalityToOutermostBraces);
+				if (result == null) result = caseOptimizationRule(addOptionalityToOutermostBraces);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -478,10 +478,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.ADD_BRACKET_TO_LINE: {
-				AddBracketToLine addBracketToLine = (AddBracketToLine)theEObject;
-				T result = caseAddBracketToLine(addBracketToLine);
-				if (result == null) result = caseOptimizationRule(addBracketToLine);
+			case OptimizationrulePackage.ADD_BRACES_TO_LINE: {
+				AddBracesToLine addBracesToLine = (AddBracesToLine)theEObject;
+				T result = caseAddBracesToLine(addBracesToLine);
+				if (result == null) result = caseOptimizationRule(addBracesToLine);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -513,24 +513,24 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.PACKAGE_ATTRIBUTES: {
-				PackageAttributes packageAttributes = (PackageAttributes)theEObject;
-				T result = casePackageAttributes(packageAttributes);
-				if (result == null) result = caseOptimizationRule(packageAttributes);
+			case OptimizationrulePackage.CHANGE_ATTRIBUTE_MULTIPLICITY: {
+				ChangeAttributeMultiplicity changeAttributeMultiplicity = (ChangeAttributeMultiplicity)theEObject;
+				T result = caseChangeAttributeMultiplicity(changeAttributeMultiplicity);
+				if (result == null) result = caseOptimizationRule(changeAttributeMultiplicity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTEN: {
-				ChangeBooleanAttrToSpecialPatten changeBooleanAttrToSpecialPatten = (ChangeBooleanAttrToSpecialPatten)theEObject;
-				T result = caseChangeBooleanAttrToSpecialPatten(changeBooleanAttrToSpecialPatten);
-				if (result == null) result = caseOptimizationRule(changeBooleanAttrToSpecialPatten);
+			case OptimizationrulePackage.CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTERN: {
+				ChangeBooleanAttrToSpecialPattern changeBooleanAttrToSpecialPattern = (ChangeBooleanAttrToSpecialPattern)theEObject;
+				T result = caseChangeBooleanAttrToSpecialPattern(changeBooleanAttrToSpecialPattern);
+				if (result == null) result = caseOptimizationRule(changeBooleanAttrToSpecialPattern);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.CHANGE_ATO_ASEMI_OR_AWITH_BRACKET: {
-				ChangeAToASemiOrAWithBracket changeAToASemiOrAWithBracket = (ChangeAToASemiOrAWithBracket)theEObject;
-				T result = caseChangeAToASemiOrAWithBracket(changeAToASemiOrAWithBracket);
-				if (result == null) result = caseOptimizationRule(changeAToASemiOrAWithBracket);
+			case OptimizationrulePackage.CHANGE_ATTRIBUTE_TO_SINGLE_ELEMENT_OR_BRACED_LIST: {
+				ChangeAttributeToSingleElementOrBracedList changeAttributeToSingleElementOrBracedList = (ChangeAttributeToSingleElementOrBracedList)theEObject;
+				T result = caseChangeAttributeToSingleElementOrBracedList(changeAttributeToSingleElementOrBracedList);
+				if (result == null) result = caseOptimizationRule(changeAttributeToSingleElementOrBracedList);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -562,10 +562,10 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case OptimizationrulePackage.ADD_BRACKET_TO_RULE: {
-				AddBracketToRule addBracketToRule = (AddBracketToRule)theEObject;
-				T result = caseAddBracketToRule(addBracketToRule);
-				if (result == null) result = caseOptimizationRule(addBracketToRule);
+			case OptimizationrulePackage.ADD_BRACES_TO_RULE: {
+				AddBracesToRule addBracesToRule = (AddBracesToRule)theEObject;
+				T result = caseAddBracesToRule(addBracesToRule);
+				if (result == null) result = caseOptimizationRule(addBracesToRule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -624,17 +624,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remove Bracket</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Remove Braces</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remove Bracket</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Remove Braces</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemoveBracket(RemoveBracket object) {
+	public T caseRemoveBraces(RemoveBraces object) {
 		return null;
 	}
 
@@ -864,17 +864,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remove Parentheses In Specified Attr</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Remove Parentheses In Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remove Parentheses In Specified Attr</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Remove Parentheses In Attribute</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemoveParenthesesInSpecifiedAttr(RemoveParenthesesInSpecifiedAttr object) {
+	public T caseRemoveParenthesesInAttribute(RemoveParenthesesInAttribute object) {
 		return null;
 	}
 
@@ -939,17 +939,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remove Keywords Of All Attrs</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Remove Attribute Keywords</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remove Keywords Of All Attrs</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Remove Attribute Keywords</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemoveKeywordsOfAllAttrs(RemoveKeywordsOfAllAttrs object) {
+	public T caseRemoveAttributeKeywords(RemoveAttributeKeywords object) {
 		return null;
 	}
 
@@ -969,62 +969,62 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change Bracket To Parentheses</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Braces To Parentheses</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change Bracket To Parentheses</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Braces To Parentheses</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChangeBracketToParentheses(ChangeBracketToParentheses object) {
+	public T caseChangeBracesToParentheses(ChangeBracesToParentheses object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change Bracket To Square</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Braces To Square</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change Bracket To Square</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Braces To Square</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChangeBracketToSquare(ChangeBracketToSquare object) {
+	public T caseChangeBracesToSquare(ChangeBracesToSquare object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change Bracket To Angle</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Braces To Angle</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change Bracket To Angle</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Braces To Angle</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChangeBracketToAngle(ChangeBracketToAngle object) {
+	public T caseChangeBracesToAngle(ChangeBracesToAngle object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remove Outermost Bracket</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Remove Outermost Braces</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remove Outermost Bracket</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Remove Outermost Braces</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemoveOutermostBracket(RemoveOutermostBracket object) {
+	public T caseRemoveOutermostBraces(RemoveOutermostBraces object) {
 		return null;
 	}
 
@@ -1044,17 +1044,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remove Bracket Except Outermost</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Remove Braces Except Outermost</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remove Bracket Except Outermost</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Remove Braces Except Outermost</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRemoveBracketExceptOutermost(RemoveBracketExceptOutermost object) {
+	public T caseRemoveBracesExceptOutermost(RemoveBracesExceptOutermost object) {
 		return null;
 	}
 
@@ -1209,17 +1209,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Add Bracket To Attr</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Add Braces To Attr</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Add Bracket To Attr</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Add Braces To Attr</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAddBracketToAttr(AddBracketToAttr object) {
+	public T caseAddBracesToAttr(AddBracesToAttr object) {
 		return null;
 	}
 
@@ -1254,17 +1254,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Add Optionality To Outermost Bracket</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Add Optionality To Outermost Braces</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Add Optionality To Outermost Bracket</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Add Optionality To Outermost Braces</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAddOptionalityToOutermostBracket(AddOptionalityToOutermostBracket object) {
+	public T caseAddOptionalityToOutermostBraces(AddOptionalityToOutermostBraces object) {
 		return null;
 	}
 
@@ -1494,17 +1494,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Add Bracket To Line</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Add Braces To Line</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Add Bracket To Line</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Add Braces To Line</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAddBracketToLine(AddBracketToLine object) {
+	public T caseAddBracesToLine(AddBracesToLine object) {
 		return null;
 	}
 
@@ -1569,47 +1569,47 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package Attributes</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Attribute Multiplicity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package Attributes</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Attribute Multiplicity</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePackageAttributes(PackageAttributes object) {
+	public T caseChangeAttributeMultiplicity(ChangeAttributeMultiplicity object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change Boolean Attr To Special Patten</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Boolean Attr To Special Pattern</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change Boolean Attr To Special Patten</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Boolean Attr To Special Pattern</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChangeBooleanAttrToSpecialPatten(ChangeBooleanAttrToSpecialPatten object) {
+	public T caseChangeBooleanAttrToSpecialPattern(ChangeBooleanAttrToSpecialPattern object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change ATo ASemi Or AWith Bracket</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Attribute To Single Element Or Braced List</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change ATo ASemi Or AWith Bracket</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Attribute To Single Element Or Braced List</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChangeAToASemiOrAWithBracket(ChangeAToASemiOrAWithBracket object) {
+	public T caseChangeAttributeToSingleElementOrBracedList(ChangeAttributeToSingleElementOrBracedList object) {
 		return null;
 	}
 
@@ -1674,17 +1674,17 @@ public class OptimizationruleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Add Bracket To Rule</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Add Braces To Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Add Bracket To Rule</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Add Braces To Rule</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAddBracketToRule(AddBracketToRule object) {
+	public T caseAddBracesToRule(AddBracesToRule object) {
 		return null;
 	}
 

@@ -1,8 +1,8 @@
 package org.bumble.xtext.grammaroptimizer.test;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingMyBibTexTest {
 	@Test
@@ -39,7 +39,8 @@ public class AdaptingMyBibTexTest {
 		go.removeKeyword(null, null, "fields", "fields");
 		
 		// add keyword ','
-		go.addKeywordToAttr(null, "key", ",", false, "fields");
+		//go.addKeywordToAttr(null, "key", ",", false, "fields");
+		go.addKeywordToAttr(null, "key", ",", false);
 		
 		// remove attribute location/commentsBefore/commentsAfter
 		go.removeAttribute(null, "location");
@@ -61,7 +62,6 @@ public class AdaptingMyBibTexTest {
 
 		// compare text
 		//Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.ScopeKey;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingSpectraTest {
 	@Test
@@ -50,7 +50,7 @@ public class AdaptingSpectraTest {
 		go.convert1toStarToStar("Model", "imports");
 		go.convert1toStarToPlus("Model", "elements");
 		go.renameKeyword("Model", null, "Model", "module", null);
-		go.addParenthesesWithoutQuotes("Model", ScopeKey.SINGLEKEWORD, "module", null, PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Model", ScopeKey.SINGLEKEWORD, "module", null, MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("Model", null, "module", "spec");
 		go.removeOptionality("Model", null);
 		go.moveLine("Model", "imports", "module", true);
@@ -136,17 +136,17 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("Counter", "initial", "TemporalExpression", "TemporalInExpr");
 		go.changeTypeOfAttr("Counter", "resetPred", "TemporalExpression", "TemporalInExpr");
 		go.removeOptionality("Counter", null);
-		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "range", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "initial", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "resetPred", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "incPred", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "decPred", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "overflowMethod", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "underflowMethod", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("Counter", "initial", "underflowMethod", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "range", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "initial", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "resetPred", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "incPred", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "decPred", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "overflowMethod", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Counter", ScopeKey.SINGLELINE, null, "underflowMethod", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("Counter", "initial", "underflowMethod", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolToLine("Counter", "underflowMethod", ";", false);
 		go.changeOptionalAttrToOrRelation("Counter", false, "initial", "underflowMethod");
-		go.packageAttributes("Counter", "initial", "underflowMethod", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("Counter", "initial", "underflowMethod", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 
 		// Adapt rule Monitor
 		go.renameKeyword("Monitor", null, "Monitor", "monitor", null);
@@ -158,18 +158,18 @@ public class AdaptingSpectraTest {
 		go.removeBracesExceptContainer("Monitor");
 		go.removeOptionality("Monitor", null);
 		go.renameKeyword("Monitor", "safety", "safety", "G", null);
-		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLEKEWORD, "G", null, PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLEKEWORD, "G", null, MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("Monitor", "safety", "G", "trans");
 		go.renameKeyword("Monitor", "stateInv", "stateInv", "always", null);
-		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLEKEWORD, "always", null, PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLEKEWORD, "always", null, MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("Monitor", "stateInv", "always", "alw");
-		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLELINE, null, "initial", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLELINE, null, "safety", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLELINE, null, "stateInv", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("Monitor", "initial", "stateInv", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLELINE, null, "initial", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLELINE, null, "safety", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Monitor", ScopeKey.SINGLELINE, null, "stateInv", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("Monitor", "initial", "stateInv", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolToLine("Monitor", "stateInv", ";", false);
 		go.changeOptionalAttrToOrRelation("Monitor", false, "initial", "stateInv");
-		go.packageAttributes("Monitor", "initial", "stateInv", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("Monitor", "initial", "stateInv", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		go.addOptionalityToKeyword("Monitor", "initial", "initial");
 		go.renameKeyword("Monitor", "initial", "initial", "ini", null);
 		go.addAlternativeKeyword("Monitor", "initial", "ini", "initially");
@@ -187,13 +187,13 @@ public class AdaptingSpectraTest {
 		go.addOptionalityToKeyword("Pattern", "initial", "ini");
 		go.addAlternativeKeyword("Pattern", "initial", "ini", "initially");
 		go.renameKeyword("Pattern", "safety", "safety", "G", null);
-		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLEKEWORD, "G", "safety", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLEKEWORD, "G", "safety", MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("Pattern", "safety", "G", "trans");
 		go.renameKeyword("Pattern", "stateInv", "stateInv", "always", null);
-		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLEKEWORD, "always", "stateInv", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLEKEWORD, "always", "stateInv", MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("Pattern", "stateInv", "always", "alw");
 		go.renameKeyword("Pattern", "justice", "justice", "GF", null);
-		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLEKEWORD, "GF", "justice", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLEKEWORD, "GF", "justice", MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("Pattern", "justice", "GF", "alwEv");
 		go.addAlternativeKeyword("Pattern", "justice", "alwEv", "alwaysEventually");
 		go.changeTypeOfAttr("Pattern", "initial", "TemporalExpression", "TemporalInExpr");
@@ -202,12 +202,12 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("Pattern", "justice", "TemporalExpression", "TemporalInExpr");
 		go.removeOptionality("Pattern", "varDeclList");
 		go.changeOptionalAttrToOrRelation("Pattern", false, "initial", "justice");
-		go.packageAttributes("Pattern", "initial", "justice", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("Pattern", "initial", "justice", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolToLine("Pattern", "justice", ";", false);
-		go.packageAttributes("Pattern", "varDeclList", "varDeclList", PackageKey.PACKAGE_ZERO_OR_MORE);
-		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLELINE, null, "varDeclList", PackageKey.PACKAGE_ZERO_OR_MORE);
-		go.packageAttributes("Pattern", "initial", "justice", PackageKey.PACKAGE_ONE_OR_MORE);
-		go.addOptionalityToContainerBraces("Pattern", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("Pattern", "varDeclList", "varDeclList", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
+		go.addParenthesesWithoutQuotes("Pattern", ScopeKey.SINGLELINE, null, "varDeclList", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
+		go.packageAttributes("Pattern", "initial", "justice", MultiplicityKey.MULTIPLICITY_ONE_OR_MORE);
+		go.addOptionalityToContainerBraces("Pattern", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule Predicate
 		go.renameKeyword("Predicate", null, "Predicate", "predicate", null);
@@ -218,12 +218,12 @@ public class AdaptingSpectraTest {
 		go.removeOptionality("Predicate", null);
 		go.changeAToASemiOrAWithBraces("Predicate", "body");
 		go.addSymbolToLine("Predicate", "body", ":", true);
-		go.addParenthesesWithoutQuotes("Predicate", ScopeKey.SINGLELINE, null, "body", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Predicate", ScopeKey.SINGLELINE, null, "body", MultiplicityKey.PACKAGE_ONLY);
 		go.changeAToAorSymbol("Predicate", "params", "'()'");
-		go.addParenthesesWithoutQuotes("Predicate", ScopeKey.SINGLELINE, null, "params", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("Predicate", ScopeKey.SINGLELINE, null, "params", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule LTLGar
-		go.addParenthesesWithoutQuotes("LTLGar", ScopeKey.SINGLEKEWORD, "LTLGar", null, PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("LTLGar", ScopeKey.SINGLEKEWORD, "LTLGar", null, MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("LTLGar", null, "LTLGar", "gar");
 		go.renameKeyword("LTLGar", null, "LTLGar", "guarantee", null);
 		go.removeBraces("LTLGar", null, null);
@@ -242,21 +242,21 @@ public class AdaptingSpectraTest {
 		go.addSymbolToRule("LTLGar", ";");
 		go.changeTypeOfAttr("LTLGar", "temporalExpr", "TemporalExpression", "QuantifierExpr");
 		go.addSymbolToLine("LTLGar", "params", ":", false);
-		go.packageAttributes("LTLGar", "name", "params", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("LTLGar", "name", "params", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		go.changeOptionalAttrToOrRelation("LTLGar", false, "safety", "justice");
-		go.packageAttributes("LTLGar", "safety", "justice", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("LTLGar", "safety", "justice", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		go.addAlternativeKeyword("LTLGar", "safety", "initially", "temp");
 		go.removeKeyword("LTLGar", "safety", "temp", null);
 		go.removeOptionality("LTLGar", "temporalExpr");
-		go.addParenthesesWithoutQuotes("LTLGar", ScopeKey.SINGLELINE, null, "temporalExpr", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("LTLGar", "safety", "temporalExpr", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("LTLGar", ScopeKey.SINGLELINE, null, "temporalExpr", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("LTLGar", "safety", "temporalExpr", MultiplicityKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("LTLGar", false, "temporalExpr", "trig");
-		go.addParenthesesWithoutQuotes("LTLGar", ScopeKey.SINGLELINE, null, "trig", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("LTLGar", "safety", "trig", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("LTLGar", ScopeKey.SINGLELINE, null, "trig", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("LTLGar", "safety", "trig", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule LTLAsm
-		go.addParenthesesWithoutQuotes("LTLAsm", ScopeKey.SINGLEKEWORD, "LTLAsm", null, PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("LTLAsm", ScopeKey.SINGLEKEWORD, "LTLAsm", null, MultiplicityKey.PACKAGE_ONLY);
 		go.removeContainerBraces("LTLAsm");
 		go.addAlternativeKeyword("LTLAsm", null, "LTLAsm", "asm");
 		go.renameKeyword("LTLAsm", "null", "LTLAsm", "assumption", null);
@@ -274,21 +274,21 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("LTLAsm", "justice", "ID", "('GF' | 'alwEv'| 'alwaysEventually')");
 		go.addSymbolToRule("LTLAsm", ";");
 		go.addSymbolToLine("LTLAsm", "params", ":", false);
-		go.packageAttributes("LTLAsm", "name", "params", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("LTLAsm", "name", "params", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		go.changeTypeOfAttr("LTLAsm", "temporalExpr", "TemporalExpression", "QuantifierExpr");
 		go.changeOptionalAttrToOrRelation("LTLAsm", false, "safety", "justice");
-		go.packageAttributes("LTLAsm", "safety", "justice", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("LTLAsm", "safety", "justice", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		go.addAlternativeKeyword("LTLAsm", "safety", "initially", "temp");
 		go.removeKeyword("LTLAsm", "safety", "temp", null);
 		go.removeOptionality("LTLAsm", "temporalExpr");
-		go.addParenthesesWithoutQuotes("LTLAsm", ScopeKey.SINGLELINE, null, "temporalExpr", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("LTLAsm", "safety", "temporalExpr", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("LTLAsm", ScopeKey.SINGLELINE, null, "temporalExpr", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("LTLAsm", "safety", "temporalExpr", MultiplicityKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("LTLAsm", false, "temporalExpr", "trig");
-		go.addParenthesesWithoutQuotes("LTLAsm", ScopeKey.SINGLELINE, null, "trig", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("LTLAsm", "safety", "trig", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("LTLAsm", ScopeKey.SINGLELINE, null, "trig", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("LTLAsm", "safety", "trig", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule EXGar
-		go.addParenthesesWithoutQuotes("EXGar", ScopeKey.SINGLEKEWORD, "EXGar", null, PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("EXGar", ScopeKey.SINGLEKEWORD, "EXGar", null, MultiplicityKey.PACKAGE_ONLY);
 		go.addAlternativeKeyword("EXGar", null, "EXGar", "gar");
 		go.renameKeyword("EXGar", null, "EXGar", "guarantee", null);
 		go.removeBraces("EXGar", null, null);
@@ -302,7 +302,7 @@ public class AdaptingSpectraTest {
 		go.addSymbolToRule("EXGar", ";");
 		go.changeTypeOfAttr("EXGar", "elements", "TemporalExpression", "TemporalInExpr");
 		go.changeOptionalAttrToOrRelation("EXGar", false, "elements", "regExp");
-		go.packageAttributes("EXGar", "elements", "regExp", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("EXGar", "elements", "regExp", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule TemporalInExpr
 		go.removeContainerBraces("TemporalInExpr");
@@ -318,7 +318,7 @@ public class AdaptingSpectraTest {
 		go.addCallToOtherRule("TemporalInExpr", "TemporalImpExpr", true);
 		go.removeAttribute("TemporalInExpr", "left");
 		go.setAstProperty("TemporalInExpr", "TemporalInExpr", "left", "current", false);
-		go.packageAttributes("TemporalInExpr", "TemporalInExpr", "values", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("TemporalInExpr", "TemporalInExpr", "values", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		
 		// Adapt rule TemporalImpExpr
@@ -332,7 +332,7 @@ public class AdaptingSpectraTest {
 		go.addCallToOtherRule("TemporalImpExpr", "TemporalIffExpr", true);
 		go.removeAttribute("TemporalImpExpr", "left");
 		go.setAstProperty("TemporalImpExpr", "TemporalImpExpr", "left", "current", false);
-		go.packageAttributes("TemporalImpExpr", "TemporalImpExpr", "implication", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("TemporalImpExpr", "TemporalImpExpr", "implication", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// Adapt rule TemporalIffExpr
 		go.removeKeyword("TemporalIffExpr", null, null, null);
@@ -344,7 +344,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalIffExpr", "elements", "TemporalExpression", "TemporalOrExpr");
 		go.addCallToOtherRule("TemporalIffExpr", "TemporalOrExpr", true);
 		go.setAstProperty("TemporalIffExpr", "TemporalIffExpr", "elements", "current", true);
-		go.packageAttributes("TemporalIffExpr", "TemporalIffExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("TemporalIffExpr", "TemporalIffExpr", "elements", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		// Adapt rule TemporalOrExpr
 		go.removeKeyword("TemporalOrExpr", null, null, null);
@@ -357,7 +357,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalOrExpr", "elements", "TemporalExpression", "TemporalAndExpr");
 		go.addCallToOtherRule("TemporalOrExpr", "TemporalAndExpr", true);
 		go.setAstProperty("TemporalOrExpr", "TemporalOrExpr", "elements", "current", true);
-		go.packageAttributes("TemporalOrExpr", "TemporalOrExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("TemporalOrExpr", "TemporalOrExpr", "elements", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 
 		// Adapt rule TemporalAndExpr
 		go.removeKeyword("TemporalAndExpr", null, null, null);
@@ -370,7 +370,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalAndExpr", "elements", "TemporalExpression", "TemporalRelationalExpr");
 		go.addCallToOtherRule("TemporalAndExpr", "TemporalRelationalExpr", true);
 		go.setAstProperty("TemporalAndExpr", "TemporalAndExpr", "elements", "current", true);
-		go.packageAttributes("TemporalAndExpr", "TemporalAndExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("TemporalAndExpr", "TemporalAndExpr", "elements", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		// Adapt rule TemporalRelationalExpr
 		go.removeKeyword("TemporalRelationalExpr", null, null, null);
@@ -383,7 +383,7 @@ public class AdaptingSpectraTest {
 		go.addCallToOtherRule("TemporalRelationalExpr", "TemporalRemainderExpr", true);
 		go.removeAttribute("TemporalRelationalExpr", "left");
 		go.setAstProperty("TemporalRelationalExpr", "TemporalRelationalExpr", "left", "current", false);
-		go.packageAttributes("TemporalRelationalExpr", "TemporalRelationalExpr", "right", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("TemporalRelationalExpr", "TemporalRelationalExpr", "right", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// Adapt rule TemporalRemainderExpr
 		go.removeKeyword("TemporalRemainderExpr", null, null, null);
@@ -396,7 +396,7 @@ public class AdaptingSpectraTest {
 		go.addCallToOtherRule("TemporalRemainderExpr", "TemporalAdditiveExpr", true);
 		go.removeAttribute("TemporalRemainderExpr", "left");
 		go.setAstProperty("TemporalRemainderExpr", "TemporalRemainderExpr", "left", "current", false);
-		go.packageAttributes("TemporalRemainderExpr", "TemporalRemainderExpr", "right", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("TemporalRemainderExpr", "TemporalRemainderExpr", "right", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// Adapt rule TemporalAdditiveExpr
 		go.removeKeyword("TemporalAdditiveExpr", null, null, null);
@@ -409,7 +409,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalAdditiveExpr", "elements", "TemporalExpression", "TemporalMultiplicativeExpr");
 		go.addCallToOtherRule("TemporalAdditiveExpr", "TemporalMultiplicativeExpr", true);
 		go.setAstProperty("TemporalAdditiveExpr", "TemporalAdditiveExpr", "elements", "current", true);
-		go.packageAttributes("TemporalAdditiveExpr", "TemporalAdditiveExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("TemporalAdditiveExpr", "TemporalAdditiveExpr", "elements", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		// Adapt rule TemporalMultiplicativeExpr
 		go.removeKeyword("TemporalMultiplicativeExpr", null, null, null);
@@ -422,7 +422,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("TemporalMultiplicativeExpr", "elements", "TemporalExpression", "TemporalBinaryExpr");
 		go.addCallToOtherRule("TemporalMultiplicativeExpr", "TemporalBinaryExpr", true);
 		go.setAstProperty("TemporalMultiplicativeExpr", "TemporalMultiplicativeExpr", "elements", "current", true);
-		go.packageAttributes("TemporalMultiplicativeExpr", "TemporalMultiplicativeExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("TemporalMultiplicativeExpr", "TemporalMultiplicativeExpr", "elements", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		// Adapt rule TemporalBinaryExpr
 		go.removeKeyword("TemporalBinaryExpr", null, null, null);
@@ -436,7 +436,7 @@ public class AdaptingSpectraTest {
 		//go.removeAction("TemporalBinaryExpr");
 		go.addCallToOtherRule("TemporalBinaryExpr", "TemporalUnaryExpr", true);
 		go.setAstProperty("TemporalBinaryExpr", "TemporalBinaryExpr", "elements", "current", true);
-		go.packageAttributes("TemporalBinaryExpr", "TemporalBinaryExpr", "elements", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("TemporalBinaryExpr", "TemporalBinaryExpr", "elements", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		// Adapt rule TemporalUnaryExpr
 		go.removeKeyword("TemporalUnaryExpr", null, null, null);
@@ -464,7 +464,7 @@ public class AdaptingSpectraTest {
 		go.removeOptionality("TemporalPrimaryExpr", "predPattParams");
 		go.addSymbolWithoutQuoteToLine("TemporalPrimaryExpr", "predPattParams", "|", false);
 		go.addSymbolToLine("TemporalPrimaryExpr", "predPattParams", "()", false);
-		go.addParenthesesWithoutQuotes("TemporalPrimaryExpr", ScopeKey.SINGLELINE, null, "predPattParams", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("TemporalPrimaryExpr", ScopeKey.SINGLELINE, null, "predPattParams", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolWithoutQuoteToLine("TemporalPrimaryExpr", "predPattParams", "|", false);
 		go.moveLine("TemporalPrimaryExpr", "regexpPointer", "regexp", false);
 		go.removeCertainTypeFromAttr("TemporalPrimaryExpr", "regexpPointer", "ID");
@@ -479,7 +479,7 @@ public class AdaptingSpectraTest {
 		newValues.add("TRUE");
 		newValues.add("true");
 		go.addAlternativeValue("Constant", "booleanValue", newValues, false);
-		go.packageAttributes("Constant", "booleanValue", "integerValue", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("Constant", "booleanValue", "integerValue", MultiplicityKey.PACKAGE_ONLY);
 		go.changeReturns("Constant", "TemporalExpression");
 		
 		// Adapt rule QuantifierExpr
@@ -487,15 +487,15 @@ public class AdaptingSpectraTest {
 		go.removeBraces("QuantifierExpr", null, null);
 		go.removeOptionality("QuantifierExpr", null);
 		go.changeTypeOfAttr("QuantifierExpr", "operator", "ID", "('forall' | 'exists')");
-		go.addKeywordToAttr("QuantifierExpr", "domainVar", ".", false, null);
+		go.addKeywordToAttr("QuantifierExpr", "domainVar", ".", false);
 		go.changeReturns("QuantifierExpr", "TemporalExpression");
 		go.changeTypeOfAttr("QuantifierExpr", "temporalExpr", "TemporalExpression", "(QuantifierExpr)");
-		go.packageAttributes("QuantifierExpr", "operator", "temporalExpr", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("QuantifierExpr", "operator", "temporalExpr", MultiplicityKey.PACKAGE_ONLY);
 		go.addCallToOtherRule("QuantifierExpr", "TemporalInExpr", false);
 		
 		// Adapt rule ValueInRange
 		go.removeKeyword("ValueInRange", null, null, null);
-		go.addKeywordToAttr("ValueInRange", "multi", "-", false, null);
+		go.addKeywordToAttr("ValueInRange", "multi", "-", false);
 		go.removeBraces("ValueInRange", null, null);
 		go.removeOptionality("ValueInRange", null);
 		go.moveLine("ValueInRange", "multi", "from", false);
@@ -503,7 +503,7 @@ public class AdaptingSpectraTest {
 		go.changeTypeOfAttr("ValueInRange", "booleanValue", "ID", "('TRUE' |'FALSE' | 'true' | 'false')");
 		go.removeCertainTypeFromAttr("ValueInRange", "const", "ID");
 		go.changeOptionalAttrToOrRelation("ValueInRange", false, "const", "from");
-		go.packageAttributes("ValueInRange", "from", "to", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("ValueInRange", "from", "to", MultiplicityKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("ValueInRange", false, "to", "booleanValue");
 		
 		// Adapt rule TypeConstant
@@ -536,10 +536,10 @@ public class AdaptingSpectraTest {
 		go.addSymbolToRule("DefineDecl", ";");
 		go.removeOptionality("DefineDecl", null);
 		go.copyAttrAToAttrB("DefineDecl", "name", "dimensions", true);
-		go.packageAttributes("DefineDecl", "name", "simpleExpr", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("DefineDecl", "name", "simpleExpr", MultiplicityKey.PACKAGE_ONLY);
 		go.changeOptionalAttrToOrRelation("DefineDecl", false, "simpleExpr", "dimensions");
-		go.packageAttributes("DefineDecl", "dimensions", "innerArray", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("DefineDecl", "name", "innerArray", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("DefineDecl", "dimensions", "innerArray", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("DefineDecl", "name", "innerArray", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule PatternParam
 		go.removeKeyword("PatternParam", null, "PatternParam", null);
@@ -574,7 +574,7 @@ public class AdaptingSpectraTest {
 		go.removeContainerBraces("VarType");
 		go.removeOptionality("VarType", null);
 		go.changeOptionalAttrToOrRelation("VarType", false, "name", "type");
-		go.packageAttributes("VarType", "name", "type", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("VarType", "name", "type", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule Subrange
 		go.removeBraces("Subrange", null, null);
@@ -594,8 +594,8 @@ public class AdaptingSpectraTest {
 		go.removeKeyword("DefineArray", null, null, null);
 		go.removeBraces("DefineArray");
 		go.removeOptionality("DefineArray", null);
-		go.addParenthesesWithoutQuotes("DefineArray", ScopeKey.SINGLELINE, null, "simpleExprs", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("DefineArray", ScopeKey.SINGLELINE, null, "innerArrays", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("DefineArray", ScopeKey.SINGLELINE, null, "simpleExprs", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("DefineArray", ScopeKey.SINGLELINE, null, "innerArrays", MultiplicityKey.PACKAGE_ONLY);
 		go.addBracesToLine("DefineArray", null);
 		go.addOptionalityToLine("DefineArray", null);
 		go.changeOptionalAttrToOrRelation("DefineArray", true, null, null);
@@ -626,7 +626,7 @@ public class AdaptingSpectraTest {
 		go.removeKeyword("BinaryRegExp", "left", "left", null);
 		go.removeAttribute("BinaryRegExp", "left");
 		go.setAstProperty("BinaryRegExp", "BinaryRegExp", "left", "current", false);
-		go.packageAttributes("BinaryRegExp", "BinaryRegExp", "right", PackageKey.PACKAGE_ZERO_OR_MORE);
+		go.packageAttributes("BinaryRegExp", "BinaryRegExp", "right", MultiplicityKey.MULTIPLICITY_ZERO_OR_MORE);
 		
 		// Adapt rule UnaryRegExp
 		go.removeKeyword("UnaryRegExp", null, "UnaryRegExp", null);
@@ -657,45 +657,45 @@ public class AdaptingSpectraTest {
 		go.removeKeyword("UnaryRegExp", "exactRepetition", "exactRepetition", null);
 		go.removeKeyword("UnaryRegExp", "atLeast", "atLeast", null);
 		go.removeOptionality("UnaryRegExp", null);
-		go.addParenthesesWithoutQuotes("UnaryRegExp", ScopeKey.SINGLELINE, null, "kleened", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("UnaryRegExp", ScopeKey.SINGLELINE, null, "questionMark", PackageKey.PACKAGE_ONLY);
-		go.addParenthesesWithoutQuotes("UnaryRegExp", ScopeKey.SINGLELINE, null, "plus", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("UnaryRegExp", ScopeKey.SINGLELINE, null, "kleened", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("UnaryRegExp", ScopeKey.SINGLELINE, null, "questionMark", MultiplicityKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("UnaryRegExp", ScopeKey.SINGLELINE, null, "plus", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolWithoutQuoteToLine("UnaryRegExp", "kleened", "|", false);
 		go.addSymbolWithoutQuoteToLine("UnaryRegExp", "questionMark", "|", false);
 		go.addSymbolWithoutQuoteToLine("UnaryRegExp", "plus", "|", false);
 		go.addSymbolWithoutQuoteToLine("UnaryRegExp", "from", "|", false);
 		go.addSymbolWithoutQuoteToLine("UnaryRegExp", "to", "|", false);
-		go.packageAttributes("UnaryRegExp", "to", "toDefine", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("UnaryRegExp", "from", "fromDefine", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("UnaryRegExp", "to", "toDefine", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("UnaryRegExp", "from", "fromDefine", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolToLine("UnaryRegExp", "toDefine", "}", false);
 		go.addSymbolToLine("UnaryRegExp", "fromDefine", ",", false);
 		go.addSymbolToLine("UnaryRegExp", "atLeast", "}", false);
 		go.addSymbolToLine("UnaryRegExp", "exactRepetition", "}", false);
-		go.packageAttributes("UnaryRegExp", "haveExactRepetition", "exactRepetition", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("UnaryRegExp", "haveAtLeast", "atLeast", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("UnaryRegExp", "haveRange", "toDefine", PackageKey.PACKAGE_ONLY);
-		go.packageAttributes("UnaryRegExp", "kleened", "toDefine", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("UnaryRegExp", "haveExactRepetition", "exactRepetition", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("UnaryRegExp", "haveAtLeast", "atLeast", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("UnaryRegExp", "haveRange", "toDefine", MultiplicityKey.PACKAGE_ONLY);
+		go.packageAttributes("UnaryRegExp", "kleened", "toDefine", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolWithoutQuoteToLine("UnaryRegExp", "exactRepetition", "|", false);
 		go.addSymbolWithoutQuoteToLine("UnaryRegExp", "atLeast", "|", false);
 		go.removeAttribute("UnaryRegExp", "left");
 		go.setAstProperty("UnaryRegExp", "UnaryRegExp", "left", "current", false);
-		go.packageAttributes("UnaryRegExp", "UnaryRegExp", "toDefine", PackageKey.PACKAGE_OPTIONALLY);
+		go.packageAttributes("UnaryRegExp", "UnaryRegExp", "toDefine", MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// Adapt rule CompRegExp
 		go.removeBraces("CompRegExp", null, null);
 		go.removeOptionality("CompRegExp", null);
 		go.removeKeyword("CompRegExp", null, null, null);
-		go.addKeywordToAttr("CompRegExp", "empty", "empty", false, null);
+		go.addKeywordToAttr("CompRegExp", "empty", "empty", false);
 		go.addOptionalityToAttr("CompRegExp", "empty");
 		go.changeTypeOfAttr("CompRegExp", "comp", "ID", "'~'");
-		go.addParenthesesWithoutQuotes("CompRegExp", ScopeKey.SINGLELINE, null, "comp", PackageKey.PACKAGE_ONLY);
+		go.addParenthesesWithoutQuotes("CompRegExp", ScopeKey.SINGLELINE, null, "comp", MultiplicityKey.PACKAGE_ONLY);
 		go.changeReturns("CompRegExp", "RegExp");
 		go.addCallToOtherRule("CompRegExp", "PrimaryRegExp", false);
 		go.removeAttribute("CompRegExp", "assrt");
 		go.removeAttribute("CompRegExp", "empty");
 		go.removeAttribute("CompRegExp", "val");
 		go.changeTypeOfAttr("CompRegExp", "left", "RegExp", "CompRegExp");
-		go.packageAttributes("CompRegExp", "CompRegExp", "left", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("CompRegExp", "CompRegExp", "left", MultiplicityKey.PACKAGE_ONLY);
 		
 		// Adapt rule enum VarOwner
 		go.keywordUpperToLowerCase("VarOwner", null, null);
@@ -735,10 +735,10 @@ public class AdaptingSpectraTest {
 		go.removeContainerBraces("Trigger");
 		go.removeOptionality("Trigger", null);
 		go.changeOptionalAttrToOrRelation("Trigger", false, "initPointer", "initRegExp");
-		go.packageAttributes("Trigger", "initPointer", "initRegExp", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("Trigger", "initPointer", "initRegExp", MultiplicityKey.PACKAGE_ONLY);
 		go.addSymbolToLine("Trigger", "initRegExp", "|=>", false);
 		go.changeOptionalAttrToOrRelation("Trigger", false, "effectPointer", "effectRegExp");
-		go.packageAttributes("Trigger", "effectPointer", "effectRegExp", PackageKey.PACKAGE_ONLY);
+		go.packageAttributes("Trigger", "effectPointer", "effectRegExp", MultiplicityKey.PACKAGE_ONLY);
 		
 		
 		String actualOutput = go.spliceGrammar();
@@ -747,7 +747,6 @@ public class AdaptingSpectraTest {
 
 		// compare text
 		//Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

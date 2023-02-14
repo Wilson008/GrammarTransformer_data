@@ -4,8 +4,8 @@ import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1toStarTo1orStar;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.Convert1toStarToStar;
 import org.bumble.xtext.grammaroptimizer.optimizationrule.GrammaroptimizerFactory;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class X0toStarRuleTest {
 	/**
@@ -30,7 +30,7 @@ public class X0toStarRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_X0toStarProcess_001.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public class X0toStarRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_X0toStarProcess_002.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	/**
@@ -80,7 +80,7 @@ public class X0toStarRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_X0toStarProcess_003.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	/**
@@ -106,7 +106,7 @@ public class X0toStarRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_X0toStarProcess_004.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	/**
@@ -132,7 +132,7 @@ public class X0toStarRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_X0toStarProcess_005.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 	
 	/**
@@ -157,6 +157,6 @@ public class X0toStarRuleTest {
 		String expectOutput = FileHelper.getFileText("Test_X0toStarProcess_006.txt", false);
 
 		// compare text
-		Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
+		Assert.assertEquals(expectOutput, actualOutput);
 	}
 }

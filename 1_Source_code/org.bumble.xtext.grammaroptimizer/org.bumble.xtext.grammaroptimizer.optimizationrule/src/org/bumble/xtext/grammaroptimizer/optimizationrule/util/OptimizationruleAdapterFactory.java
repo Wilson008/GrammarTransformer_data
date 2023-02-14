@@ -72,8 +72,8 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createOptimizationRuleAdapter();
 			}
 			@Override
-			public Adapter caseRemoveBracket(RemoveBracket object) {
-				return createRemoveBracketAdapter();
+			public Adapter caseRemoveBraces(RemoveBraces object) {
+				return createRemoveBracesAdapter();
 			}
 			@Override
 			public Adapter caseAddKeywordToAttr(AddKeywordToAttr object) {
@@ -136,8 +136,8 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createAddParenthesesToAttrAdapter();
 			}
 			@Override
-			public Adapter caseRemoveParenthesesInSpecifiedAttr(RemoveParenthesesInSpecifiedAttr object) {
-				return createRemoveParenthesesInSpecifiedAttrAdapter();
+			public Adapter caseRemoveParenthesesInAttribute(RemoveParenthesesInAttribute object) {
+				return createRemoveParenthesesInAttributeAdapter();
 			}
 			@Override
 			public Adapter caseAddImport(AddImport object) {
@@ -156,36 +156,36 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createRenameRuleAdapter();
 			}
 			@Override
-			public Adapter caseRemoveKeywordsOfAllAttrs(RemoveKeywordsOfAllAttrs object) {
-				return createRemoveKeywordsOfAllAttrsAdapter();
+			public Adapter caseRemoveAttributeKeywords(RemoveAttributeKeywords object) {
+				return createRemoveAttributeKeywordsAdapter();
 			}
 			@Override
 			public Adapter caseRemoveOptionality(RemoveOptionality object) {
 				return createRemoveOptionalityAdapter();
 			}
 			@Override
-			public Adapter caseChangeBracketToParentheses(ChangeBracketToParentheses object) {
-				return createChangeBracketToParenthesesAdapter();
+			public Adapter caseChangeBracesToParentheses(ChangeBracesToParentheses object) {
+				return createChangeBracesToParenthesesAdapter();
 			}
 			@Override
-			public Adapter caseChangeBracketToSquare(ChangeBracketToSquare object) {
-				return createChangeBracketToSquareAdapter();
+			public Adapter caseChangeBracesToSquare(ChangeBracesToSquare object) {
+				return createChangeBracesToSquareAdapter();
 			}
 			@Override
-			public Adapter caseChangeBracketToAngle(ChangeBracketToAngle object) {
-				return createChangeBracketToAngleAdapter();
+			public Adapter caseChangeBracesToAngle(ChangeBracesToAngle object) {
+				return createChangeBracesToAngleAdapter();
 			}
 			@Override
-			public Adapter caseRemoveOutermostBracket(RemoveOutermostBracket object) {
-				return createRemoveOutermostBracketAdapter();
+			public Adapter caseRemoveOutermostBraces(RemoveOutermostBraces object) {
+				return createRemoveOutermostBracesAdapter();
 			}
 			@Override
 			public Adapter caseConvert1toStarTo1orStar(Convert1toStarTo1orStar object) {
 				return createConvert1toStarTo1orStarAdapter();
 			}
 			@Override
-			public Adapter caseRemoveBracketExceptOutermost(RemoveBracketExceptOutermost object) {
-				return createRemoveBracketExceptOutermostAdapter();
+			public Adapter caseRemoveBracesExceptOutermost(RemoveBracesExceptOutermost object) {
+				return createRemoveBracesExceptOutermostAdapter();
 			}
 			@Override
 			public Adapter caseRemoveCertainTypeFromAttr(RemoveCertainTypeFromAttr object) {
@@ -228,8 +228,8 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createAddOptionalityToKeywordAdapter();
 			}
 			@Override
-			public Adapter caseAddBracketToAttr(AddBracketToAttr object) {
-				return createAddBracketToAttrAdapter();
+			public Adapter caseAddBracesToAttr(AddBracesToAttr object) {
+				return createAddBracesToAttrAdapter();
 			}
 			@Override
 			public Adapter caseKeywordUpperToLowerCase(KeywordUpperToLowerCase object) {
@@ -240,8 +240,8 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createAddSquareBracketToAttrAdapter();
 			}
 			@Override
-			public Adapter caseAddOptionalityToOutermostBracket(AddOptionalityToOutermostBracket object) {
-				return createAddOptionalityToOutermostBracketAdapter();
+			public Adapter caseAddOptionalityToOutermostBraces(AddOptionalityToOutermostBraces object) {
+				return createAddOptionalityToOutermostBracesAdapter();
 			}
 			@Override
 			public Adapter caseAddSymbolToAttr(AddSymbolToAttr object) {
@@ -304,8 +304,8 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createAddOptionalityToLineAdapter();
 			}
 			@Override
-			public Adapter caseAddBracketToLine(AddBracketToLine object) {
-				return createAddBracketToLineAdapter();
+			public Adapter caseAddBracesToLine(AddBracesToLine object) {
+				return createAddBracesToLineAdapter();
 			}
 			@Override
 			public Adapter caseAddParenthesesWithoutQuoteToRule(AddParenthesesWithoutQuoteToRule object) {
@@ -324,16 +324,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createAddSymbolWithoutQuoteToKeywordAdapter();
 			}
 			@Override
-			public Adapter casePackageAttributes(PackageAttributes object) {
-				return createPackageAttributesAdapter();
+			public Adapter caseChangeAttributeMultiplicity(ChangeAttributeMultiplicity object) {
+				return createChangeAttributeMultiplicityAdapter();
 			}
 			@Override
-			public Adapter caseChangeBooleanAttrToSpecialPatten(ChangeBooleanAttrToSpecialPatten object) {
-				return createChangeBooleanAttrToSpecialPattenAdapter();
+			public Adapter caseChangeBooleanAttrToSpecialPattern(ChangeBooleanAttrToSpecialPattern object) {
+				return createChangeBooleanAttrToSpecialPatternAdapter();
 			}
 			@Override
-			public Adapter caseChangeAToASemiOrAWithBracket(ChangeAToASemiOrAWithBracket object) {
-				return createChangeAToASemiOrAWithBracketAdapter();
+			public Adapter caseChangeAttributeToSingleElementOrBracedList(ChangeAttributeToSingleElementOrBracedList object) {
+				return createChangeAttributeToSingleElementOrBracedListAdapter();
 			}
 			@Override
 			public Adapter caseChangeReturns(ChangeReturns object) {
@@ -352,8 +352,8 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 				return createAddAlternativeSubClassToAbstractClassAdapter();
 			}
 			@Override
-			public Adapter caseAddBracketToRule(AddBracketToRule object) {
-				return createAddBracketToRuleAdapter();
+			public Adapter caseAddBracesToRule(AddBracesToRule object) {
+				return createAddBracesToRuleAdapter();
 			}
 			@Override
 			public Adapter caseRemoveLiteralFromEnum(RemoveLiteralFromEnum object) {
@@ -410,16 +410,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket <em>Remove Bracket</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces <em>Remove Braces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces
 	 * @generated
 	 */
-	public Adapter createRemoveBracketAdapter() {
+	public Adapter createRemoveBracesAdapter() {
 		return null;
 	}
 
@@ -634,16 +634,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInSpecifiedAttr <em>Remove Parentheses In Specified Attr</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInAttribute <em>Remove Parentheses In Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInSpecifiedAttr
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInAttribute
 	 * @generated
 	 */
-	public Adapter createRemoveParenthesesInSpecifiedAttrAdapter() {
+	public Adapter createRemoveParenthesesInAttributeAdapter() {
 		return null;
 	}
 
@@ -704,16 +704,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeywordsOfAllAttrs <em>Remove Keywords Of All Attrs</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttributeKeywords <em>Remove Attribute Keywords</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeywordsOfAllAttrs
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttributeKeywords
 	 * @generated
 	 */
-	public Adapter createRemoveKeywordsOfAllAttrsAdapter() {
+	public Adapter createRemoveAttributeKeywordsAdapter() {
 		return null;
 	}
 
@@ -732,58 +732,58 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses <em>Change Bracket To Parentheses</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToParentheses <em>Change Braces To Parentheses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToParentheses
 	 * @generated
 	 */
-	public Adapter createChangeBracketToParenthesesAdapter() {
+	public Adapter createChangeBracesToParenthesesAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare <em>Change Bracket To Square</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare <em>Change Braces To Square</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare
 	 * @generated
 	 */
-	public Adapter createChangeBracketToSquareAdapter() {
+	public Adapter createChangeBracesToSquareAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle <em>Change Bracket To Angle</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToAngle <em>Change Braces To Angle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToAngle
 	 * @generated
 	 */
-	public Adapter createChangeBracketToAngleAdapter() {
+	public Adapter createChangeBracesToAngleAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket <em>Remove Outermost Bracket</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces <em>Remove Outermost Braces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces
 	 * @generated
 	 */
-	public Adapter createRemoveOutermostBracketAdapter() {
+	public Adapter createRemoveOutermostBracesAdapter() {
 		return null;
 	}
 
@@ -802,16 +802,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost <em>Remove Bracket Except Outermost</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost <em>Remove Braces Except Outermost</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost
 	 * @generated
 	 */
-	public Adapter createRemoveBracketExceptOutermostAdapter() {
+	public Adapter createRemoveBracesExceptOutermostAdapter() {
 		return null;
 	}
 
@@ -956,16 +956,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr <em>Add Bracket To Attr</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToAttr <em>Add Braces To Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToAttr
 	 * @generated
 	 */
-	public Adapter createAddBracketToAttrAdapter() {
+	public Adapter createAddBracesToAttrAdapter() {
 		return null;
 	}
 
@@ -998,16 +998,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket <em>Add Optionality To Outermost Bracket</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBraces <em>Add Optionality To Outermost Braces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBraces
 	 * @generated
 	 */
-	public Adapter createAddOptionalityToOutermostBracketAdapter() {
+	public Adapter createAddOptionalityToOutermostBracesAdapter() {
 		return null;
 	}
 
@@ -1222,16 +1222,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToLine <em>Add Bracket To Line</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToLine <em>Add Braces To Line</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToLine
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToLine
 	 * @generated
 	 */
-	public Adapter createAddBracketToLineAdapter() {
+	public Adapter createAddBracesToLineAdapter() {
 		return null;
 	}
 
@@ -1292,44 +1292,44 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.PackageAttributes <em>Package Attributes</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeMultiplicity <em>Change Attribute Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.PackageAttributes
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeMultiplicity
 	 * @generated
 	 */
-	public Adapter createPackageAttributesAdapter() {
+	public Adapter createChangeAttributeMultiplicityAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPatten <em>Change Boolean Attr To Special Patten</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPattern <em>Change Boolean Attr To Special Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPatten
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBooleanAttrToSpecialPattern
 	 * @generated
 	 */
-	public Adapter createChangeBooleanAttrToSpecialPattenAdapter() {
+	public Adapter createChangeBooleanAttrToSpecialPatternAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToASemiOrAWithBracket <em>Change ATo ASemi Or AWith Bracket</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeToSingleElementOrBracedList <em>Change Attribute To Single Element Or Braced List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAToASemiOrAWithBracket
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeAttributeToSingleElementOrBracedList
 	 * @generated
 	 */
-	public Adapter createChangeAToASemiOrAWithBracketAdapter() {
+	public Adapter createChangeAttributeToSingleElementOrBracedListAdapter() {
 		return null;
 	}
 
@@ -1390,16 +1390,16 @@ public class OptimizationruleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToRule <em>Add Bracket To Rule</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToRule <em>Add Braces To Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToRule
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToRule
 	 * @generated
 	 */
-	public Adapter createAddBracketToRuleAdapter() {
+	public Adapter createAddBracesToRuleAdapter() {
 		return null;
 	}
 

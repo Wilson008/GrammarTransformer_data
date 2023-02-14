@@ -2,8 +2,8 @@ package org.bumble.xtext.grammaroptimizer.test;
 
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingMyXeniaTest {
 	@Test
@@ -54,8 +54,8 @@ public class AdaptingMyXeniaTest {
 		go.changeBracesToSquare("Header", "sites");
 		
 		// add keywords 'has' and 'pages' to the end of attribute appName
-		go.addKeywordToAttr("Header", "appName", "has", false, null);
-		go.addKeywordToAttr("Header", "appName", "pages", false, null);
+		go.addKeywordToAttr("Header", "appName", "has", false);
+		go.addKeywordToAttr("Header", "appName", "pages", false);
 		
 		// change the type of attribute appName to ID
 		go.changeTypeOfAttr("Header", "appName", "EString", "ID");
@@ -228,7 +228,6 @@ public class AdaptingMyXeniaTest {
 
 		// compare text
 		//Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

@@ -124,10 +124,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int OPTIMIZATION_RULE_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketImpl <em>Remove Bracket</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesImpl <em>Remove Bracket</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveBracket()
 	 * @generated
 	 */
@@ -1410,10 +1410,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int ADD_PARENTHESES_TO_ATTR_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInSpecifiedAttrImpl <em>Remove Parentheses In Specified Attr</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInAttribute <em>Remove Parentheses In Specified Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInSpecifiedAttrImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInAttribute
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveParenthesesInSpecifiedAttr()
 	 * @generated
 	 */
@@ -1766,10 +1766,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int CHANGE_RULE_NAME_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveKeywordsOfAllAttrsImpl <em>Remove Keywords Of All Attrs</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveAttributeKeywordsImpl <em>Remove Keywords Of All Attrs</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveKeywordsOfAllAttrsImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveAttributeKeywordsImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveKeywordsOfAllAttrs()
 	 * @generated
 	 */
@@ -1894,10 +1894,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int REMOVE_OPTIONALITY_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToParenthesesImpl <em>Change Bracket To Parentheses</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToParenthesesImpl <em>Change Bracket To Parentheses</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToParenthesesImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToParenthesesImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getChangeBracketToParentheses()
 	 * @generated
 	 */
@@ -1958,10 +1958,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int CHANGE_BRACKET_TO_PARENTHESES_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToSquareImpl <em>Change Bracket To Square</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToSquareImpl <em>Change Bracket To Square</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToSquareImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToSquareImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getChangeBracketToSquare()
 	 * @generated
 	 */
@@ -2022,10 +2022,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int CHANGE_BRACKET_TO_SQUARE_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToAngleImpl <em>Change Bracket To Angle</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToAngleImpl <em>Change Bracket To Angle</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToAngleImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToAngleImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getChangeBracketToAngle()
 	 * @generated
 	 */
@@ -2086,10 +2086,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int CHANGE_BRACKET_TO_ANGLE_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracketImpl <em>Remove Outer Most Bracket</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracesImpl <em>Remove Outer Most Bracket</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracketImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracesImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveOutermostBracket()
 	 * @generated
 	 */
@@ -2214,10 +2214,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int CONVERT1TO_STAR_TO1OR_STAR_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketExceptOutermostImpl <em>Remove Bracket Except Outermost</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesExceptOutermostImpl <em>Remove Bracket Except Outermost</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketExceptOutermostImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesExceptOutermostImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveBracketExceptOutermost()
 	 * @generated
 	 */
@@ -3099,10 +3099,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int ADD_OPTIONALITY_TO_KEYWORD_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracketToAttrImpl <em>Add Bracket To Attr</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracesToAttrImpl <em>Add Bracket To Attr</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracketToAttrImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracesToAttrImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getAddBracketToAttr()
 	 * @generated
 	 */
@@ -3373,10 +3373,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 	int ADD_SQUARE_BRACKET_TO_ATTR_OPERATION_COUNT = OPTIMIZATION_RULE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracketImpl <em>Add Optionality To Outer Most Bracket</em>}' class.
+	 * The meta object id for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracesImpl <em>Add Optionality To Outer Most Bracket</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracketImpl
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracesImpl
 	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getAddOptionalityToOutermostBracket()
 	 * @generated
 	 */
@@ -3984,32 +3984,32 @@ public interface GrammaroptimizerPackage extends EPackage {
 	EOperation getOptimizationRule__Apply();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket <em>Remove Bracket</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces <em>Remove Bracket</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Remove Bracket</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces
 	 * @generated
 	 */
 	EClass getRemoveBracket();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket#getOnlyExistAttr <em>Only Exist Attr</em>}'.
+	 * Returns the meta object for the attribute '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces#getOnlyExistAttr <em>Only Exist Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Only Exist Attr</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket#getOnlyExistAttr()
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces#getOnlyExistAttr()
 	 * @see #getRemoveBracket()
 	 * @generated
 	 */
 	EAttribute getRemoveBracket_OnlyExistAttr();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket#getExcludedGrammarRule <em>Excluded Grammar Rule</em>}'.
+	 * Returns the meta object for the attribute list '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces#getExcludedGrammarRule <em>Excluded Grammar Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Excluded Grammar Rule</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracket#getExcludedGrammarRule()
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBraces#getExcludedGrammarRule()
 	 * @see #getRemoveBracket()
 	 * @generated
 	 */
@@ -4395,11 +4395,11 @@ public interface GrammaroptimizerPackage extends EPackage {
 	EClass getAddParenthesesToAttr();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInSpecifiedAttr <em>Remove Parentheses In Specified Attr</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInAttribute <em>Remove Parentheses In Specified Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Remove Parentheses In Specified Attr</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInSpecifiedAttr
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveParenthesesInAttribute
 	 * @generated
 	 */
 	EClass getRemoveParenthesesInSpecifiedAttr();
@@ -4489,11 +4489,11 @@ public interface GrammaroptimizerPackage extends EPackage {
 	EAttribute getRenameRule_NewName();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeywordsOfAllAttrs <em>Remove Keywords Of All Attrs</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttributeKeywords <em>Remove Keywords Of All Attrs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Remove Keywords Of All Attrs</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveKeywordsOfAllAttrs
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveAttributeKeywords
 	 * @generated
 	 */
 	EClass getRemoveKeywordsOfAllAttrs();
@@ -4509,41 +4509,41 @@ public interface GrammaroptimizerPackage extends EPackage {
 	EClass getRemoveOptionality();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses <em>Change Bracket To Parentheses</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToParentheses <em>Change Bracket To Parentheses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Change Bracket To Parentheses</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToParentheses
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToParentheses
 	 * @generated
 	 */
 	EClass getChangeBracketToParentheses();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare <em>Change Bracket To Square</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare <em>Change Bracket To Square</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Change Bracket To Square</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToSquare
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToSquare
 	 * @generated
 	 */
 	EClass getChangeBracketToSquare();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle <em>Change Bracket To Angle</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToAngle <em>Change Bracket To Angle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Change Bracket To Angle</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracketToAngle
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.ChangeBracesToAngle
 	 * @generated
 	 */
 	EClass getChangeBracketToAngle();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket <em>Remove Outer Most Bracket</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces <em>Remove Outer Most Bracket</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Remove Outer Most Bracket</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBracket
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveOutermostBraces
 	 * @generated
 	 */
 	EClass getRemoveOutermostBracket();
@@ -4559,11 +4559,11 @@ public interface GrammaroptimizerPackage extends EPackage {
 	EClass getConvert1toStarTo1orStar();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost <em>Remove Bracket Except Outermost</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost <em>Remove Bracket Except Outermost</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Remove Bracket Except Outermost</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracketExceptOutermost
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.RemoveBracesExceptOutermost
 	 * @generated
 	 */
 	EClass getRemoveBracketExceptOutermost();
@@ -4822,11 +4822,11 @@ public interface GrammaroptimizerPackage extends EPackage {
 	EAttribute getAddOptionalityToKeyword_Keyword();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr <em>Add Bracket To Attr</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToAttr <em>Add Bracket To Attr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Add Bracket To Attr</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracketToAttr
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddBracesToAttr
 	 * @generated
 	 */
 	EClass getAddBracketToAttr();
@@ -4884,11 +4884,11 @@ public interface GrammaroptimizerPackage extends EPackage {
 	EClass getAddSquareBracketToAttr();
 
 	/**
-	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket <em>Add Optionality To Outer Most Bracket</em>}'.
+	 * Returns the meta object for class '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBraces <em>Add Optionality To Outer Most Bracket</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Add Optionality To Outer Most Bracket</em>'.
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBracket
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.AddOptionalityToOutermostBraces
 	 * @generated
 	 */
 	EClass getAddOptionalityToOutermostBracket();
@@ -5150,10 +5150,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 		EOperation OPTIMIZATION_RULE___APPLY = eINSTANCE.getOptimizationRule__Apply();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketImpl <em>Remove Bracket</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesImpl <em>Remove Bracket</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveBracket()
 		 * @generated
 		 */
@@ -5496,10 +5496,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 		EClass ADD_PARENTHESES_TO_ATTR = eINSTANCE.getAddParenthesesToAttr();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInSpecifiedAttrImpl <em>Remove Parentheses In Specified Attr</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInAttribute <em>Remove Parentheses In Specified Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInSpecifiedAttrImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveParenthesesInAttribute
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveParenthesesInSpecifiedAttr()
 		 * @generated
 		 */
@@ -5578,10 +5578,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 		EAttribute CHANGE_RULE_NAME__NEW_NAME = eINSTANCE.getRenameRule_NewName();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveKeywordsOfAllAttrsImpl <em>Remove Keywords Of All Attrs</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveAttributeKeywordsImpl <em>Remove Keywords Of All Attrs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveKeywordsOfAllAttrsImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveAttributeKeywordsImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveKeywordsOfAllAttrs()
 		 * @generated
 		 */
@@ -5598,40 +5598,40 @@ public interface GrammaroptimizerPackage extends EPackage {
 		EClass REMOVE_OPTIONALITY = eINSTANCE.getRemoveOptionality();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToParenthesesImpl <em>Change Bracket To Parentheses</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToParenthesesImpl <em>Change Bracket To Parentheses</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToParenthesesImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToParenthesesImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getChangeBracketToParentheses()
 		 * @generated
 		 */
 		EClass CHANGE_BRACKET_TO_PARENTHESES = eINSTANCE.getChangeBracketToParentheses();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToSquareImpl <em>Change Bracket To Square</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToSquareImpl <em>Change Bracket To Square</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToSquareImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToSquareImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getChangeBracketToSquare()
 		 * @generated
 		 */
 		EClass CHANGE_BRACKET_TO_SQUARE = eINSTANCE.getChangeBracketToSquare();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToAngleImpl <em>Change Bracket To Angle</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToAngleImpl <em>Change Bracket To Angle</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracketToAngleImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.ChangeBracesToAngleImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getChangeBracketToAngle()
 		 * @generated
 		 */
 		EClass CHANGE_BRACKET_TO_ANGLE = eINSTANCE.getChangeBracketToAngle();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracketImpl <em>Remove Outer Most Bracket</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracesImpl <em>Remove Outer Most Bracket</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracketImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveOutermostBracesImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveOutermostBracket()
 		 * @generated
 		 */
@@ -5648,10 +5648,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 		EClass CONVERT1TO_STAR_TO1OR_STAR = eINSTANCE.getConvert1toStarTo1orStar();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketExceptOutermostImpl <em>Remove Bracket Except Outermost</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesExceptOutermostImpl <em>Remove Bracket Except Outermost</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracketExceptOutermostImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.RemoveBracesExceptOutermostImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getRemoveBracketExceptOutermost()
 		 * @generated
 		 */
@@ -5872,10 +5872,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 		EAttribute ADD_OPTIONALITY_TO_KEYWORD__KEYWORD = eINSTANCE.getAddOptionalityToKeyword_Keyword();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracketToAttrImpl <em>Add Bracket To Attr</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracesToAttrImpl <em>Add Bracket To Attr</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracketToAttrImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddBracesToAttrImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getAddBracketToAttr()
 		 * @generated
 		 */
@@ -5928,10 +5928,10 @@ public interface GrammaroptimizerPackage extends EPackage {
 		EClass ADD_SQUARE_BRACKET_TO_ATTR = eINSTANCE.getAddSquareBracketToAttr();
 
 		/**
-		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracketImpl <em>Add Optionality To Outer Most Bracket</em>}' class.
+		 * The meta object literal for the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracesImpl <em>Add Optionality To Outer Most Bracket</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracketImpl
+		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.AddOptionalityToOutermostBracesImpl
 		 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.impl.GrammaroptimizerPackageImpl#getAddOptionalityToOutermostBracket()
 		 * @generated
 		 */

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bumble.xtext.grammaroptimizer.GrammarOptimizer;
-import org.bumble.xtext.grammaroptimizer.optimizationrule.PackageKey;
+import org.bumble.xtext.grammaroptimizer.optimizationrule.MultiplicityKey;
+import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
 public class AdaptingEastAdlSimplifiedTest {
 	@Test
@@ -64,7 +64,7 @@ public class AdaptingEastAdlSimplifiedTest {
 		go.changeTypeOfAttr(null, "uuid", "String0", "UUID");
 		
 		// allow empty attribute existing
-		go.addOptionalityToContainerBraces(null, PackageKey.PACKAGE_OPTIONALLY);
+		go.addOptionalityToContainerBraces(null, MultiplicityKey.MULTIPLICITY_OPTIONAL);
 		
 		// add ';' to the attributes which is not 0...* or 1...*, and the name is not shortName
 		excludedAttr.clear();
@@ -77,7 +77,6 @@ public class AdaptingEastAdlSimplifiedTest {
 
 		// compare text
 		//Assertions.assertTrue(actualOutput.equals(expectOutput), "The modified grammar is not expected!");
-		Assertions.assertEquals(expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""),
-				"The modified grammar is not expected!");
+		Assert.assertEquals("The modified grammar is not expected!", expectOutput.replaceAll("\\s+", ""), actualOutput.replaceAll("\\s+", ""));
 	}
 }

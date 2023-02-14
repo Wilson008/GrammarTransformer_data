@@ -13,7 +13,7 @@ package org.bumble.xtext.grammaroptimizer.optimizationrule;
  * </p>
  * <ul>
  *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddCallToOtherRule#getNameOfOtherClass <em>Name Of Other Class</em>}</li>
- *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddCallToOtherRule#isRemoveAction <em>Remove Action</em>}</li>
+ *   <li>{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddCallToOtherRule#isCallRequired <em>Call Required</em>}</li>
  * </ul>
  *
  * @see org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage#getAddCallToOtherRule()
@@ -44,25 +44,25 @@ public interface AddCallToOtherRule extends OptimizationRule {
 	void setNameOfOtherClass(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Remove Action</b></em>' attribute.
+	 * Returns the value of the '<em><b>Call Required</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Remove Action</em>' attribute.
-	 * @see #setRemoveAction(boolean)
-	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage#getAddCallToOtherRule_RemoveAction()
+	 * @return the value of the '<em>Call Required</em>' attribute.
+	 * @see #setCallRequired(boolean)
+	 * @see org.bumble.xtext.grammaroptimizer.optimizationrule.OptimizationrulePackage#getAddCallToOtherRule_CallRequired()
 	 * @model
 	 * @generated
 	 */
-	boolean isRemoveAction();
+	boolean isCallRequired();
 
 	/**
-	 * Sets the value of the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddCallToOtherRule#isRemoveAction <em>Remove Action</em>}' attribute.
+	 * Sets the value of the '{@link org.bumble.xtext.grammaroptimizer.optimizationrule.AddCallToOtherRule#isCallRequired <em>Call Required</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Remove Action</em>' attribute.
-	 * @see #isRemoveAction()
+	 * @param value the new value of the '<em>Call Required</em>' attribute.
+	 * @see #isCallRequired()
 	 * @generated
 	 */
-	void setRemoveAction(boolean value);
+	void setCallRequired(boolean value);
 
 } // AddCallToOtherRule

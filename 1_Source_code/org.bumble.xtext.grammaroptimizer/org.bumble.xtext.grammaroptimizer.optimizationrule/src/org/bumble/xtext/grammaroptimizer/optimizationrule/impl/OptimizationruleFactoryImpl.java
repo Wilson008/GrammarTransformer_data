@@ -57,7 +57,7 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case OptimizationrulePackage.REMOVE_BRACKET: return createRemoveBracket();
+			case OptimizationrulePackage.REMOVE_BRACES: return createRemoveBraces();
 			case OptimizationrulePackage.ADD_KEYWORD_TO_ATTR: return createAddKeywordToAttr();
 			case OptimizationrulePackage.REMOVE_KEYWORD: return createRemoveKeyword();
 			case OptimizationrulePackage.RENAME_KEYWORD: return createRenameKeyword();
@@ -73,19 +73,19 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 			case OptimizationrulePackage.ADD_KEYWORD_AFTER_KEYWORD: return createAddKeywordAfterKeyword();
 			case OptimizationrulePackage.CHANGE_TYPE_OF_ATTR: return createChangeTypeOfAttr();
 			case OptimizationrulePackage.ADD_PARENTHESES_TO_ATTR: return createAddParenthesesToAttr();
-			case OptimizationrulePackage.REMOVE_PARENTHESES_IN_SPECIFIED_ATTR: return createRemoveParenthesesInSpecifiedAttr();
+			case OptimizationrulePackage.REMOVE_PARENTHESES_IN_ATTRIBUTE: return createRemoveParenthesesInAttribute();
 			case OptimizationrulePackage.ADD_IMPORT: return createAddImport();
 			case OptimizationrulePackage.REMOVE_ATTRIBUTE: return createRemoveAttribute();
 			case OptimizationrulePackage.CHANGE_ATTR_LINE_CONTENT: return createChangeAttrLineContent();
 			case OptimizationrulePackage.RENAME_RULE: return createRenameRule();
-			case OptimizationrulePackage.REMOVE_KEYWORDS_OF_ALL_ATTRS: return createRemoveKeywordsOfAllAttrs();
+			case OptimizationrulePackage.REMOVE_ATTRIBUTE_KEYWORDS: return createRemoveAttributeKeywords();
 			case OptimizationrulePackage.REMOVE_OPTIONALITY: return createRemoveOptionality();
-			case OptimizationrulePackage.CHANGE_BRACKET_TO_PARENTHESES: return createChangeBracketToParentheses();
-			case OptimizationrulePackage.CHANGE_BRACKET_TO_SQUARE: return createChangeBracketToSquare();
-			case OptimizationrulePackage.CHANGE_BRACKET_TO_ANGLE: return createChangeBracketToAngle();
-			case OptimizationrulePackage.REMOVE_OUTERMOST_BRACKET: return createRemoveOutermostBracket();
+			case OptimizationrulePackage.CHANGE_BRACES_TO_PARENTHESES: return createChangeBracesToParentheses();
+			case OptimizationrulePackage.CHANGE_BRACES_TO_SQUARE: return createChangeBracesToSquare();
+			case OptimizationrulePackage.CHANGE_BRACES_TO_ANGLE: return createChangeBracesToAngle();
+			case OptimizationrulePackage.REMOVE_OUTERMOST_BRACES: return createRemoveOutermostBraces();
 			case OptimizationrulePackage.CONVERT1TO_STAR_TO1OR_STAR: return createConvert1toStarTo1orStar();
-			case OptimizationrulePackage.REMOVE_BRACKET_EXCEPT_OUTERMOST: return createRemoveBracketExceptOutermost();
+			case OptimizationrulePackage.REMOVE_BRACES_EXCEPT_OUTERMOST: return createRemoveBracesExceptOutermost();
 			case OptimizationrulePackage.REMOVE_CERTAIN_TYPE_FROM_ATTR: return createRemoveCertainTypeFromAttr();
 			case OptimizationrulePackage.CHANGE_RULE_CONTENT: return createChangeRuleContent();
 			case OptimizationrulePackage.CHANGE_CALLED_RULE: return createChangeCalledRule();
@@ -96,10 +96,10 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 			case OptimizationrulePackage.REMOVE_IMPORT: return createRemoveImport();
 			case OptimizationrulePackage.ADD_ALTERNATIVE_KEYWORD: return createAddAlternativeKeyword();
 			case OptimizationrulePackage.ADD_OPTIONALITY_TO_KEYWORD: return createAddOptionalityToKeyword();
-			case OptimizationrulePackage.ADD_BRACKET_TO_ATTR: return createAddBracketToAttr();
+			case OptimizationrulePackage.ADD_BRACES_TO_ATTR: return createAddBracesToAttr();
 			case OptimizationrulePackage.KEYWORD_UPPER_TO_LOWER_CASE: return createKeywordUpperToLowerCase();
 			case OptimizationrulePackage.ADD_SQUARE_BRACKET_TO_ATTR: return createAddSquareBracketToAttr();
-			case OptimizationrulePackage.ADD_OPTIONALITY_TO_OUTERMOST_BRACKET: return createAddOptionalityToOutermostBracket();
+			case OptimizationrulePackage.ADD_OPTIONALITY_TO_OUTERMOST_BRACES: return createAddOptionalityToOutermostBraces();
 			case OptimizationrulePackage.ADD_SYMBOL_TO_ATTR: return createAddSymbolToAttr();
 			case OptimizationrulePackage.ADD_PRIMITIVE_TYPE: return createAddPrimitiveType();
 			case OptimizationrulePackage.ADD_SYMBOL_TO_RULE: return createAddSymbolToRule();
@@ -115,19 +115,19 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 			case OptimizationrulePackage.CHANGE_ATO_OPTIONAL_AOR_A: return createChangeAToOptionalAorA();
 			case OptimizationrulePackage.ADD_TERMINAL_RULE: return createAddTerminalRule();
 			case OptimizationrulePackage.ADD_OPTIONALITY_TO_LINE: return createAddOptionalityToLine();
-			case OptimizationrulePackage.ADD_BRACKET_TO_LINE: return createAddBracketToLine();
+			case OptimizationrulePackage.ADD_BRACES_TO_LINE: return createAddBracesToLine();
 			case OptimizationrulePackage.ADD_PARENTHESES_WITHOUT_QUOTE_TO_RULE: return createAddParenthesesWithoutQuoteToRule();
 			case OptimizationrulePackage.ADD_ALTERNATIVE_SYMBOL: return createAddAlternativeSymbol();
 			case OptimizationrulePackage.CHANGE_AB_TO_ABOR_BA: return createChangeABToABorBA();
 			case OptimizationrulePackage.ADD_SYMBOL_WITHOUT_QUOTE_TO_KEYWORD: return createAddSymbolWithoutQuoteToKeyword();
-			case OptimizationrulePackage.PACKAGE_ATTRIBUTES: return createPackageAttributes();
-			case OptimizationrulePackage.CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTEN: return createChangeBooleanAttrToSpecialPatten();
-			case OptimizationrulePackage.CHANGE_ATO_ASEMI_OR_AWITH_BRACKET: return createChangeAToASemiOrAWithBracket();
+			case OptimizationrulePackage.CHANGE_ATTRIBUTE_MULTIPLICITY: return createChangeAttributeMultiplicity();
+			case OptimizationrulePackage.CHANGE_BOOLEAN_ATTR_TO_SPECIAL_PATTERN: return createChangeBooleanAttrToSpecialPattern();
+			case OptimizationrulePackage.CHANGE_ATTRIBUTE_TO_SINGLE_ELEMENT_OR_BRACED_LIST: return createChangeAttributeToSingleElementOrBracedList();
 			case OptimizationrulePackage.CHANGE_RETURNS: return createChangeReturns();
 			case OptimizationrulePackage.ADD_ALTERNATIVE_VALUE: return createAddAlternativeValue();
 			case OptimizationrulePackage.CHANGE_ATO_AOR_SYMBOL: return createChangeAToAorSymbol();
 			case OptimizationrulePackage.ADD_ALTERNATIVE_SUB_CLASS_TO_ABSTRACT_CLASS: return createAddAlternativeSubClassToAbstractClass();
-			case OptimizationrulePackage.ADD_BRACKET_TO_RULE: return createAddBracketToRule();
+			case OptimizationrulePackage.ADD_BRACES_TO_RULE: return createAddBracesToRule();
 			case OptimizationrulePackage.REMOVE_LITERAL_FROM_ENUM: return createRemoveLiteralFromEnum();
 			case OptimizationrulePackage.CONVERT0TO_STAR_TO0TO_STAROR1TO_STAR: return createConvert0toStarTo0toStaror1toStar();
 			case OptimizationrulePackage.REMOVE_ACTION: return createRemoveAction();
@@ -148,8 +148,8 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 		switch (eDataType.getClassifierID()) {
 			case OptimizationrulePackage.SCOPE_KEY:
 				return createScopeKeyFromString(eDataType, initialValue);
-			case OptimizationrulePackage.PACKAGE_KEY:
-				return createPackageKeyFromString(eDataType, initialValue);
+			case OptimizationrulePackage.MULTIPLICITY_KEY:
+				return createMultiplicityKeyFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -165,8 +165,8 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 		switch (eDataType.getClassifierID()) {
 			case OptimizationrulePackage.SCOPE_KEY:
 				return convertScopeKeyToString(eDataType, instanceValue);
-			case OptimizationrulePackage.PACKAGE_KEY:
-				return convertPackageKeyToString(eDataType, instanceValue);
+			case OptimizationrulePackage.MULTIPLICITY_KEY:
+				return convertMultiplicityKeyToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -177,9 +177,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveBracket createRemoveBracket() {
-		RemoveBracketImpl removeBracket = new RemoveBracketImpl();
-		return removeBracket;
+	public RemoveBraces createRemoveBraces() {
+		RemoveBracesImpl removeBraces = new RemoveBracesImpl();
+		return removeBraces;
 	}
 
 	/**
@@ -337,9 +337,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveParenthesesInSpecifiedAttr createRemoveParenthesesInSpecifiedAttr() {
-		RemoveParenthesesInSpecifiedAttrImpl removeParenthesesInSpecifiedAttr = new RemoveParenthesesInSpecifiedAttrImpl();
-		return removeParenthesesInSpecifiedAttr;
+	public RemoveParenthesesInAttribute createRemoveParenthesesInAttribute() {
+		RemoveParenthesesInAttributeImpl removeParenthesesInAttribute = new RemoveParenthesesInAttributeImpl();
+		return removeParenthesesInAttribute;
 	}
 
 	/**
@@ -387,9 +387,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveKeywordsOfAllAttrs createRemoveKeywordsOfAllAttrs() {
-		RemoveKeywordsOfAllAttrsImpl removeKeywordsOfAllAttrs = new RemoveKeywordsOfAllAttrsImpl();
-		return removeKeywordsOfAllAttrs;
+	public RemoveAttributeKeywords createRemoveAttributeKeywords() {
+		RemoveAttributeKeywordsImpl removeAttributeKeywords = new RemoveAttributeKeywordsImpl();
+		return removeAttributeKeywords;
 	}
 
 	/**
@@ -407,9 +407,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeBracketToParentheses createChangeBracketToParentheses() {
-		ChangeBracketToParenthesesImpl changeBracketToParentheses = new ChangeBracketToParenthesesImpl();
-		return changeBracketToParentheses;
+	public ChangeBracesToParentheses createChangeBracesToParentheses() {
+		ChangeBracesToParenthesesImpl changeBracesToParentheses = new ChangeBracesToParenthesesImpl();
+		return changeBracesToParentheses;
 	}
 
 	/**
@@ -417,9 +417,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeBracketToSquare createChangeBracketToSquare() {
-		ChangeBracketToSquareImpl changeBracketToSquare = new ChangeBracketToSquareImpl();
-		return changeBracketToSquare;
+	public ChangeBracesToSquare createChangeBracesToSquare() {
+		ChangeBracesToSquareImpl changeBracesToSquare = new ChangeBracesToSquareImpl();
+		return changeBracesToSquare;
 	}
 
 	/**
@@ -427,9 +427,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeBracketToAngle createChangeBracketToAngle() {
-		ChangeBracketToAngleImpl changeBracketToAngle = new ChangeBracketToAngleImpl();
-		return changeBracketToAngle;
+	public ChangeBracesToAngle createChangeBracesToAngle() {
+		ChangeBracesToAngleImpl changeBracesToAngle = new ChangeBracesToAngleImpl();
+		return changeBracesToAngle;
 	}
 
 	/**
@@ -437,9 +437,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveOutermostBracket createRemoveOutermostBracket() {
-		RemoveOutermostBracketImpl removeOutermostBracket = new RemoveOutermostBracketImpl();
-		return removeOutermostBracket;
+	public RemoveOutermostBraces createRemoveOutermostBraces() {
+		RemoveOutermostBracesImpl removeOutermostBraces = new RemoveOutermostBracesImpl();
+		return removeOutermostBraces;
 	}
 
 	/**
@@ -457,9 +457,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveBracketExceptOutermost createRemoveBracketExceptOutermost() {
-		RemoveBracketExceptOutermostImpl removeBracketExceptOutermost = new RemoveBracketExceptOutermostImpl();
-		return removeBracketExceptOutermost;
+	public RemoveBracesExceptOutermost createRemoveBracesExceptOutermost() {
+		RemoveBracesExceptOutermostImpl removeBracesExceptOutermost = new RemoveBracesExceptOutermostImpl();
+		return removeBracesExceptOutermost;
 	}
 
 	/**
@@ -567,9 +567,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddBracketToAttr createAddBracketToAttr() {
-		AddBracketToAttrImpl addBracketToAttr = new AddBracketToAttrImpl();
-		return addBracketToAttr;
+	public AddBracesToAttr createAddBracesToAttr() {
+		AddBracesToAttrImpl addBracesToAttr = new AddBracesToAttrImpl();
+		return addBracesToAttr;
 	}
 
 	/**
@@ -597,9 +597,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddOptionalityToOutermostBracket createAddOptionalityToOutermostBracket() {
-		AddOptionalityToOutermostBracketImpl addOptionalityToOutermostBracket = new AddOptionalityToOutermostBracketImpl();
-		return addOptionalityToOutermostBracket;
+	public AddOptionalityToOutermostBraces createAddOptionalityToOutermostBraces() {
+		AddOptionalityToOutermostBracesImpl addOptionalityToOutermostBraces = new AddOptionalityToOutermostBracesImpl();
+		return addOptionalityToOutermostBraces;
 	}
 
 	/**
@@ -757,9 +757,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddBracketToLine createAddBracketToLine() {
-		AddBracketToLineImpl addBracketToLine = new AddBracketToLineImpl();
-		return addBracketToLine;
+	public AddBracesToLine createAddBracesToLine() {
+		AddBracesToLineImpl addBracesToLine = new AddBracesToLineImpl();
+		return addBracesToLine;
 	}
 
 	/**
@@ -807,9 +807,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageAttributes createPackageAttributes() {
-		PackageAttributesImpl packageAttributes = new PackageAttributesImpl();
-		return packageAttributes;
+	public ChangeAttributeMultiplicity createChangeAttributeMultiplicity() {
+		ChangeAttributeMultiplicityImpl changeAttributeMultiplicity = new ChangeAttributeMultiplicityImpl();
+		return changeAttributeMultiplicity;
 	}
 
 	/**
@@ -817,9 +817,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeBooleanAttrToSpecialPatten createChangeBooleanAttrToSpecialPatten() {
-		ChangeBooleanAttrToSpecialPattenImpl changeBooleanAttrToSpecialPatten = new ChangeBooleanAttrToSpecialPattenImpl();
-		return changeBooleanAttrToSpecialPatten;
+	public ChangeBooleanAttrToSpecialPattern createChangeBooleanAttrToSpecialPattern() {
+		ChangeBooleanAttrToSpecialPatternImpl changeBooleanAttrToSpecialPattern = new ChangeBooleanAttrToSpecialPatternImpl();
+		return changeBooleanAttrToSpecialPattern;
 	}
 
 	/**
@@ -827,9 +827,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeAToASemiOrAWithBracket createChangeAToASemiOrAWithBracket() {
-		ChangeAToASemiOrAWithBracketImpl changeAToASemiOrAWithBracket = new ChangeAToASemiOrAWithBracketImpl();
-		return changeAToASemiOrAWithBracket;
+	public ChangeAttributeToSingleElementOrBracedList createChangeAttributeToSingleElementOrBracedList() {
+		ChangeAttributeToSingleElementOrBracedListImpl changeAttributeToSingleElementOrBracedList = new ChangeAttributeToSingleElementOrBracedListImpl();
+		return changeAttributeToSingleElementOrBracedList;
 	}
 
 	/**
@@ -877,9 +877,9 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddBracketToRule createAddBracketToRule() {
-		AddBracketToRuleImpl addBracketToRule = new AddBracketToRuleImpl();
-		return addBracketToRule;
+	public AddBracesToRule createAddBracesToRule() {
+		AddBracesToRuleImpl addBracesToRule = new AddBracesToRuleImpl();
+		return addBracesToRule;
 	}
 
 	/**
@@ -957,8 +957,8 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageKey createPackageKeyFromString(EDataType eDataType, String initialValue) {
-		PackageKey result = PackageKey.get(initialValue);
+	public MultiplicityKey createMultiplicityKeyFromString(EDataType eDataType, String initialValue) {
+		MultiplicityKey result = MultiplicityKey.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -968,7 +968,7 @@ public class OptimizationruleFactoryImpl extends EFactoryImpl implements Optimiz
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertPackageKeyToString(EDataType eDataType, Object instanceValue) {
+	public String convertMultiplicityKeyToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
