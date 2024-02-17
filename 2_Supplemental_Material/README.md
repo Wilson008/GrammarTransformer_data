@@ -21,11 +21,11 @@ Here is only one document in this folder which is the list of classes we used fo
 There are two sub-folders in this folder:
 
 1. `Subsection_7.1_Grammar_Adaptation` 
-Includes seven spreadsheets, each of which compares the grammar rules of the optimized grammar and the original grammar, to see if the grammar rule in the original grammar is imitated by the one in optimized grammar.
+Includes seven spreadsheets, each of which compares the grammar rules of the transformed grammar and the original grammar, to see if the grammar rule in the original grammar is imitated by the one in transformed grammar.
 1. `Subsection_7.2_Support_Evolution`
 In this sub-folder, there are three sub-folders:
 
-	1. QVTo grammar analysis: there are four spreadsheets for comparing the original/generated/optimized grammars.
+	1. QVTo grammar analysis: there are four spreadsheets for comparing the original/generated/transformed grammars.
 	1. QVTo grammar comparison: there are three spreadsheets for comparing the generated grammars between four versions.
 	1. QVTo metamodel adaptation: there are four spreadsheets describing how we did the adaptations in the four versions of the metamodel in details.
 
